@@ -1,0 +1,33 @@
+In file included from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1[m[K:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:59:44:[m[K [01;31m[Kerror: [m[K‘[01m[KAllyRobotHP[m[K’ is not a member of ‘[01m[Kpb_rm_interfaces::msg[m[K’; did you mean ‘[01m[Krm_decision_interfaces::msg::AllyRobotHP[m[K’?
+   59 |   rclcpp::Publisher<pb_rm_interfaces::msg::[01;31m[KAllyRobotHP[m[K>::SharedPtr all_robot_hp_pub_;
+      |                                            [01;31m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_cpp/rm_decision_interfaces/msg/ally_robot_hp.hpp:7[m[K,
+                 from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:29[m[K,
+                 from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1[m[K:
+[01m[K/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_cpp/rm_decision_interfaces/msg/detail/ally_robot_hp__struct.hpp:206:7:[m[K [01;36m[Knote: [m[K‘[01m[Krm_decision_interfaces::msg::AllyRobotHP[m[K’ declared here
+  206 | using [01;36m[KAllyRobotHP[m[K =
+      |       [01;36m[K^~~~~~~~~~~[m[K
+In file included from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1[m[K:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:59:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   59 |   rclcpp::Publisher<pb_rm_interfaces::msg::AllyRobotHP[01;31m[K>[m[K::SharedPtr all_robot_hp_pub_;
+      |                                                       [01;31m[K^[m[K
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:59:58:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   59 |   rclcpp::Publisher<pb_rm_interfaces::msg::AllyRobotHP>::[01;31m[KSharedPtr[m[K all_robot_hp_pub_;
+      |                                                          [01;31m[K^~~~~~~~~[m[K
+      |                                                                   [32m[K;[m[K
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:59:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kall_robot_hp_pub_[m[K’ does not name a type
+   59 |   rclcpp::Publisher<pb_rm_interfaces::msg::AllyRobotHP>::SharedPtr [01;31m[Kall_robot_hp_pub_[m[K;
+      |                                                                    [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:[m[K In member function ‘[01m[Kvoid standard_robot_pp_ros2::StandardRobotPpRos2Node::createPublisher()[m[K’:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:51:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kall_robot_hp_pub_[m[K’ was not declared in this scope
+   51 |   [01;31m[Kall_robot_hp_pub_[m[K =
+      |   [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:[m[K In member function ‘[01m[Kvoid standard_robot_pp_ros2::StandardRobotPpRos2Node::publishAllRobotHp(standard_robot_pp_ros2::ReceiveAllRobotHpData&)[m[K’:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:433:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kall_robot_hp_pub_[m[K’ was not declared in this scope; did you mean ‘[01m[Kall_robot_hp[m[K’?
+  433 |   [01;31m[Kall_robot_hp_pub_[m[K->publish(msg);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |   [32m[Kall_robot_hp[m[K
+gmake[2]: *** [CMakeFiles/standard_robot_pp_ros2.dir/build.make:76: CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/standard_robot_pp_ros2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

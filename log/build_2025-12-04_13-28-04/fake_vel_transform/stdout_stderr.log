@@ -1,0 +1,33 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/fake_vel_transform_node.dir/rclcpp_components/node_main_fake_vel_transform_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/fake_vel_transform.dir/src/fake_vel_transform.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable fake_vel_transform_node[0m
+[ 75%] Built target fake_vel_transform_node
+[100%] [32m[1mLinking CXX shared library libfake_vel_transform.so[0m
+[100%] Built target fake_vel_transform
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/lib/fake_vel_transform/fake_vel_transform_node
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/include/fake_vel_transform/fake_vel_transform.hpp
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/library_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/library_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/lib/libfake_vel_transform.so
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/launch/fake_vel_transform.launch.py
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/package_run_dependencies/fake_vel_transform
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/parent_prefix_path/fake_vel_transform
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/ament_prefix_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/ament_prefix_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/path.sh
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.bash
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.sh
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.zsh
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/package.dsv
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/packages/fake_vel_transform
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/rclcpp_components/fake_vel_transform
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/fake_vel_transformConfig.cmake
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/fake_vel_transformConfig-version.cmake
+-- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/package.xml

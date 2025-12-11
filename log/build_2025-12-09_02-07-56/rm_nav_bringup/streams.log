@@ -1,0 +1,58 @@
+[0.011s] Invoking command in '/workspaces/auto_sentry/build/rm_nav_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_nav_bringup -- -j28 -l28
+[0.047s] Invoked command in '/workspaces/auto_sentry/build/rm_nav_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_nav_bringup -- -j28 -l28
+[0.099s] Invoking command in '/workspaces/auto_sentry/build/rm_nav_bringup': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_nav_bringup
+[0.108s] -- Install configuration: ""
+[0.108s] -- Execute custom install script
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/launch/bringup_real.launch.py
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/launch/bringup_sim.launch.py
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/MID360_config.json
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/fastlio_mid360_real.yaml
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/icp_registration_real.yaml
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/mapper_params_localization_real.yaml
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/mapper_params_online_async_real.yaml
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/measurement_params_real.yaml
+[0.109s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/nav2_params_real.yaml
+[0.110s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/pointlio_mid360_real.yaml
+[0.110s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/reality/segmentation_real.yaml
+[0.110s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/fastlio_mid360_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/icp_registration_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/mapper_params_localization_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/mapper_params_online_async_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/measurement_params_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/nav2_params_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/pointlio_mid360_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/config/simulation/segmentation_sim.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUC.data
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUC.pgm
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUC.posegraph
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUC.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUL.data
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUL.pgm
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUL.posegraph
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/RMUL.yaml
+[0.111s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/secret.data
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/secret.pgm
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/secret.posegraph
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/map/secret.yaml
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/PCD/RMUC.pcd
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/PCD/RMUL.pcd
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/rviz/fastlio.rviz
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/rviz/pointlio.rviz
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/urdf/sentry_robot_real.xacro
+[0.112s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/urdf/sentry_robot_sim.xacro
+[0.113s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/ament_index/resource_index/package_run_dependencies/rm_nav_bringup
+[0.113s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/ament_index/resource_index/parent_prefix_path/rm_nav_bringup
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/environment/ament_prefix_path.sh
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/environment/ament_prefix_path.dsv
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/environment/path.sh
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/environment/path.dsv
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/local_setup.bash
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/local_setup.sh
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/local_setup.zsh
+[0.114s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/local_setup.dsv
+[0.114s] -- Symlinking: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/package.dsv
+[0.131s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/ament_index/resource_index/packages/rm_nav_bringup
+[0.131s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/cmake/rm_nav_bringupConfig.cmake
+[0.131s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/cmake/rm_nav_bringupConfig-version.cmake
+[0.131s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_nav_bringup/share/rm_nav_bringup/package.xml
+[0.134s] Invoked command in '/workspaces/auto_sentry/build/rm_nav_bringup' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_nav_bringup

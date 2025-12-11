@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/bt4_plugin_manifest.dir/bt_plugin_manifest.cpp.o -o bt4_plugin_manifest  -Wl,-rpath,/workspaces/auto_sentry/build/behaviortree_cpp:/opt/ros/humble/lib ../libbehaviortree_cpp.so /opt/ros/humble/lib/libament_index_cpp.so 

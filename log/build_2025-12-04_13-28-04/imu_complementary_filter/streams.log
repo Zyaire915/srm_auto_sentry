@@ -1,0 +1,41 @@
+[0.184s] Invoking command in '/workspaces/auto_sentry/build/imu_complementary_filter': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/imu_complementary_filter -- -j28 -l28
+[0.297s] [ 20%] [32mBuilding CXX object CMakeFiles/complementary_filter.dir/src/complementary_filter.cpp.o[0m
+[0.297s] [ 40%] [32mBuilding CXX object CMakeFiles/complementary_filter.dir/src/complementary_filter_ros.cpp.o[0m
+[49.803s] [ 60%] [32m[1mLinking CXX shared library libcomplementary_filter.so[0m
+[50.115s] [ 60%] Built target complementary_filter
+[50.154s] [ 80%] [32mBuilding CXX object CMakeFiles/complementary_filter_node.dir/src/complementary_filter_node.cpp.o[0m
+[54.401s] [100%] [32m[1mLinking CXX executable complementary_filter_node[0m
+[54.590s] [100%] Built target complementary_filter_node
+[54.623s] Invoked command in '/workspaces/auto_sentry/build/imu_complementary_filter' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/imu_complementary_filter -- -j28 -l28
+[54.698s] Invoking command in '/workspaces/auto_sentry/build/imu_complementary_filter': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/imu_complementary_filter
+[54.712s] -- Install configuration: ""
+[54.713s] -- Execute custom install script
+[54.714s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/lib/imu_complementary_filter/complementary_filter_node
+[54.728s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/include/imu_complementary_filter/complementary_filter.h
+[54.745s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/include/imu_complementary_filter/complementary_filter_ros.h
+[54.757s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/launch/complementary_filter.launch.py
+[54.773s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/library_path.sh
+[54.784s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/library_path.dsv
+[54.801s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/ament_index/resource_index/package_run_dependencies/imu_complementary_filter
+[54.813s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/ament_index/resource_index/parent_prefix_path/imu_complementary_filter
+[54.828s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/ament_prefix_path.sh
+[54.839s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/ament_prefix_path.dsv
+[54.850s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/path.sh
+[54.862s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/environment/path.dsv
+[54.873s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/local_setup.bash
+[54.884s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/local_setup.sh
+[54.895s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/local_setup.zsh
+[54.906s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/local_setup.dsv
+[54.918s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/package.dsv
+[54.930s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/ament_index/resource_index/packages/imu_complementary_filter
+[54.943s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/ament_cmake_export_include_directories-extras.cmake
+[54.958s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/ament_cmake_export_libraries-extras.cmake
+[54.978s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/ament_cmake_export_targets-extras.cmake
+[54.996s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/imu_complementary_filterConfig.cmake
+[55.007s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/imu_complementary_filterConfig-version.cmake
+[55.018s] -- Symlinking: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/package.xml
+[55.030s] -- Installing: /workspaces/auto_sentry/install/imu_complementary_filter/lib/libcomplementary_filter.so
+[55.035s] -- Set runtime path of "/workspaces/auto_sentry/install/imu_complementary_filter/lib/libcomplementary_filter.so" to ""
+[55.035s] -- Installing: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/export_imu_complementary_filterExport.cmake
+[55.035s] -- Installing: /workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/export_imu_complementary_filterExport-noconfig.cmake
+[55.041s] Invoked command in '/workspaces/auto_sentry/build/imu_complementary_filter' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/imu_complementary_filter

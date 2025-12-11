@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/costmap_converter_msgs/rosidl_generator_cpp/costmap_converter_msgs/msg/detail/obstacle_msg__builder.hpp

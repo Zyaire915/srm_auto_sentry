@@ -1,0 +1,4 @@
+source;share/standard_robot_pp_ros2/local_setup.bash
+source;share/standard_robot_pp_ros2/local_setup.dsv
+source;share/standard_robot_pp_ros2/local_setup.sh
+source;share/standard_robot_pp_ros2/local_setup.zsh

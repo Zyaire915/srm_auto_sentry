@@ -1,0 +1,114 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_auto: 1.3.9 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found ASIO: /usr/include  
+-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /workspaces/auto_sentry/src/transport_drivers/udp_driver/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/auto_sentry/build/udp_driver
+[  4%] [32mBuilding CXX object CMakeFiles/udp_driver.dir/src/udp_socket.cpp.o[0m
+[  8%] [32mBuilding CXX object CMakeFiles/udp_driver.dir/src/udp_driver.cpp.o[0m
+[ 12%] [32m[1mLinking CXX shared library libudp_driver.so[0m
+[ 12%] Built target udp_driver
+[ 16%] [32mBuilding CXX object gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o[0m
+[ 20%] [32m[1mLinking CXX static library libgtest.a[0m
+[ 20%] Built target gtest
+[ 25%] [32mBuilding CXX object CMakeFiles/udp_driver_nodes.dir/src/udp_receiver_node.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/udp_driver_nodes.dir/src/udp_sender_node.cpp.o[0m
+[ 33%] [32m[1mLinking CXX shared library libudp_driver_nodes.so[0m
+[ 33%] Built target udp_driver_nodes
+[ 37%] [32mBuilding CXX object gtest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/udp_receiver_node_exe.dir/rclcpp_components/node_main_udp_receiver_node_exe.cpp.o[0m
+[ 45%] [32mBuilding CXX object CMakeFiles/udp_bridge_node_exe.dir/src/udp_bridge_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/udp_sender_node_exe.dir/rclcpp_components/node_main_udp_sender_node_exe.cpp.o[0m
+[ 54%] [32m[1mLinking CXX static library libgtest_main.a[0m
+[ 54%] Built target gtest_main
+[ 58%] [32mBuilding CXX object CMakeFiles/test_udp_data.dir/test/test_udp_data.cpp.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/test_udp_socket.dir/test/test_udp_socket.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/test_udp_driver.dir/test/test_udp_driver.cpp.o[0m
+[ 70%] [32m[1mLinking CXX executable test_udp_socket[0m
+[ 75%] [32m[1mLinking CXX executable test_udp_data[0m
+[ 75%] Built target test_udp_socket
+[ 79%] [32mBuilding CXX object CMakeFiles/test_udp_driver_nodes.dir/test/test_udp_driver_nodes.cpp.o[0m
+[ 79%] Built target test_udp_data
+[ 83%] [32m[1mLinking CXX executable udp_sender_node_exe[0m
+[ 83%] Built target udp_sender_node_exe
+[ 87%] [32m[1mLinking CXX executable udp_receiver_node_exe[0m
+[ 87%] Built target udp_receiver_node_exe
+[ 91%] [32m[1mLinking CXX executable udp_bridge_node_exe[0m
+[ 91%] Built target udp_bridge_node_exe
+[ 95%] [32m[1mLinking CXX executable test_udp_driver[0m
+[ 95%] Built target test_udp_driver
+[100%] [32m[1mLinking CXX executable test_udp_driver_nodes[0m
+[100%] Built target test_udp_driver_nodes
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/lib/udp_driver/udp_receiver_node_exe
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/lib/udp_driver/udp_sender_node_exe
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/include/udp_driver/udp_driver.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/include/udp_driver/udp_receiver_node.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/include/udp_driver/udp_sender_node.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/include/udp_driver/udp_socket.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/include/udp_driver/visibility_control.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/library_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/library_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/lib/libudp_driver.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/lib/libudp_driver_nodes.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/lib/udp_driver/udp_bridge_node_exe
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/ament_index/resource_index/package_run_dependencies/udp_driver
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/ament_index/resource_index/parent_prefix_path/udp_driver
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/ament_prefix_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/ament_prefix_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/environment/path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/local_setup.bash
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/local_setup.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/local_setup.zsh
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/package.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/ament_index/resource_index/packages/udp_driver
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/ament_index/resource_index/rclcpp_components/udp_driver
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/cmake/udp_driverConfig.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/cmake/udp_driverConfig-version.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_driver/share/udp_driver/package.xml

@@ -1,0 +1,37 @@
+[0.167s] Invoking command in '/workspaces/auto_sentry/build/fake_vel_transform': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/fake_vel_transform -- -j28 -l28
+[0.302s] [ 25%] [32mBuilding CXX object CMakeFiles/fake_vel_transform_node.dir/rclcpp_components/node_main_fake_vel_transform_node.cpp.o[0m
+[0.304s] [ 50%] [32mBuilding CXX object CMakeFiles/fake_vel_transform.dir/src/fake_vel_transform.cpp.o[0m
+[22.112s] [ 75%] [32m[1mLinking CXX executable fake_vel_transform_node[0m
+[22.394s] [ 75%] Built target fake_vel_transform_node
+[31.391s] [100%] [32m[1mLinking CXX shared library libfake_vel_transform.so[0m
+[32.206s] [100%] Built target fake_vel_transform
+[32.236s] Invoked command in '/workspaces/auto_sentry/build/fake_vel_transform' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/fake_vel_transform -- -j28 -l28
+[32.300s] Invoking command in '/workspaces/auto_sentry/build/fake_vel_transform': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/fake_vel_transform
+[32.309s] -- Install configuration: ""
+[32.310s] -- Execute custom install script
+[32.311s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/lib/fake_vel_transform/fake_vel_transform_node
+[32.328s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/include/fake_vel_transform/fake_vel_transform.hpp
+[32.339s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/library_path.sh
+[32.351s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/library_path.dsv
+[32.364s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/lib/libfake_vel_transform.so
+[32.376s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/launch/fake_vel_transform.launch.py
+[32.391s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/package_run_dependencies/fake_vel_transform
+[32.408s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/parent_prefix_path/fake_vel_transform
+[32.424s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/ament_prefix_path.sh
+[32.434s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/ament_prefix_path.dsv
+[32.450s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/path.sh
+[32.462s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/environment/path.dsv
+[32.475s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.bash
+[32.491s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.sh
+[32.506s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.zsh
+[32.518s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/local_setup.dsv
+[32.535s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/package.dsv
+[32.551s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/packages/fake_vel_transform
+[32.565s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/ament_index/resource_index/rclcpp_components/fake_vel_transform
+[32.582s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_dependencies-extras.cmake
+[32.598s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_include_directories-extras.cmake
+[32.614s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/ament_cmake_export_libraries-extras.cmake
+[32.630s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/fake_vel_transformConfig.cmake
+[32.642s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/cmake/fake_vel_transformConfig-version.cmake
+[32.652s] -- Symlinking: /workspaces/auto_sentry/install/fake_vel_transform/share/fake_vel_transform/package.xml
+[32.667s] Invoked command in '/workspaces/auto_sentry/build/fake_vel_transform' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/fake_vel_transform

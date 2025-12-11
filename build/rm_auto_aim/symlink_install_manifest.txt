@@ -1,0 +1,15 @@
+/workspaces/auto_sentry/install/rm_auto_aim/share/ament_index/resource_index/package_run_dependencies/rm_auto_aim
+/workspaces/auto_sentry/install/rm_auto_aim/share/ament_index/resource_index/parent_prefix_path/rm_auto_aim
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/environment/ament_prefix_path.sh
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/environment/ament_prefix_path.dsv
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/environment/path.sh
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/environment/path.dsv
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/local_setup.bash
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/local_setup.sh
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/local_setup.zsh
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/local_setup.dsv
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/package.dsv
+/workspaces/auto_sentry/install/rm_auto_aim/share/ament_index/resource_index/packages/rm_auto_aim
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/cmake/rm_auto_aimConfig.cmake
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/cmake/rm_auto_aimConfig-version.cmake
+/workspaces/auto_sentry/install/rm_auto_aim/share/rm_auto_aim/package.xml

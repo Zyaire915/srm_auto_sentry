@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/hik_camera/ament_cmake_core/hik_cameraConfig-version.cmake

@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_detect_enemy.hpp

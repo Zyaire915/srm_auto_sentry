@@ -1,0 +1,4 @@
+Invoking command in '/workspaces/auto_sentry/build/pointcloud_to_laserscan': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/pointcloud_to_laserscan -- -j28 -l28
+Invoked command in '/workspaces/auto_sentry/build/pointcloud_to_laserscan' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/pointcloud_to_laserscan -- -j28 -l28
+Invoking command in '/workspaces/auto_sentry/build/pointcloud_to_laserscan': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/pointcloud_to_laserscan
+Invoked command in '/workspaces/auto_sentry/build/pointcloud_to_laserscan' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/pointcloud_to_laserscan

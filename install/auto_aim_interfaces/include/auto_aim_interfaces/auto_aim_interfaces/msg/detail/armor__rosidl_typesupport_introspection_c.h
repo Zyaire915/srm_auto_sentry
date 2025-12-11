@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_typesupport_introspection_c/auto_aim_interfaces/msg/detail/armor__rosidl_typesupport_introspection_c.h

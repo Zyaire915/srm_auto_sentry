@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py

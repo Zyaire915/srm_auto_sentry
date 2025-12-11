@@ -1,0 +1,847 @@
+[0.000000] (-) TimerEvent: {}
+[0.000711] (-) JobUnselected: {'identifier': 'armor_detector'}
+[0.000773] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000799] (-) JobUnselected: {'identifier': 'asio_cmake_module'}
+[0.000832] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000874] (-) JobUnselected: {'identifier': 'behaviortree_cpp'}
+[0.000885] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.000894] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.000903] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.000919] (-) JobUnselected: {'identifier': 'costmap_converter'}
+[0.000930] (-) JobUnselected: {'identifier': 'costmap_converter_msgs'}
+[0.000939] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.000949] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000959] (-) JobUnselected: {'identifier': 'game_status_tester'}
+[0.001012] (-) JobUnselected: {'identifier': 'hik_camera'}
+[0.001022] (-) JobUnselected: {'identifier': 'icp_registration'}
+[0.001036] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.001054] (-) JobUnselected: {'identifier': 'io_context'}
+[0.001075] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation'}
+[0.001117] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation_ros'}
+[0.001129] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.001138] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.001147] (-) JobUnselected: {'identifier': 'pb_rm_simulation'}
+[0.001162] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.001172] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.001181] (-) JobUnselected: {'identifier': 'rm_auto_aim'}
+[0.001191] (-) JobUnselected: {'identifier': 'rm_decision_interfaces'}
+[0.001200] (-) JobUnselected: {'identifier': 'rm_gimbal_description'}
+[0.001245] (-) JobUnselected: {'identifier': 'rm_nav_bringup'}
+[0.001261] (-) JobUnselected: {'identifier': 'rm_navigation'}
+[0.001272] (-) JobUnselected: {'identifier': 'rm_rune_detector'}
+[0.001283] (-) JobUnselected: {'identifier': 'rm_serial_driver'}
+[0.001292] (-) JobUnselected: {'identifier': 'rm_vision_bringup'}
+[0.001303] (-) JobUnselected: {'identifier': 'ros2_livox_simulation'}
+[0.001312] (-) JobUnselected: {'identifier': 'serial_driver'}
+[0.001323] (-) JobUnselected: {'identifier': 'standard_robot_pp_ros2'}
+[0.001331] (-) JobUnselected: {'identifier': 'teb_local_planner'}
+[0.001340] (-) JobUnselected: {'identifier': 'teb_msgs'}
+[0.001350] (-) JobUnselected: {'identifier': 'udp_driver'}
+[0.001358] (-) JobUnselected: {'identifier': 'udp_msgs'}
+[0.001401] (rm_behavior_tree) JobQueued: {'identifier': 'rm_behavior_tree', 'dependencies': OrderedDict([('auto_aim_interfaces', '/workspaces/auto_sentry/install/auto_aim_interfaces'), ('behaviortree_cpp', '/workspaces/auto_sentry/install/behaviortree_cpp'), ('rm_decision_interfaces', '/workspaces/auto_sentry/install/rm_decision_interfaces'), ('behaviortree_ros2', '/workspaces/auto_sentry/install/behaviortree_ros2')])}
+[0.001625] (rm_behavior_tree) JobStarted: {'identifier': 'rm_behavior_tree'}
+[0.015363] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'cmake'}
+[0.017519] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'build'}
+[0.018689] (rm_behavior_tree) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/auto_sentry/build/rm_behavior_tree', '--', '-j28', '-l28'], 'cwd': '/workspaces/auto_sentry/build/rm_behavior_tree', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-df13f356-21d0-4983-9dee-2e92481bff41.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/behaviortree_cpp/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/rm_behavior_tree'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.040357] (rm_behavior_tree) StdoutLine: {'line': b'-- Found ament_cmake_auto: 1.3.9 (/opt/ros/humble/share/ament_cmake_auto/cmake)\n'}
+[0.099646] (-) TimerEvent: {}
+[0.127045] (rm_behavior_tree) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.199765] (-) TimerEvent: {}
+[0.201487] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.203225] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.207542] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.214971] (rm_behavior_tree) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.225250] (rm_behavior_tree) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.263843] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.264789] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299928] (-) TimerEvent: {}
+[0.366267] (rm_behavior_tree) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.400100] (-) TimerEvent: {}
+[0.500310] (-) TimerEvent: {}
+[0.600611] (-) TimerEvent: {}
+[0.700945] (-) TimerEvent: {}
+[0.801324] (-) TimerEvent: {}
+[0.901637] (-) TimerEvent: {}
+[1.001993] (-) TimerEvent: {}
+[1.102349] (-) TimerEvent: {}
+[1.202591] (-) TimerEvent: {}
+[1.302888] (-) TimerEvent: {}
+[1.403188] (-) TimerEvent: {}
+[1.503497] (-) TimerEvent: {}
+[1.603863] (-) TimerEvent: {}
+[1.704179] (-) TimerEvent: {}
+[1.804536] (-) TimerEvent: {}
+[1.874610] (rm_behavior_tree) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.904689] (-) TimerEvent: {}
+[2.004970] (-) TimerEvent: {}
+[2.105219] (-) TimerEvent: {}
+[2.205448] (-) TimerEvent: {}
+[2.293682] (rm_behavior_tree) StdoutLine: {'line': b'-- Generating done\n'}
+[2.296163] (rm_behavior_tree) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/auto_sentry/build/rm_behavior_tree\n'}
+[2.305549] (-) TimerEvent: {}
+[2.319902] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target decision_switch\x1b[0m\n'}
+[2.320041] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target rm_behavior_tree\x1b[0m\n'}
+[2.337642] (rm_behavior_tree) StdoutLine: {'line': b'[  2%] \x1b[32mBuilding CXX object CMakeFiles/decision_switch.dir/plugins/control/decision_switch.cpp.o\x1b[0m\n'}
+[2.340633] (rm_behavior_tree) StdoutLine: {'line': b'[  4%] \x1b[32m\x1b[1mLinking CXX executable rm_behavior_tree\x1b[0m\n'}
+[2.405711] (-) TimerEvent: {}
+[2.485822] (rm_behavior_tree) StdoutLine: {'line': b'[  7%] Built target rm_behavior_tree\n'}
+[2.505886] (-) TimerEvent: {}
+[2.606203] (-) TimerEvent: {}
+[2.706557] (-) TimerEvent: {}
+[2.806889] (-) TimerEvent: {}
+[2.907229] (-) TimerEvent: {}
+[3.007514] (-) TimerEvent: {}
+[3.107824] (-) TimerEvent: {}
+[3.208190] (-) TimerEvent: {}
+[3.308431] (-) TimerEvent: {}
+[3.408779] (-) TimerEvent: {}
+[3.509098] (-) TimerEvent: {}
+[3.609327] (-) TimerEvent: {}
+[3.709588] (-) TimerEvent: {}
+[3.809823] (-) TimerEvent: {}
+[3.910147] (-) TimerEvent: {}
+[4.010386] (-) TimerEvent: {}
+[4.110646] (-) TimerEvent: {}
+[4.210883] (-) TimerEvent: {}
+[4.311248] (-) TimerEvent: {}
+[4.411484] (-) TimerEvent: {}
+[4.511754] (-) TimerEvent: {}
+[4.612100] (-) TimerEvent: {}
+[4.712346] (-) TimerEvent: {}
+[4.812613] (-) TimerEvent: {}
+[4.912957] (-) TimerEvent: {}
+[5.013255] (-) TimerEvent: {}
+[5.113511] (-) TimerEvent: {}
+[5.163983] (rm_behavior_tree) StdoutLine: {'line': b'[  9%] \x1b[32m\x1b[1mLinking CXX shared library libdecision_switch.so\x1b[0m\n'}
+[5.213627] (-) TimerEvent: {}
+[5.291102] (rm_behavior_tree) StdoutLine: {'line': b'[  9%] Built target decision_switch\n'}
+[5.301587] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target rate_controller\x1b[0m\n'}
+[5.313804] (-) TimerEvent: {}
+[5.321236] (rm_behavior_tree) StdoutLine: {'line': b'[ 11%] \x1b[32m\x1b[1mLinking CXX shared library librate_controller.so\x1b[0m\n'}
+[5.414031] (-) TimerEvent: {}
+[5.451175] (rm_behavior_tree) StdoutLine: {'line': b'[ 14%] Built target rate_controller\n'}
+[5.462217] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_game_time\x1b[0m\n'}
+[5.482893] (rm_behavior_tree) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/is_game_time.dir/plugins/condition/is_game_time.cpp.o\x1b[0m\n'}
+[5.514238] (-) TimerEvent: {}
+[5.614618] (-) TimerEvent: {}
+[5.715006] (-) TimerEvent: {}
+[5.815540] (-) TimerEvent: {}
+[5.915815] (-) TimerEvent: {}
+[6.016168] (-) TimerEvent: {}
+[6.116397] (-) TimerEvent: {}
+[6.216626] (-) TimerEvent: {}
+[6.316892] (-) TimerEvent: {}
+[6.417219] (-) TimerEvent: {}
+[6.517463] (-) TimerEvent: {}
+[6.617727] (-) TimerEvent: {}
+[6.718097] (-) TimerEvent: {}
+[6.818333] (-) TimerEvent: {}
+[6.918592] (-) TimerEvent: {}
+[7.018927] (-) TimerEvent: {}
+[7.119277] (-) TimerEvent: {}
+[7.182067] (rm_behavior_tree) StdoutLine: {'line': b'[ 19%] \x1b[32m\x1b[1mLinking CXX shared library libis_game_time.so\x1b[0m\n'}
+[7.219473] (-) TimerEvent: {}
+[7.319718] (-) TimerEvent: {}
+[7.341834] (rm_behavior_tree) StdoutLine: {'line': b'[ 19%] Built target is_game_time\n'}
+[7.351375] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_status_ok\x1b[0m\n'}
+[7.372963] (rm_behavior_tree) StdoutLine: {'line': b'[ 21%] \x1b[32mBuilding CXX object CMakeFiles/is_status_ok.dir/plugins/condition/is_status_ok.cpp.o\x1b[0m\n'}
+[7.419894] (-) TimerEvent: {}
+[7.520197] (-) TimerEvent: {}
+[7.620449] (-) TimerEvent: {}
+[7.720715] (-) TimerEvent: {}
+[7.821026] (-) TimerEvent: {}
+[7.921282] (-) TimerEvent: {}
+[8.021556] (-) TimerEvent: {}
+[8.121806] (-) TimerEvent: {}
+[8.222140] (-) TimerEvent: {}
+[8.322381] (-) TimerEvent: {}
+[8.422639] (-) TimerEvent: {}
+[8.522972] (-) TimerEvent: {}
+[8.623357] (-) TimerEvent: {}
+[8.723625] (-) TimerEvent: {}
+[8.823964] (-) TimerEvent: {}
+[8.924238] (-) TimerEvent: {}
+[9.024462] (-) TimerEvent: {}
+[9.077962] (rm_behavior_tree) StdoutLine: {'line': b'[ 23%] \x1b[32m\x1b[1mLinking CXX shared library libis_status_ok.so\x1b[0m\n'}
+[9.124725] (-) TimerEvent: {}
+[9.225205] (-) TimerEvent: {}
+[9.245078] (rm_behavior_tree) StdoutLine: {'line': b'[ 23%] Built target is_status_ok\n'}
+[9.254990] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_attacked\x1b[0m\n'}
+[9.272600] (rm_behavior_tree) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/is_attacked.dir/plugins/condition/is_attacked.cpp.o\x1b[0m\n'}
+[9.325355] (-) TimerEvent: {}
+[9.425745] (-) TimerEvent: {}
+[9.526149] (-) TimerEvent: {}
+[9.626668] (-) TimerEvent: {}
+[9.726997] (-) TimerEvent: {}
+[9.827348] (-) TimerEvent: {}
+[9.927676] (-) TimerEvent: {}
+[10.028010] (-) TimerEvent: {}
+[10.128246] (-) TimerEvent: {}
+[10.228496] (-) TimerEvent: {}
+[10.328754] (-) TimerEvent: {}
+[10.429077] (-) TimerEvent: {}
+[10.529313] (-) TimerEvent: {}
+[10.629582] (-) TimerEvent: {}
+[10.729918] (-) TimerEvent: {}
+[10.830132] (-) TimerEvent: {}
+[10.930353] (-) TimerEvent: {}
+[10.942157] (rm_behavior_tree) StdoutLine: {'line': b'[ 28%] \x1b[32m\x1b[1mLinking CXX shared library libis_attacked.so\x1b[0m\n'}
+[11.030448] (-) TimerEvent: {}
+[11.097996] (rm_behavior_tree) StdoutLine: {'line': b'[ 28%] Built target is_attacked\n'}
+[11.106536] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_friend_ok\x1b[0m\n'}
+[11.122528] (rm_behavior_tree) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/is_friend_ok.dir/plugins/condition/is_friend_ok.cpp.o\x1b[0m\n'}
+[11.130564] (-) TimerEvent: {}
+[11.230932] (-) TimerEvent: {}
+[11.331305] (-) TimerEvent: {}
+[11.431574] (-) TimerEvent: {}
+[11.531842] (-) TimerEvent: {}
+[11.632173] (-) TimerEvent: {}
+[11.732423] (-) TimerEvent: {}
+[11.832687] (-) TimerEvent: {}
+[11.932953] (-) TimerEvent: {}
+[12.033206] (-) TimerEvent: {}
+[12.133438] (-) TimerEvent: {}
+[12.233701] (-) TimerEvent: {}
+[12.333955] (-) TimerEvent: {}
+[12.434195] (-) TimerEvent: {}
+[12.534423] (-) TimerEvent: {}
+[12.634674] (-) TimerEvent: {}
+[12.734995] (-) TimerEvent: {}
+[12.828123] (rm_behavior_tree) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking CXX shared library libis_friend_ok.so\x1b[0m\n'}
+[12.835186] (-) TimerEvent: {}
+[12.935547] (-) TimerEvent: {}
+[12.989350] (rm_behavior_tree) StdoutLine: {'line': b'[ 33%] Built target is_friend_ok\n'}
+[12.998004] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_outpost_ok\x1b[0m\n'}
+[13.015203] (rm_behavior_tree) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/is_outpost_ok.dir/plugins/condition/is_outpost_ok.cpp.o\x1b[0m\n'}
+[13.035645] (-) TimerEvent: {}
+[13.135924] (-) TimerEvent: {}
+[13.236260] (-) TimerEvent: {}
+[13.336527] (-) TimerEvent: {}
+[13.436848] (-) TimerEvent: {}
+[13.537174] (-) TimerEvent: {}
+[13.637411] (-) TimerEvent: {}
+[13.737665] (-) TimerEvent: {}
+[13.837976] (-) TimerEvent: {}
+[13.938238] (-) TimerEvent: {}
+[14.038467] (-) TimerEvent: {}
+[14.138732] (-) TimerEvent: {}
+[14.239094] (-) TimerEvent: {}
+[14.339325] (-) TimerEvent: {}
+[14.439586] (-) TimerEvent: {}
+[14.539906] (-) TimerEvent: {}
+[14.640247] (-) TimerEvent: {}
+[14.740582] (-) TimerEvent: {}
+[14.790579] (rm_behavior_tree) StdoutLine: {'line': b'[ 38%] \x1b[32m\x1b[1mLinking CXX shared library libis_outpost_ok.so\x1b[0m\n'}
+[14.840703] (-) TimerEvent: {}
+[14.941021] (-) TimerEvent: {}
+[14.957566] (rm_behavior_tree) StdoutLine: {'line': b'[ 38%] Built target is_outpost_ok\n'}
+[14.966992] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_detect_enemy\x1b[0m\n'}
+[14.985535] (rm_behavior_tree) StdoutLine: {'line': b'[ 40%] \x1b[32m\x1b[1mLinking CXX shared library libis_detect_enemy.so\x1b[0m\n'}
+[15.041262] (-) TimerEvent: {}
+[15.141707] (-) TimerEvent: {}
+[15.159374] (rm_behavior_tree) StdoutLine: {'line': b'[ 42%] Built target is_detect_enemy\n'}
+[15.168348] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target send_goal\x1b[0m\n'}
+[15.191529] (rm_behavior_tree) StdoutLine: {'line': b'[ 45%] \x1b[32m\x1b[1mLinking CXX shared library libsend_goal.so\x1b[0m\n'}
+[15.241948] (-) TimerEvent: {}
+[15.342460] (-) TimerEvent: {}
+[15.442921] (-) TimerEvent: {}
+[15.473150] (rm_behavior_tree) StdoutLine: {'line': b'[ 47%] Built target send_goal\n'}
+[15.482927] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_all_robot_hp\x1b[0m\n'}
+[15.508556] (rm_behavior_tree) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/sub_all_robot_hp.dir/plugins/action/sub_all_robot_hp.cpp.o\x1b[0m\n'}
+[15.543157] (-) TimerEvent: {}
+[15.643561] (-) TimerEvent: {}
+[15.743960] (-) TimerEvent: {}
+[15.844409] (-) TimerEvent: {}
+[15.944813] (-) TimerEvent: {}
+[16.045218] (-) TimerEvent: {}
+[16.145657] (-) TimerEvent: {}
+[16.246052] (-) TimerEvent: {}
+[16.346414] (-) TimerEvent: {}
+[16.446811] (-) TimerEvent: {}
+[16.547244] (-) TimerEvent: {}
+[16.647671] (-) TimerEvent: {}
+[16.748078] (-) TimerEvent: {}
+[16.848401] (-) TimerEvent: {}
+[16.948672] (-) TimerEvent: {}
+[17.049028] (-) TimerEvent: {}
+[17.149270] (-) TimerEvent: {}
+[17.249538] (-) TimerEvent: {}
+[17.349827] (-) TimerEvent: {}
+[17.450196] (-) TimerEvent: {}
+[17.550433] (-) TimerEvent: {}
+[17.650759] (-) TimerEvent: {}
+[17.751076] (-) TimerEvent: {}
+[17.851325] (-) TimerEvent: {}
+[17.951592] (-) TimerEvent: {}
+[18.051919] (-) TimerEvent: {}
+[18.152262] (-) TimerEvent: {}
+[18.252503] (-) TimerEvent: {}
+[18.352767] (-) TimerEvent: {}
+[18.453098] (-) TimerEvent: {}
+[18.553328] (-) TimerEvent: {}
+[18.653597] (-) TimerEvent: {}
+[18.753918] (-) TimerEvent: {}
+[18.854243] (-) TimerEvent: {}
+[18.954469] (-) TimerEvent: {}
+[19.054781] (-) TimerEvent: {}
+[19.155024] (-) TimerEvent: {}
+[19.255381] (-) TimerEvent: {}
+[19.355727] (-) TimerEvent: {}
+[19.456128] (-) TimerEvent: {}
+[19.556369] (-) TimerEvent: {}
+[19.656637] (-) TimerEvent: {}
+[19.756986] (-) TimerEvent: {}
+[19.857264] (-) TimerEvent: {}
+[19.957505] (-) TimerEvent: {}
+[20.057775] (-) TimerEvent: {}
+[20.158116] (-) TimerEvent: {}
+[20.258360] (-) TimerEvent: {}
+[20.358632] (-) TimerEvent: {}
+[20.458949] (-) TimerEvent: {}
+[20.559234] (-) TimerEvent: {}
+[20.659465] (-) TimerEvent: {}
+[20.759678] (-) TimerEvent: {}
+[20.859980] (-) TimerEvent: {}
+[20.960239] (-) TimerEvent: {}
+[21.060492] (-) TimerEvent: {}
+[21.160737] (-) TimerEvent: {}
+[21.261061] (-) TimerEvent: {}
+[21.361297] (-) TimerEvent: {}
+[21.461525] (-) TimerEvent: {}
+[21.561782] (-) TimerEvent: {}
+[21.662098] (-) TimerEvent: {}
+[21.762326] (-) TimerEvent: {}
+[21.862769] (-) TimerEvent: {}
+[21.963076] (-) TimerEvent: {}
+[22.063302] (-) TimerEvent: {}
+[22.163542] (-) TimerEvent: {}
+[22.263782] (-) TimerEvent: {}
+[22.364158] (-) TimerEvent: {}
+[22.464391] (-) TimerEvent: {}
+[22.564625] (-) TimerEvent: {}
+[22.664894] (-) TimerEvent: {}
+[22.681862] (rm_behavior_tree) StdoutLine: {'line': b'[ 52%] \x1b[32m\x1b[1mLinking CXX shared library libsub_all_robot_hp.so\x1b[0m\n'}
+[22.765073] (-) TimerEvent: {}
+[22.865301] (-) TimerEvent: {}
+[22.965573] (-) TimerEvent: {}
+[23.065835] (-) TimerEvent: {}
+[23.166157] (-) TimerEvent: {}
+[23.210940] (rm_behavior_tree) StdoutLine: {'line': b'[ 52%] Built target sub_all_robot_hp\n'}
+[23.237262] (rm_behavior_tree) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/sub_ally_robot_hp.dir/plugins/action/sub_ally_robot_hp.cpp.o\x1b[0m\n'}
+[23.266234] (-) TimerEvent: {}
+[23.366432] (-) TimerEvent: {}
+[23.466744] (-) TimerEvent: {}
+[23.567073] (-) TimerEvent: {}
+[23.667404] (-) TimerEvent: {}
+[23.767764] (-) TimerEvent: {}
+[23.868125] (-) TimerEvent: {}
+[23.968515] (-) TimerEvent: {}
+[24.068867] (-) TimerEvent: {}
+[24.169145] (-) TimerEvent: {}
+[24.269488] (-) TimerEvent: {}
+[24.369817] (-) TimerEvent: {}
+[24.470146] (-) TimerEvent: {}
+[24.570380] (-) TimerEvent: {}
+[24.670690] (-) TimerEvent: {}
+[24.771037] (-) TimerEvent: {}
+[24.871301] (-) TimerEvent: {}
+[24.971553] (-) TimerEvent: {}
+[25.071888] (-) TimerEvent: {}
+[25.172320] (-) TimerEvent: {}
+[25.272724] (-) TimerEvent: {}
+[25.373043] (-) TimerEvent: {}
+[25.473383] (-) TimerEvent: {}
+[25.573641] (-) TimerEvent: {}
+[25.673959] (-) TimerEvent: {}
+[25.774258] (-) TimerEvent: {}
+[25.874490] (-) TimerEvent: {}
+[25.974722] (-) TimerEvent: {}
+[26.075049] (-) TimerEvent: {}
+[26.175313] (-) TimerEvent: {}
+[26.275568] (-) TimerEvent: {}
+[26.375824] (-) TimerEvent: {}
+[26.476057] (-) TimerEvent: {}
+[26.576287] (-) TimerEvent: {}
+[26.676644] (-) TimerEvent: {}
+[26.776967] (-) TimerEvent: {}
+[26.877317] (-) TimerEvent: {}
+[26.977563] (-) TimerEvent: {}
+[27.077847] (-) TimerEvent: {}
+[27.178201] (-) TimerEvent: {}
+[27.278479] (-) TimerEvent: {}
+[27.378809] (-) TimerEvent: {}
+[27.479135] (-) TimerEvent: {}
+[27.579518] (-) TimerEvent: {}
+[27.679833] (-) TimerEvent: {}
+[27.780200] (-) TimerEvent: {}
+[27.880531] (-) TimerEvent: {}
+[27.980801] (-) TimerEvent: {}
+[28.081162] (-) TimerEvent: {}
+[28.181397] (-) TimerEvent: {}
+[28.281703] (-) TimerEvent: {}
+[28.382027] (-) TimerEvent: {}
+[28.482370] (-) TimerEvent: {}
+[28.582591] (-) TimerEvent: {}
+[28.682835] (-) TimerEvent: {}
+[28.783161] (-) TimerEvent: {}
+[28.883411] (-) TimerEvent: {}
+[28.983681] (-) TimerEvent: {}
+[29.083990] (-) TimerEvent: {}
+[29.184259] (-) TimerEvent: {}
+[29.284505] (-) TimerEvent: {}
+[29.384810] (-) TimerEvent: {}
+[29.485135] (-) TimerEvent: {}
+[29.585376] (-) TimerEvent: {}
+[29.685628] (-) TimerEvent: {}
+[29.785939] (-) TimerEvent: {}
+[29.886231] (-) TimerEvent: {}
+[29.986501] (-) TimerEvent: {}
+[30.086813] (-) TimerEvent: {}
+[30.187154] (-) TimerEvent: {}
+[30.287480] (-) TimerEvent: {}
+[30.387830] (-) TimerEvent: {}
+[30.410825] (rm_behavior_tree) StdoutLine: {'line': b'[ 57%] \x1b[32m\x1b[1mLinking CXX shared library libsub_ally_robot_hp.so\x1b[0m\n'}
+[30.488008] (-) TimerEvent: {}
+[30.588349] (-) TimerEvent: {}
+[30.688609] (-) TimerEvent: {}
+[30.788930] (-) TimerEvent: {}
+[30.889172] (-) TimerEvent: {}
+[30.953839] (rm_behavior_tree) StdoutLine: {'line': b'[ 57%] Built target sub_ally_robot_hp\n'}
+[30.966722] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_robot_status\x1b[0m\n'}
+[30.989377] (-) TimerEvent: {}
+[30.994533] (rm_behavior_tree) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/sub_robot_status.dir/plugins/action/sub_robot_status.cpp.o\x1b[0m\n'}
+[31.089537] (-) TimerEvent: {}
+[31.189868] (-) TimerEvent: {}
+[31.290202] (-) TimerEvent: {}
+[31.390530] (-) TimerEvent: {}
+[31.490839] (-) TimerEvent: {}
+[31.591188] (-) TimerEvent: {}
+[31.691521] (-) TimerEvent: {}
+[31.791874] (-) TimerEvent: {}
+[31.892215] (-) TimerEvent: {}
+[31.992476] (-) TimerEvent: {}
+[32.092822] (-) TimerEvent: {}
+[32.193205] (-) TimerEvent: {}
+[32.293459] (-) TimerEvent: {}
+[32.393817] (-) TimerEvent: {}
+[32.494170] (-) TimerEvent: {}
+[32.594510] (-) TimerEvent: {}
+[32.694746] (-) TimerEvent: {}
+[32.795072] (-) TimerEvent: {}
+[32.895445] (-) TimerEvent: {}
+[32.995787] (-) TimerEvent: {}
+[33.096115] (-) TimerEvent: {}
+[33.196468] (-) TimerEvent: {}
+[33.296726] (-) TimerEvent: {}
+[33.397073] (-) TimerEvent: {}
+[33.497381] (-) TimerEvent: {}
+[33.597641] (-) TimerEvent: {}
+[33.697964] (-) TimerEvent: {}
+[33.798273] (-) TimerEvent: {}
+[33.898536] (-) TimerEvent: {}
+[33.998845] (-) TimerEvent: {}
+[34.099160] (-) TimerEvent: {}
+[34.199394] (-) TimerEvent: {}
+[34.299722] (-) TimerEvent: {}
+[34.400072] (-) TimerEvent: {}
+[34.500320] (-) TimerEvent: {}
+[34.600644] (-) TimerEvent: {}
+[34.700877] (-) TimerEvent: {}
+[34.801277] (-) TimerEvent: {}
+[34.901537] (-) TimerEvent: {}
+[35.001777] (-) TimerEvent: {}
+[35.102116] (-) TimerEvent: {}
+[35.202355] (-) TimerEvent: {}
+[35.302615] (-) TimerEvent: {}
+[35.402865] (-) TimerEvent: {}
+[35.503223] (-) TimerEvent: {}
+[35.603577] (-) TimerEvent: {}
+[35.703938] (-) TimerEvent: {}
+[35.804252] (-) TimerEvent: {}
+[35.904479] (-) TimerEvent: {}
+[36.004803] (-) TimerEvent: {}
+[36.105135] (-) TimerEvent: {}
+[36.205365] (-) TimerEvent: {}
+[36.305601] (-) TimerEvent: {}
+[36.405924] (-) TimerEvent: {}
+[36.506307] (-) TimerEvent: {}
+[36.606657] (-) TimerEvent: {}
+[36.706917] (-) TimerEvent: {}
+[36.807246] (-) TimerEvent: {}
+[36.907575] (-) TimerEvent: {}
+[37.007881] (-) TimerEvent: {}
+[37.108237] (-) TimerEvent: {}
+[37.208488] (-) TimerEvent: {}
+[37.308815] (-) TimerEvent: {}
+[37.409165] (-) TimerEvent: {}
+[37.509549] (-) TimerEvent: {}
+[37.609881] (-) TimerEvent: {}
+[37.710220] (-) TimerEvent: {}
+[37.810551] (-) TimerEvent: {}
+[37.910883] (-) TimerEvent: {}
+[38.011245] (-) TimerEvent: {}
+[38.111527] (-) TimerEvent: {}
+[38.193041] (rm_behavior_tree) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library libsub_robot_status.so\x1b[0m\n'}
+[38.211707] (-) TimerEvent: {}
+[38.312166] (-) TimerEvent: {}
+[38.412410] (-) TimerEvent: {}
+[38.512684] (-) TimerEvent: {}
+[38.613007] (-) TimerEvent: {}
+[38.713259] (-) TimerEvent: {}
+[38.734954] (rm_behavior_tree) StdoutLine: {'line': b'[ 61%] Built target sub_robot_status\n'}
+[38.746186] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_game_status\x1b[0m\n'}
+[38.771111] (rm_behavior_tree) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/sub_game_status.dir/plugins/action/sub_game_status.cpp.o\x1b[0m\n'}
+[38.813438] (-) TimerEvent: {}
+[38.913693] (-) TimerEvent: {}
+[39.014047] (-) TimerEvent: {}
+[39.114377] (-) TimerEvent: {}
+[39.214712] (-) TimerEvent: {}
+[39.315021] (-) TimerEvent: {}
+[39.415376] (-) TimerEvent: {}
+[39.515708] (-) TimerEvent: {}
+[39.616085] (-) TimerEvent: {}
+[39.716336] (-) TimerEvent: {}
+[39.816604] (-) TimerEvent: {}
+[39.916940] (-) TimerEvent: {}
+[40.017231] (-) TimerEvent: {}
+[40.117471] (-) TimerEvent: {}
+[40.217836] (-) TimerEvent: {}
+[40.318157] (-) TimerEvent: {}
+[40.418387] (-) TimerEvent: {}
+[40.518638] (-) TimerEvent: {}
+[40.618958] (-) TimerEvent: {}
+[40.719256] (-) TimerEvent: {}
+[40.819508] (-) TimerEvent: {}
+[40.919826] (-) TimerEvent: {}
+[41.020197] (-) TimerEvent: {}
+[41.120431] (-) TimerEvent: {}
+[41.220707] (-) TimerEvent: {}
+[41.320938] (-) TimerEvent: {}
+[41.421262] (-) TimerEvent: {}
+[41.521492] (-) TimerEvent: {}
+[41.621806] (-) TimerEvent: {}
+[41.722121] (-) TimerEvent: {}
+[41.822456] (-) TimerEvent: {}
+[41.922778] (-) TimerEvent: {}
+[42.023120] (-) TimerEvent: {}
+[42.123371] (-) TimerEvent: {}
+[42.223635] (-) TimerEvent: {}
+[42.323954] (-) TimerEvent: {}
+[42.424296] (-) TimerEvent: {}
+[42.524639] (-) TimerEvent: {}
+[42.625035] (-) TimerEvent: {}
+[42.725383] (-) TimerEvent: {}
+[42.825652] (-) TimerEvent: {}
+[42.925929] (-) TimerEvent: {}
+[43.026134] (-) TimerEvent: {}
+[43.126473] (-) TimerEvent: {}
+[43.226812] (-) TimerEvent: {}
+[43.327073] (-) TimerEvent: {}
+[43.427412] (-) TimerEvent: {}
+[43.527686] (-) TimerEvent: {}
+[43.627997] (-) TimerEvent: {}
+[43.728369] (-) TimerEvent: {}
+[43.828718] (-) TimerEvent: {}
+[43.929064] (-) TimerEvent: {}
+[44.029412] (-) TimerEvent: {}
+[44.129721] (-) TimerEvent: {}
+[44.230067] (-) TimerEvent: {}
+[44.330324] (-) TimerEvent: {}
+[44.430634] (-) TimerEvent: {}
+[44.530954] (-) TimerEvent: {}
+[44.631279] (-) TimerEvent: {}
+[44.731607] (-) TimerEvent: {}
+[44.831932] (-) TimerEvent: {}
+[44.932268] (-) TimerEvent: {}
+[45.032742] (-) TimerEvent: {}
+[45.133158] (-) TimerEvent: {}
+[45.233423] (-) TimerEvent: {}
+[45.333728] (-) TimerEvent: {}
+[45.434041] (-) TimerEvent: {}
+[45.534367] (-) TimerEvent: {}
+[45.634684] (-) TimerEvent: {}
+[45.735004] (-) TimerEvent: {}
+[45.835380] (-) TimerEvent: {}
+[45.925651] (rm_behavior_tree) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library libsub_game_status.so\x1b[0m\n'}
+[45.935571] (-) TimerEvent: {}
+[46.035862] (-) TimerEvent: {}
+[46.136109] (-) TimerEvent: {}
+[46.236361] (-) TimerEvent: {}
+[46.336609] (-) TimerEvent: {}
+[46.436845] (-) TimerEvent: {}
+[46.488186] (rm_behavior_tree) StdoutLine: {'line': b'[ 66%] Built target sub_game_status\n'}
+[46.499268] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_armors\x1b[0m\n'}
+[46.533286] (rm_behavior_tree) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library libsub_armors.so\x1b[0m\n'}
+[46.537022] (-) TimerEvent: {}
+[46.637286] (-) TimerEvent: {}
+[46.737549] (-) TimerEvent: {}
+[46.837867] (-) TimerEvent: {}
+[46.938140] (-) TimerEvent: {}
+[47.038369] (-) TimerEvent: {}
+[47.093286] (rm_behavior_tree) StdoutLine: {'line': b'[ 71%] Built target sub_armors\n'}
+[47.104194] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_decision_num\x1b[0m\n'}
+[47.129725] (rm_behavior_tree) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/sub_decision_num.dir/plugins/action/sub_decision_num.cpp.o\x1b[0m\n'}
+[47.138500] (-) TimerEvent: {}
+[47.239065] (-) TimerEvent: {}
+[47.339321] (-) TimerEvent: {}
+[47.439587] (-) TimerEvent: {}
+[47.539855] (-) TimerEvent: {}
+[47.640210] (-) TimerEvent: {}
+[47.740467] (-) TimerEvent: {}
+[47.840736] (-) TimerEvent: {}
+[47.941078] (-) TimerEvent: {}
+[48.041353] (-) TimerEvent: {}
+[48.141656] (-) TimerEvent: {}
+[48.241999] (-) TimerEvent: {}
+[48.342280] (-) TimerEvent: {}
+[48.442629] (-) TimerEvent: {}
+[48.542988] (-) TimerEvent: {}
+[48.643285] (-) TimerEvent: {}
+[48.743538] (-) TimerEvent: {}
+[48.843878] (-) TimerEvent: {}
+[48.944229] (-) TimerEvent: {}
+[49.044496] (-) TimerEvent: {}
+[49.144827] (-) TimerEvent: {}
+[49.245196] (-) TimerEvent: {}
+[49.345435] (-) TimerEvent: {}
+[49.445667] (-) TimerEvent: {}
+[49.545984] (-) TimerEvent: {}
+[49.646251] (-) TimerEvent: {}
+[49.746577] (-) TimerEvent: {}
+[49.846912] (-) TimerEvent: {}
+[49.947247] (-) TimerEvent: {}
+[50.047509] (-) TimerEvent: {}
+[50.147777] (-) TimerEvent: {}
+[50.248126] (-) TimerEvent: {}
+[50.348359] (-) TimerEvent: {}
+[50.448677] (-) TimerEvent: {}
+[50.549016] (-) TimerEvent: {}
+[50.649420] (-) TimerEvent: {}
+[50.749776] (-) TimerEvent: {}
+[50.850135] (-) TimerEvent: {}
+[50.950516] (-) TimerEvent: {}
+[51.050815] (-) TimerEvent: {}
+[51.151155] (-) TimerEvent: {}
+[51.251493] (-) TimerEvent: {}
+[51.351848] (-) TimerEvent: {}
+[51.452190] (-) TimerEvent: {}
+[51.552418] (-) TimerEvent: {}
+[51.652696] (-) TimerEvent: {}
+[51.753040] (-) TimerEvent: {}
+[51.853291] (-) TimerEvent: {}
+[51.953646] (-) TimerEvent: {}
+[52.053964] (-) TimerEvent: {}
+[52.154289] (-) TimerEvent: {}
+[52.254626] (-) TimerEvent: {}
+[52.354966] (-) TimerEvent: {}
+[52.455224] (-) TimerEvent: {}
+[52.555543] (-) TimerEvent: {}
+[52.655852] (-) TimerEvent: {}
+[52.756160] (-) TimerEvent: {}
+[52.856497] (-) TimerEvent: {}
+[52.956720] (-) TimerEvent: {}
+[53.057051] (-) TimerEvent: {}
+[53.157392] (-) TimerEvent: {}
+[53.257646] (-) TimerEvent: {}
+[53.357975] (-) TimerEvent: {}
+[53.458202] (-) TimerEvent: {}
+[53.558514] (-) TimerEvent: {}
+[53.658761] (-) TimerEvent: {}
+[53.759059] (-) TimerEvent: {}
+[53.859386] (-) TimerEvent: {}
+[53.959702] (-) TimerEvent: {}
+[54.060031] (-) TimerEvent: {}
+[54.160401] (-) TimerEvent: {}
+[54.260682] (-) TimerEvent: {}
+[54.343635] (rm_behavior_tree) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libsub_decision_num.so\x1b[0m\n'}
+[54.360781] (-) TimerEvent: {}
+[54.461074] (-) TimerEvent: {}
+[54.561444] (-) TimerEvent: {}
+[54.661717] (-) TimerEvent: {}
+[54.761964] (-) TimerEvent: {}
+[54.862302] (-) TimerEvent: {}
+[54.905855] (rm_behavior_tree) StdoutLine: {'line': b'[ 76%] Built target sub_decision_num\n'}
+[54.915979] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target get_current_location\x1b[0m\n'}
+[54.932813] (rm_behavior_tree) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libget_current_location.so\x1b[0m\n'}
+[54.962417] (-) TimerEvent: {}
+[55.062741] (-) TimerEvent: {}
+[55.163056] (-) TimerEvent: {}
+[55.203932] (rm_behavior_tree) StdoutLine: {'line': b'[ 80%] Built target get_current_location\n'}
+[55.217998] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target move_around\x1b[0m\n'}
+[55.237820] (rm_behavior_tree) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX shared library libmove_around.so\x1b[0m\n'}
+[55.263240] (-) TimerEvent: {}
+[55.363483] (-) TimerEvent: {}
+[55.463812] (-) TimerEvent: {}
+[55.564133] (-) TimerEvent: {}
+[55.568023] (rm_behavior_tree) StdoutLine: {'line': b'[ 85%] Built target move_around\n'}
+[55.578376] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target robot_control\x1b[0m\n'}
+[55.593117] (rm_behavior_tree) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding CXX object CMakeFiles/robot_control.dir/plugins/action/robot_control.cpp.o\x1b[0m\n'}
+[55.664312] (-) TimerEvent: {}
+[55.764594] (-) TimerEvent: {}
+[55.864857] (-) TimerEvent: {}
+[55.965135] (-) TimerEvent: {}
+[56.065476] (-) TimerEvent: {}
+[56.165824] (-) TimerEvent: {}
+[56.266095] (-) TimerEvent: {}
+[56.366328] (-) TimerEvent: {}
+[56.466592] (-) TimerEvent: {}
+[56.566853] (-) TimerEvent: {}
+[56.667243] (-) TimerEvent: {}
+[56.767490] (-) TimerEvent: {}
+[56.868368] (-) TimerEvent: {}
+[56.968646] (-) TimerEvent: {}
+[57.068975] (-) TimerEvent: {}
+[57.169247] (-) TimerEvent: {}
+[57.269476] (-) TimerEvent: {}
+[57.369756] (-) TimerEvent: {}
+[57.470110] (-) TimerEvent: {}
+[57.570373] (-) TimerEvent: {}
+[57.670607] (-) TimerEvent: {}
+[57.770923] (-) TimerEvent: {}
+[57.871250] (-) TimerEvent: {}
+[57.971488] (-) TimerEvent: {}
+[58.071760] (-) TimerEvent: {}
+[58.172117] (-) TimerEvent: {}
+[58.272357] (-) TimerEvent: {}
+[58.372635] (-) TimerEvent: {}
+[58.472968] (-) TimerEvent: {}
+[58.573215] (-) TimerEvent: {}
+[58.673436] (-) TimerEvent: {}
+[58.773762] (-) TimerEvent: {}
+[58.874039] (-) TimerEvent: {}
+[58.974293] (-) TimerEvent: {}
+[59.074531] (-) TimerEvent: {}
+[59.175480] (-) TimerEvent: {}
+[59.275824] (-) TimerEvent: {}
+[59.331419] (rm_behavior_tree) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control.so\x1b[0m\n'}
+[59.375946] (-) TimerEvent: {}
+[59.476286] (-) TimerEvent: {}
+[59.576532] (-) TimerEvent: {}
+[59.640517] (rm_behavior_tree) StdoutLine: {'line': b'[ 90%] Built target robot_control\n'}
+[59.649850] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target print_message\x1b[0m\n'}
+[59.671644] (rm_behavior_tree) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking CXX shared library libprint_message.so\x1b[0m\n'}
+[59.676640] (-) TimerEvent: {}
+[59.776951] (-) TimerEvent: {}
+[59.877195] (-) TimerEvent: {}
+[59.922456] (rm_behavior_tree) StdoutLine: {'line': b'[ 95%] Built target print_message\n'}
+[59.943243] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target hp_decision_patrol\x1b[0m\n'}
+[59.974458] (rm_behavior_tree) StdoutLine: {'line': b'[ 97%] \x1b[32mBuilding CXX object CMakeFiles/hp_decision_patrol.dir/plugins/action/hp_decision_patrol.cpp.o\x1b[0m\n'}
+[59.977323] (-) TimerEvent: {}
+[60.077588] (-) TimerEvent: {}
+[60.177839] (-) TimerEvent: {}
+[60.278178] (-) TimerEvent: {}
+[60.378414] (-) TimerEvent: {}
+[60.478661] (-) TimerEvent: {}
+[60.578998] (-) TimerEvent: {}
+[60.679250] (-) TimerEvent: {}
+[60.779503] (-) TimerEvent: {}
+[60.879757] (-) TimerEvent: {}
+[60.980097] (-) TimerEvent: {}
+[61.080338] (-) TimerEvent: {}
+[61.180607] (-) TimerEvent: {}
+[61.280864] (-) TimerEvent: {}
+[61.381197] (-) TimerEvent: {}
+[61.481430] (-) TimerEvent: {}
+[61.581688] (-) TimerEvent: {}
+[61.681935] (-) TimerEvent: {}
+[61.782280] (-) TimerEvent: {}
+[61.882619] (-) TimerEvent: {}
+[61.982962] (-) TimerEvent: {}
+[62.083206] (-) TimerEvent: {}
+[62.183538] (-) TimerEvent: {}
+[62.283807] (-) TimerEvent: {}
+[62.384161] (-) TimerEvent: {}
+[62.484488] (-) TimerEvent: {}
+[62.584837] (-) TimerEvent: {}
+[62.685171] (-) TimerEvent: {}
+[62.785413] (-) TimerEvent: {}
+[62.885664] (-) TimerEvent: {}
+[62.985989] (-) TimerEvent: {}
+[63.013400] (rm_behavior_tree) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libhp_decision_patrol.so\x1b[0m\n'}
+[63.086081] (-) TimerEvent: {}
+[63.186333] (-) TimerEvent: {}
+[63.217017] (rm_behavior_tree) StdoutLine: {'line': b'[100%] Built target hp_decision_patrol\n'}
+[63.225243] (rm_behavior_tree) CommandEnded: {'returncode': 0}
+[63.286640] (-) TimerEvent: {}
+[63.373703] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'install'}
+[63.386850] (rm_behavior_tree) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspaces/auto_sentry/build/rm_behavior_tree'], 'cwd': '/workspaces/auto_sentry/build/rm_behavior_tree', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-df13f356-21d0-4983-9dee-2e92481bff41.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/behaviortree_cpp/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/rm_behavior_tree'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble')]), 'shell': False}
+[63.387920] (-) TimerEvent: {}
+[63.396472] (rm_behavior_tree) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[63.397357] (rm_behavior_tree) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[63.398255] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/bt_conversions.hpp\n'}
+[63.398466] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/get_current_location.hpp\n'}
+[63.398564] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/hp_decision_patrol.hpp\n'}
+[63.409551] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/move_around.hpp\n'}
+[63.409793] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/print_message.hpp\n'}
+[63.409937] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/robot_control.hpp\n'}
+[63.410036] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/send_goal.hpp\n'}
+[63.410111] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_all_robot_hp.hpp\n'}
+[63.410177] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_ally_robot_hp.hpp\n'}
+[63.418997] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_armors.hpp\n'}
+[63.419168] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_decision_num.hpp\n'}
+[63.419238] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_game_status.hpp\n'}
+[63.419419] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_robot_status.hpp\n'}
+[63.419572] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_attacked.hpp\n'}
+[63.419655] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_detect_enemy.hpp\n'}
+[63.419729] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_friend_ok.hpp\n'}
+[63.419780] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_game_time.hpp\n'}
+[63.419831] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_outpost_ok.hpp\n'}
+[63.419878] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_status_ok.hpp\n'}
+[63.419924] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/control/decision_switch.hpp\n'}
+[63.419969] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/decorator/rate_controller.hpp\n'}
+[63.420013] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/rm_behavior_tree.h\n'}
+[63.420083] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.sh\n'}
+[63.420168] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.dsv\n'}
+[63.420244] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libdecision_switch.so\n'}
+[63.420322] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librate_controller.so\n'}
+[63.420408] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_game_time.so\n'}
+[63.420496] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_status_ok.so\n'}
+[63.420582] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_attacked.so\n'}
+[63.420669] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_friend_ok.so\n'}
+[63.420755] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_outpost_ok.so\n'}
+[63.420841] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_detect_enemy.so\n'}
+[63.420928] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsend_goal.so\n'}
+[63.421012] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_all_robot_hp.so\n'}
+[63.421083] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_ally_robot_hp.so\n'}
+[63.432233] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_robot_status.so\n'}
+[63.432407] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_game_status.so\n'}
+[63.432660] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_armors.so\n'}
+[63.432870] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_decision_num.so\n'}
+[63.432970] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libget_current_location.so\n'}
+[63.433036] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libmove_around.so\n'}
+[63.433143] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librobot_control.so\n'}
+[63.433204] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libprint_message.so\n'}
+[63.433261] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libhp_decision_patrol.so\n'}
+[63.442718] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/rm_behavior_tree/rm_behavior_tree\n'}
+[63.442927] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/launch/rm_behavior_tree.launch.py\n'}
+[63.443282] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/Project.btproj\n'}
+[63.443623] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_left.xml\n'}
+[63.443758] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_right.xml\n'}
+[63.443829] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/decision_switch_test.xml\n'}
+[63.443895] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/hp_patrol_test.xml\n'}
+[63.453865] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/protect_supply.xml\n'}
+[63.454002] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/retreat_attack_left.xml\n'}
+[63.454428] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/rmuc_01.xml\n'}
+[63.454626] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/package_run_dependencies/rm_behavior_tree\n'}
+[63.454697] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/parent_prefix_path/rm_behavior_tree\n'}
+[63.454753] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.sh\n'}
+[63.454858] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.dsv\n'}
+[63.454930] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.sh\n'}
+[63.454980] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.dsv\n'}
+[63.455026] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.bash\n'}
+[63.455081] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.sh\n'}
+[63.455134] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.zsh\n'}
+[63.455183] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.dsv\n'}
+[63.455228] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.dsv\n'}
+[63.465690] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/packages/rm_behavior_tree\n'}
+[63.465801] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[63.465896] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[63.465982] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[63.466045] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig.cmake\n'}
+[63.466092] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig-version.cmake\n'}
+[63.466138] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.xml\n'}
+[63.467663] (rm_behavior_tree) CommandEnded: {'returncode': 0}
+[63.488033] (-) TimerEvent: {}
+[63.588314] (-) TimerEvent: {}
+[63.621446] (rm_behavior_tree) JobEnded: {'identifier': 'rm_behavior_tree', 'rc': 0}
+[63.622241] (-) EventReactorShutdown: {}

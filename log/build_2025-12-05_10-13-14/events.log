@@ -1,0 +1,213 @@
+[0.000000] (-) TimerEvent: {}
+[0.000289] (-) JobUnselected: {'identifier': 'armor_detector'}
+[0.000358] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000626] (-) JobUnselected: {'identifier': 'asio_cmake_module'}
+[0.000674] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000724] (-) JobUnselected: {'identifier': 'behaviortree_cpp'}
+[0.001399] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.001451] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.001496] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.001565] (-) JobUnselected: {'identifier': 'costmap_converter'}
+[0.001593] (-) JobUnselected: {'identifier': 'costmap_converter_msgs'}
+[0.001612] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.001700] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.001727] (-) JobUnselected: {'identifier': 'game_status_tester'}
+[0.001746] (-) JobUnselected: {'identifier': 'hik_camera'}
+[0.001766] (-) JobUnselected: {'identifier': 'icp_registration'}
+[0.001853] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.001875] (-) JobUnselected: {'identifier': 'io_context'}
+[0.001899] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation'}
+[0.001915] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation_ros'}
+[0.001935] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.001952] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.002027] (-) JobUnselected: {'identifier': 'pb_rm_simulation'}
+[0.002046] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.002069] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.002138] (-) JobUnselected: {'identifier': 'rm_auto_aim'}
+[0.002168] (-) JobUnselected: {'identifier': 'rm_behavior_tree'}
+[0.002186] (-) JobUnselected: {'identifier': 'rm_decision_interfaces'}
+[0.002488] (-) JobUnselected: {'identifier': 'rm_gimbal_description'}
+[0.002523] (-) JobUnselected: {'identifier': 'rm_nav_bringup'}
+[0.002584] (-) JobUnselected: {'identifier': 'rm_navigation'}
+[0.002601] (-) JobUnselected: {'identifier': 'rm_rune_detector'}
+[0.002632] (-) JobUnselected: {'identifier': 'rm_serial_driver'}
+[0.002711] (-) JobUnselected: {'identifier': 'rm_vision_bringup'}
+[0.002730] (-) JobUnselected: {'identifier': 'ros2_livox_simulation'}
+[0.002749] (-) JobUnselected: {'identifier': 'serial_driver'}
+[0.002766] (-) JobUnselected: {'identifier': 'teb_local_planner'}
+[0.002811] (-) JobUnselected: {'identifier': 'teb_msgs'}
+[0.002868] (-) JobUnselected: {'identifier': 'udp_driver'}
+[0.002897] (-) JobUnselected: {'identifier': 'udp_msgs'}
+[0.002975] (standard_robot_pp_ros2) JobQueued: {'identifier': 'standard_robot_pp_ros2', 'dependencies': OrderedDict([('pb_rm_interfaces', '/workspaces/auto_sentry/install/pb_rm_interfaces'), ('rm_decision_interfaces', '/workspaces/auto_sentry/install/rm_decision_interfaces'), ('udp_msgs', '/workspaces/auto_sentry/install/udp_msgs'), ('io_context', '/workspaces/auto_sentry/install/io_context'), ('serial_driver', '/workspaces/auto_sentry/install/serial_driver')])}
+[0.003011] (standard_robot_pp_ros2) JobStarted: {'identifier': 'standard_robot_pp_ros2'}
+[0.053294] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'cmake'}
+[0.055214] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'build'}
+[0.055372] (standard_robot_pp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/auto_sentry/build/standard_robot_pp_ros2', '--', '-j28', '-l28'], 'cwd': '/workspaces/auto_sentry/build/standard_robot_pp_ros2', 'env': OrderedDict([('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:/workspaces/auto_sentry/install/udp_driver/lib:/workspaces/auto_sentry/install/standard_robot_pp_ros2/lib:/workspaces/auto_sentry/install/rm_serial_driver/lib:/workspaces/auto_sentry/install/teb_local_planner/lib:/workspaces/auto_sentry/install/teb_msgs/lib:/workspaces/auto_sentry/install/ros2_livox_simulation/lib:/workspaces/auto_sentry/install/rm_rune_detector/lib:/workspaces/auto_sentry/install/rm_behavior_tree/lib:/workspaces/auto_sentry/install/pointcloud_to_laserscan/lib:/workspaces/auto_sentry/install/icp_registration/lib:/workspaces/auto_sentry/install/fast_lio/lib:/workspaces/auto_sentry/install/livox_ros_driver2/lib:/workspaces/auto_sentry/install/linefit_ground_segmentation/lib:/workspaces/auto_sentry/install/imu_complementary_filter/lib:/workspaces/auto_sentry/install/hik_camera/lib:/workspaces/auto_sentry/install/fake_vel_transform/lib:/workspaces/auto_sentry/install/costmap_converter/lib:/workspaces/auto_sentry/install/costmap_converter_msgs/lib:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/armor_tracker/lib:/workspaces/auto_sentry/install/armor_detector/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-05355949-43d1-4aa0-83ff-236ce669c4e4.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/workspaces/auto_sentry/install'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/costmap_converter/bin:/workspaces/auto_sentry/install/behaviortree_cpp/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/standard_robot_pp_ros2'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/teb_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/fast_lio/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble')]), 'shell': False}
+[0.099209] (-) TimerEvent: {}
+[0.147776] (standard_robot_pp_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target standard_robot_pp_ros2\x1b[0m\n'}
+[0.175107] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 40%] Built target standard_robot_pp_ros2_node\n'}
+[0.193693] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o\x1b[0m\n'}
+[0.199423] (-) TimerEvent: {}
+[0.299994] (-) TimerEvent: {}
+[0.400603] (-) TimerEvent: {}
+[0.501315] (-) TimerEvent: {}
+[0.601844] (-) TimerEvent: {}
+[0.702409] (-) TimerEvent: {}
+[0.802975] (-) TimerEvent: {}
+[0.903422] (-) TimerEvent: {}
+[1.003921] (-) TimerEvent: {}
+[1.104420] (-) TimerEvent: {}
+[1.204902] (-) TimerEvent: {}
+[1.305315] (-) TimerEvent: {}
+[1.405810] (-) TimerEvent: {}
+[1.506220] (-) TimerEvent: {}
+[1.606698] (-) TimerEvent: {}
+[1.707106] (-) TimerEvent: {}
+[1.807500] (-) TimerEvent: {}
+[1.907901] (-) TimerEvent: {}
+[2.008310] (-) TimerEvent: {}
+[2.108799] (-) TimerEvent: {}
+[2.209301] (-) TimerEvent: {}
+[2.309774] (-) TimerEvent: {}
+[2.410156] (-) TimerEvent: {}
+[2.510652] (-) TimerEvent: {}
+[2.611054] (-) TimerEvent: {}
+[2.711523] (-) TimerEvent: {}
+[2.811976] (-) TimerEvent: {}
+[2.912414] (-) TimerEvent: {}
+[3.012832] (-) TimerEvent: {}
+[3.113236] (-) TimerEvent: {}
+[3.213633] (-) TimerEvent: {}
+[3.313949] (-) TimerEvent: {}
+[3.414344] (-) TimerEvent: {}
+[3.514761] (-) TimerEvent: {}
+[3.615181] (-) TimerEvent: {}
+[3.715614] (-) TimerEvent: {}
+[3.816047] (-) TimerEvent: {}
+[3.916385] (-) TimerEvent: {}
+[4.016784] (-) TimerEvent: {}
+[4.117204] (-) TimerEvent: {}
+[4.217602] (-) TimerEvent: {}
+[4.318027] (-) TimerEvent: {}
+[4.418457] (-) TimerEvent: {}
+[4.518904] (-) TimerEvent: {}
+[4.619317] (-) TimerEvent: {}
+[4.719747] (-) TimerEvent: {}
+[4.820057] (-) TimerEvent: {}
+[4.920477] (-) TimerEvent: {}
+[5.020942] (-) TimerEvent: {}
+[5.121370] (-) TimerEvent: {}
+[5.221798] (-) TimerEvent: {}
+[5.322165] (-) TimerEvent: {}
+[5.422574] (-) TimerEvent: {}
+[5.523006] (-) TimerEvent: {}
+[5.623403] (-) TimerEvent: {}
+[5.723731] (-) TimerEvent: {}
+[5.824131] (-) TimerEvent: {}
+[5.924528] (-) TimerEvent: {}
+[6.024960] (-) TimerEvent: {}
+[6.125314] (-) TimerEvent: {}
+[6.225700] (-) TimerEvent: {}
+[6.326027] (-) TimerEvent: {}
+[6.426363] (-) TimerEvent: {}
+[6.526664] (-) TimerEvent: {}
+[6.627071] (-) TimerEvent: {}
+[6.727486] (-) TimerEvent: {}
+[6.827858] (-) TimerEvent: {}
+[6.928212] (-) TimerEvent: {}
+[7.028645] (-) TimerEvent: {}
+[7.129080] (-) TimerEvent: {}
+[7.229467] (-) TimerEvent: {}
+[7.329848] (-) TimerEvent: {}
+[7.430261] (-) TimerEvent: {}
+[7.530668] (-) TimerEvent: {}
+[7.630990] (-) TimerEvent: {}
+[7.731402] (-) TimerEvent: {}
+[7.831816] (-) TimerEvent: {}
+[7.932222] (-) TimerEvent: {}
+[8.032612] (-) TimerEvent: {}
+[8.133030] (-) TimerEvent: {}
+[8.233426] (-) TimerEvent: {}
+[8.333823] (-) TimerEvent: {}
+[8.434197] (-) TimerEvent: {}
+[8.534653] (-) TimerEvent: {}
+[8.634978] (-) TimerEvent: {}
+[8.735307] (-) TimerEvent: {}
+[8.835696] (-) TimerEvent: {}
+[8.936128] (-) TimerEvent: {}
+[9.036545] (-) TimerEvent: {}
+[9.137023] (-) TimerEvent: {}
+[9.237436] (-) TimerEvent: {}
+[9.337871] (-) TimerEvent: {}
+[9.438186] (-) TimerEvent: {}
+[9.538622] (-) TimerEvent: {}
+[9.638926] (-) TimerEvent: {}
+[9.739254] (-) TimerEvent: {}
+[9.839573] (-) TimerEvent: {}
+[9.939873] (-) TimerEvent: {}
+[10.040181] (-) TimerEvent: {}
+[10.140552] (-) TimerEvent: {}
+[10.240881] (-) TimerEvent: {}
+[10.341303] (-) TimerEvent: {}
+[10.441735] (-) TimerEvent: {}
+[10.542047] (-) TimerEvent: {}
+[10.642385] (-) TimerEvent: {}
+[10.742816] (-) TimerEvent: {}
+[10.843119] (-) TimerEvent: {}
+[10.943522] (-) TimerEvent: {}
+[11.043887] (-) TimerEvent: {}
+[11.144205] (-) TimerEvent: {}
+[11.244607] (-) TimerEvent: {}
+[11.344931] (-) TimerEvent: {}
+[11.445257] (-) TimerEvent: {}
+[11.545642] (-) TimerEvent: {}
+[11.645958] (-) TimerEvent: {}
+[11.746302] (-) TimerEvent: {}
+[11.846733] (-) TimerEvent: {}
+[11.868124] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX shared library libstandard_robot_pp_ros2.so\x1b[0m\n'}
+[11.946868] (-) TimerEvent: {}
+[12.047219] (-) TimerEvent: {}
+[12.147615] (-) TimerEvent: {}
+[12.247951] (-) TimerEvent: {}
+[12.348279] (-) TimerEvent: {}
+[12.448679] (-) TimerEvent: {}
+[12.549006] (-) TimerEvent: {}
+[12.649408] (-) TimerEvent: {}
+[12.695761] (standard_robot_pp_ros2) StdoutLine: {'line': b'[100%] Built target standard_robot_pp_ros2\n'}
+[12.715490] (standard_robot_pp_ros2) CommandEnded: {'returncode': 0}
+[12.749597] (-) TimerEvent: {}
+[12.798766] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'install'}
+[12.812570] (standard_robot_pp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspaces/auto_sentry/build/standard_robot_pp_ros2'], 'cwd': '/workspaces/auto_sentry/build/standard_robot_pp_ros2', 'env': OrderedDict([('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:/workspaces/auto_sentry/install/udp_driver/lib:/workspaces/auto_sentry/install/standard_robot_pp_ros2/lib:/workspaces/auto_sentry/install/rm_serial_driver/lib:/workspaces/auto_sentry/install/teb_local_planner/lib:/workspaces/auto_sentry/install/teb_msgs/lib:/workspaces/auto_sentry/install/ros2_livox_simulation/lib:/workspaces/auto_sentry/install/rm_rune_detector/lib:/workspaces/auto_sentry/install/rm_behavior_tree/lib:/workspaces/auto_sentry/install/pointcloud_to_laserscan/lib:/workspaces/auto_sentry/install/icp_registration/lib:/workspaces/auto_sentry/install/fast_lio/lib:/workspaces/auto_sentry/install/livox_ros_driver2/lib:/workspaces/auto_sentry/install/linefit_ground_segmentation/lib:/workspaces/auto_sentry/install/imu_complementary_filter/lib:/workspaces/auto_sentry/install/hik_camera/lib:/workspaces/auto_sentry/install/fake_vel_transform/lib:/workspaces/auto_sentry/install/costmap_converter/lib:/workspaces/auto_sentry/install/costmap_converter_msgs/lib:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/armor_tracker/lib:/workspaces/auto_sentry/install/armor_detector/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-05355949-43d1-4aa0-83ff-236ce669c4e4.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/workspaces/auto_sentry/install'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/costmap_converter/bin:/workspaces/auto_sentry/install/behaviortree_cpp/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-ff363c45-49a2-4bdd-8ac4-9b91c208fbab.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/standard_robot_pp_ros2'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/teb_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/fast_lio/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble')]), 'shell': False}
+[12.826374] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[12.827084] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[12.827349] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node\n'}
+[12.827566] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so\n'}
+[12.827751] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node\n'}
+[12.828239] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/crc_func.h\n'}
+[12.828394] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/debug_for_pb_rm.hpp\n'}
+[12.828526] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/packet_typedef.hpp\n'}
+[12.828630] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/robot_info.hpp\n'}
+[12.828723] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp\n'}
+[12.828904] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml\n'}
+[12.829131] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py\n'}
+[12.829332] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/package_run_dependencies/standard_robot_pp_ros2\n'}
+[12.829504] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/parent_prefix_path/standard_robot_pp_ros2\n'}
+[12.829678] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.sh\n'}
+[12.829854] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.dsv\n'}
+[12.830008] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.sh\n'}
+[12.830170] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.dsv\n'}
+[12.830319] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.bash\n'}
+[12.830458] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.sh\n'}
+[12.830602] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.zsh\n'}
+[12.830744] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.dsv\n'}
+[12.830946] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.dsv\n'}
+[12.845199] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/packages/standard_robot_pp_ros2\n'}
+[12.845529] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/rclcpp_components/standard_robot_pp_ros2\n'}
+[12.845662] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config.cmake\n'}
+[12.845815] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config-version.cmake\n'}
+[12.845895] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.xml\n'}
+[12.848535] (standard_robot_pp_ros2) CommandEnded: {'returncode': 0}
+[12.849961] (-) TimerEvent: {}
+[12.950590] (-) TimerEvent: {}
+[12.956184] (standard_robot_pp_ros2) JobEnded: {'identifier': 'standard_robot_pp_ros2', 'rc': 0}
+[12.957141] (-) EventReactorShutdown: {}

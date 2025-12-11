@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/livox_ros_driver2/ament_cmake_python/livox_ros_driver2/livox_ros_driver2.egg-info/SOURCES.txt

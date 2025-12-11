@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/udp_msgs/rosidl_typesupport_introspection_c/udp_msgs/srv/detail/udp_socket__rosidl_typesupport_introspection_c.h

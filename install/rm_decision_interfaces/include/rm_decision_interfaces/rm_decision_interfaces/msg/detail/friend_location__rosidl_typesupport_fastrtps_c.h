@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/friend_location__rosidl_typesupport_fastrtps_c.h

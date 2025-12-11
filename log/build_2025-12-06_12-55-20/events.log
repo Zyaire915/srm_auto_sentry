@@ -1,0 +1,96 @@
+[0.000000] (-) TimerEvent: {}
+[0.000217] (-) JobUnselected: {'identifier': 'armor_detector'}
+[0.000454] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000490] (-) JobUnselected: {'identifier': 'asio_cmake_module'}
+[0.000515] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000569] (-) JobUnselected: {'identifier': 'behaviortree_cpp'}
+[0.000593] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.000615] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.000637] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.000693] (-) JobUnselected: {'identifier': 'costmap_converter'}
+[0.000715] (-) JobUnselected: {'identifier': 'costmap_converter_msgs'}
+[0.000734] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.000765] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000788] (-) JobUnselected: {'identifier': 'game_status_tester'}
+[0.000838] (-) JobUnselected: {'identifier': 'hik_camera'}
+[0.000867] (-) JobUnselected: {'identifier': 'icp_registration'}
+[0.000918] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.000940] (-) JobUnselected: {'identifier': 'io_context'}
+[0.000960] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation'}
+[0.001013] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation_ros'}
+[0.001042] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.001176] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.001200] (-) JobUnselected: {'identifier': 'pb_rm_simulation'}
+[0.001250] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.001278] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.001319] (-) JobUnselected: {'identifier': 'rm_auto_aim'}
+[0.001349] (-) JobUnselected: {'identifier': 'rm_behavior_tree'}
+[0.001370] (-) JobUnselected: {'identifier': 'rm_decision_interfaces'}
+[0.001393] (-) JobUnselected: {'identifier': 'rm_gimbal_description'}
+[0.001429] (-) JobUnselected: {'identifier': 'rm_nav_bringup'}
+[0.001478] (-) JobUnselected: {'identifier': 'rm_navigation'}
+[0.001500] (-) JobUnselected: {'identifier': 'rm_rune_detector'}
+[0.001554] (-) JobUnselected: {'identifier': 'rm_serial_driver'}
+[0.001576] (-) JobUnselected: {'identifier': 'rm_vision_bringup'}
+[0.001595] (-) JobUnselected: {'identifier': 'ros2_livox_simulation'}
+[0.001648] (-) JobUnselected: {'identifier': 'serial_driver'}
+[0.001671] (-) JobUnselected: {'identifier': 'teb_local_planner'}
+[0.001802] (-) JobUnselected: {'identifier': 'teb_msgs'}
+[0.001954] (-) JobUnselected: {'identifier': 'udp_driver'}
+[0.002007] (-) JobUnselected: {'identifier': 'udp_msgs'}
+[0.002063] (standard_robot_pp_ros2) JobQueued: {'identifier': 'standard_robot_pp_ros2', 'dependencies': OrderedDict([('pb_rm_interfaces', '/workspaces/auto_sentry/install/pb_rm_interfaces'), ('rm_decision_interfaces', '/workspaces/auto_sentry/install/rm_decision_interfaces'), ('udp_msgs', '/workspaces/auto_sentry/install/udp_msgs'), ('io_context', '/workspaces/auto_sentry/install/io_context'), ('serial_driver', '/workspaces/auto_sentry/install/serial_driver')])}
+[0.002195] (standard_robot_pp_ros2) JobStarted: {'identifier': 'standard_robot_pp_ros2'}
+[0.018083] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'cmake'}
+[0.018934] (standard_robot_pp_ros2) JobProgress: {'identifier': 'standard_robot_pp_ros2', 'progress': 'build'}
+[0.019451] (standard_robot_pp_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/auto_sentry/build/standard_robot_pp_ros2', '--', '-j28', '-l28'], 'cwd': '/workspaces/auto_sentry/build/standard_robot_pp_ros2', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-c49dc6d4-5f09-442b-8b7a-caa88b1609d2.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-8f79da08-2de2-47ca-9001-f3c12f68dbb3.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-8f79da08-2de2-47ca-9001-f3c12f68dbb3.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-8f79da08-2de2-47ca-9001-f3c12f68dbb3.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/standard_robot_pp_ros2'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.046859] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099485] (-) TimerEvent: {}
+[0.123629] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.128797] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.150056] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.151692] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.155520] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.162829] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.173017] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.199651] (-) TimerEvent: {}
+[0.217722] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.219115] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299846] (-) TimerEvent: {}
+[0.324458] (standard_robot_pp_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.399971] (-) TimerEvent: {}
+[0.435263] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.9 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[0.476484] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found serial_driver: 1.2.0 (/workspaces/auto_sentry/install/serial_driver/share/serial_driver/cmake)\n'}
+[0.500096] (-) TimerEvent: {}
+[0.569654] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.6 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[0.600243] (-) TimerEvent: {}
+[0.700584] (-) TimerEvent: {}
+[0.781740] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)\n'}
+[0.785020] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)\n'}
+[0.786079] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[0.792326] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)\n'}
+[0.800746] (-) TimerEvent: {}
+[0.850336] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)\n'}
+[0.889865] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found pb_rm_interfaces: 0.1.0 (/workspaces/auto_sentry/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake)\n'}
+[0.900862] (-) TimerEvent: {}
+[0.923266] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Found rm_decision_interfaces: 0.0.0 (/workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake)\n'}
+[1.001067] (-) TimerEvent: {}
+[1.063835] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.083097] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[1.084287] (standard_robot_pp_ros2) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/auto_sentry/build/standard_robot_pp_ros2\n'}
+[1.101191] (-) TimerEvent: {}
+[1.108862] (standard_robot_pp_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target standard_robot_pp_ros2_node\x1b[0m\n'}
+[1.109079] (standard_robot_pp_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target standard_robot_pp_ros2\x1b[0m\n'}
+[1.128884] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 40%] Built target standard_robot_pp_ros2_node\n'}
+[1.134486] (standard_robot_pp_ros2) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o\x1b[0m\n'}
+[1.201415] (-) TimerEvent: {}
+[1.215767] (standard_robot_pp_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1\x1b[m\x1b[K:\n'}
+[1.215977] (standard_robot_pp_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:27:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krm_decision_interfaces/msg/rfid_status.hpp: No such file or directory\n'}
+[1.216062] (standard_robot_pp_ros2) StderrLine: {'line': b'   27 | #include \x1b[01;31m\x1b[K<rm_decision_interfaces/msg/rfid_status.hpp>\x1b[m\x1b[K\n'}
+[1.216133] (standard_robot_pp_ros2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[1.216200] (standard_robot_pp_ros2) StderrLine: {'line': b'compilation terminated.\n'}
+[1.217445] (standard_robot_pp_ros2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/standard_robot_pp_ros2.dir/build.make:76: CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o] Error 1\n'}
+[1.217837] (standard_robot_pp_ros2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/standard_robot_pp_ros2.dir/all] Error 2\n'}
+[1.218045] (standard_robot_pp_ros2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[1.219912] (standard_robot_pp_ros2) CommandEnded: {'returncode': 2}
+[1.267181] (standard_robot_pp_ros2) JobEnded: {'identifier': 'standard_robot_pp_ros2', 'rc': 2}
+[1.277995] (-) EventReactorShutdown: {}

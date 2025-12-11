@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_py/rm_decision_interfaces/msg/_ground_robot_position.py

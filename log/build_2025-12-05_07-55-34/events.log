@@ -1,0 +1,257 @@
+[0.000000] (-) TimerEvent: {}
+[0.000270] (-) JobUnselected: {'identifier': 'armor_detector'}
+[0.000368] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000433] (-) JobUnselected: {'identifier': 'asio_cmake_module'}
+[0.000458] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000517] (-) JobUnselected: {'identifier': 'behaviortree_cpp'}
+[0.000528] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.000543] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.000558] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.000568] (-) JobUnselected: {'identifier': 'costmap_converter'}
+[0.000582] (-) JobUnselected: {'identifier': 'costmap_converter_msgs'}
+[0.000701] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.000743] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.000758] (-) JobUnselected: {'identifier': 'game_status_tester'}
+[0.000774] (-) JobUnselected: {'identifier': 'hik_camera'}
+[0.000862] (-) JobUnselected: {'identifier': 'icp_registration'}
+[0.000901] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.000916] (-) JobUnselected: {'identifier': 'io_context'}
+[0.000930] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation'}
+[0.000941] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation_ros'}
+[0.001131] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.001152] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.001171] (-) JobUnselected: {'identifier': 'pb_rm_simulation'}
+[0.001191] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.001210] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.001229] (-) JobUnselected: {'identifier': 'rm_auto_aim'}
+[0.001248] (-) JobUnselected: {'identifier': 'rm_decision_interfaces'}
+[0.001266] (-) JobUnselected: {'identifier': 'rm_gimbal_description'}
+[0.001285] (-) JobUnselected: {'identifier': 'rm_nav_bringup'}
+[0.001304] (-) JobUnselected: {'identifier': 'rm_navigation'}
+[0.001324] (-) JobUnselected: {'identifier': 'rm_rune_detector'}
+[0.001356] (-) JobUnselected: {'identifier': 'rm_serial_driver'}
+[0.001379] (-) JobUnselected: {'identifier': 'rm_vision_bringup'}
+[0.001404] (-) JobUnselected: {'identifier': 'ros2_livox_simulation'}
+[0.001445] (-) JobUnselected: {'identifier': 'serial_driver'}
+[0.001463] (-) JobUnselected: {'identifier': 'standard_robot_pp_ros2'}
+[0.001473] (-) JobUnselected: {'identifier': 'teb_local_planner'}
+[0.001483] (-) JobUnselected: {'identifier': 'teb_msgs'}
+[0.001540] (-) JobUnselected: {'identifier': 'udp_driver'}
+[0.001551] (-) JobUnselected: {'identifier': 'udp_msgs'}
+[0.001566] (rm_behavior_tree) JobQueued: {'identifier': 'rm_behavior_tree', 'dependencies': OrderedDict([('auto_aim_interfaces', '/workspaces/auto_sentry/install/auto_aim_interfaces'), ('behaviortree_cpp', '/workspaces/auto_sentry/install/behaviortree_cpp'), ('rm_decision_interfaces', '/workspaces/auto_sentry/install/rm_decision_interfaces'), ('behaviortree_ros2', '/workspaces/auto_sentry/install/behaviortree_ros2')])}
+[0.001591] (rm_behavior_tree) JobStarted: {'identifier': 'rm_behavior_tree'}
+[0.023179] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'cmake'}
+[0.025261] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'build'}
+[0.026736] (rm_behavior_tree) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/auto_sentry/build/rm_behavior_tree', '--', '-j28', '-l28'], 'cwd': '/workspaces/auto_sentry/build/rm_behavior_tree', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/workspaces/auto_sentry/install/udp_driver/lib:/workspaces/auto_sentry/install/standard_robot_pp_ros2/lib:/workspaces/auto_sentry/install/rm_serial_driver/lib:/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/teb_local_planner/lib:/workspaces/auto_sentry/install/teb_msgs/lib:/workspaces/auto_sentry/install/ros2_livox_simulation/lib:/workspaces/auto_sentry/install/rm_rune_detector/lib:/workspaces/auto_sentry/install/rm_behavior_tree/lib:/workspaces/auto_sentry/install/pointcloud_to_laserscan/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:/workspaces/auto_sentry/install/icp_registration/lib:/workspaces/auto_sentry/install/fast_lio/lib:/workspaces/auto_sentry/install/livox_ros_driver2/lib:/workspaces/auto_sentry/install/linefit_ground_segmentation/lib:/workspaces/auto_sentry/install/imu_complementary_filter/lib:/workspaces/auto_sentry/install/hik_camera/lib:/workspaces/auto_sentry/install/fake_vel_transform/lib:/workspaces/auto_sentry/install/costmap_converter/lib:/workspaces/auto_sentry/install/costmap_converter_msgs/lib:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/lib:/workspaces/auto_sentry/install/armor_tracker/lib:/workspaces/auto_sentry/install/armor_detector/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-df13f356-21d0-4983-9dee-2e92481bff41.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/workspaces/auto_sentry/install'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/behaviortree_cpp/bin:/workspaces/auto_sentry/install/costmap_converter/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/rm_behavior_tree'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/teb_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/fast_lio/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble')]), 'shell': False}
+[0.066267] (rm_behavior_tree) StdoutLine: {'line': b'-- Found ament_cmake_auto: 1.3.9 (/opt/ros/humble/share/ament_cmake_auto/cmake)\n'}
+[0.099638] (-) TimerEvent: {}
+[0.151514] (rm_behavior_tree) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.199837] (-) TimerEvent: {}
+[0.227030] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.228965] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.233354] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.241786] (rm_behavior_tree) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.252817] (rm_behavior_tree) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.292974] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.294775] (rm_behavior_tree) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.300038] (-) TimerEvent: {}
+[0.400394] (-) TimerEvent: {}
+[0.403205] (rm_behavior_tree) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.500572] (-) TimerEvent: {}
+[0.600958] (-) TimerEvent: {}
+[0.701362] (-) TimerEvent: {}
+[0.801708] (-) TimerEvent: {}
+[0.902017] (-) TimerEvent: {}
+[1.002406] (-) TimerEvent: {}
+[1.102805] (-) TimerEvent: {}
+[1.203099] (-) TimerEvent: {}
+[1.303396] (-) TimerEvent: {}
+[1.403775] (-) TimerEvent: {}
+[1.504006] (-) TimerEvent: {}
+[1.604327] (-) TimerEvent: {}
+[1.704702] (-) TimerEvent: {}
+[1.805027] (-) TimerEvent: {}
+[1.905236] (-) TimerEvent: {}
+[2.005454] (-) TimerEvent: {}
+[2.105765] (-) TimerEvent: {}
+[2.194178] (rm_behavior_tree) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.205862] (-) TimerEvent: {}
+[2.306161] (-) TimerEvent: {}
+[2.406564] (-) TimerEvent: {}
+[2.506842] (-) TimerEvent: {}
+[2.607147] (-) TimerEvent: {}
+[2.609015] (rm_behavior_tree) StdoutLine: {'line': b'-- Generating done\n'}
+[2.611805] (rm_behavior_tree) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/auto_sentry/build/rm_behavior_tree\n'}
+[2.639542] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target decision_switch\x1b[0m\n'}
+[2.640054] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target rm_behavior_tree\x1b[0m\n'}
+[2.658832] (rm_behavior_tree) StdoutLine: {'line': b'[  4%] Built target decision_switch\n'}
+[2.663843] (rm_behavior_tree) StdoutLine: {'line': b'[  7%] \x1b[32mBuilding CXX object CMakeFiles/rm_behavior_tree.dir/src/rm_behavior_tree.cpp.o\x1b[0m\n'}
+[2.670816] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target rate_controller\x1b[0m\n'}
+[2.685663] (rm_behavior_tree) StdoutLine: {'line': b'[ 11%] Built target rate_controller\n'}
+[2.696286] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_game_time\x1b[0m\n'}
+[2.707269] (-) TimerEvent: {}
+[2.711839] (rm_behavior_tree) StdoutLine: {'line': b'[ 16%] Built target is_game_time\n'}
+[2.723714] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_status_ok\x1b[0m\n'}
+[2.737464] (rm_behavior_tree) StdoutLine: {'line': b'[ 21%] Built target is_status_ok\n'}
+[2.749653] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_attacked\x1b[0m\n'}
+[2.765800] (rm_behavior_tree) StdoutLine: {'line': b'[ 26%] Built target is_attacked\n'}
+[2.776242] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_friend_ok\x1b[0m\n'}
+[2.789879] (rm_behavior_tree) StdoutLine: {'line': b'[ 30%] Built target is_friend_ok\n'}
+[2.801957] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_outpost_ok\x1b[0m\n'}
+[2.807382] (-) TimerEvent: {}
+[2.815470] (rm_behavior_tree) StdoutLine: {'line': b'[ 35%] Built target is_outpost_ok\n'}
+[2.826357] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target is_detect_enemy\x1b[0m\n'}
+[2.840189] (rm_behavior_tree) StdoutLine: {'line': b'[ 40%] Built target is_detect_enemy\n'}
+[2.851053] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target send_goal\x1b[0m\n'}
+[2.867579] (rm_behavior_tree) StdoutLine: {'line': b'[ 45%] Built target send_goal\n'}
+[2.880672] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_all_robot_hp\x1b[0m\n'}
+[2.901608] (rm_behavior_tree) StdoutLine: {'line': b'[ 50%] Built target sub_all_robot_hp\n'}
+[2.907604] (-) TimerEvent: {}
+[2.912903] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_ally_robot_hp\x1b[0m\n'}
+[2.935404] (rm_behavior_tree) StdoutLine: {'line': b'[ 54%] Built target sub_ally_robot_hp\n'}
+[2.946950] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_robot_status\x1b[0m\n'}
+[2.967243] (rm_behavior_tree) StdoutLine: {'line': b'[ 59%] Built target sub_robot_status\n'}
+[2.978922] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_game_status\x1b[0m\n'}
+[3.002164] (rm_behavior_tree) StdoutLine: {'line': b'[ 64%] Built target sub_game_status\n'}
+[3.007782] (-) TimerEvent: {}
+[3.014421] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_armors\x1b[0m\n'}
+[3.036655] (rm_behavior_tree) StdoutLine: {'line': b'[ 69%] Built target sub_armors\n'}
+[3.050362] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target sub_decision_num\x1b[0m\n'}
+[3.072794] (rm_behavior_tree) StdoutLine: {'line': b'[ 73%] Built target sub_decision_num\n'}
+[3.085284] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target get_current_location\x1b[0m\n'}
+[3.103551] (rm_behavior_tree) StdoutLine: {'line': b'[ 78%] Built target get_current_location\n'}
+[3.107856] (-) TimerEvent: {}
+[3.116663] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target move_around\x1b[0m\n'}
+[3.134271] (rm_behavior_tree) StdoutLine: {'line': b'[ 83%] Built target move_around\n'}
+[3.145465] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target robot_control\x1b[0m\n'}
+[3.161876] (rm_behavior_tree) StdoutLine: {'line': b'[ 88%] Built target robot_control\n'}
+[3.174965] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target print_message\x1b[0m\n'}
+[3.192202] (rm_behavior_tree) StdoutLine: {'line': b'[ 90%] \x1b[32m\x1b[1mLinking CXX shared library libprint_message.so\x1b[0m\n'}
+[3.207995] (-) TimerEvent: {}
+[3.308215] (-) TimerEvent: {}
+[3.408441] (-) TimerEvent: {}
+[3.450454] (rm_behavior_tree) StdoutLine: {'line': b'[ 92%] Built target print_message\n'}
+[3.462688] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target hp_decision_patrol\x1b[0m\n'}
+[3.481017] (rm_behavior_tree) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding CXX object CMakeFiles/hp_decision_patrol.dir/plugins/action/hp_decision_patrol.cpp.o\x1b[0m\n'}
+[3.508658] (-) TimerEvent: {}
+[3.608902] (-) TimerEvent: {}
+[3.709243] (-) TimerEvent: {}
+[3.809701] (-) TimerEvent: {}
+[3.910132] (-) TimerEvent: {}
+[4.010449] (-) TimerEvent: {}
+[4.110753] (-) TimerEvent: {}
+[4.210999] (-) TimerEvent: {}
+[4.311323] (-) TimerEvent: {}
+[4.411711] (-) TimerEvent: {}
+[4.512059] (-) TimerEvent: {}
+[4.612394] (-) TimerEvent: {}
+[4.712756] (-) TimerEvent: {}
+[4.813122] (-) TimerEvent: {}
+[4.913467] (-) TimerEvent: {}
+[5.013837] (-) TimerEvent: {}
+[5.114166] (-) TimerEvent: {}
+[5.214509] (-) TimerEvent: {}
+[5.314863] (-) TimerEvent: {}
+[5.415108] (-) TimerEvent: {}
+[5.515454] (-) TimerEvent: {}
+[5.615699] (-) TimerEvent: {}
+[5.715950] (-) TimerEvent: {}
+[5.736721] (rm_behavior_tree) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX executable rm_behavior_tree\x1b[0m\n'}
+[5.816042] (-) TimerEvent: {}
+[5.886311] (rm_behavior_tree) StdoutLine: {'line': b'[ 97%] Built target rm_behavior_tree\n'}
+[5.916243] (-) TimerEvent: {}
+[6.016568] (-) TimerEvent: {}
+[6.116913] (-) TimerEvent: {}
+[6.217289] (-) TimerEvent: {}
+[6.317686] (-) TimerEvent: {}
+[6.418011] (-) TimerEvent: {}
+[6.504986] (rm_behavior_tree) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX shared library libhp_decision_patrol.so\x1b[0m\n'}
+[6.518133] (-) TimerEvent: {}
+[6.618527] (-) TimerEvent: {}
+[6.718821] (-) TimerEvent: {}
+[6.762666] (rm_behavior_tree) StdoutLine: {'line': b'[100%] Built target hp_decision_patrol\n'}
+[6.773696] (rm_behavior_tree) CommandEnded: {'returncode': 0}
+[6.818950] (-) TimerEvent: {}
+[6.919366] (-) TimerEvent: {}
+[6.970697] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'install'}
+[6.985104] (rm_behavior_tree) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspaces/auto_sentry/build/rm_behavior_tree'], 'cwd': '/workspaces/auto_sentry/build/rm_behavior_tree', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/workspaces/auto_sentry/install/udp_driver/lib:/workspaces/auto_sentry/install/standard_robot_pp_ros2/lib:/workspaces/auto_sentry/install/rm_serial_driver/lib:/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/teb_local_planner/lib:/workspaces/auto_sentry/install/teb_msgs/lib:/workspaces/auto_sentry/install/ros2_livox_simulation/lib:/workspaces/auto_sentry/install/rm_rune_detector/lib:/workspaces/auto_sentry/install/rm_behavior_tree/lib:/workspaces/auto_sentry/install/pointcloud_to_laserscan/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:/workspaces/auto_sentry/install/icp_registration/lib:/workspaces/auto_sentry/install/fast_lio/lib:/workspaces/auto_sentry/install/livox_ros_driver2/lib:/workspaces/auto_sentry/install/linefit_ground_segmentation/lib:/workspaces/auto_sentry/install/imu_complementary_filter/lib:/workspaces/auto_sentry/install/hik_camera/lib:/workspaces/auto_sentry/install/fake_vel_transform/lib:/workspaces/auto_sentry/install/costmap_converter/lib:/workspaces/auto_sentry/install/costmap_converter_msgs/lib:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/lib:/workspaces/auto_sentry/install/armor_tracker/lib:/workspaces/auto_sentry/install/armor_detector/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-df13f356-21d0-4983-9dee-2e92481bff41.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('COLCON_PREFIX_PATH', '/workspaces/auto_sentry/install'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/behaviortree_cpp/bin:/workspaces/auto_sentry/install/costmap_converter/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/rm_behavior_tree'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/teb_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/fast_lio/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/livox_ros_driver2/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/btcpp_ros2_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/workspaces/auto_sentry/install/udp_driver:/workspaces/auto_sentry/install/standard_robot_pp_ros2:/workspaces/auto_sentry/install/rm_vision_bringup:/workspaces/auto_sentry/install/rm_serial_driver:/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/teb_local_planner:/workspaces/auto_sentry/install/teb_msgs:/workspaces/auto_sentry/install/ros2_livox_simulation:/workspaces/auto_sentry/install/rm_rune_detector:/workspaces/auto_sentry/install/rm_navigation:/workspaces/auto_sentry/install/rm_nav_bringup:/workspaces/auto_sentry/install/rm_gimbal_description:/workspaces/auto_sentry/install/rm_behavior_tree:/workspaces/auto_sentry/install/rm_auto_aim:/workspaces/auto_sentry/install/pointcloud_to_laserscan:/workspaces/auto_sentry/install/point_lio:/workspaces/auto_sentry/install/pb_rm_simulation:/workspaces/auto_sentry/install/game_status_tester:/workspaces/auto_sentry/install/pb_rm_interfaces:/workspaces/auto_sentry/install/icp_registration:/workspaces/auto_sentry/install/fast_lio:/workspaces/auto_sentry/install/livox_ros_driver2:/workspaces/auto_sentry/install/linefit_ground_segmentation_ros:/workspaces/auto_sentry/install/linefit_ground_segmentation:/workspaces/auto_sentry/install/imu_complementary_filter:/workspaces/auto_sentry/install/hik_camera:/workspaces/auto_sentry/install/fake_vel_transform:/workspaces/auto_sentry/install/costmap_converter:/workspaces/auto_sentry/install/costmap_converter_msgs:/workspaces/auto_sentry/install/btcpp_ros2_samples:/workspaces/auto_sentry/install/btcpp_ros2_interfaces:/workspaces/auto_sentry/install/armor_tracker:/workspaces/auto_sentry/install/armor_detector:/workspaces/auto_sentry/install/asio_cmake_module:/opt/ros/humble')]), 'shell': False}
+[6.998247] (rm_behavior_tree) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[6.998867] (rm_behavior_tree) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[6.999662] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/bt_conversions.hpp\n'}
+[6.999831] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/get_current_location.hpp\n'}
+[7.000124] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/hp_decision_patrol.hpp\n'}
+[7.000299] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/move_around.hpp\n'}
+[7.000407] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/print_message.hpp\n'}
+[7.000524] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/robot_control.hpp\n'}
+[7.000645] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/send_goal.hpp\n'}
+[7.000803] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_all_robot_hp.hpp\n'}
+[7.000925] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_ally_robot_hp.hpp\n'}
+[7.001026] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_armors.hpp\n'}
+[7.001121] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_decision_num.hpp\n'}
+[7.001217] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_game_status.hpp\n'}
+[7.001306] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_robot_status.hpp\n'}
+[7.001397] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_attacked.hpp\n'}
+[7.001489] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_detect_enemy.hpp\n'}
+[7.001569] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_friend_ok.hpp\n'}
+[7.001664] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_game_time.hpp\n'}
+[7.001755] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_outpost_ok.hpp\n'}
+[7.001823] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_status_ok.hpp\n'}
+[7.001911] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/control/decision_switch.hpp\n'}
+[7.001983] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/decorator/rate_controller.hpp\n'}
+[7.002071] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/rm_behavior_tree.h\n'}
+[7.002136] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.sh\n'}
+[7.002200] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.dsv\n'}
+[7.002414] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libdecision_switch.so\n'}
+[7.002558] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librate_controller.so\n'}
+[7.002690] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_game_time.so\n'}
+[7.002814] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_status_ok.so\n'}
+[7.002968] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_attacked.so\n'}
+[7.003388] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_friend_ok.so\n'}
+[7.003644] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_outpost_ok.so\n'}
+[7.003860] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_detect_enemy.so\n'}
+[7.004047] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsend_goal.so\n'}
+[7.004363] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_all_robot_hp.so\n'}
+[7.004433] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_ally_robot_hp.so\n'}
+[7.004714] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_robot_status.so\n'}
+[7.004799] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_game_status.so\n'}
+[7.004982] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_armors.so\n'}
+[7.005180] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_decision_num.so\n'}
+[7.005340] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libget_current_location.so\n'}
+[7.005541] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libmove_around.so\n'}
+[7.005721] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librobot_control.so\n'}
+[7.005904] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libprint_message.so\n'}
+[7.006085] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libhp_decision_patrol.so\n'}
+[7.006518] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/rm_behavior_tree/rm_behavior_tree\n'}
+[7.006940] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/launch/rm_behavior_tree.launch.py\n'}
+[7.007413] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/Project.btproj\n'}
+[7.007552] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_left.xml\n'}
+[7.007711] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_right.xml\n'}
+[7.007869] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/decision_switch_test.xml\n'}
+[7.008014] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/hp_patrol_test.xml\n'}
+[7.008178] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/protect_supply.xml\n'}
+[7.008336] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/retreat_attack_left.xml\n'}
+[7.008511] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/rmuc_01.xml\n'}
+[7.008866] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/package_run_dependencies/rm_behavior_tree\n'}
+[7.009148] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/parent_prefix_path/rm_behavior_tree\n'}
+[7.009323] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.sh\n'}
+[7.009435] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.dsv\n'}
+[7.009583] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.sh\n'}
+[7.009711] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.dsv\n'}
+[7.009839] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.bash\n'}
+[7.009963] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.sh\n'}
+[7.010086] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.zsh\n'}
+[7.010208] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.dsv\n'}
+[7.010303] (rm_behavior_tree) StdoutLine: {'line': b'-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.dsv\n'}
+[7.019442] (-) TimerEvent: {}
+[7.020728] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/packages/rm_behavior_tree\n'}
+[7.020790] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[7.021195] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[7.021239] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[7.021274] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig.cmake\n'}
+[7.021309] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig-version.cmake\n'}
+[7.021350] (rm_behavior_tree) StdoutLine: {'line': b'-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.xml\n'}
+[7.022939] (rm_behavior_tree) CommandEnded: {'returncode': 0}
+[7.119640] (-) TimerEvent: {}
+[7.219944] (-) TimerEvent: {}
+[7.243975] (rm_behavior_tree) JobEnded: {'identifier': 'rm_behavior_tree', 'rc': 0}
+[7.244966] (-) EventReactorShutdown: {}

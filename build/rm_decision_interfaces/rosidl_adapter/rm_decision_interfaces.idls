@@ -1,0 +1,12 @@
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/AllRobotHP.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/AllyRobotHP.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/RobotStatus.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/FriendLocation.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/GameStatus.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/RFID.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/RobotControl.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/DecisionNum.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/EventData.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/GroundRobotPosition.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/GameRobotHP.idl
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_adapter/rm_decision_interfaces:msg/RfidStatus.idl

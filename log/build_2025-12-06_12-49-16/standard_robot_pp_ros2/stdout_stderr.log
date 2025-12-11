@@ -1,0 +1,10 @@
+[ 40%] Built target standard_robot_pp_ros2_node
+[ 60%] [32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o[0m
+In file included from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1[m[K:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:23:10:[m[K [01;31m[Kfatal error: [m[Krm_decision_interfaces/msg/event_data.hpp: No such file or directory
+   23 | #include [01;31m[K<rm_decision_interfaces/msg/event_data.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/standard_robot_pp_ros2.dir/build.make:76: CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/standard_robot_pp_ros2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,16 @@
+<root main_tree_to_execute="HpTestTree">
+    <BehaviorTree ID="HpTestTree">
+        <Sequence>
+            <SubAllyRobotHP ally_hp_data="{the_hp_data}" />
+            
+            <HpDecisionPatrol 
+                hp_input="{the_hp_data}"
+                high_hp_x="6.0" high_hp_y="1.0"
+                low_hp_x="0.0" low_hp_y="1.0"
+                target_pose="{current_goal}" 
+            />
+            
+            <SendGoal goal_pose="{current_goal}" />
+        </Sequence>
+    </BehaviorTree>
+</root>

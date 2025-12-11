@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/game_status__rosidl_typesupport_fastrtps_cpp.hpp

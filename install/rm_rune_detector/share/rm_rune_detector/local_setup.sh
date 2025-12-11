@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_rune_detector/ament_cmake_environment_hooks/local_setup.sh

@@ -1,0 +1,62 @@
+-- Found ament_cmake_auto: 1.3.9 (/opt/ros/humble/share/ament_cmake_auto/cmake)
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/auto_sentry/build/rm_behavior_tree
+[35m[1mConsolidate compiler generated dependencies of target decision_switch[0m
+[35m[1mConsolidate compiler generated dependencies of target rm_behavior_tree[0m
+[  2%] [32mBuilding CXX object CMakeFiles/rm_behavior_tree.dir/src/rm_behavior_tree.cpp.o[0m
+[  7%] Built target decision_switch
+[35m[1mConsolidate compiler generated dependencies of target rate_controller[0m
+[ 12%] Built target rate_controller
+[35m[1mConsolidate compiler generated dependencies of target is_game_time[0m
+[ 17%] Built target is_game_time
+[35m[1mConsolidate compiler generated dependencies of target is_status_ok[0m
+[ 22%] Built target is_status_ok
+[35m[1mConsolidate compiler generated dependencies of target is_attacked[0m
+[ 27%] Built target is_attacked
+[35m[1mConsolidate compiler generated dependencies of target is_friend_ok[0m
+[ 32%] Built target is_friend_ok
+[35m[1mConsolidate compiler generated dependencies of target is_outpost_ok[0m
+[ 37%] Built target is_outpost_ok
+[35m[1mConsolidate compiler generated dependencies of target is_detect_enemy[0m
+[ 42%] Built target is_detect_enemy
+[35m[1mConsolidate compiler generated dependencies of target send_goal[0m
+[ 47%] Built target send_goal
+[35m[1mConsolidate compiler generated dependencies of target sub_all_robot_hp[0m
+[ 52%] Built target sub_all_robot_hp
+[35m[1mConsolidate compiler generated dependencies of target sub_robot_status[0m
+[ 57%] Built target sub_robot_status
+[35m[1mConsolidate compiler generated dependencies of target sub_game_status[0m
+[ 62%] Built target sub_game_status
+[35m[1mConsolidate compiler generated dependencies of target sub_armors[0m
+[ 67%] Built target sub_armors
+[35m[1mConsolidate compiler generated dependencies of target sub_decision_num[0m
+[ 72%] Built target sub_decision_num
+[35m[1mConsolidate compiler generated dependencies of target get_current_location[0m
+[ 77%] Built target get_current_location
+[35m[1mConsolidate compiler generated dependencies of target move_around[0m
+[ 82%] Built target move_around
+[35m[1mConsolidate compiler generated dependencies of target robot_control[0m
+[ 87%] Built target robot_control
+[35m[1mConsolidate compiler generated dependencies of target print_message[0m
+[ 92%] Built target print_message
+[ 95%] [32mBuilding CXX object CMakeFiles/hp_decision_patrol.dir/plugins/action/hp_decision_patrol.cpp.o[0m
+[01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/hp_decision_patrol.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus rm_behavior_tree::HpDecisionPatrol::onTick(const std::shared_ptr<rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> > >&)[m[K’:
+[01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/hp_decision_patrol.cpp:37:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kally_7_robot_hp[m[K’; did you mean ‘[01m[Kblue_7_robot_hp[m[K’?
+   37 |   int current_hp = last_msg->[01;31m[Kally_7_robot_hp[m[K;
+      |                              [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                              [32m[Kblue_7_robot_hp[m[K
+[ 97%] [32m[1mLinking CXX executable rm_behavior_tree[0m
+[ 97%] Built target rm_behavior_tree
+gmake[2]: *** [CMakeFiles/hp_decision_patrol.dir/build.make:76: CMakeFiles/hp_decision_patrol.dir/plugins/action/hp_decision_patrol.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:822: CMakeFiles/hp_decision_patrol.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

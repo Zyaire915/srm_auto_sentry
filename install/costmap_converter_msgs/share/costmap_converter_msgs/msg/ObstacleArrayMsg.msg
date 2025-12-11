@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/src/pb_rmsimulation/src/rm_navigation/costmap_converter/costmap_converter_msgs/msg/ObstacleArrayMsg.msg

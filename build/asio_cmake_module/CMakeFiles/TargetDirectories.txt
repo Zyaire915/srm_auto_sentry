@@ -1,0 +1,9 @@
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/uninstall.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/asio_cmake_module_uninstall.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/test.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/edit_cache.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/rebuild_cache.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/list_install_components.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/install.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/install/local.dir
+/workspaces/auto_sentry/build/asio_cmake_module/CMakeFiles/install/strip.dir

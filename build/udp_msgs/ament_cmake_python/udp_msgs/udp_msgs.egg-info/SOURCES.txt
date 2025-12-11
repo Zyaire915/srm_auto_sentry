@@ -1,0 +1,6 @@
+setup.py
+udp_msgs/__init__.py
+udp_msgs.egg-info/PKG-INFO
+udp_msgs.egg-info/SOURCES.txt
+udp_msgs.egg-info/dependency_links.txt
+udp_msgs.egg-info/top_level.txt

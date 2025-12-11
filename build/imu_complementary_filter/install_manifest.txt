@@ -1,0 +1,3 @@
+/workspaces/auto_sentry/install/imu_complementary_filter/lib/libcomplementary_filter.so
+/workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/export_imu_complementary_filterExport.cmake
+/workspaces/auto_sentry/install/imu_complementary_filter/share/imu_complementary_filter/cmake/export_imu_complementary_filterExport-noconfig.cmake

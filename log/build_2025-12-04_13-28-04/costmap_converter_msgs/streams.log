@@ -1,0 +1,187 @@
+[0.140s] Invoking command in '/workspaces/auto_sentry/build/costmap_converter_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/costmap_converter_msgs -- -j28 -l28
+[0.299s] [  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[0.299s] [  2%] Built target ament_cmake_python_symlink_costmap_converter_msgs
+[0.299s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.095s] running egg_info
+[1.097s] creating costmap_converter_msgs.egg-info
+[1.097s] writing costmap_converter_msgs.egg-info/PKG-INFO
+[1.098s] writing dependency_links to costmap_converter_msgs.egg-info/dependency_links.txt
+[1.098s] writing top-level names to costmap_converter_msgs.egg-info/top_level.txt
+[1.099s] writing manifest file 'costmap_converter_msgs.egg-info/SOURCES.txt'
+[1.107s] reading manifest file 'costmap_converter_msgs.egg-info/SOURCES.txt'
+[1.113s] writing manifest file 'costmap_converter_msgs.egg-info/SOURCES.txt'
+[1.236s] [  5%] Built target ament_cmake_python_build_costmap_converter_msgs_egg
+[1.319s] [  7%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_generator_c.dir/rosidl_generator_c/costmap_converter_msgs/msg/detail/obstacle_msg__functions.c.o[0m
+[1.324s] [ 10%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_generator_c.dir/rosidl_generator_c/costmap_converter_msgs/msg/detail/obstacle_array_msg__functions.c.o[0m
+[1.504s] [ 12%] [32m[1mLinking C shared library libcostmap_converter_msgs__rosidl_generator_c.so[0m
+[1.639s] [ 12%] Built target costmap_converter_msgs__rosidl_generator_c
+[1.685s] [ 15%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.686s] [ 20%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.687s] [ 17%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.858s] [ 20%] Built target costmap_converter_msgs__cpp
+[1.906s] [ 23%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.913s] [ 25%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.914s] [ 28%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.672s] [ 30%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/costmap_converter_msgs/msg/obstacle_array_msg__type_support.cpp.o[0m
+[2.684s] [ 33%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/costmap_converter_msgs/msg/obstacle_msg__type_support.cpp.o[0m
+[2.773s] [ 35%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/costmap_converter_msgs/msg/detail/obstacle_msg__type_support.c.o[0m
+[2.782s] [ 38%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/costmap_converter_msgs/msg/detail/obstacle_array_msg__type_support.c.o[0m
+[2.970s] [ 41%] [32m[1mLinking C shared library libcostmap_converter_msgs__rosidl_typesupport_introspection_c.so[0m
+[2.972s] [ 43%] [32m[1mLinking CXX shared library libcostmap_converter_msgs__rosidl_typesupport_c.so[0m
+[3.175s] [ 43%] Built target costmap_converter_msgs__rosidl_typesupport_introspection_c
+[3.237s] [ 43%] Built target costmap_converter_msgs__rosidl_typesupport_c
+[4.351s] [ 46%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/costmap_converter_msgs/msg/detail/obstacle_msg__type_support_c.cpp.o[0m
+[4.375s] [ 48%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/costmap_converter_msgs/msg/detail/obstacle_array_msg__type_support_c.cpp.o[0m
+[4.391s] [ 51%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/costmap_converter_msgs/msg/obstacle_msg__type_support.cpp.o[0m
+[4.395s] [ 53%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/costmap_converter_msgs/msg/obstacle_array_msg__type_support.cpp.o[0m
+[4.640s] [ 56%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/costmap_converter_msgs/msg/detail/obstacle_array_msg__type_support.cpp.o[0m
+[4.672s] [ 58%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/costmap_converter_msgs/msg/detail/obstacle_msg__type_support.cpp.o[0m
+[5.373s] [ 61%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/costmap_converter_msgs/msg/detail/dds_fastrtps/obstacle_array_msg__type_support.cpp.o[0m
+[5.376s] [ 64%] [32mBuilding CXX object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/costmap_converter_msgs/msg/detail/dds_fastrtps/obstacle_msg__type_support.cpp.o[0m
+[6.672s] [ 66%] [32m[1mLinking CXX shared library libcostmap_converter_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.698s] [ 69%] [32m[1mLinking CXX shared library libcostmap_converter_msgs__rosidl_typesupport_cpp.so[0m
+[7.001s] [ 69%] Built target costmap_converter_msgs__rosidl_typesupport_cpp
+[7.004s] [ 69%] Built target costmap_converter_msgs__rosidl_typesupport_fastrtps_cpp
+[7.994s] [ 71%] [32m[1mLinking CXX shared library libcostmap_converter_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[8.348s] [ 71%] Built target costmap_converter_msgs__rosidl_typesupport_fastrtps_c
+[8.418s] [ 74%] [32m[1mLinking CXX shared library libcostmap_converter_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[8.811s] [ 74%] Built target costmap_converter_msgs__rosidl_typesupport_introspection_cpp
+[9.023s] [ 74%] Built target costmap_converter_msgs
+[9.298s] [ 76%] [34m[1mGenerating Python code for ROS interfaces[0m
+[11.445s] [ 76%] Built target costmap_converter_msgs__py
+[11.557s] [ 79%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_generator_py.dir/rosidl_generator_py/costmap_converter_msgs/msg/_obstacle_msg_s.c.o[0m
+[11.571s] [ 82%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_generator_py.dir/rosidl_generator_py/costmap_converter_msgs/msg/_obstacle_array_msg_s.c.o[0m
+[12.810s] [ 84%] [32m[1mLinking C shared library rosidl_generator_py/costmap_converter_msgs/libcostmap_converter_msgs__rosidl_generator_py.so[0m
+[13.026s] [ 84%] Built target costmap_converter_msgs__rosidl_generator_py
+[13.174s] [ 87%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[13.192s] [ 89%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[13.266s] [ 92%] [32mBuilding C object CMakeFiles/costmap_converter_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[13.769s] [ 94%] [32m[1mLinking C shared library rosidl_generator_py/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.795s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.819s] [100%] [32m[1mLinking C shared library rosidl_generator_py/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[13.956s] [100%] Built target costmap_converter_msgs__rosidl_typesupport_c__pyext
+[13.989s] [100%] Built target costmap_converter_msgs__rosidl_typesupport_fastrtps_c__pyext
+[14.133s] [100%] Built target costmap_converter_msgs__rosidl_typesupport_introspection_c__pyext
+[14.279s] Invoked command in '/workspaces/auto_sentry/build/costmap_converter_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/costmap_converter_msgs -- -j28 -l28
+[14.878s] Invoking command in '/workspaces/auto_sentry/build/costmap_converter_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/costmap_converter_msgs
+[14.936s] -- Install configuration: ""
+[14.939s] -- Execute custom install script
+[14.941s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/ament_index/resource_index/rosidl_interfaces/costmap_converter_msgs
+[14.982s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__functions.h
+[15.011s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__struct.h
+[15.040s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__type_support.h
+[15.050s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__functions.h
+[15.114s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__struct.h
+[15.143s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__type_support.h
+[15.176s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/obstacle_array_msg.h
+[15.205s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/obstacle_msg.h
+[15.241s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/rosidl_generator_c__visibility_control.h
+[15.264s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/library_path.sh
+[15.320s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/library_path.dsv
+[15.359s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__rosidl_typesupport_fastrtps_c.h
+[15.409s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__rosidl_typesupport_fastrtps_c.h
+[15.499s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[15.568s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__builder.hpp
+[15.642s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__struct.hpp
+[15.705s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__traits.hpp
+[15.783s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__builder.hpp
+[15.843s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__struct.hpp
+[15.888s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__traits.hpp
+[15.959s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/obstacle_array_msg.hpp
+[16.040s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/obstacle_msg.hpp
+[16.137s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[16.190s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__rosidl_typesupport_fastrtps_cpp.hpp
+[16.263s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[16.341s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__rosidl_typesupport_introspection_c.h
+[16.377s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__rosidl_typesupport_introspection_c.h
+[16.406s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[16.427s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_array_msg__rosidl_typesupport_introspection_cpp.hpp
+[16.457s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/include/costmap_converter_msgs/costmap_converter_msgs/msg/detail/obstacle_msg__rosidl_typesupport_introspection_cpp.hpp
+[16.470s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/pythonpath.sh
+[16.495s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/pythonpath.dsv
+[16.533s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs-0.1.2-py3.10.egg-info/PKG-INFO
+[16.550s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs-0.1.2-py3.10.egg-info/SOURCES.txt
+[16.570s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs-0.1.2-py3.10.egg-info/dependency_links.txt
+[16.594s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs-0.1.2-py3.10.egg-info/top_level.txt
+[16.633s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/__init__.py
+[16.662s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_c.c
+[16.694s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[16.719s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/_costmap_converter_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[16.762s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[16.793s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[16.830s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[16.863s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/libcostmap_converter_msgs__rosidl_generator_py.so
+[16.902s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/__init__.py
+[16.939s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_array_msg.py
+[16.980s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_array_msg_s.c
+[17.012s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_msg.py
+[17.040s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_msg_s.c
+[17.074s] -- Up-to-date symlink: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[17.074s] -- Up-to-date symlink: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[17.078s] -- Up-to-date symlink: /workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/costmap_converter_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[17.079s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/msg/ObstacleMsg.idl
+[17.150s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/msg/ObstacleArrayMsg.idl
+[17.185s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/msg/ObstacleMsg.msg
+[17.204s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/msg/ObstacleArrayMsg.msg
+[17.228s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/ament_index/resource_index/package_run_dependencies/costmap_converter_msgs
+[17.269s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/ament_index/resource_index/parent_prefix_path/costmap_converter_msgs
+[17.297s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/ament_prefix_path.sh
+[17.325s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/ament_prefix_path.dsv
+[17.365s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/path.sh
+[17.399s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/environment/path.dsv
+[17.436s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/local_setup.bash
+[17.474s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/local_setup.sh
+[17.505s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/local_setup.zsh
+[17.532s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/local_setup.dsv
+[17.552s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/package.dsv
+[17.587s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/ament_index/resource_index/packages/costmap_converter_msgs
+[17.624s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/rosidl_cmake-extras.cmake
+[17.654s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[17.685s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[17.714s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[17.767s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[17.799s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[17.844s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[17.877s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgsConfig.cmake
+[17.913s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgsConfig-version.cmake
+[17.965s] -- Symlinking: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/package.xml
+[18.027s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_generator_c.so
+[18.028s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_generator_c.so" to ""
+[18.028s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_fastrtps_c.so
+[18.028s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[18.029s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_fastrtps_cpp.so
+[18.032s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[18.032s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_introspection_c.so
+[18.038s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_introspection_c.so" to ""
+[18.038s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_c.so
+[18.039s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_c.so" to ""
+[18.043s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_introspection_cpp.so
+[18.044s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[18.044s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_cpp.so
+[18.045s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_typesupport_cpp.so" to ""
+[18.247s] Listing '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs'...
+[18.247s] Compiling '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/__init__.py'...
+[18.249s] Listing '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg'...
+[18.251s] Compiling '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/__init__.py'...
+[18.251s] Compiling '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_array_msg.py'...
+[18.251s] Compiling '/workspaces/auto_sentry/install/costmap_converter_msgs/local/lib/python3.10/dist-packages/costmap_converter_msgs/msg/_obstacle_msg.py'...
+[18.271s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_generator_py.so
+[18.271s] -- Set runtime path of "/workspaces/auto_sentry/install/costmap_converter_msgs/lib/libcostmap_converter_msgs__rosidl_generator_py.so" to ""
+[18.272s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_generator_cExport.cmake
+[18.273s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_generator_cExport-noconfig.cmake
+[18.278s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[18.278s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[18.282s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_generator_cppExport.cmake
+[18.284s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[18.284s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[18.285s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_introspection_cExport.cmake
+[18.286s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[18.286s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_cExport.cmake
+[18.291s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[18.292s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[18.293s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[18.298s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_cppExport.cmake
+[18.298s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/costmap_converter_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[18.299s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_generator_pyExport.cmake
+[18.299s] -- Installing: /workspaces/auto_sentry/install/costmap_converter_msgs/share/costmap_converter_msgs/cmake/export_costmap_converter_msgs__rosidl_generator_pyExport-noconfig.cmake
+[18.348s] Invoked command in '/workspaces/auto_sentry/build/costmap_converter_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/costmap_converter_msgs

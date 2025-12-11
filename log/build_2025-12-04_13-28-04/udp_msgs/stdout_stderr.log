@@ -1,0 +1,215 @@
+[  2%] [34m[1mGenerating C code for ROS interfaces[0m
+[  4%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  4%] Built target ament_cmake_python_symlink_udp_msgs
+running egg_info
+creating udp_msgs.egg-info
+writing udp_msgs.egg-info/PKG-INFO
+writing dependency_links to udp_msgs.egg-info/dependency_links.txt
+writing top-level names to udp_msgs.egg-info/top_level.txt
+writing manifest file 'udp_msgs.egg-info/SOURCES.txt'
+reading manifest file 'udp_msgs.egg-info/SOURCES.txt'
+writing manifest file 'udp_msgs.egg-info/SOURCES.txt'
+[  4%] Built target ament_cmake_python_build_udp_msgs_egg
+[  6%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_c.dir/rosidl_generator_c/udp_msgs/msg/detail/udp_packet__functions.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_c.dir/rosidl_generator_c/udp_msgs/srv/detail/udp_send__functions.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_c.dir/rosidl_generator_c/udp_msgs/srv/detail/udp_socket__functions.c.o[0m
+[ 10%] Built target udp_msgs__cpp
+[ 12%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 14%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 17%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 19%] [32m[1mLinking C shared library libudp_msgs__rosidl_generator_c.so[0m
+[ 19%] Built target udp_msgs__rosidl_generator_c
+[ 21%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 23%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 25%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 27%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/udp_msgs/srv/udp_send__type_support.cpp.o[0m
+[ 29%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/udp_msgs/msg/udp_packet__type_support.cpp.o[0m
+[ 31%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/udp_msgs/srv/udp_socket__type_support.cpp.o[0m
+[ 34%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/udp_msgs/srv/detail/udp_send__type_support.cpp.o[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/udp_msgs/msg/detail/udp_packet__type_support.cpp.o[0m
+[ 38%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/udp_msgs/srv/detail/udp_socket__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/udp_msgs/srv/detail/dds_fastrtps/udp_socket__type_support.cpp.o[0m
+[ 42%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/udp_msgs/msg/detail/dds_fastrtps/udp_packet__type_support.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/udp_msgs/srv/detail/dds_fastrtps/udp_send__type_support.cpp.o[0m
+[ 46%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/udp_msgs/srv/detail/udp_send__type_support.c.o[0m
+[ 48%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/udp_msgs/msg/detail/udp_packet__type_support.c.o[0m
+[ 51%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/udp_msgs/srv/detail/udp_socket__type_support.c.o[0m
+[ 53%] [32m[1mLinking C shared library libudp_msgs__rosidl_typesupport_introspection_c.so[0m
+[ 53%] Built target udp_msgs__rosidl_typesupport_introspection_c
+[ 55%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/udp_msgs/srv/udp_socket__type_support.cpp.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/udp_msgs/srv/udp_send__type_support.cpp.o[0m
+[ 59%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/udp_msgs/msg/udp_packet__type_support.cpp.o[0m
+[ 61%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/udp_msgs/srv/detail/udp_socket__type_support_c.cpp.o[0m
+[ 63%] [32m[1mLinking CXX shared library libudp_msgs__rosidl_typesupport_c.so[0m
+[ 65%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/udp_msgs/srv/detail/udp_send__type_support_c.cpp.o[0m
+[ 68%] [32mBuilding CXX object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/udp_msgs/msg/detail/udp_packet__type_support_c.cpp.o[0m
+[ 68%] Built target udp_msgs__rosidl_typesupport_c
+[ 70%] [32m[1mLinking CXX shared library libudp_msgs__rosidl_typesupport_cpp.so[0m
+[ 70%] Built target udp_msgs__rosidl_typesupport_cpp
+[ 72%] [32m[1mLinking CXX shared library libudp_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[ 74%] [32m[1mLinking CXX shared library libudp_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[ 74%] Built target udp_msgs__rosidl_typesupport_introspection_cpp
+[ 74%] Built target udp_msgs__rosidl_typesupport_fastrtps_c
+[ 76%] [32m[1mLinking CXX shared library libudp_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 76%] Built target udp_msgs__rosidl_typesupport_fastrtps_cpp
+[ 76%] Built target udp_msgs
+[ 78%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 78%] Built target udp_msgs__py
+[ 80%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_py.dir/rosidl_generator_py/udp_msgs/srv/_udp_send_s.c.o[0m
+[ 82%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_py.dir/rosidl_generator_py/udp_msgs/srv/_udp_socket_s.c.o[0m
+[ 85%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_generator_py.dir/rosidl_generator_py/udp_msgs/msg/_udp_packet_s.c.o[0m
+[ 87%] [32m[1mLinking C shared library rosidl_generator_py/udp_msgs/libudp_msgs__rosidl_generator_py.so[0m
+[ 87%] Built target udp_msgs__rosidl_generator_py
+[ 89%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 91%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 93%] [32mBuilding C object CMakeFiles/udp_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[ 95%] [32m[1mLinking C shared library rosidl_generator_py/udp_msgs/udp_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/udp_msgs/udp_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[ 97%] Built target udp_msgs__rosidl_typesupport_fastrtps_c__pyext
+[100%] [32m[1mLinking C shared library rosidl_generator_py/udp_msgs/udp_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[100%] Built target udp_msgs__rosidl_typesupport_introspection_c__pyext
+[100%] Built target udp_msgs__rosidl_typesupport_c__pyext
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/ament_index/resource_index/rosidl_interfaces/udp_msgs
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__functions.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__struct.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__type_support.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/rosidl_generator_c__visibility_control.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/udp_packet.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__functions.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__struct.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__type_support.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__functions.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__struct.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__type_support.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/udp_send.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/udp_socket.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/library_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/library_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__rosidl_typesupport_fastrtps_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__builder.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__struct.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__traits.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/udp_packet.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__builder.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__struct.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__traits.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__builder.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__struct.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__traits.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/udp_send.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/udp_socket.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__rosidl_typesupport_fastrtps_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__rosidl_typesupport_introspection_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__rosidl_typesupport_introspection_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__rosidl_typesupport_introspection_c.h
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/msg/detail/udp_packet__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_send__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/include/udp_msgs/udp_msgs/srv/detail/udp_socket__rosidl_typesupport_introspection_cpp.hpp
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/pythonpath.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/pythonpath.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs-0.0.5-py3.10.egg-info/PKG-INFO
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs-0.0.5-py3.10.egg-info/SOURCES.txt
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs-0.0.5-py3.10.egg-info/dependency_links.txt
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs-0.0.5-py3.10.egg-info/top_level.txt
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/__init__.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_c.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/_udp_msgs_s.ep.rosidl_typesupport_introspection_c.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/libudp_msgs__rosidl_generator_py.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg/__init__.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg/_udp_packet.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg/_udp_packet_s.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/__init__.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_send.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_send_s.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_socket.py
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_socket_s.c
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/udp_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/msg/UdpPacket.idl
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSend.idl
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSocket.idl
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/msg/UdpPacket.msg
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSend.srv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSend_Request.msg
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSend_Response.msg
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSocket.srv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSocket_Request.msg
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/srv/UdpSocket_Response.msg
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/ament_index/resource_index/package_run_dependencies/udp_msgs
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/ament_index/resource_index/parent_prefix_path/udp_msgs
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/ament_prefix_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/ament_prefix_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/path.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/environment/path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/local_setup.bash
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/local_setup.sh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/local_setup.zsh
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/package.dsv
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/ament_index/resource_index/packages/udp_msgs
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/rosidl_cmake-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/ament_cmake_export_targets-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgsConfig.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgsConfig-version.cmake
+-- Symlinking: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/package.xml
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_generator_c.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_generator_c.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_fastrtps_c.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_fastrtps_cpp.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_introspection_c.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_c.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_c.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_introspection_cpp.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_cpp.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_typesupport_cpp.so" to ""
+Listing '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/__init__.py'...
+Listing '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg/__init__.py'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/msg/_udp_packet.py'...
+Listing '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/__init__.py'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_send.py'...
+Compiling '/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages/udp_msgs/srv/_udp_socket.py'...
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_generator_py.so
+-- Set runtime path of "/workspaces/auto_sentry/install/udp_msgs/lib/libudp_msgs__rosidl_generator_py.so" to ""
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_generator_cExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_generator_cppExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_cExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_cppExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/udp_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_generator_pyExport.cmake
+-- Installing: /workspaces/auto_sentry/install/udp_msgs/share/udp_msgs/cmake/export_udp_msgs__rosidl_generator_pyExport-noconfig.cmake

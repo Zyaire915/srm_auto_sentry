@@ -1,0 +1,8 @@
+[01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/hp_decision_patrol.cpp:[m[K In member function ‘[01m[Kvirtual BT::NodeStatus rm_behavior_tree::HpDecisionPatrol::onTick(const std::shared_ptr<rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> > >&)[m[K’:
+[01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/hp_decision_patrol.cpp:37:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = struct rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct rm_decision_interfaces::msg::AllRobotHP_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kally_7_robot_hp[m[K’; did you mean ‘[01m[Kblue_7_robot_hp[m[K’?
+   37 |   int current_hp = last_msg->[01;31m[Kally_7_robot_hp[m[K;
+      |                              [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                              [32m[Kblue_7_robot_hp[m[K
+gmake[2]: *** [CMakeFiles/hp_decision_patrol.dir/build.make:76: CMakeFiles/hp_decision_patrol.dir/plugins/action/hp_decision_patrol.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:822: CMakeFiles/hp_decision_patrol.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

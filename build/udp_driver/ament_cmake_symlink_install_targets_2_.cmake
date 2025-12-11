@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/workspaces/auto_sentry/build/udp_driver/libudp_driver.so" "/workspaces/auto_sentry/build/udp_driver/libudp_driver_nodes.so" "TARGETS" "udp_driver" "udp_driver_nodes" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

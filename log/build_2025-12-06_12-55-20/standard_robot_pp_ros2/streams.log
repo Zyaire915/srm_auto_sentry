@@ -1,0 +1,38 @@
+[0.018s] Invoking command in '/workspaces/auto_sentry/build/standard_robot_pp_ros2': AMENT_PREFIX_PATH=/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /workspaces/auto_sentry/build/standard_robot_pp_ros2 -- -j28 -l28
+[0.045s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.122s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.127s] -- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+[0.148s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.150s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.153s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.161s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.171s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.216s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.217s] -- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.322s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.433s] -- Found rclcpp_components: 16.0.9 (/opt/ros/humble/share/rclcpp_components/cmake)
+[0.474s] -- Found serial_driver: 1.2.0 (/workspaces/auto_sentry/install/serial_driver/share/serial_driver/cmake)
+[0.568s] -- Found tf2_ros: 0.25.6 (/opt/ros/humble/share/tf2_ros/cmake)
+[0.780s] -- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+[0.783s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.784s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.790s] -- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.848s] -- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+[0.888s] -- Found pb_rm_interfaces: 0.1.0 (/workspaces/auto_sentry/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake)
+[0.921s] -- Found rm_decision_interfaces: 0.0.0 (/workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake)
+[1.062s] -- Configuring done
+[1.081s] -- Generating done
+[1.082s] -- Build files have been written to: /workspaces/auto_sentry/build/standard_robot_pp_ros2
+[1.107s] [35m[1mConsolidate compiler generated dependencies of target standard_robot_pp_ros2_node[0m
+[1.107s] [35m[1mConsolidate compiler generated dependencies of target standard_robot_pp_ros2[0m
+[1.127s] [ 40%] Built target standard_robot_pp_ros2_node
+[1.132s] [ 60%] [32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o[0m
+[1.214s] In file included from [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:1[m[K:
+[1.214s] [01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp:27:10:[m[K [01;31m[Kfatal error: [m[Krm_decision_interfaces/msg/rfid_status.hpp: No such file or directory
+[1.214s]    27 | #include [01;31m[K<rm_decision_interfaces/msg/rfid_status.hpp>[m[K
+[1.214s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[1.214s] compilation terminated.
+[1.215s] gmake[2]: *** [CMakeFiles/standard_robot_pp_ros2.dir/build.make:76: CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o] Error 1
+[1.216s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/standard_robot_pp_ros2.dir/all] Error 2
+[1.216s] gmake: *** [Makefile:146: all] Error 2
+[1.218s] Invoked command in '/workspaces/auto_sentry/build/standard_robot_pp_ros2' returned '2': AMENT_PREFIX_PATH=/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/workspaces/auto_sentry/install/serial_driver:/workspaces/auto_sentry/install/io_context:/workspaces/auto_sentry/install/udp_msgs:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/pb_rm_interfaces:/opt/ros/humble LD_LIBRARY_PATH=/workspaces/auto_sentry/install/serial_driver/lib:/workspaces/auto_sentry/install/io_context/lib:/workspaces/auto_sentry/install/udp_msgs/lib:/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/pb_rm_interfaces/lib:${LD_LIBRARY_PATH} PYTHONPATH=/workspaces/auto_sentry/install/udp_msgs/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/pb_rm_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/cmake --build /workspaces/auto_sentry/build/standard_robot_pp_ros2 -- -j28 -l28

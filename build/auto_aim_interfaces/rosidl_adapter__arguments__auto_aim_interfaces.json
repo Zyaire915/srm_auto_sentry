@@ -1,0 +1,13 @@
+{
+  "package_name": "auto_aim_interfaces",
+  "non_idl_tuples": [
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/Armor.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/Armors.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/Target.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/DebugLight.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/DebugLights.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/DebugArmor.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/DebugArmors.msg",
+    "/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces:msg/TrackerInfo.msg"
+  ]
+}

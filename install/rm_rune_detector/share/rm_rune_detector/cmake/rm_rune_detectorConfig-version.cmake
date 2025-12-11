@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_rune_detector/ament_cmake_core/rm_rune_detectorConfig-version.cmake

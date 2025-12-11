@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/standard_robot_pp_ros2/ament_cmake_environment_hooks/local_setup.sh

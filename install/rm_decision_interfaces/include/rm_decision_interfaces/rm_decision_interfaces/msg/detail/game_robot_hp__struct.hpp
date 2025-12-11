@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_cpp/rm_decision_interfaces/msg/detail/game_robot_hp__struct.hpp

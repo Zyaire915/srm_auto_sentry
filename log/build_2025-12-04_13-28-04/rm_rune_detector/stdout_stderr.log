@@ -1,0 +1,38 @@
+[ 16%] [32mBuilding CXX object CMakeFiles/rm_rune_detector_node.dir/rclcpp_components/node_main_rm_rune_detector_node.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/rm_rune_detector.dir/src/pnp_solver.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/rm_rune_detector.dir/src/rm_rune_detector_node.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/rm_rune_detector.dir/src/rune_detector.cpp.o[0m
+[ 83%] [32m[1mLinking CXX executable rm_rune_detector_node[0m
+[ 83%] Built target rm_rune_detector_node
+[100%] [32m[1mLinking CXX shared library librm_rune_detector.so[0m
+[100%] Built target rm_rune_detector
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/lib/rm_rune_detector/rm_rune_detector_node
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/include/rm_rune_detector/pnp_solver.hpp
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/include/rm_rune_detector/rm_rune_detector_node.hpp
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/include/rm_rune_detector/rune.hpp
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/include/rm_rune_detector/rune_detector.hpp
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/library_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/library_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/lib/librm_rune_detector.so
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/launch/rm_rune_detector.launch.py
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/ament_index/resource_index/package_run_dependencies/rm_rune_detector
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/ament_index/resource_index/parent_prefix_path/rm_rune_detector
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/ament_prefix_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/ament_prefix_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/path.sh
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/environment/path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/local_setup.bash
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/local_setup.sh
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/local_setup.zsh
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/package.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/ament_index/resource_index/packages/rm_rune_detector
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/ament_index/resource_index/rclcpp_components/rm_rune_detector
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/cmake/ament_cmake_export_libraries-extras.cmake
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/cmake/rm_rune_detectorConfig.cmake
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/cmake/rm_rune_detectorConfig-version.cmake
+-- Symlinking: /workspaces/auto_sentry/install/rm_rune_detector/share/rm_rune_detector/package.xml

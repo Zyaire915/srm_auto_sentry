@@ -1,0 +1,23 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from udp_msgs/srv/UdpSocket.srv
+// generated code does not contain a copyright notice
+
+
+module udp_msgs {
+  module srv {
+    struct UdpSocket_Request {
+      string local_address;
+
+      uint16 local_port;
+
+      string remote_address;
+
+      uint16 remote_port;
+
+      boolean is_broadcast;
+    };
+    struct UdpSocket_Response {
+      boolean socket_created;
+    };
+  };
+};

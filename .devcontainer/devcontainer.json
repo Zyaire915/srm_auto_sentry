@@ -1,0 +1,33 @@
+{
+	"name": "auto_sentry",
+	"image": "lihanchen2004/pb_rm_simulation:1.0.0",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/auto_sentry,type=bind",
+    // 👇 新增下面这行：告诉 VS Code 默认进入这个目录
+    "workspaceFolder": "/workspaces/auto_sentry",
+	"runArgs": [
+	  "--name=goat",
+	  "--init",
+	  "--gpus=all",
+	  "--privileged",
+	  "-v", 
+	  "/dev:/dev",
+	  "--env=NVIDIA_DRIVER_CAPABILITIES=all",
+	  "--env=DISPLAY=${localEnv:DISPLAY}",
+	  "--env=QT_X11_NO_MITSHM=1",
+	  "--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+	  "--network=host"
+	],
+	"customizations": {
+	  "vscode": {
+			"extensions": [
+				"llvm-vs-code-extensions.vscode-clangd",
+				"vadimcn.vscode-lldb",
+				"xaver.clang-format",
+				"ms-python.python",
+				"ms-iot.vscode-ros",
+				"ms-vscode.cmake-tools",
+				"usernamehw.errorlens"
+			]
+	  }
+	}
+}

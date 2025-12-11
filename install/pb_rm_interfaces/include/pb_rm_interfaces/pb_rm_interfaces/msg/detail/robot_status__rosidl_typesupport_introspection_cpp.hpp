@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_typesupport_introspection_cpp/pb_rm_interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp

@@ -1,0 +1,22 @@
+[0.189s] Invoking command in '/workspaces/auto_sentry/build/rm_gimbal_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_gimbal_description -- -j28 -l28
+[0.474s] Invoked command in '/workspaces/auto_sentry/build/rm_gimbal_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_gimbal_description -- -j28 -l28
+[0.628s] Invoking command in '/workspaces/auto_sentry/build/rm_gimbal_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_gimbal_description
+[0.654s] -- Install configuration: ""
+[0.654s] -- Execute custom install script
+[0.654s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/urdf/rm_gimbal.urdf.xacro
+[0.655s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/ament_index/resource_index/package_run_dependencies/rm_gimbal_description
+[0.659s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/ament_index/resource_index/parent_prefix_path/rm_gimbal_description
+[0.659s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/environment/ament_prefix_path.sh
+[0.659s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/environment/ament_prefix_path.dsv
+[0.659s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/environment/path.sh
+[0.659s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/environment/path.dsv
+[0.660s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.bash
+[0.660s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.sh
+[0.660s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.zsh
+[0.660s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/local_setup.dsv
+[0.660s] -- Symlinking: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/package.dsv
+[0.692s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/ament_index/resource_index/packages/rm_gimbal_description
+[0.693s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/cmake/rm_gimbal_descriptionConfig.cmake
+[0.695s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/cmake/rm_gimbal_descriptionConfig-version.cmake
+[0.695s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_gimbal_description/share/rm_gimbal_description/package.xml
+[0.766s] Invoked command in '/workspaces/auto_sentry/build/rm_gimbal_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_gimbal_description

@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/rm_vision_bringup/ament_cmake_environment_hooks/local_setup.zsh

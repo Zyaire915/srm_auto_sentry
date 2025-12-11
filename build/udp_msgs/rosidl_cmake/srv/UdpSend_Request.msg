@@ -1,0 +1,5 @@
+string local_address
+uint16 local_port
+string remote_address
+uint16 remote_port
+uint8[] data

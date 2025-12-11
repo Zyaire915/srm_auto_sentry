@@ -1,0 +1,98 @@
+[35m[1mConsolidate compiler generated dependencies of target rm_behavior_tree[0m
+[  4%] Built target decision_switch
+[  7%] [32mBuilding CXX object CMakeFiles/rm_behavior_tree.dir/src/rm_behavior_tree.cpp.o[0m
+[ 11%] Built target rate_controller
+[ 16%] Built target is_game_time
+[ 21%] Built target is_status_ok
+[ 26%] Built target is_attacked
+[ 30%] Built target is_friend_ok
+[ 35%] Built target is_outpost_ok
+[ 40%] Built target is_detect_enemy
+[ 45%] Built target send_goal
+[ 50%] Built target sub_all_robot_hp
+[ 54%] Built target sub_ally_robot_hp
+[ 59%] Built target sub_robot_status
+[ 64%] Built target sub_game_status
+[ 69%] Built target sub_armors
+[ 73%] Built target sub_decision_num
+[ 78%] Built target get_current_location
+[ 83%] Built target move_around
+[ 88%] Built target robot_control
+[ 92%] Built target print_message
+[ 97%] Built target hp_decision_patrol
+[100%] [32m[1mLinking CXX executable rm_behavior_tree[0m
+[100%] Built target rm_behavior_tree
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/bt_conversions.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/get_current_location.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/hp_decision_patrol.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/move_around.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/print_message.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/robot_control.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/send_goal.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_all_robot_hp.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_ally_robot_hp.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_armors.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_decision_num.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_game_status.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_robot_status.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_attacked.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_detect_enemy.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_friend_ok.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_game_time.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_outpost_ok.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/condition/is_status_ok.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/control/decision_switch.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/plugins/decorator/rate_controller.hpp
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/include/rm_behavior_tree/rm_behavior_tree.h
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.sh
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/library_path.dsv
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libdecision_switch.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librate_controller.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_game_time.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_status_ok.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_attacked.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_friend_ok.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_outpost_ok.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libis_detect_enemy.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsend_goal.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_all_robot_hp.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_ally_robot_hp.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_robot_status.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_game_status.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_armors.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libsub_decision_num.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libget_current_location.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libmove_around.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/librobot_control.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libprint_message.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/libhp_decision_patrol.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/lib/rm_behavior_tree/rm_behavior_tree
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/launch/rm_behavior_tree.launch.py
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/Project.btproj
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_left.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/attack_right.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/decision_switch_test.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/hp_patrol_test.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/protect_supply.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/retreat_attack_left.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/config/rmuc_01.xml
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/package_run_dependencies/rm_behavior_tree
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/parent_prefix_path/rm_behavior_tree
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.sh
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/environment/path.dsv
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.bash
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.sh
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.zsh
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.dsv
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/ament_index/resource_index/packages/rm_behavior_tree
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig.cmake
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/cmake/rm_behavior_treeConfig-version.cmake
+-- Up-to-date symlink: /workspaces/auto_sentry/install/rm_behavior_tree/share/rm_behavior_tree/package.xml

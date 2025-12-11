@@ -1,0 +1,10 @@
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:[m[K In member function ‘[01m[Kvoid standard_robot_pp_ros2::StandardRobotPpRos2Node::publishRobotStatus(standard_robot_pp_ros2::ReceiveRobotStatus&)[m[K’:
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:567:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing RobotStatus = struct rm_decision_interfaces::msg::RobotStatus_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct rm_decision_interfaces::msg::RobotStatus_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kmaximum_hp[m[K’
+  567 |   msg.[01;31m[Kmaximum_hp[m[K = 0;
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/src/standard_robot_pp_ros2.cpp:568:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing RobotStatus = struct rm_decision_interfaces::msg::RobotStatus_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct rm_decision_interfaces::msg::RobotStatus_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kshooter_17mm_1_barrel_heat[m[K’
+  568 |   msg.[01;31m[Kshooter_17mm_1_barrel_heat[m[K = robot_status.data.shooter_17mm_1_barrel_heat;
+      |       [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/standard_robot_pp_ros2.dir/build.make:76: CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/standard_robot_pp_ros2.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

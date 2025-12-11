@@ -1,0 +1,79 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Override CMake install command with custom implementation using symlinks instead of copying resources
+-- Found rclcpp: 16.0.9 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.6 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+-- Found FastRTPS: /opt/ros/humble/include  
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found rclcpp_components: 16.0.9 (/opt/ros/humble/share/rclcpp_components/cmake)
+-- Found serial_driver: 1.2.0 (/workspaces/auto_sentry/install/serial_driver/share/serial_driver/cmake)
+-- Found tf2_ros: 0.25.6 (/opt/ros/humble/share/tf2_ros/cmake)
+-- Found tf2_geometry_msgs: 0.25.6 (/opt/ros/humble/share/tf2_geometry_msgs/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found sensor_msgs: 4.2.3 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found example_interfaces: 0.9.3 (/opt/ros/humble/share/example_interfaces/cmake)
+-- Found pb_rm_interfaces: 0.1.0 (/workspaces/auto_sentry/install/pb_rm_interfaces/share/pb_rm_interfaces/cmake)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/auto_sentry/build/standard_robot_pp_ros2
+[ 40%] [32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2.dir/src/standard_robot_pp_ros2.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/standard_robot_pp_ros2_node.dir/rclcpp_components/node_main_standard_robot_pp_ros2_node.cpp.o[0m
+[ 60%] [32mBuilding C object CMakeFiles/standard_robot_pp_ros2.dir/src/crc_func.c.o[0m
+[ 80%] [32m[1mLinking CXX executable standard_robot_pp_ros2_node[0m
+[ 80%] Built target standard_robot_pp_ros2_node
+[100%] [32m[1mLinking CXX shared library libstandard_robot_pp_ros2.so[0m
+[100%] Built target standard_robot_pp_ros2
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/libstandard_robot_pp_ros2.so
+-- Up-to-date symlink: /workspaces/auto_sentry/install/standard_robot_pp_ros2/lib/standard_robot_pp_ros2/standard_robot_pp_ros2_node
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/crc_func.h
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/debug_for_pb_rm.hpp
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/packet_typedef.hpp
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/robot_info.hpp
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/config/standard_robot_pp_ros2.yaml
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/launch/standard_robot_pp_ros2.launch.py
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/package_run_dependencies/standard_robot_pp_ros2
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/parent_prefix_path/standard_robot_pp_ros2
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.sh
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/ament_prefix_path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.sh
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/environment/path.dsv
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.bash
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.sh
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.zsh
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/local_setup.dsv
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.dsv
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/packages/standard_robot_pp_ros2
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/ament_index/resource_index/rclcpp_components/standard_robot_pp_ros2
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config.cmake
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/cmake/standard_robot_pp_ros2Config-version.cmake
+-- Symlinking: /workspaces/auto_sentry/install/standard_robot_pp_ros2/share/standard_robot_pp_ros2/package.xml

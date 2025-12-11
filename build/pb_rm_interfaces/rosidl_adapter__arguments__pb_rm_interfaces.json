@@ -1,0 +1,12 @@
+{
+  "package_name": "pb_rm_interfaces",
+  "non_idl_tuples": [
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/EventData.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/GameRobotHP.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/GameStatus.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/GroundRobotPosition.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/RfidStatus.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/RobotStatus.msg",
+    "/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces:msg/AllyRobotHP.msg"
+  ]
+}

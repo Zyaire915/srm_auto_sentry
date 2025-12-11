@@ -1,0 +1,366 @@
+[0.010s] Invoking command in '/workspaces/auto_sentry/build/rm_decision_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/rm_behavior_tree-master/rm_decision_interfaces -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/rm_decision_interfaces
+[0.020s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.105s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.111s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.112s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.114s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.133s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.152s] -- Found std_msgs: 4.2.3 (/opt/ros/humble/share/std_msgs/cmake)
+[0.191s] -- Found nav_msgs: 4.2.3 (/opt/ros/humble/share/nav_msgs/cmake)
+[0.472s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[0.640s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.878s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.898s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[0.913s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.913s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[0.913s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[0.948s] -- Configuring done
+[0.980s] -- Generating done
+[0.982s] -- Build files have been written to: /workspaces/auto_sentry/build/rm_decision_interfaces
+[0.986s] Invoked command in '/workspaces/auto_sentry/build/rm_decision_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/rm_behavior_tree-master/rm_decision_interfaces -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/rm_decision_interfaces
+[0.988s] Invoking command in '/workspaces/auto_sentry/build/rm_decision_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_decision_interfaces -- -j28 -l28
+[1.028s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.038s] [  2%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.042s] [  2%] Built target ament_cmake_python_symlink_rm_decision_interfaces
+[1.161s] running egg_info
+[1.162s] writing rm_decision_interfaces.egg-info/PKG-INFO
+[1.162s] writing dependency_links to rm_decision_interfaces.egg-info/dependency_links.txt
+[1.162s] writing top-level names to rm_decision_interfaces.egg-info/top_level.txt
+[1.163s] reading manifest file 'rm_decision_interfaces.egg-info/SOURCES.txt'
+[1.164s] writing manifest file 'rm_decision_interfaces.egg-info/SOURCES.txt'
+[1.182s] [  2%] Built target ament_cmake_python_build_rm_decision_interfaces_egg
+[1.475s] [  2%] Built target rm_decision_interfaces__cpp
+[1.481s] [  5%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.481s] [  5%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.481s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.485s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_generator_c[0m
+[1.496s] [  8%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/decision_num__functions.c.o[0m
+[1.496s] [  8%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/robot_control__functions.c.o[0m
+[1.497s] [  9%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/ally_robot_hp__functions.c.o[0m
+[1.497s] [ 10%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/all_robot_hp__functions.c.o[0m
+[1.497s] [ 12%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/robot_status__functions.c.o[0m
+[1.497s] [ 12%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/friend_location__functions.c.o[0m
+[1.497s] [ 14%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/game_status__functions.c.o[0m
+[1.497s] [ 14%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_c.dir/rosidl_generator_c/rm_decision_interfaces/msg/detail/rfid__functions.c.o[0m
+[1.547s] [ 16%] [32m[1mLinking C shared library librm_decision_interfaces__rosidl_generator_c.so[0m
+[1.582s] [ 16%] Built target rm_decision_interfaces__rosidl_generator_c
+[1.592s] [ 18%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.592s] [ 18%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.593s] [ 19%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.801s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_cpp[0m
+[1.817s] [ 21%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/decision_num__type_support.cpp.o[0m
+[1.817s] [ 21%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/rfid__type_support.cpp.o[0m
+[1.817s] [ 22%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/robot_status__type_support.cpp.o[0m
+[1.818s] [ 25%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/all_robot_hp__type_support.cpp.o[0m
+[1.818s] [ 25%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/ally_robot_hp__type_support.cpp.o[0m
+[1.818s] [ 26%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/friend_location__type_support.cpp.o[0m
+[1.818s] [ 27%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/game_status__type_support.cpp.o[0m
+[1.819s] [ 28%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/rm_decision_interfaces/msg/robot_control__type_support.cpp.o[0m
+[1.840s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_introspection_cpp[0m
+[1.858s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/robot_control__type_support.cpp.o[0m
+[1.859s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/friend_location__type_support.cpp.o[0m
+[1.859s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/all_robot_hp__type_support.cpp.o[0m
+[1.859s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/game_status__type_support.cpp.o[0m
+[1.859s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/ally_robot_hp__type_support.cpp.o[0m
+[1.859s] [ 35%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/robot_status__type_support.cpp.o[0m
+[1.859s] [ 36%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/rfid__type_support.cpp.o[0m
+[1.860s] [ 37%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/rm_decision_interfaces/msg/detail/decision_num__type_support.cpp.o[0m
+[1.900s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[1.922s] [ 39%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/all_robot_hp__type_support.cpp.o[0m
+[1.922s] [ 40%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/ally_robot_hp__type_support.cpp.o[0m
+[1.923s] [ 41%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/robot_status__type_support.cpp.o[0m
+[1.924s] [ 42%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/friend_location__type_support.cpp.o[0m
+[1.932s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_c[0m
+[1.942s] [ 43%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/game_status__type_support.cpp.o[0m
+[1.942s] [ 44%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/rfid__type_support.cpp.o[0m
+[1.944s] [ 45%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/decision_num__type_support.cpp.o[0m
+[1.948s] [ 47%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/rm_decision_interfaces/msg/detail/dds_fastrtps/robot_control__type_support.cpp.o[0m
+[1.957s] [ 48%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/all_robot_hp__type_support.cpp.o[0m
+[1.968s] [ 49%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/ally_robot_hp__type_support.cpp.o[0m
+[2.000s] [ 50%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/robot_status__type_support.cpp.o[0m
+[2.020s] [ 51%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/friend_location__type_support.cpp.o[0m
+[2.040s] [ 52%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/game_status__type_support.cpp.o[0m
+[2.040s] [ 54%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/rfid__type_support.cpp.o[0m
+[2.055s] [ 55%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/robot_control__type_support.cpp.o[0m
+[2.065s] [ 56%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/rm_decision_interfaces/msg/decision_num__type_support.cpp.o[0m
+[2.098s] [ 57%] [32m[1mLinking CXX shared library librm_decision_interfaces__rosidl_typesupport_c.so[0m
+[2.099s] [ 58%] [32m[1mLinking CXX shared library librm_decision_interfaces__rosidl_typesupport_cpp.so[0m
+[2.108s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_fastrtps_c[0m
+[2.128s] [ 62%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/ally_robot_hp__type_support_c.cpp.o[0m
+[2.128s] [ 62%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/all_robot_hp__type_support_c.cpp.o[0m
+[2.128s] [ 62%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/friend_location__type_support_c.cpp.o[0m
+[2.129s] [ 63%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/robot_status__type_support_c.cpp.o[0m
+[2.129s] [ 64%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/rfid__type_support_c.cpp.o[0m
+[2.130s] [ 65%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/game_status__type_support_c.cpp.o[0m
+[2.130s] [ 66%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/decision_num__type_support_c.cpp.o[0m
+[2.130s] [ 67%] [32mBuilding CXX object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/rm_decision_interfaces/msg/detail/robot_control__type_support_c.cpp.o[0m
+[2.146s] [ 67%] Built target rm_decision_interfaces__rosidl_typesupport_c
+[2.153s] [ 67%] Built target rm_decision_interfaces__rosidl_typesupport_cpp
+[2.205s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_introspection_c[0m
+[2.216s] [ 68%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/friend_location__type_support.c.o[0m
+[2.217s] [ 70%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/game_status__type_support.c.o[0m
+[2.219s] [ 71%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/all_robot_hp__type_support.c.o[0m
+[2.219s] [ 72%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/ally_robot_hp__type_support.c.o[0m
+[2.220s] [ 73%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/rfid__type_support.c.o[0m
+[2.220s] [ 74%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/robot_control__type_support.c.o[0m
+[2.224s] [ 75%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/robot_status__type_support.c.o[0m
+[2.242s] [ 77%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/rm_decision_interfaces/msg/detail/decision_num__type_support.c.o[0m
+[2.262s] [ 78%] [32m[1mLinking CXX shared library librm_decision_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[2.278s] [ 79%] [32m[1mLinking C shared library librm_decision_interfaces__rosidl_typesupport_introspection_c.so[0m
+[2.301s] [ 79%] Built target rm_decision_interfaces__rosidl_typesupport_introspection_cpp
+[2.315s] [ 79%] Built target rm_decision_interfaces__rosidl_typesupport_introspection_c
+[2.383s] [ 80%] [32m[1mLinking CXX shared library librm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.441s] [ 80%] Built target rm_decision_interfaces__rosidl_typesupport_fastrtps_cpp
+[2.455s] [ 81%] [32m[1mLinking CXX shared library librm_decision_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[2.511s] [ 81%] Built target rm_decision_interfaces__rosidl_typesupport_fastrtps_c
+[2.527s] [ 81%] Built target rm_decision_interfaces
+[2.553s] [ 82%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.280s] [ 82%] Built target rm_decision_interfaces__py
+[3.289s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_generator_py[0m
+[3.303s] [ 83%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_ally_robot_hp_s.c.o[0m
+[3.304s] [ 85%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_all_robot_hp_s.c.o[0m
+[3.304s] [ 86%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_decision_num_s.c.o[0m
+[3.304s] [ 87%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_robot_control_s.c.o[0m
+[3.305s] [ 88%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_game_status_s.c.o[0m
+[3.305s] [ 89%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_rfid_s.c.o[0m
+[3.305s] [ 91%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_robot_status_s.c.o[0m
+[3.306s] [ 91%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_generator_py.dir/rosidl_generator_py/rm_decision_interfaces/msg/_friend_location_s.c.o[0m
+[3.387s] [ 93%] [32m[1mLinking C shared library rosidl_generator_py/rm_decision_interfaces/librm_decision_interfaces__rosidl_generator_py.so[0m
+[3.417s] [ 93%] Built target rm_decision_interfaces__rosidl_generator_py
+[3.428s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[3.429s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[3.429s] [35m[1mConsolidate compiler generated dependencies of target rm_decision_interfaces__rosidl_typesupport_c__pyext[0m
+[3.441s] [ 94%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.441s] [ 95%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.442s] [ 96%] [32mBuilding C object CMakeFiles/rm_decision_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[3.517s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.517s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.522s] [100%] [32m[1mLinking C shared library rosidl_generator_py/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[3.546s] [100%] Built target rm_decision_interfaces__rosidl_typesupport_introspection_c__pyext
+[3.549s] [100%] Built target rm_decision_interfaces__rosidl_typesupport_c__pyext
+[3.553s] [100%] Built target rm_decision_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[3.563s] Invoked command in '/workspaces/auto_sentry/build/rm_decision_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/rm_decision_interfaces -- -j28 -l28
+[3.751s] Invoking command in '/workspaces/auto_sentry/build/rm_decision_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_decision_interfaces
+[3.757s] -- Install configuration: ""
+[3.758s] -- Execute custom install script
+[3.758s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/ament_index/resource_index/rosidl_interfaces/rm_decision_interfaces
+[3.758s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/all_robot_hp.h
+[3.758s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/ally_robot_hp.h
+[3.765s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/decision_num.h
+[3.765s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__functions.h
+[3.765s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__struct.h
+[3.765s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__type_support.h
+[3.765s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__functions.h
+[3.771s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__struct.h
+[3.778s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__type_support.h
+[3.783s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__functions.h
+[3.783s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__struct.h
+[3.783s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__functions.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__struct.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__functions.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__struct.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__functions.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__struct.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__functions.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__struct.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__functions.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__struct.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__type_support.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/friend_location.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/game_status.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rfid.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/robot_control.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/robot_status.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rosidl_generator_c__visibility_control.h
+[3.784s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/library_path.sh
+[3.785s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/library_path.dsv
+[3.785s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__rosidl_typesupport_fastrtps_c.h
+[3.785s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_c.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[3.792s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__rosidl_typesupport_introspection_c.h
+[3.792s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_c.h
+[3.799s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[3.800s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/all_robot_hp.hpp
+[3.800s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/ally_robot_hp.hpp
+[3.806s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/decision_num.hpp
+[3.806s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__builder.hpp
+[3.806s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__struct.hpp
+[3.806s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__traits.hpp
+[3.806s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__builder.hpp
+[3.813s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__struct.hpp
+[3.819s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__traits.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__builder.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__struct.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__traits.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__builder.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__struct.hpp
+[3.825s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__traits.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__builder.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__struct.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__traits.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__builder.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__struct.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__traits.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__builder.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__struct.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__traits.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__builder.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__struct.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__traits.hpp
+[3.826s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/friend_location.hpp
+[3.827s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/game_status.hpp
+[3.827s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rfid.hpp
+[3.827s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/robot_control.hpp
+[3.827s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/robot_status.hpp
+[3.828s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__rosidl_typesupport_fastrtps_cpp.hpp
+[3.828s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__rosidl_typesupport_fastrtps_cpp.hpp
+[3.836s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[3.837s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/all_robot_hp__rosidl_typesupport_introspection_cpp.hpp
+[3.837s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/ally_robot_hp__rosidl_typesupport_introspection_cpp.hpp
+[3.843s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/decision_num__rosidl_typesupport_introspection_cpp.hpp
+[3.843s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/friend_location__rosidl_typesupport_introspection_cpp.hpp
+[3.843s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/game_status__rosidl_typesupport_introspection_cpp.hpp
+[3.843s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/rfid__rosidl_typesupport_introspection_cpp.hpp
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_control__rosidl_typesupport_introspection_cpp.hpp
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/include/rm_decision_interfaces/rm_decision_interfaces/msg/detail/robot_status__rosidl_typesupport_introspection_cpp.hpp
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/pythonpath.sh
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/pythonpath.dsv
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/__init__.py
+[3.844s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_c.c
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/_rm_decision_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/librm_decision_interfaces__rosidl_generator_py.so
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/__init__.py
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_all_robot_hp.py
+[3.845s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_all_robot_hp_s.c
+[3.845s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_ally_robot_hp.py
+[3.851s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_ally_robot_hp_s.c
+[3.857s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_decision_num.py
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_decision_num_s.c
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_friend_location.py
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_friend_location_s.c
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_game_status.py
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_game_status_s.c
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_rfid.py
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_rfid_s.c
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_control.py
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_control_s.c
+[3.858s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_status.py
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_status_s.c
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[3.859s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/rm_decision_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[3.860s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/AllRobotHP.idl
+[3.860s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/AllyRobotHP.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RobotStatus.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/FriendLocation.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/GameStatus.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RFID.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RobotControl.idl
+[3.867s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/DecisionNum.idl
+[3.868s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/AllRobotHP.msg
+[3.868s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/AllyRobotHP.msg
+[3.873s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RobotStatus.msg
+[3.873s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/FriendLocation.msg
+[3.873s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/GameStatus.msg
+[3.873s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RFID.msg
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/RobotControl.msg
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/msg/DecisionNum.msg
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/ament_index/resource_index/package_run_dependencies/rm_decision_interfaces
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/ament_index/resource_index/parent_prefix_path/rm_decision_interfaces
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/ament_prefix_path.sh
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/ament_prefix_path.dsv
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/path.sh
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/environment/path.dsv
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/local_setup.bash
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/local_setup.sh
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/local_setup.zsh
+[3.874s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/local_setup.dsv
+[3.874s] -- Symlinking: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/package.dsv
+[3.880s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/ament_index/resource_index/packages/rm_decision_interfaces
+[3.880s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rosidl_cmake-extras.cmake
+[3.880s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfacesConfig.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfacesConfig-version.cmake
+[3.881s] -- Up-to-date symlink: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/package.xml
+[3.881s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_generator_c.so
+[3.881s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_generator_c.so" to ""
+[3.881s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_fastrtps_c.so
+[3.882s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[3.882s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_introspection_c.so
+[3.882s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[3.882s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_c.so
+[3.882s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_c.so" to ""
+[3.882s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[3.882s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[3.882s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_introspection_cpp.so
+[3.882s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[3.883s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_cpp.so
+[3.883s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_typesupport_cpp.so" to ""
+[3.914s] Listing '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/__init__.py'...
+[3.914s] Listing '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/__init__.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_all_robot_hp.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_ally_robot_hp.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_decision_num.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_friend_location.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_game_status.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_rfid.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_control.py'...
+[3.914s] Compiling '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages/rm_decision_interfaces/msg/_robot_status.py'...
+[3.918s] -- Installing: /workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_generator_py.so
+[3.918s] -- Set runtime path of "/workspaces/auto_sentry/install/rm_decision_interfaces/lib/librm_decision_interfaces__rosidl_generator_py.so" to ""
+[3.918s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_generator_cExport.cmake
+[3.918s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_generator_cExport-noconfig.cmake
+[3.918s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_cExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_generator_cppExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_cppExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/rm_decision_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_generator_pyExport.cmake
+[3.919s] -- Up-to-date: /workspaces/auto_sentry/install/rm_decision_interfaces/share/rm_decision_interfaces/cmake/export_rm_decision_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[3.921s] Invoked command in '/workspaces/auto_sentry/build/rm_decision_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/rm_decision_interfaces

@@ -1,0 +1,79 @@
+[0.000000] (-) TimerEvent: {}
+[0.000472] (-) JobUnselected: {'identifier': 'armor_detector'}
+[0.000635] (-) JobUnselected: {'identifier': 'armor_tracker'}
+[0.000665] (-) JobUnselected: {'identifier': 'asio_cmake_module'}
+[0.000691] (-) JobUnselected: {'identifier': 'auto_aim_interfaces'}
+[0.000808] (-) JobUnselected: {'identifier': 'behaviortree_cpp'}
+[0.000836] (-) JobUnselected: {'identifier': 'behaviortree_ros2'}
+[0.000859] (-) JobUnselected: {'identifier': 'btcpp_ros2_interfaces'}
+[0.000881] (-) JobUnselected: {'identifier': 'btcpp_ros2_samples'}
+[0.001056] (-) JobUnselected: {'identifier': 'costmap_converter'}
+[0.001081] (-) JobUnselected: {'identifier': 'costmap_converter_msgs'}
+[0.001134] (-) JobUnselected: {'identifier': 'fake_vel_transform'}
+[0.001165] (-) JobUnselected: {'identifier': 'fast_lio'}
+[0.001224] (-) JobUnselected: {'identifier': 'game_status_tester'}
+[0.001248] (-) JobUnselected: {'identifier': 'hik_camera'}
+[0.001269] (-) JobUnselected: {'identifier': 'icp_registration'}
+[0.001300] (-) JobUnselected: {'identifier': 'imu_complementary_filter'}
+[0.001324] (-) JobUnselected: {'identifier': 'io_context'}
+[0.001377] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation'}
+[0.001402] (-) JobUnselected: {'identifier': 'linefit_ground_segmentation_ros'}
+[0.001423] (-) JobUnselected: {'identifier': 'livox_ros_driver2'}
+[0.001489] (-) JobUnselected: {'identifier': 'pb_rm_interfaces'}
+[0.001525] (-) JobUnselected: {'identifier': 'pb_rm_simulation'}
+[0.001541] (-) JobUnselected: {'identifier': 'point_lio'}
+[0.001555] (-) JobUnselected: {'identifier': 'pointcloud_to_laserscan'}
+[0.001567] (-) JobUnselected: {'identifier': 'rm_auto_aim'}
+[0.001578] (-) JobUnselected: {'identifier': 'rm_decision_interfaces'}
+[0.001600] (-) JobUnselected: {'identifier': 'rm_gimbal_description'}
+[0.001641] (-) JobUnselected: {'identifier': 'rm_nav_bringup'}
+[0.001654] (-) JobUnselected: {'identifier': 'rm_navigation'}
+[0.001670] (-) JobUnselected: {'identifier': 'rm_rune_detector'}
+[0.001782] (-) JobUnselected: {'identifier': 'rm_serial_driver'}
+[0.001821] (-) JobUnselected: {'identifier': 'rm_vision_bringup'}
+[0.001848] (-) JobUnselected: {'identifier': 'ros2_livox_simulation'}
+[0.001874] (-) JobUnselected: {'identifier': 'serial_driver'}
+[0.001915] (-) JobUnselected: {'identifier': 'standard_robot_pp_ros2'}
+[0.001928] (-) JobUnselected: {'identifier': 'teb_local_planner'}
+[0.001948] (-) JobUnselected: {'identifier': 'teb_msgs'}
+[0.001961] (-) JobUnselected: {'identifier': 'udp_driver'}
+[0.001972] (-) JobUnselected: {'identifier': 'udp_msgs'}
+[0.002007] (rm_behavior_tree) JobQueued: {'identifier': 'rm_behavior_tree', 'dependencies': OrderedDict([('auto_aim_interfaces', '/workspaces/auto_sentry/install/auto_aim_interfaces'), ('behaviortree_cpp', '/workspaces/auto_sentry/install/behaviortree_cpp'), ('rm_decision_interfaces', '/workspaces/auto_sentry/install/rm_decision_interfaces'), ('behaviortree_ros2', '/workspaces/auto_sentry/install/behaviortree_ros2')])}
+[0.002047] (rm_behavior_tree) JobStarted: {'identifier': 'rm_behavior_tree'}
+[0.015363] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'cmake'}
+[0.017380] (rm_behavior_tree) JobProgress: {'identifier': 'rm_behavior_tree', 'progress': 'build'}
+[0.018195] (rm_behavior_tree) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/auto_sentry/build/rm_behavior_tree', '--', '-j28', '-l28'], 'cwd': '/workspaces/auto_sentry/build/rm_behavior_tree', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US:en'), ('HOSTNAME', 'zyaire-Legion-Y7000P-IRX9'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/lib:/workspaces/auto_sentry/install/behaviortree_cpp/lib:/workspaces/auto_sentry/install/auto_aim_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/opt/openvdb_vendor/lib:/opt/ros/humble/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/helpers/browser.sh'), ('HOME', '/root'), ('OLDPWD', '/workspaces/auto_sentry'), ('TERM_PROGRAM_VERSION', '1.105.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-df13f356-21d0-4983-9dee-2e92481bff41.sock'), ('ZSH', '/root/.oh-my-zsh'), ('LSCOLORS', 'Gxfxcxdxbxegedabagacad'), ('PAGER', 'more'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('REMOTE_CONTAINERS', 'true'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('LOGNAME', 'root'), ('_', '/usr/bin/colcon'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('ROS_VERSION', '2'), ('USER_ZDOTDIR', '/root'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('CODELLDB_LAUNCH_CONNECT_FILE', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/vadimcn.vscode-lldb/rpcaddress.txt'), ('PATH', '/workspaces/auto_sentry/install/behaviortree_cpp/bin:/root/.vscode-server/extensions/vadimcn.vscode-lldb-1.12.0/bin:/vscode/vscode-server/bin/linux-x64/7d842fb85a0275a4a8e4d7e040d2625abbf7f084/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/bundled/scripts/noConfigScripts:/root/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand'), ('DISPLAY', ':0'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock","/root/.gnupg/S.gpg-agent"]'), ('LANG', 'en_US.UTF-8'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/root/.vscode-server/extensions/ms-python.debugpy-2025.16.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-2e3fdfac1b899528.txt'), ('PYTHONSTARTUP', '/root/.vscode-server/data/User/workspaceStorage/0775b367d5ba38951e9949dabd6e39b9/ms-python.python/pythonrc.py'), ('VSCODE_INJECTION', '1'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('TERM_PROGRAM', 'vscode'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-a856a013df.sock'), ('AMENT_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-05e82b15-101c-49ce-a72f-03c2e5c5dac7.sock'), ('SHELL', '/bin/zsh'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('LC_ALL', 'en_US.UTF-8'), ('PWD', '/workspaces/auto_sentry/build/rm_behavior_tree'), ('ZDOTDIR', '/root'), ('PYTHONPATH', '/workspaces/auto_sentry/install/rm_decision_interfaces/local/lib/python3.10/dist-packages:/workspaces/auto_sentry/install/auto_aim_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/workspaces/auto_sentry/install/behaviortree_ros2:/workspaces/auto_sentry/install/rm_decision_interfaces:/workspaces/auto_sentry/install/behaviortree_cpp:/workspaces/auto_sentry/install/auto_aim_interfaces:/opt/ros/humble')]), 'shell': False}
+[0.052956] (rm_behavior_tree) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target rm_behavior_tree\x1b[0m\n'}
+[0.062820] (rm_behavior_tree) StdoutLine: {'line': b'[  4%] Built target decision_switch\n'}
+[0.066916] (rm_behavior_tree) StdoutLine: {'line': b'[  9%] Built target rm_behavior_tree\n'}
+[0.088141] (rm_behavior_tree) StdoutLine: {'line': b'[ 14%] Built target rate_controller\n'}
+[0.099926] (-) TimerEvent: {}
+[0.125406] (rm_behavior_tree) StdoutLine: {'line': b'[ 19%] Built target is_game_time\n'}
+[0.160866] (rm_behavior_tree) StdoutLine: {'line': b'[ 23%] Built target is_status_ok\n'}
+[0.183033] (rm_behavior_tree) StdoutLine: {'line': b'[ 28%] Built target is_attacked\n'}
+[0.200177] (-) TimerEvent: {}
+[0.208771] (rm_behavior_tree) StdoutLine: {'line': b'[ 33%] Built target is_friend_ok\n'}
+[0.243808] (rm_behavior_tree) StdoutLine: {'line': b'[ 38%] Built target is_outpost_ok\n'}
+[0.280135] (rm_behavior_tree) StdoutLine: {'line': b'[ 42%] Built target is_detect_enemy\n'}
+[0.300366] (-) TimerEvent: {}
+[0.317775] (rm_behavior_tree) StdoutLine: {'line': b'[ 47%] Built target send_goal\n'}
+[0.343482] (rm_behavior_tree) StdoutLine: {'line': b'[ 52%] Built target sub_all_robot_hp\n'}
+[0.367537] (rm_behavior_tree) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/sub_ally_robot_hp.dir/plugins/action/sub_ally_robot_hp.cpp.o\x1b[0m\n'}
+[0.400476] (-) TimerEvent: {}
+[0.500689] (-) TimerEvent: {}
+[0.600987] (-) TimerEvent: {}
+[0.701321] (-) TimerEvent: {}
+[0.801578] (-) TimerEvent: {}
+[0.901823] (-) TimerEvent: {}
+[0.911738] (rm_behavior_tree) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/sub_ally_robot_hp.cpp:1\x1b[m\x1b[K:\n'}
+[0.911947] (rm_behavior_tree) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_ally_robot_hp.hpp:5:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Krm_decision_interfaces/msg/ally_robot_hp.hpp: No such file or directory\n'}
+[0.912032] (rm_behavior_tree) StderrLine: {'line': b'    5 | #include \x1b[01;31m\x1b[K"rm_decision_interfaces/msg/ally_robot_hp.hpp"\x1b[m\x1b[K\n'}
+[0.912110] (rm_behavior_tree) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[0.912182] (rm_behavior_tree) StderrLine: {'line': b'compilation terminated.\n'}
+[0.918335] (rm_behavior_tree) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/sub_ally_robot_hp.dir/build.make:76: CMakeFiles/sub_ally_robot_hp.dir/plugins/action/sub_ally_robot_hp.cpp.o] Error 1\n'}
+[0.918696] (rm_behavior_tree) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/sub_ally_robot_hp.dir/all] Error 2\n'}
+[0.918806] (rm_behavior_tree) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[0.920466] (rm_behavior_tree) CommandEnded: {'returncode': 2}
+[1.002010] (-) TimerEvent: {}
+[1.072664] (rm_behavior_tree) JobEnded: {'identifier': 'rm_behavior_tree', 'rc': 2}
+[1.083138] (-) EventReactorShutdown: {}

@@ -1,0 +1,1 @@
+/workspaces/auto_sentry/build/btcpp_ros2_samples/ament_cmake_core/btcpp_ros2_samplesConfig-version.cmake

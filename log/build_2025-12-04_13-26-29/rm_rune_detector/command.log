@@ -1,0 +1,1 @@
+Invoking command in '/workspaces/auto_sentry/build/rm_rune_detector': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_rune_detector -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/rm_rune_detector

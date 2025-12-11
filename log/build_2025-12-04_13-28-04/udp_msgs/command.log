@@ -1,0 +1,4 @@
+Invoking command in '/workspaces/auto_sentry/build/udp_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/udp_msgs -- -j28 -l28
+Invoked command in '/workspaces/auto_sentry/build/udp_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /workspaces/auto_sentry/build/udp_msgs -- -j28 -l28
+Invoking command in '/workspaces/auto_sentry/build/udp_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/udp_msgs
+Invoked command in '/workspaces/auto_sentry/build/udp_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /workspaces/auto_sentry/build/udp_msgs
