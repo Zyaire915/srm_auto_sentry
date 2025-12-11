@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_generator_py/pb_rm_interfaces/msg/_ground_robot_position.py

@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_typesupport_introspection_c/auto_aim_interfaces/msg/detail/tracker_info__rosidl_typesupport_introspection_c.h

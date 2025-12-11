@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/livox_ros_driver2/rosidl_typesupport_fastrtps_c/livox_ros_driver2/msg/rosidl_typesupport_fastrtps_c__visibility_control.h

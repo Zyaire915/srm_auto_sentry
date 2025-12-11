@@ -1,6 +1,0 @@
-{
-  "package_name": "fast_lio",
-  "non_idl_tuples": [
-    "/workspaces/auto_sentry/src/pb_rmsimulation/src/rm_localization/FAST_LIO:msg/Pose6D.msg"
-  ]
-}

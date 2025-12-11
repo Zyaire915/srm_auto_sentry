@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_generator_c/pb_rm_interfaces/msg/event_data.h

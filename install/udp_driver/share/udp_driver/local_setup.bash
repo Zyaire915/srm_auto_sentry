@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/udp_driver/ament_cmake_environment_hooks/local_setup.bash

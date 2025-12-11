@@ -1,1 +1,0 @@
-Invoking command in '/workspaces/auto_sentry/build/livox_ros_driver2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/pb_rmsimulation/src/rm_driver/livox_ros_driver2/src -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/livox_ros_driver2

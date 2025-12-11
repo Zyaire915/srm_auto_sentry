@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/game_status_tester/ament_cmake_core/game_status_testerConfig.cmake

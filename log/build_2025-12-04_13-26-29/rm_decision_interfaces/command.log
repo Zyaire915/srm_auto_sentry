@@ -1,1 +1,0 @@
-Invoking command in '/workspaces/auto_sentry/build/rm_decision_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/rm_behavior_tree-master/rm_decision_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/rm_decision_interfaces

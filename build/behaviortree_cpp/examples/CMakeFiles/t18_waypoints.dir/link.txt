@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/t18_waypoints.dir/t18_waypoints.cpp.o -o t18_waypoints  -Wl,-rpath,/workspaces/auto_sentry/build/behaviortree_cpp:/opt/ros/humble/lib ../sample_nodes/lib/libbt_sample_nodes.a ../libbehaviortree_cpp.so /opt/ros/humble/lib/libament_index_cpp.so 

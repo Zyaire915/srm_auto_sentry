@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_cpp/rm_decision_interfaces/msg/detail/all_robot_hp__builder.hpp

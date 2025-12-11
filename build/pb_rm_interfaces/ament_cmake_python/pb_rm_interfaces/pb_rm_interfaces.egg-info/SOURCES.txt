@@ -1,6 +1,0 @@
-setup.py
-pb_rm_interfaces/__init__.py
-pb_rm_interfaces.egg-info/PKG-INFO
-pb_rm_interfaces.egg-info/SOURCES.txt
-pb_rm_interfaces.egg-info/dependency_links.txt
-pb_rm_interfaces.egg-info/top_level.txt

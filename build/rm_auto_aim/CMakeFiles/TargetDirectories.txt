@@ -1,9 +1,0 @@
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/uninstall.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/rm_auto_aim_uninstall.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/test.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/edit_cache.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/rebuild_cache.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/list_install_components.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/install.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/install/local.dir
-/workspaces/auto_sentry/build/rm_auto_aim/CMakeFiles/install/strip.dir

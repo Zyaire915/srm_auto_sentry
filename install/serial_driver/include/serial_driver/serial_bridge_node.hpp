@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/transport_drivers/serial_driver/include/serial_driver/serial_bridge_node.hpp

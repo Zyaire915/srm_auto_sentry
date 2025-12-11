@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/serial_driver/ament_cmake_core/serial_driverConfig-version.cmake

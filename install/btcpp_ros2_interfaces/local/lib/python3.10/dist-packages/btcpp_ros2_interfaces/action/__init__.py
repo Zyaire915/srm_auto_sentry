@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/btcpp_ros2_interfaces/rosidl_generator_py/btcpp_ros2_interfaces/action/__init__.py

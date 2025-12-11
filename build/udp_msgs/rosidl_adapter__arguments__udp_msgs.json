@@ -1,8 +1,0 @@
-{
-  "package_name": "udp_msgs",
-  "non_idl_tuples": [
-    "/workspaces/auto_sentry/src/transport_drivers/udp_msgs:msg/UdpPacket.msg",
-    "/workspaces/auto_sentry/src/transport_drivers/udp_msgs:srv/UdpSend.srv",
-    "/workspaces/auto_sentry/src/transport_drivers/udp_msgs:srv/UdpSocket.srv"
-  ]
-}

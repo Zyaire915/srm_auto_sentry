@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_auto_aim/auto_aim_interfaces/msg/DebugLights.msg

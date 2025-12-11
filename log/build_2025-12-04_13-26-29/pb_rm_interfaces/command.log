@@ -1,1 +1,0 @@
-Invoking command in '/workspaces/auto_sentry/build/pb_rm_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/pb_rm_interfaces

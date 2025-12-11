@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/teb_msgs/rosidl_generator_py/teb_msgs/msg/_trajectory_msg_s.c

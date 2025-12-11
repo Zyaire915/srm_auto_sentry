@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/pb_rm_interfaces/msg/RobotStatus.msg

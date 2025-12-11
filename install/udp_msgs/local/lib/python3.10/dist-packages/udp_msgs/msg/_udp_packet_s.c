@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/udp_msgs/rosidl_generator_py/udp_msgs/msg/_udp_packet_s.c

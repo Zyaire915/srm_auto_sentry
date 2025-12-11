@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/udp_msgs/rosidl_generator_c/udp_msgs/srv/udp_socket.h

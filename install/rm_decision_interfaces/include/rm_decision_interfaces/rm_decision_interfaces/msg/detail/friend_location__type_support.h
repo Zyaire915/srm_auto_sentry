@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_c/rm_decision_interfaces/msg/detail/friend_location__type_support.h

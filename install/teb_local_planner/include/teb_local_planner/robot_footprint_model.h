@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/pb_rmsimulation/src/rm_navigation/teb_local_planner/teb_local_planner/include/teb_local_planner/robot_footprint_model.h

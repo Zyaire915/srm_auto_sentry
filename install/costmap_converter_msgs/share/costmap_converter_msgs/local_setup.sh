@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/costmap_converter_msgs/ament_cmake_environment_hooks/local_setup.sh

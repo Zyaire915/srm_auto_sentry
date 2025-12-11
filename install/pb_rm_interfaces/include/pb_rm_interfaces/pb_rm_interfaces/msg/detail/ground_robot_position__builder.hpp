@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_generator_cpp/pb_rm_interfaces/msg/detail/ground_robot_position__builder.hpp

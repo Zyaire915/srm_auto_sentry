@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/ros2_livox_simulation/ament_cmake_environment_hooks/local_setup.zsh

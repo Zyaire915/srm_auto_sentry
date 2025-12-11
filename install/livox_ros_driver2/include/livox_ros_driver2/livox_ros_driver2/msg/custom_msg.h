@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/livox_ros_driver2/rosidl_generator_c/livox_ros_driver2/msg/custom_msg.h

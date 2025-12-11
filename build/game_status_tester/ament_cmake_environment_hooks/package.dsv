@@ -1,4 +1,0 @@
-source;share/game_status_tester/local_setup.bash
-source;share/game_status_tester/local_setup.dsv
-source;share/game_status_tester/local_setup.sh
-source;share/game_status_tester/local_setup.zsh

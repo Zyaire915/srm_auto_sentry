@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/rm_decision_interfaces/ament_cmake_environment_hooks/local_setup.bash

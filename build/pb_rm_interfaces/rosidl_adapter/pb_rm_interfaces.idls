@@ -1,7 +1,0 @@
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/EventData.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/GameRobotHP.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/GameStatus.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/GroundRobotPosition.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/RfidStatus.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/RobotStatus.idl
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_adapter/pb_rm_interfaces:msg/AllyRobotHP.idl

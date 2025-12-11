@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/PB_RM_Vision-master/src/rm_rune_detector/launch/rm_rune_detector.launch.py

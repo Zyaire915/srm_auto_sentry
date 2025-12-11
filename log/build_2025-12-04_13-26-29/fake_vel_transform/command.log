@@ -1,1 +1,0 @@
-Invoking command in '/workspaces/auto_sentry/build/fake_vel_transform': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /workspaces/auto_sentry/src/pb_rmsimulation/src/rm_navigation/fake_vel_transform -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspaces/auto_sentry/install/fake_vel_transform

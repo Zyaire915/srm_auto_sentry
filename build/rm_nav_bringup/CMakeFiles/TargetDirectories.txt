@@ -1,9 +1,0 @@
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/uninstall.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/rm_nav_bringup_uninstall.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/test.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/edit_cache.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/rebuild_cache.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/list_install_components.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/install.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/install/local.dir
-/workspaces/auto_sentry/build/rm_nav_bringup/CMakeFiles/install/strip.dir

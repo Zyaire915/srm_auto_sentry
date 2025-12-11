@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/fast_lio/rosidl_generator_py/fast_lio/__init__.py

@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/workspaces/auto_sentry/build/standard_robot_pp_ros2/standard_robot_pp_ros2_node" "TARGETS" "standard_robot_pp_ros2_node" "DESTINATION" "lib/standard_robot_pp_ros2")

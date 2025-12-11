@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/rm_decision_interfaces/rosidl_generator_c/rm_decision_interfaces/msg/detail/robot_status__functions.h

@@ -1,8 +1,0 @@
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Armor.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Armors.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/Target.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugLight.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugLights.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugArmor.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/DebugArmors.idl
-/workspaces/auto_sentry/build/auto_aim_interfaces/rosidl_adapter/auto_aim_interfaces:msg/TrackerInfo.idl

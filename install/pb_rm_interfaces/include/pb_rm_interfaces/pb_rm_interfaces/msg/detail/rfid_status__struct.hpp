@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/pb_rm_interfaces/rosidl_generator_cpp/pb_rm_interfaces/msg/detail/rfid_status__struct.hpp

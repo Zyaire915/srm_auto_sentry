@@ -1,9 +1,0 @@
-In file included from [01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/plugins/action/sub_ally_robot_hp.cpp:1[m[K:
-[01m[K/workspaces/auto_sentry/src/rm_behavior_tree-master/rm_behavior_tree/include/rm_behavior_tree/plugins/action/sub_ally_robot_hp.hpp:5:10:[m[K [01;31m[Kfatal error: [m[Krm_decision_interfaces/msg/ally_robot_hp.hpp: No such file or directory
-    5 | #include [01;31m[K"rm_decision_interfaces/msg/ally_robot_hp.hpp"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/sub_ally_robot_hp.dir/build.make:76: CMakeFiles/sub_ally_robot_hp.dir/plugins/action/sub_ally_robot_hp.cpp.o] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:508: CMakeFiles/sub_ally_robot_hp.dir/all] Error 2
-gmake[1]: *** Waiting for unfinished jobs....
-gmake: *** [Makefile:146: all] Error 2

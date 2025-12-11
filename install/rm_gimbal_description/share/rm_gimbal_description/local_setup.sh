@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/rm_gimbal_description/ament_cmake_environment_hooks/local_setup.sh

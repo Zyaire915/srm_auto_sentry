@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/standard_robot_pp_ros2-master/src/standard_robot_pp_ros2/include/standard_robot_pp_ros2.hpp

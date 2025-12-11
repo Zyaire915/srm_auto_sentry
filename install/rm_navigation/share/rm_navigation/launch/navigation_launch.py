@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/pb_rmsimulation/src/rm_navigation/rm_navigation/launch/navigation_launch.py

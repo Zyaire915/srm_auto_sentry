@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/src/pb_rmsimulation/src/rm_driver/livox_ros_driver2/src/launch/msg_MID360_launch.py

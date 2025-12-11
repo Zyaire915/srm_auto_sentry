@@ -1,1 +1,0 @@
-/workspaces/auto_sentry/build/udp_msgs/rosidl_typesupport_introspection_c/udp_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
