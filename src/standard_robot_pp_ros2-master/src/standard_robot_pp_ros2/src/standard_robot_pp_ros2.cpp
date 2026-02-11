@@ -235,7 +235,7 @@ void StandardRobotPpRos2Node::receiveData()
 
       // FIX: 必须读满 4 字节，否则视为坏帧
       if (header_len != 4) {
-        RCLCPP_WARN(get_logger(), "Header fragment error, expected 4 got %d", header_len);
+        // RCLCPP_WARN(get_logger(), "Header fragment error, expected 4 got %d", header_len);
         continue;
       }
 
@@ -250,11 +250,11 @@ void StandardRobotPpRos2Node::receiveData()
       bool crc8_ok = verify_CRC8_check_sum(header_frame_buf.data(), header_frame_buf.size());
       // RCLCPP_DEBUG(get_logger(), "CRC8:0x%02X",);
       if (!crc8_ok) {
-        RCLCPP_WARN(
-          get_logger(),
-          "Receive Header CRC8 FAIL! SOF:0x%02X, LenL:0x%02X, LenH:0x%02X, Seq:%d, RecvCRC:0x%02X",
-          header_frame_buf[0], header_frame_buf[1], header_frame_buf[2], header_frame_buf[3],
-          received_crc8);
+        // RCLCPP_WARN(
+        //   get_logger(),
+        //   "Receive Header CRC8 FAIL! SOF:0x%02X, LenL:0x%02X, LenH:0x%02X, Seq:%d, RecvCRC:0x%02X",
+        //   header_frame_buf[0], header_frame_buf[1], header_frame_buf[2], header_frame_buf[3],
+        //   received_crc8);
         continue;
       }
       RCLCPP_DEBUG(get_logger(), "Receive Header CRC8 OK!");
@@ -287,7 +287,7 @@ void StandardRobotPpRos2Node::receiveData()
       int body_len_to_read = header_frame.data_length + 2;
 
       if (body_len_to_read > 2048 || body_len_to_read < 0) {
-        RCLCPP_WARN(get_logger(), "Invalid Body Len: %d", body_len_to_read);
+        // RCLCPP_WARN(get_logger(), "Invalid Body Len: %d", body_len_to_read);
         continue;
       }
 
@@ -312,9 +312,9 @@ void StandardRobotPpRos2Node::receiveData()
       // 6. 构造整包
       full_packet.insert(full_packet.end(), data_buf.begin(), data_buf.end());
 
-      // --- DEBUG: 打印原始 Hex 数据 ---
-      printHex("RECV", cmd_id, full_packet);  // 调试时打开
-      // -----------------------------
+      // // --- DEBUG: 打印原始 Hex 数据 ---
+      // printHex("RECV", cmd_id, full_packet);  // 调试时打开
+      // // -----------------------------
 
       // 7. CRC16校验
       bool crc16_ok = verify_CRC16_check_sum(full_packet.data(), full_packet.size());
@@ -322,9 +322,9 @@ void StandardRobotPpRos2Node::receiveData()
                                 full_packet[full_packet.size() - 2];
 
       if (!crc16_ok) {
-        RCLCPP_WARN(
-          get_logger(), "Receive CRC16 FAIL! CmdID: 0x%04X, TotalLen: %lu, RecvCRC: 0x%04X", cmd_id,
-          full_packet.size(), received_crc16);
+        // RCLCPP_WARN(
+        //   get_logger(), "Receive CRC16 FAIL! CmdID: 0x%04X, TotalLen: %lu, RecvCRC: 0x%04X", cmd_id,
+        //   full_packet.size(), received_crc16);
         continue;
       }
       // 8. 解析数据
@@ -355,7 +355,7 @@ void StandardRobotPpRos2Node::receiveData()
           publishRobotStatus(robot_status_data);
         } break;
         default: {
-          RCLCPP_WARN(get_logger(), "Unprocessed id: 0x%04X", cmd_id);
+          // RCLCPP_WARN(get_logger(), "Unprocessed id: 0x%04X", cmd_id);
         } break;
       }
     } catch (const std::exception & ex) {
@@ -607,12 +607,12 @@ void StandardRobotPpRos2Node::sendData()
       append_CRC8_check_sum(
         reinterpret_cast<unsigned char *>(&local_data_copy), sizeof(HeaderFrame));
 
-      // --- DEBUG: 打印帧头校验信息 ---
-      RCLCPP_INFO(
-        get_logger(), "Send Header CRC8 OK! SOF:0x%02X, DataLen:%d, ID:0x%04X, CRC8:0x%02X",
-        local_data_copy.frame_header.sof, local_data_copy.frame_header.data_length, ID_ROBOT_CMD,
-        local_data_copy.frame_header.crc);
-      // ----------------------------
+      // // --- DEBUG: 打印帧头校验信息 ---
+      // RCLCPP_INFO(
+      //   get_logger(), "Send Header CRC8 OK! SOF:0x%02X, DataLen:%d, ID:0x%04X, CRC8:0x%02X",
+      //   local_data_copy.frame_header.sof, local_data_copy.frame_header.data_length, ID_ROBOT_CMD,
+      //   local_data_copy.frame_header.crc);
+      // // ----------------------------
 
       // 2. 整包 CRC16
       append_CRC16_check_sum(
@@ -620,13 +620,13 @@ void StandardRobotPpRos2Node::sendData()
 
       std::vector<uint8_t> send_data = toVector(local_data_copy);
 
-      // --- DEBUG: 打印 CRC16 和 Hex 数据 ---
-      uint16_t crc16_value = (static_cast<uint16_t>(send_data[send_data.size() - 1]) << 8) |
-                             send_data[send_data.size() - 2];
+      // // --- DEBUG: 打印 CRC16 和 Hex 数据 ---
+      // uint16_t crc16_value = (static_cast<uint16_t>(send_data[send_data.size() - 1]) << 8) |
+      //                        send_data[send_data.size() - 2];
 
-      RCLCPP_INFO(get_logger(), "Send CRC16: 0x%04X, TotalLen: %lu", crc16_value, send_data.size());
-      printHex("SEND", ID_ROBOT_CMD, send_data);
-      // -----------------------------------
+      // RCLCPP_INFO(get_logger(), "Send CRC16: 0x%04X, TotalLen: %lu", crc16_value, send_data.size());
+      // printHex("SEND", ID_ROBOT_CMD, send_data);
+      // // -----------------------------------
 
       serial_driver_->port()->send(send_data);
     } catch (const std::exception & ex) {
