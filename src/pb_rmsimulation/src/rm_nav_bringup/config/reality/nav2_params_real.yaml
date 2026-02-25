@@ -30,7 +30,7 @@ amcl:
     save_pose_rate: 0.5
     sigma_hit: 0.2
     tf_broadcast: true
-    transform_tolerance: 1.0
+    transform_tolerance: 2.0
     update_min_a: 0.2
     update_min_d: 0.25
     z_hit: 0.5
@@ -91,7 +91,7 @@ bt_navigator:
 controller_server:
   ros__parameters:
     use_sim_time: False
-    controller_frequency: 50.0
+    controller_frequency: 20.0
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.1
     min_theta_velocity_threshold: 0.001
@@ -106,7 +106,7 @@ controller_server:
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.5
+      xy_goal_tolerance: 1.0
       yaw_goal_tolerance: 10.0
     FollowPath:
       plugin: teb_local_planner::TebLocalPlannerROS
@@ -116,7 +116,7 @@ controller_server:
       # Trajectory
       #*******************************************************************************
       teb_autosize: 1.0                             #是否自动调整轨迹大小。根据时间分辨率自动调整轨迹大小
-      dt_ref: 0.6                                   #轨迹的期望时间分辨率（应该与底层控制速率的数量级相符）
+      dt_ref: 0.6                                  #轨迹的期望时间分辨率（应该与底层控制速率的数量级相符）
       dt_hysteresis: 0.06                           #自动调整大小的滞后（根据当前时间分辨率 dt）：通常为 dt_ref 的 10%
       max_samples: 500                              #最大样本数量；警告：如果太小，离散化/分辨率可能不足以用于给定的机器人模型，或者避障不再有效。
       global_plan_overwrite_orientation: False      #覆盖全局规划器提供的局部子目标的方向
@@ -169,8 +169,8 @@ controller_server:
       #*******************************************************************************
       # Obstacles 障碍物
       #*******************************************************************************
-      min_obstacle_dist: 0.1                     #机器人与障碍物之间最小的期望间隔距离
-      inflation_dist: 0.3                         #障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
+      min_obstacle_dist: 0.1                   #机器人与障碍物之间最小的期望间隔距离
+      inflation_dist: 0.6                        #障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
       dynamic_obstacle_inflation_dist: 0.7        #具有非零惩罚成本的动态障碍物预测位置周围的缓冲区（应大于min_obstacle_dist才能生效)
       include_dynamic_obstacles: True             #预测动态障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
       include_costmap_obstacles: True             #是否直接考虑代价地图中的障碍物 (如果没有单独的聚类和检测功能，则需要此选项)
@@ -211,11 +211,11 @@ controller_server:
       weight_kinematics_turning_radius: 0.1   #强制最小转弯半径（小车型机器人）的优化权重
       weight_optimaltime: 0.1                 #优化轨迹并尽量缩短运动时间的权重，确保在规定的时间内到达目标
       weight_shortest_path: 0.0               #倾向于选择更短的路径，路径可能更加弯曲或不平坦
-      weight_obstacle: 80.0                  #与障碍物保持最小距离的权重
+      weight_obstacle: 90.0                  #与障碍物保持最小距离的权重
       weight_inflation: 0.2                   #优化轨迹并尽量避免膨胀区域的权重 (权重应设置较小)
       weight_dynamic_obstacle: 10.0           #与动态障碍物保持最小距离的权重
       weight_dynamic_obstacle_inflation: 0.2  #优化轨迹并尽量避免动态障碍物膨胀区域的权重 (权重应设置较小)
-      weight_viapoint: 1.0                    #一些特定的权重 (例如 weight_obstacle) 会在外循环每次迭代中乘以该因子进行调整。这样逐步增加权重比直接设置较高的权重值可以改善优化问题的数值条件
+      weight_viapoint: 1.0                  #一些特定的权重 (例如 weight_obstacle) 会在外循环每次迭代中乘以该因子进行调整。这样逐步增加权重比直接设置较高的权重值可以改善优化问题的数值条件
       weight_adapt_factor: 2.0                #非线性障碍物代价的指数 (cost = linear_cost * obstacle_cost_exponent)。设置为 1 则禁用非线性代价 (默认值)
 
       #*******************************************************************************
@@ -377,7 +377,7 @@ recoveries_server:
     costmap_topic: local_costmap/costmap_raw
     footprint_topic: local_costmap/published_footprint
     cycle_frequency: 2.0
-    recovery_plugins: ["spin", "backup"]
+    recovery_plugins: ["spin","backup"]
     spin:
       plugin: "nav2_recoveries/Spin"
     backup:
