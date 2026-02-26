@@ -20,8 +20,7 @@
       "imu_data_ip" : "192.168.1.50",
       "imu_data_port": 56401,
       "log_data_ip" : "",
-      "log_data_port": 56501,
-      "xfer_format": 4
+      "log_data_port": 56501
     }
   },
   "lidar_configs" : [
@@ -29,8 +28,7 @@
       "ip" : "192.168.1.184",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
-      "time_sync_en": true,      
-      "sync_type": "ptp",         
+      "timestamp_type" : 0,        
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,
