@@ -293,10 +293,10 @@ void publish_odometry(
 
   pubOdomAftMapped->publish(odomAftMapped);
 
-  // Print delay
-  auto now_time = rclcpp::Clock(RCL_ROS_TIME).now();
-  double delay = (now_time - odomAftMapped.header.stamp).seconds();
-  RCLCPP_INFO(logger_, "Odometry delay: %.3f seconds", delay);
+  // // Print delay
+  // auto now_time = rclcpp::Clock(RCL_ROS_TIME).now();
+  // double delay = (now_time - odomAftMapped.header.stamp).seconds();
+  // RCLCPP_WARN(logger_, "Odometry delay: %.3f seconds", delay);
 
   // Publish tf from lidar_odom to base_link
   static geometry_msgs::msg::TransformStamped livox_to_base_link_transform;
