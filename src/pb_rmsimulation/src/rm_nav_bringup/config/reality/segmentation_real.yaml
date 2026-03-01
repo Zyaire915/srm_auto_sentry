@@ -4,7 +4,7 @@ ground_segmentation:
 
     r_min: 0.2                  # minimum point distance.
     r_max: 50                   # maximum point distance.
-    n_bins: 20                 # number of radial bins. tao改的
+    n_bins: 30                  # number of radial bins. tao改的
     n_segments: 360             # number of radial segments.
 
     max_dist_to_line: 0.1       # maximum vertical distance of point to line to be considered ground.
