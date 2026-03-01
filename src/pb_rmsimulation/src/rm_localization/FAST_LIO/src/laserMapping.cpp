@@ -100,6 +100,23 @@ double last_timestamp_lidar = 0, last_timestamp_imu = -1.0;
 double gyr_cov = 0.1, acc_cov = 0.1, b_gyr_cov = 0.0001, b_acc_cov = 0.0001;
 double filter_size_corner_min = 0, filter_size_surf_min = 0, filter_size_map_min = 0, fov_deg = 0;
 double cube_len = 0, HALF_FOV_COS = 0, FOV_DEG = 0, total_distance = 0, lidar_end_time = 0, first_lidar_time = 0.0;
+// Device-to-wall time mapping (for sensors that publish device-relative timestamps)
+// On first call we compute an offset = (system_wall_time - device_time). Subsequent
+// conversions add this offset to device timestamps so published headers use wall time.
+double device_time_offset_seconds = 0.0;
+bool   device_time_offset_set = false;
+
+static rclcpp::Time device_to_wall_time(double device_ts)
+{
+    if (!device_time_offset_set)
+    {
+        // Record offset between system wall clock and device timestamp (both in seconds)
+        device_time_offset_seconds = rclcpp::Clock(RCL_SYSTEM_TIME).now().seconds() - device_ts;
+        device_time_offset_set = true;
+        std::cout << "[FAST_LIO] device_time_offset_seconds = " << device_time_offset_seconds << std::endl;
+    }
+    return get_ros_time(device_ts + device_time_offset_seconds);
+}
 int    effct_feat_num = 0, time_log_counter = 0, scan_count = 0, publish_count = 0;
 int    iterCount = 0, feats_down_size = 0, NUM_MAX_ITERATIONS = 0, laserCloudValidNum = 0, pcd_save_interval = -1, pcd_index = 0;
 bool   point_selected_surf[100000] = {0};
@@ -511,8 +528,8 @@ void publish_frame_world(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::Share
 
         sensor_msgs::msg::PointCloud2 laserCloudmsg;
         pcl::toROSMsg(*laserCloudWorld, laserCloudmsg);
-        // laserCloudmsg.header.stamp = ros::Time().fromSec(lidar_end_time);
-        laserCloudmsg.header.stamp = get_ros_time(lidar_end_time);
+    // laserCloudmsg.header.stamp = ros::Time().fromSec(lidar_end_time);
+    laserCloudmsg.header.stamp = device_to_wall_time(lidar_end_time);
         laserCloudmsg.header.frame_id = "lidar_odom";
         pubLaserCloudFull->publish(laserCloudmsg);
         publish_count -= PUBFRAME_PERIOD;
@@ -564,7 +581,7 @@ void publish_frame_body(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::Shared
 
     sensor_msgs::msg::PointCloud2 laserCloudmsg;
     pcl::toROSMsg(*laserCloudIMUBody, laserCloudmsg);
-    laserCloudmsg.header.stamp = get_ros_time(lidar_end_time);
+    laserCloudmsg.header.stamp = device_to_wall_time(lidar_end_time);
     laserCloudmsg.header.frame_id = "livox_frame";
     pubLaserCloudFull_body->publish(laserCloudmsg);
     publish_count -= PUBFRAME_PERIOD;
@@ -581,7 +598,7 @@ void publish_effect_world(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::Shar
     }
     sensor_msgs::msg::PointCloud2 laserCloudFullRes3;
     pcl::toROSMsg(*laserCloudWorld, laserCloudFullRes3);
-    laserCloudFullRes3.header.stamp = get_ros_time(lidar_end_time);
+    laserCloudFullRes3.header.stamp = device_to_wall_time(lidar_end_time);
     laserCloudFullRes3.header.frame_id = "lidar_odom";
     pubLaserCloudEffect->publish(laserCloudFullRes3);
 }
@@ -602,7 +619,7 @@ void publish_map(rclcpp::Publisher<sensor_msgs::msg::PointCloud2>::SharedPtr pub
 
     sensor_msgs::msg::PointCloud2 laserCloudmsg;
     pcl::toROSMsg(*pcl_wait_pub, laserCloudmsg);
-    laserCloudmsg.header.stamp = get_ros_time(lidar_end_time);
+    laserCloudmsg.header.stamp = device_to_wall_time(lidar_end_time);
     laserCloudmsg.header.frame_id = "lidar_odom";
     pubLaserCloudMap->publish(laserCloudmsg);
 }
@@ -633,7 +650,7 @@ void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPt
 {
     odomAftMapped.header.frame_id = "lidar_odom";
     odomAftMapped.child_frame_id = "livox_frame";
-    odomAftMapped.header.stamp = get_ros_time(lidar_end_time);
+    odomAftMapped.header.stamp = device_to_wall_time(lidar_end_time);
     set_posestamp(odomAftMapped.pose);
     pubOdomAftMapped->publish(odomAftMapped);
     auto P = kf.get_P();
@@ -686,7 +703,7 @@ void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPt
 void publish_path(rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr pubPath)
 {
     set_posestamp(msg_body_pose);
-    msg_body_pose.header.stamp = get_ros_time(lidar_end_time); // ros::Time().fromSec(lidar_end_time);
+    msg_body_pose.header.stamp = device_to_wall_time(lidar_end_time); // ros::Time().fromSec(lidar_end_time);
     msg_body_pose.header.frame_id = "lidar_odom";
 
     /*** if path is too large, the rvis will crash ***/
