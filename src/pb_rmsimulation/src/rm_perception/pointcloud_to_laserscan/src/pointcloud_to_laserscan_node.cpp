@@ -75,7 +75,10 @@ PointCloudToLaserScanNode::PointCloudToLaserScanNode(const rclcpp::NodeOptions &
   inf_epsilon_ = this->declare_parameter("inf_epsilon", 1.0);
   use_inf_ = this->declare_parameter("use_inf", true);
 
-  pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("scan", rclcpp::SensorDataQoS());
+  // Create publisher with BEST_EFFORT QoS (suitable for lidar data)
+  rclcpp::QoS qos_laser(10);
+  qos_laser.best_effort();
+  pub_ = this->create_publisher<sensor_msgs::msg::LaserScan>("scan", qos_laser);
 
   using std::placeholders::_1;
   // if pointcloud target frame specified, we need to filter by transform availability
@@ -118,8 +121,9 @@ void PointCloudToLaserScanNode::subscriptionListenerThreadLoop()
         RCLCPP_INFO(
           this->get_logger(),
           "Got a subscriber to laserscan, starting pointcloud subscriber");
-        rclcpp::SensorDataQoS qos;
-        qos.keep_last(input_queue_size_);
+        // Subscribe with BEST_EFFORT QoS to match publisher
+        rclcpp::QoS qos(input_queue_size_);
+        qos.best_effort();
         sub_.subscribe(this, "cloud_in", qos.get_rmw_qos_profile());
       }
     } else if (sub_.getSubscriber()) {

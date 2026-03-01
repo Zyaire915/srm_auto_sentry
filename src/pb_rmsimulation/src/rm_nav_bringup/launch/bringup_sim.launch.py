@@ -160,16 +160,12 @@ def generate_launch_description():
         Node(
             package="tf2_ros",
             executable="static_transform_publisher",
+            # Static transform from odom to lidar_odom (zero transform)
             arguments=[
-                # Useless arguments, provided by LIO in publish_odometry() function
-                # '--x', '0.0',
-                # '--y', '0.0',
-                # '--z', '0.0',
-                # '--roll', '0.0',
-                # '--pitch', '0.0',
-                # '--yaw', '0.0',
-                '--frame-id', 'odom',
-                '--child-frame-id', 'lidar_odom'
+                '0.0', '0.0', '0.0',  # x, y, z
+                '0.0', '0.0', '0.0',  # roll, pitch, yaw (in radians)
+                'odom',
+                'lidar_odom'
             ],
         ),
 

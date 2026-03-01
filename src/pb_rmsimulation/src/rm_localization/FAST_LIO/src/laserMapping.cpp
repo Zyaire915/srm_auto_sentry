@@ -657,8 +657,17 @@ void publish_odometry(const rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPt
           livox_to_base_link_transform = tf_buffer_->lookupTransform("livox_frame", "base_link", odomAftMapped.header.stamp);
           transform_acquired = true; // Set the flag to true indicating that the transform has been acquired
       } catch (tf2::TransformException &ex) {
-          RCLCPP_ERROR(logger_, "Failed to lookup transform from base_link to livox_frame: %s", ex.what());
-          return;
+          RCLCPP_WARN(logger_, "Failed to lookup transform from base_link to livox_frame at time %f: %s. Trying latest transform...", 
+                      odomAftMapped.header.stamp.sec, ex.what());
+          // Fallback: try to get the latest available transform
+          try {
+              livox_to_base_link_transform = tf_buffer_->lookupTransform("livox_frame", "base_link", tf2::TimePointZero);
+              transform_acquired = true;
+              RCLCPP_INFO(logger_, "Successfully acquired latest livox_frame->base_link transform");
+          } catch (tf2::TransformException &ex_fallback) {
+              RCLCPP_ERROR(logger_, "Failed to lookup latest transform from base_link to livox_frame: %s", ex_fallback.what());
+              return;
+          }
       }
   }
   
