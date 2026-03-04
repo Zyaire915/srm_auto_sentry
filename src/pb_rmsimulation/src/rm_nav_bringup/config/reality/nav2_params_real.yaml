@@ -30,7 +30,7 @@ amcl:
     save_pose_rate: 0.5
     sigma_hit: 0.2
     tf_broadcast: true
-    transform_tolerance: 2.0
+    transform_tolerance: 1.0
     update_min_a: 0.2
     update_min_d: 0.25
     z_hit: 0.5
@@ -53,7 +53,7 @@ bt_navigator:
     global_frame: map
     robot_base_frame: base_link_fake
     odom_topic: /Odometry
-    bt_loop_duration: 100
+    bt_loop_duration: 10
     default_server_timeout: 20
     plugin_lib_names:
     - nav2_compute_path_to_pose_action_bt_node
@@ -91,7 +91,7 @@ bt_navigator:
 controller_server:
   ros__parameters:
     use_sim_time: False
-    controller_frequency: 25.0 
+    controller_frequency: 20.0 
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.1
     min_theta_velocity_threshold: 0.001
@@ -107,8 +107,8 @@ controller_server:
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
-      xy_goal_tolerance: 0.5
-      yaw_goal_tolerance: 10.0
+      xy_goal_tolerance: 0.2
+      yaw_goal_tolerance: 6.28
     FollowPath:
       plugin: teb_local_planner::TebLocalPlannerROS
       # https://github.com/rst-tu-dortmund/teb_local_planner/tree/ros2-master
@@ -122,10 +122,10 @@ controller_server:
       max_samples: 500                              #最大样本数量；警告：如果太小，离散化/分辨率可能不足以用于给定的机器人模型，或者避障不再有效。
       global_plan_overwrite_orientation: False      #覆盖全局规划器提供的局部子目标的方向
       allow_init_with_backwards_motion: True        #如果为真，基础轨迹可能会以后退运动初始化，以防目标在本地代价地图中位于起点之后（仅当机器人配备后部传感器时推荐）
-      max_global_plan_lookahead_dist: 1.0           #指定用于优化考虑的全局规划子集的最大长度（累积欧氏距离）[如果 <=0：禁用；长度也受到本地代价地图大小的限制！
+      max_global_plan_lookahead_dist: 2.0           #指定用于优化考虑的全局规划子集的最大长度（累积欧氏距离）[如果 <=0：禁用；长度也受到本地代价地图大小的限制！
       force_reinit_new_goal_dist: 1.0               #如果之前的目标更新距离超过此值，则强制规划器重新初始化轨迹
       force_reinit_new_goal_angular: 0.78           #如果之前的目标更新的角度超过此弧度值，则强制规划器重新初始化轨迹
-      feasibility_check_no_poses: 4                 #在预测路径上，每个采样间隔需要检查可行性的姿态数目
+      feasibility_check_no_poses: 0                 #在预测路径上，每个采样间隔需要检查可行性的姿态数目
       feasibility_check_lookahead_distance: 1.5     #每个采样间隔需要检查可行性的距离（以及feasibility_check_no_poses之下的索引）与机器人之间的距离。-1检查所有姿势，直到feasibility_check_no_poses。https://robotics.stackexchange.com/questions/80845/what-are-reasons-for-teb-planners-feasibility-check-to-fail
       exact_arc_length: False                       #如果为真，规划器在速度、加速度和转向率计算中使用准确的弧长 [-> 增加 CPU 时间]，否则使用欧氏近似。
       publish_feedback: False                       #发布包含完整轨迹和活动障碍物列表的规划器反馈（应仅用于评估或调试目的）
@@ -236,7 +236,7 @@ controller_server:
       h_signature_prescaler: 0.5            #（0.2 < value <= 1）缩放用于区分同伦类的内部参数
       h_signature_threshold: 0.1            #如果实部和复部的差都低于规定的阈值，则假定两个h签名相等。
       obstacle_heading_threshold: 0.45      #为了将障碍物纳入探索范围，需要指定障碍物朝向和目标朝向的归一化点积的阈值
-      switching_blocking_period: 60.0       #指定允许切换到新的等效类之前需要终止的持续时间
+      switching_blocking_period: 0.0       #指定允许切换到新的等效类之前需要终止的持续时间
       viapoints_all_candidates: False       #若为真，则所有不同拓扑结构的路径都会附加到路径点集合上，否则只会附加与初始/全局计划共享相同路径点的路径 (在测试优化节点中没有效果)
       delete_detours_backwards: True
       max_ratio_detours_duration_best_duration: 3.0
@@ -391,6 +391,16 @@ recoveries_server:
     max_rotational_vel: 3.0
     min_rotational_vel: 0.4
     rotational_acc_lim: 3.0
+
+waypoint_follower:
+  ros__parameters:
+    loop_rate: 20
+    stop_on_failure: false
+    waypoint_task_executor_plugin: "wait_at_waypoint"   
+    wait_at_waypoint:
+      plugin: "nav2_waypoint_follower::WaitAtWaypoint"
+      enabled: True
+      waypoint_pause_duration: 0
 
 map_server:
   ros__parameters:
