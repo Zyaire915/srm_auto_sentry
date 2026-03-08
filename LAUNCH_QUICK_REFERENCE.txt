@@ -1,0 +1,59 @@
+Launch 修改快速参考
+
+【核心改动】
+
+1. 导入: 添加 RegisterEventHandler, OnProcessStart
+2. 定位逻辑: 为 ICP 模式添加独立 SLAM 节点 (第 265-333 行)
+3. Nav2 延迟: 添加条件延迟 (第 357-401 行)
+
+【时序】
+
+T+0s:  SLAM 启动 (定位模式)
+T+3s:  ICP 启动 (等待 SLAM 初始化)
+T+10s: Nav2 启动 (ICP 已发布位姿)
+
+【启动命令】
+
+ICP + SLAM:
+ros2 launch rm_nav_bringup bringup_real.launch.py \
+    mode:=nav localization:=icp world:=328
+
+仅 SLAM:
+ros2 launch rm_nav_bringup bringup_real.launch.py \
+    mode:=nav localization:=slam_toolbox world:=328
+
+AMCL:
+ros2 launch rm_nav_bringup bringup_real.launch.py \
+    mode:=nav localization:=amcl world:=328
+
+【时间调优】
+
+ICP 延迟 (第 310 行):
+  period=3.0  →  改为 1-5 秒
+
+Nav2 延迟 (第 372 行):
+  period=10.0  →  改为 5-20 秒 (取决于点云大小)
+
+【监控】
+
+查看节点: watch -n 0.5 'ros2 node list'
+查看位姿: ros2 topic echo /amcl_pose --field=pose.pose
+查看 ICP: ros2 topic echo /initialpose
+
+【话题】
+
+/initialpose  ← ICP 发送的初始位姿
+/amcl_pose    ← SLAM 发送的当前位姿
+/scan         ← LIO 发送的激光扫描
+/plan         ← Nav2 发送的路径规划
+
+【故障排除】
+
+问题: SLAM 收到位姿后不变
+解决: 检查 mapper_params_localization_real.yaml 是否启用定位模式
+
+问题: ICP 计算超时
+解决: 增加 Nav2 延迟或优化 ICP 参数
+
+问题: 位姿跳转后仍不匹配
+解决: 检查 ICP fitness score 或重新生成 PCD 地图

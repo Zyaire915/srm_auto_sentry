@@ -4,11 +4,12 @@ import yaml
 from ament_index_python.packages import get_package_share_directory
 
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, GroupAction, TimerAction
+from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument, GroupAction, TimerAction, RegisterEventHandler
 from launch_ros.actions import Node
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
 from launch.conditions import LaunchConfigurationEquals, LaunchConfigurationNotEquals, IfCondition
+from launch.event_handlers import OnProcessStart
 
 
 def generate_launch_description():
@@ -264,6 +265,8 @@ def generate_launch_description():
     start_localization_group = GroupAction(
         condition = LaunchConfigurationEquals('mode', 'nav'),
         actions=[
+            # ====== Step A: Start SLAM Toolbox in localization mode ======
+            # For ICP + SLAM mode, start SLAM first to prepare for pose correction
             Node(
                 condition = LaunchConfigurationEquals('localization', 'slam_toolbox'),
                 package='slam_toolbox',
@@ -277,6 +280,20 @@ def generate_launch_description():
                 ],
             ),
 
+            Node(
+                condition = LaunchConfigurationEquals('localization', 'icp'),
+                package='slam_toolbox',
+                executable='localization_slam_toolbox_node',
+                name='slam_toolbox',
+                parameters=[
+                    slam_toolbox_localization_file_dir,
+                    {'use_sim_time': use_sim_time,
+                    'map_file_name': slam_toolbox_map_dir,
+                    'map_start_pose': [0.0, 0.0, 0.0]}
+                ],
+            ),
+
+            # ====== Step B: AMCL localization (alternative) ======
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(os.path.join(navigation2_launch_dir,'localization_amcl_launch.py')),
                 condition = LaunchConfigurationEquals('localization', 'amcl'),
@@ -286,8 +303,9 @@ def generate_launch_description():
                     'map': nav2_map_dir}.items()
             ),
 
+            # ====== Step C: Start ICP Registration (delayed 3s for SLAM to be ready) ======
             TimerAction(
-                period=7.0,
+                period=3.0,
                 actions=[
                     Node(
                         condition=LaunchConfigurationEquals('localization', 'icp'),
@@ -299,11 +317,11 @@ def generate_launch_description():
                             {'use_sim_time': use_sim_time,
                                 'pcd_path': icp_pcd_dir}
                         ],
-                        # arguments=['--ros-args', '--log-level', ['icp_registration:=', 'DEBUG']]
                     )
                 ]
             ),
 
+            # ====== Map Server for non-SLAM modes ======
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(os.path.join(navigation2_launch_dir, 'map_server_launch.py')),
                 condition = LaunchConfigurationNotEquals('localization', 'slam_toolbox'),
@@ -345,6 +363,17 @@ def generate_launch_description():
             'nav_rviz': use_nav_rviz}.items()
     )
 
+    # ====== Step D: Delay Navigation2 startup for ICP mode ======
+    # This ensures ICP has completed pose calculation and publishing before Nav2 starts
+    # For non-ICP modes, Nav2 can start immediately
+    start_navigation2_delayed = TimerAction(
+        period=10.0,  # Adjusted for ICP computation time + safety margin
+        actions=[start_navigation2],
+        condition = LaunchConfigurationEquals('localization', 'icp')
+    )
+
+    start_navigation2_immediate = start_navigation2
+
     ld = LaunchDescription()
 
     # Declare the launch options
@@ -365,6 +394,9 @@ def generate_launch_description():
     ld.add_action(start_localization_group)
     ld.add_action(bringup_fake_vel_transform_node)
     ld.add_action(start_mapping)
-    ld.add_action(start_navigation2)
+    
+    # Add Navigation2 with conditional delay for ICP mode
+    ld.add_action(start_navigation2_delayed)
+    ld.add_action(start_navigation2_immediate)
 
     return ld
