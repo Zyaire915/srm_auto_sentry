@@ -4,4 +4,5 @@ log/
 .vscode/
 *.pcd
 *.pgm
+.cache/
 .vscode/settings.json
