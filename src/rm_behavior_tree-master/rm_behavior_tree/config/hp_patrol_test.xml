@@ -6,9 +6,9 @@
             <HpDecisionPatrol 
                 hp_input="{the_hp_data}"
                 high_hp_x="6.0" high_hp_y="1.0"
-                low_hp_x="0.0" low_hp_y="1.0"
+                low_hp_x="0.0" low_hp_y="0.0"
                 target_pose="{current_goal}" 
-                hp_threshold="350"
+                hp_threshold="2500"
             />
             
             <SendGoal goal_pose="{current_goal}" />

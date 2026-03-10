@@ -30,8 +30,9 @@ int main(int argc, char ** argv)
 
   BT::RosNodeParams params_send_goal;
   params_send_goal.nh = std::make_shared<rclcpp::Node>("send_goal");
-  //FIX
   params_send_goal.default_port_value = "navigate_to_pose";
+  params_send_goal.server_timeout = std::chrono::milliseconds(5000);
+  params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(10000);
 
   // 【新增 2】定义 SubAllyRobotHP 的参数 (话题名)
   BT::RosNodeParams params_sub_ally;

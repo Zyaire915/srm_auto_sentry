@@ -38,12 +38,12 @@ ros2 topic pub -r 3 /robot_hp rm_decision_interfaces/msg/AllRobotHP "{
     blue_base_hp: 1000
 }" &
 
-ros2 topic pub -r 3 /hp_input rm_decision_interfaces/msg/AllyRobotHP "{
+ros2 topic pub -r 3 /referee/ally_robot_hp rm_decision_interfaces/msg/AllyRobotHP "{
     ally_1_robot_hp: 100,
     ally_2_robot_hp: 100,
     ally_3_robot_hp: 100,
     ally_4_robot_hp: 100,
-    ally_7_robot_hp: 200,  # 哨兵通常是 7 号
+    ally_7_robot_hp: 400,  # 哨兵通常是 7 号
     ally_outpost_hp: 20,  
     ally_base_hp: 1000
 }" &
