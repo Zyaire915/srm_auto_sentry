@@ -164,12 +164,12 @@ controller_server:
       #*******************************************************************************
       # GoalTolerance 目标容差
       #*******************************************************************************
-      free_goal_vel: False      #允许机器人以最大速度驶向目的地，为False时，车到达终点时的目标速度为0；
+      free_goal_vel: True      #允许机器人以最大速度驶向目的地，为False时，车到达终点时的目标速度为0；
 
       #*******************************************************************************
       # Obstacles 障碍物
       #*******************************************************************************
-      min_obstacle_dist: 0.5                     #机器人与障碍物之间最小的期望间隔距离
+      min_obstacle_dist: 0.4                     #机器人与障碍物之间最小的期望间隔距离
       inflation_dist: 0.6                         #障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
       dynamic_obstacle_inflation_dist: 0.7        #具有非零惩罚成本的动态障碍物预测位置周围的缓冲区（应大于min_obstacle_dist才能生效)
       include_dynamic_obstacles: True             #预测动态障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
@@ -410,12 +410,12 @@ velocity_smoother:
     odom_topic: "Odometry"
     odom_duration: 0.1
 
-waypoint_follower:
-  ros__parameters:
-    loop_rate: 10000
-    stop_on_failure: false
-    waypoint_task_executor_plugin: "wait_at_waypoint"   
-    wait_at_waypoint:
-      plugin: "nav2_waypoint_follower::WaitAtWaypoint"
-      enabled: True
-      waypoint_pause_duration: 1
+# waypoint_follower:
+#   ros__parameters:
+#     loop_rate: 50
+#     stop_on_failure: false
+#     waypoint_task_executor_plugin: "wait_at_waypoint"   
+#     wait_at_waypoint:
+#       plugin: "nav2_waypoint_follower::WaitAtWaypoint"
+#       enabled: True
+#       waypoint_pause_duration: 1

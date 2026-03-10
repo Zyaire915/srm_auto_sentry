@@ -181,7 +181,7 @@
 
     ```sh
     ros2 launch rm_nav_bringup bringup_real.launch.py \
-    world:=best \
+    world:=dark \
     mode:=nav \
     lio:=fastlio \
     localization:=slam_toolbox \
