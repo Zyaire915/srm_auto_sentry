@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="NavigateThroughWaypoints">
+  <BehaviorTree ID="NavigateThroughWaypoints">
+    <!-- 
+      自定义多途径点导航树
+      优点：可以灵活控制每个途径点的容差
+      输入：poses（PoseStamped 数组），waypoint_tolerance，final_goal_tolerance
+    -->
+    <Sequence name="RootSequence">
+      <!-- 第一步：初始化 -->
+      <Script code=" data = {'wp_index': 0, 'total_wps': len(poses)-1} " />
+      
+      <!-- 第二步：设置途径点容差（宽松） -->
+      <RosServiceCommand 
+        service_name="/controller_server/set_parameters"
+        request="[{name: 'general_goal_checker.xy_goal_tolerance', value: 1.0}]"/>
+      
+      <!-- 第三步：循环处理每个途径点（除了最后一个） -->
+      <Sequence name="WaypointLoop">
+        <While condition="data['wp_index'] &lt; data['total_wps']">
+          <Sequence>
+            <!-- 当前途径点 -->
+            <Script code=" current_pose = poses[data['wp_index']] " />
+            
+            <!-- 计算到当前途径点的路径 -->
+            <ComputePathToPose 
+              goal="{current_pose}"
+              path="{path}"
+              planner_id="GridBased"/>
+            
+            <!-- 执行路径跟随 -->
+            <FollowPath 
+              path="{path}"
+              controller_id="FollowPath"/>
+            
+            <!-- 检查是否到达目标（此时容差为 1.0m） -->
+            <Sequence name="WaypointReached">
+              <IsGoalReached distance_threshold="1.0"/>
+              <!-- 更新索引 -->
+              <Script code=" data['wp_index'] += 1 " />
+            </Sequence>
+          </Sequence>
+        </While>
+      </Sequence>
+      
+      <!-- 第四步：设置最终目标容差（严格） -->
+      <RosServiceCommand 
+        service_name="/controller_server/set_parameters"
+        request="[{name: 'general_goal_checker.xy_goal_tolerance', value: 0.25}]"/>
+      
+      <!-- 第五步：导航到最终目标 -->
+      <Sequence name="FinalGoal">
+        <!-- 最后一个位置（最终目标） -->
+        <Script code=" final_goal = poses[-1] " />
+        
+        <!-- 计算到最终目标的路径 -->
+        <ComputePathToPose 
+          goal="{final_goal}"
+          path="{final_path}"
+          planner_id="GridBased"/>
+        
+        <!-- 执行路径跟随 -->
+        <FollowPath 
+          path="{final_path}"
+          controller_id="FollowPath"/>
+        
+        <!-- 检查是否到达最终目标 -->
+        <IsGoalReached distance_threshold="0.25"/>
+      </Sequence>
+    </Sequence>
+  </BehaviorTree>
+</root>

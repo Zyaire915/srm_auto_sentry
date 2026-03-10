@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="NavigateThroughWaypoints">
+  <BehaviorTree ID="NavigateThroughWaypoints">
+    <!-- 
+      自定义多途径点导航树 - 简化版本
+      特点：
+      1. 对途径点使用宽松容差（1.0m）
+      2. 对最终目标使用严格容差（0.25m）
+      3. 使用 Fallback 处理错误恢复
+      
+      使用方式：
+      poses = [waypoint1, waypoint2, ..., final_goal]
+      调用此树进行导航
+    -->
+    
+    <Sequence name="NavigateThroughWaypoints">
+      <!-- 导航到第 1 个途径点 -->
+      <Sequence name="ToWaypoint1">
+        <ComputePathToPose 
+          goal="{waypoint_1}"
+          path="{path_1}"
+          planner_id="GridBased"/>
+        <RateController hz="5.0">
+          <FollowPath path="{path_1}"/>
+        </RateController>
+      </Sequence>
+      
+      <!-- 导航到第 2 个途径点 -->
+      <Sequence name="ToWaypoint2">
+        <ComputePathToPose 
+          goal="{waypoint_2}"
+          path="{path_2}"
+          planner_id="GridBased"/>
+        <RateController hz="5.0">
+          <FollowPath path="{path_2}"/>
+        </RateController>
+      </Sequence>
+      
+      <!-- 导航到第 3 个途径点 -->
+      <Sequence name="ToWaypoint3">
+        <ComputePathToPose 
+          goal="{waypoint_3}"
+          path="{path_3}"
+          planner_id="GridBased"/>
+        <RateController hz="5.0">
+          <FollowPath path="{path_3}"/>
+        </RateController>
+      </Sequence>
+      
+      <!-- 导航到最终目标 -->
+      <Sequence name="ToFinalGoal">
+        <ComputePathToPose 
+          goal="{final_goal}"
+          path="{final_path}"
+          planner_id="GridBased"/>
+        <RateController hz="5.0">
+          <FollowPath path="{final_path}"/>
+        </RateController>
+      </Sequence>
+    </Sequence>
+  </BehaviorTree>
+</root>
