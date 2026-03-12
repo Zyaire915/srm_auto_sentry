@@ -1,0 +1,12 @@
+base_publisher_node:
+  ros__parameters:
+    # 基地在 map 坐标系下的坐标（扫图后修改这里）
+    base_map_x: 0.0
+    base_map_y: 0.0
+    base_map_z: 0.0
+
+    # 发布频率 (Hz)
+    publish_rate: 30.0
+
+    # TF 查询超时时间 (秒)
+    tf_timeout: 0.1
