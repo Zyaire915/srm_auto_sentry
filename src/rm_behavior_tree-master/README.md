@@ -58,7 +58,7 @@
 
     ```sh
     ros2 launch rm_behavior_tree rm_behavior_tree.launch.py \
-    style:=retreat_attack_left \
+    style:=hp_patrol_test \
     use_sim_time:=True
     ```
 
