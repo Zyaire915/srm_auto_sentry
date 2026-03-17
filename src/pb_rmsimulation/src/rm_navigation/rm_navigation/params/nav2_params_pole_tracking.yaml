@@ -1,0 +1,418 @@
+#### Nav2 参数 - 绕桩专用配置（最小干扰局部规划）
+#### 
+#### 本配置文件目标：让局部规划器严格跟随全局路径，最小化干扰
+#### 使用场景：绕桩、精密导航等需要严格路径的任务
+####
+#### 使用方法：
+####   ros2 launch rm_nav_bringup bringup_sim.launch.py ... params_file:=path/to/nav2_params_pole_tracking.yaml
+
+amcl:
+  ros__parameters:
+    use_sim_time: False
+    alpha1: 0.2
+    alpha2: 0.2
+    alpha3: 0.2
+    alpha4: 0.2
+    alpha5: 0.2
+    base_frame_id: "base_link"
+    beam_skip_distance: 0.5
+    beam_skip_error_threshold: 0.9
+    beam_skip_threshold: 0.3
+    do_beamskip: false
+    global_frame_id: "map"
+    lambda_short: 0.1
+    laser_likelihood_max_dist: 2.0
+    laser_max_range: 100.0
+    laser_min_range: -1.0
+    laser_model_type: "likelihood_field"
+    max_beams: 60
+    max_particles: 2000
+    min_particles: 500
+    odom_frame_id: "odom"
+    pf_err: 0.05
+    pf_z: 0.99
+    recovery_alpha_fast: 0.0
+    recovery_alpha_slow: 0.0
+    resample_interval: 1
+    robot_model_type: "nav2_amcl::OmniMotionModel"
+    save_pose_rate: 0.5
+    sigma_hit: 0.2
+    tf_broadcast: true
+    transform_tolerance: 1.0
+    update_min_a: 0.2
+    update_min_d: 0.25
+    z_hit: 0.5
+    z_max: 0.05
+    z_rand: 0.5
+    z_short: 0.05
+    scan_topic: scan
+
+amcl_map_client:
+  ros__parameters:
+    use_sim_time: False
+
+amcl_rclcpp_node:
+  ros__parameters:
+    use_sim_time: False
+
+bt_navigator:
+  ros__parameters:
+    use_sim_time: False
+    global_frame: map
+    robot_base_frame: base_link
+    odom_topic: /Odometry
+    bt_loop_duration: 10
+    default_server_timeout: 20
+    enable_groot_monitoring: True
+    groot_zmq_publisher_port: 1666
+    groot_zmq_server_port: 1667
+    plugin_lib_names:
+    - nav2_compute_path_to_pose_action_bt_node
+    - nav2_compute_path_through_poses_action_bt_node
+    - nav2_follow_path_action_bt_node
+    - nav2_back_up_action_bt_node
+    - nav2_spin_action_bt_node
+    - nav2_wait_action_bt_node
+    - nav2_clear_costmap_service_bt_node
+    - nav2_is_stuck_condition_bt_node
+    - nav2_goal_reached_condition_bt_node
+    - nav2_goal_updated_condition_bt_node
+    - nav2_initial_pose_received_condition_bt_node
+    - nav2_reinitialize_global_localization_service_bt_node
+    - nav2_rate_controller_bt_node
+    - nav2_distance_controller_bt_node
+    - nav2_speed_controller_bt_node
+    - nav2_truncate_path_action_bt_node
+    - nav2_goal_updater_node_bt_node
+    - nav2_recovery_node_bt_node
+    - nav2_pipeline_sequence_bt_node
+    - nav2_round_robin_node_bt_node
+    - nav2_transform_available_condition_bt_node
+    - nav2_time_expired_condition_bt_node
+    - nav2_distance_traveled_condition_bt_node
+    - nav2_single_trigger_bt_node
+    - nav2_is_battery_low_condition_bt_node
+    - nav2_navigate_through_poses_action_bt_node
+    - nav2_navigate_to_pose_action_bt_node
+    - nav2_remove_passed_goals_action_bt_node
+    - nav2_planner_selector_bt_node
+    - nav2_controller_selector_bt_node
+    - nav2_goal_checker_selector_bt_node
+
+bt_navigator_rclcpp_node:
+  ros__parameters:
+    use_sim_time: False
+
+controller_server:
+  ros__parameters:
+    use_sim_time: False
+    controller_frequency: 10.0    # ⭐ 降低频率，让规划器更新更稳定
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.5
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.5
+    progress_checker_plugin: "progress_checker"
+    goal_checker_plugins: ["general_goal_checker"]
+    controller_plugins: ["FollowPath"]
+
+    # Progress checker parameters
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.3    # ⭐ 更小的移动要求，避免超时
+      movement_time_allowance: 15.0    # ⭐ 更长的时间允许
+
+    # Goal checker parameters - 严格的目标检查
+    general_goal_checker:
+      stateful: True
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.5           # ⭐ 较小的容差，精确导航
+      yaw_goal_tolerance: 0.5          # ⭐ 允许一定的偏航角误差
+
+    # TEB局部规划器配置 - 最小化干扰模式
+    # 目标：严格跟随路径，不做太多优化
+    FollowPath:
+      plugin: "teb_local_planner::TebLocalPlannerROS"
+      # ===== 轨迹配置 =====
+      teb_autosize: False              # ⭐ 禁止自动调整，保持稳定
+      dt_ref: 0.3                      # ⭐ 更大的时间步长，更平滑
+      dt_hysteresis: 0.03
+      max_samples: 500
+      global_plan_overwrite_frequency: 0.0  # ⭐ 不覆盖全局路径
+      allow_init_with_backwards_motion: False
+      max_global_plan_lookahead_dist: 3.0
+      global_plan_viapoint_sep: 0.5    # ⭐ 使用全局路径的所有点
+      force_reinit_new_goal: False
+      feasibility_check_no_pose: False
+      
+      # ===== 禁用重规划（只规划一次） =====
+      allow_reinit: False              # ⭐⭐⭐ 禁止重新初始化
+      force_reinit_new_goal: False     # 新目标时也不重新初始化
+      trajectories_sample_dist: 0.05   # 增加采样距离，减少规划次数
+      
+      # ===== 重规划参数 =====
+      enable_homotopy_class_planning: False  # 禁用多种拓扑
+      roadmap_graph_no_samples: 0      # 不生成路线图
+      roadmap_graph_area_width: 0.0
+      roadmap_graph_area_length_scale: 1.0
+      
+      # ===== 速度和加速度约束 =====
+      max_vel_x: 2.0
+      max_vel_y: 0.0                   # ⭐ 禁止侧向运动（全轮驱动机器人）
+      max_vel_theta: 4.0
+      min_vel_x: 0.0
+      min_vel_y: 0.0
+      min_vel_theta: 0.0
+      acc_lim_x: 2.5
+      acc_lim_y: 0.0
+      acc_lim_theta: 3.0
+      
+      # ===== 优化参数 - 最小化干扰 =====
+      weight_kinematics_forward_drive: 900.0    # ⭐ 强制直线前进
+      weight_kinematics_turning_radius: 50.0
+      weight_optimaltime: 1.0          # ⭐ 最小化时间优化
+      weight_obstacle: 50.0            # ⭐ 减少避障权重
+      weight_viapoint: 1.0             # ⭐ 严格跟踪经过点
+      weight_adapt_factor: 2.0
+      
+      # ===== 锁定轨迹参数 =====
+      weight_inflation: 0.1            # 最小化膨胀权重
+      weight_velocity_obstacle_ratio: 0.0  # 禁用速度-障碍物权衡
+      allow_bounded_vel_oscillations: False  # 禁止速度振荡
+      
+      # ===== 障碍物处理 =====
+      min_obstacle_dist: 0.5
+      include_costmap_obstacles: true
+      costmap_obstacles_behind_robot_dist: 1.0
+      obstacle_poses_affected: 15
+      costmap_converter_plugin: ""
+      costmap_converter_spin_thread: true
+      costmap_converter_rate: 5
+      
+      # ===== 同伦类 =====
+      enable_homotopy_class_planning: False  # ⭐ 禁用，保持简单路径
+      enable_multithreading: False
+      max_number_classes: 4
+      
+      # ===== 其他参数 =====
+      publish_cost_grid_pc: False
+      visualize_with_time_as_z_axis_scale: False
+      allow_terminal_goal_w_zero_penalty: False
+      shrink_horizon_backup: True
+      allow_backwards_motion: False
+      exact_arc_length: False
+      small_epsilon: 1e-6
+      penalty_epsilon: 0.1
+      infinite_cost_penalty: 1e4
+      oscillation_velocity_epsilon: 0.1
+      viapoints_all_candidates: True
+      delete_detours_backwards: True
+      max_ratio_sample_orientation: 0.5
+      moving_obstacle_collision_check: False
+      moving_obstacle_max_prediction_horizon: 5
+
+controller_server_rclcpp_node:
+  ros__parameters:
+    use_sim_time: False
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      update_frequency: 20.0
+      publish_frequency: 10.0
+      global_frame: map
+      robot_base_frame: base_link
+      use_sim_time: False
+      rolling_window: true
+      width: 5
+      height: 5
+      resolution: 0.05
+      robot_radius: 0.2
+      plugins: ["voxel2d_layer", "voxel3d_layer", "inflation_layer"]
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 2.0
+        inflation_radius: 0.7
+      voxel2d_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        publish_voxel_map: False
+        origin_z: 0.0
+        z_resolution: 0.05
+        z_voxels: 16
+        max_obstacle_height: 2.0
+        mark_threshold: 0
+        observation_sources: scan 
+        scan:
+          topic: /scan
+          raytrace_min_range: 0.0
+          raytrace_max_range: 50.0
+          min_obstacle_height: 0.0
+          max_obstacle_height: 2.0
+          clearing: True
+          marking: True
+          data_type: "LaserScan"
+      voxel3d_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        publish_voxel_map: False
+        origin_z: 0.0
+        z_resolution: 0.05
+        z_voxels: 16
+        mark_threshold: 1
+        observation_sources: livox
+        min_obstacle_height: 0.00
+        max_obstacle_height: 2.0 
+        livox:
+          topic: /livox/lidar/pointcloud
+          raytrace_min_range: 0.0
+          raytrace_max_range: 50.0
+          min_obstacle_height: 0.0
+          max_obstacle_height: 2.0 
+          clearing: True
+          marking: True
+          data_type: "PointCloud2"
+      static_layer:
+        map_subscribe_transient_local: True
+      always_send_full_costmap: True
+  local_costmap_client:
+    ros__parameters:
+      use_sim_time: False
+  local_costmap_rclcpp_node:
+    ros__parameters:
+      use_sim_time: False
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 20.0
+      publish_frequency: 10.0
+      global_frame: map
+      robot_base_frame: base_link
+      use_sim_time: False
+      robot_radius: 0.2
+      resolution: 0.05
+      track_unknown_space: true
+      plugins: ["static_layer", "voxel2d_layer", "voxel3d_layer", "inflation_layer"]
+      voxel2d_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: True
+        observation_sources: scan
+        scan:
+          topic: /scan
+          raytrace_min_range: 0.0
+          raytrace_max_range: 50.0
+          min_obstacle_height: 0.0
+          max_obstacle_height: 2.0
+          clearing: True
+          marking: True
+          data_type: "LaserScan"
+      voxel3d_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: True
+        observation_sources: livox
+        max_obstacle_height: 2.0
+        publish_voxel_map: False
+        origin_z: 0.0
+        z_resolution: 0.05
+        z_voxels: 16
+        min_obstacle_height: 0.0
+        mark_threshold: 1
+        livox:
+          topic: /livox/lidar/pointcloud
+          raytrace_min_range: 0.0
+          raytrace_max_range: 50.0
+          min_obstacle_height: 0.0
+          max_obstacle_height: 2.0
+          clearing: True
+          marking: True
+          data_type: "PointCloud2"
+      static_layer:
+        map_subscribe_transient_local: True
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 2.0
+        inflation_radius: 0.7
+      always_send_full_costmap: True
+  global_costmap_client:
+    ros__parameters:
+      use_sim_time: False
+  global_costmap_rclcpp_node:
+    ros__parameters:
+      use_sim_time: False
+
+map_server:
+  ros__parameters:
+    use_sim_time: False
+    yaml_filename: "map.yaml"
+
+map_saver:
+  ros__parameters:
+    use_sim_time: False
+    save_map_timeout: 5.0
+    free_thresh_default: 0.25
+    occupied_thresh_default: 0.65
+    map_subscribe_transient_local: False
+
+planner_server:
+  ros__parameters:
+    expected_planner_frequency: 20.0
+    use_sim_time: False
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+      tolerance: 0.5
+      use_astar: false
+      allow_unknown: true
+
+planner_server_rclcpp_node:
+  ros__parameters:
+    use_sim_time: False
+
+recoveries_server:
+  ros__parameters:
+    costmap_topic: local_costmap/costmap_raw
+    footprint_topic: local_costmap/published_footprint
+    cycle_frequency: 10.0
+    recovery_plugins: ["spin", "backup", "wait"]
+    spin:
+      plugin: "nav2_recoveries/Spin"
+    backup:
+      plugin: "nav2_recoveries/BackUp"
+    wait:
+      plugin: "nav2_recoveries/Wait"
+    global_frame: odom
+    robot_base_frame: base_link
+    transform_timeout: 0.1
+    use_sim_time: false
+    tf_buffer_duration: 10.0
+
+robot_state_publisher:
+  ros__parameters:
+    use_sim_time: False
+
+smoother_server:
+  ros__parameters:
+    use_sim_time: False
+    smoother_plugins: ["simple_smoother"]
+    simple_smoother:
+      plugin: "nav2_smoother/SimpleSmoother"
+      tolerance: 1e-10
+      max_its: 1000
+      do_refinement: True
+
+smoother_server_rclcpp_node:
+  ros__parameters:
+    use_sim_time: False
+
+velocity_smoother:
+  ros__parameters:
+    use_sim_time: False
+    smoothing_frequency: 20.0
+    scale_velocities: False
+    feedback: "open_loop"
+    max_accel: 2.5
+    max_decel: 2.5
+    odom_topic: "odom"
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0

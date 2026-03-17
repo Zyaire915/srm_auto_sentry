@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 file(CHMOD 
   ${CMAKE_CURRENT_SOURCE_DIR}/scripts/waypoints_navigator.py 
   ${CMAKE_CURRENT_SOURCE_DIR}/scripts/waypoints_test_client.py
+  ${CMAKE_CURRENT_SOURCE_DIR}/scripts/single_plan_navigator.py
   FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE
 )
 
@@ -19,6 +20,7 @@ install(
   PROGRAMS
     scripts/waypoints_navigator.py
     scripts/waypoints_test_client.py
+    scripts/single_plan_navigator.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -34,6 +36,11 @@ install(
       COMMAND ${CMAKE_COMMAND} -E create_symlink 
       waypoints_test_client.py 
       \${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}/waypoints_test_client
+    )
+    execute_process(
+      COMMAND ${CMAKE_COMMAND} -E create_symlink 
+      single_plan_navigator.py 
+      \${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}/single_plan_navigator
     )
   "
 )

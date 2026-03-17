@@ -10,7 +10,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
 from geometry_msgs.msg import PoseStamped, PoseArray
-from nav2_msgs.action import NavigateToPose
+from nav2_msgs.action import NavigateThroughPoses
 from nav_msgs.msg import Path
 from std_msgs.msg import Float64MultiArray
 from rcl_interfaces.msg import Parameter, ParameterValue
@@ -45,11 +45,11 @@ class WaypointsNavigator(Node):
         self.goal_checker_timeout = self.get_parameter('goal_checker_timeout').value
         
         # Nav2 Action 客户端
-        self.nav_client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
+        self.nav_client = ActionClient(self, NavigateThroughPoses, 'navigate_through_poses')
         
         # 等待 action server
         if not self.nav_client.wait_for_server(timeout_sec=10):
-            self.get_logger().error('navigate_to_pose action server 不可用')
+            self.get_logger().error('navigate_through_poses action server 不可用')
             raise RuntimeError('Action server 初始化失败')
         
         # SetParameters 服务客户端
@@ -124,7 +124,7 @@ class WaypointsNavigator(Node):
             self.get_logger().error(f'处理途径点时出错: {e}')
     
     def navigate_waypoints(self):
-        """依次导航到所有途径点（无间隔）"""
+        """一次性导航到所有途径点（无间隔）"""
         if self.is_navigating:
             self.get_logger().warn('已有导航任务在进行中')
             return
@@ -132,23 +132,18 @@ class WaypointsNavigator(Node):
         self.is_navigating = True
         
         try:
-            for i, (pose, tolerance) in enumerate(zip(self.current_waypoints, self.current_tolerances)):
-                self.get_logger().info(f'\n--- 导航到途径点 {i+1}/{len(self.current_waypoints)} ---')
-                self.get_logger().info(f'位置: ({pose.pose.position.x:.2f}, {pose.pose.position.y:.2f})')
-                self.get_logger().info(f'容差: {tolerance:.2f}m')
-                
-                # 设置此点的容差
-                self.set_goal_tolerance(tolerance)
-                time.sleep(0.5)  # 等待参数生效
-                
-                # 发送导航目标
-                if not self.send_navigation_goal(pose):
-                    self.get_logger().error(f'导航到途径点 {i+1} 失败！')
-                    break
-                
-                self.get_logger().info(f'✓ 到达途径点 {i+1}')
+            self.get_logger().info(f'\n--- 开始多途径点导航 ---')
+            self.get_logger().info(f'总共 {len(self.current_waypoints)} 个途径点')
             
-            self.get_logger().info('\n✓✓✓ 所有途径点导航完成！✓✓✓')
+            # 设置最后一个点的容差为最终目标容差，其他点用途径点容差
+            self.set_goal_tolerance(self.final_goal_tolerance)
+            time.sleep(0.5)  # 等待参数生效
+            
+            # 一次性发送所有途径点
+            if self.send_navigation_goal_through_poses(self.current_waypoints):
+                self.get_logger().info('\n✓✓✓ 所有途径点导航完成！✓✓✓')
+            else:
+                self.get_logger().error('多途径点导航失败！')
         
         except Exception as e:
             self.get_logger().error(f'导航过程出错: {e}')
@@ -156,20 +151,20 @@ class WaypointsNavigator(Node):
         finally:
             self.is_navigating = False
     
-    def send_navigation_goal(self, goal_pose: PoseStamped) -> bool:
+    def send_navigation_goal_through_poses(self, goal_poses: List[PoseStamped]) -> bool:
         """
-        发送单个导航目标并等待完成
+        一次性发送多个导航目标
         
         Args:
-            goal_pose: 目标位姿
+            goal_poses: 目标位姿列表
             
         Returns:
             成功返回 True，失败返回 False
         """
         try:
             # 创建 action 目标
-            goal = NavigateToPose.Goal()
-            goal.pose = goal_pose
+            goal = NavigateThroughPoses.Goal()
+            goal.poses = goal_poses
             
             # 发送目标
             future = self.nav_client.send_goal_async(goal)
@@ -181,9 +176,11 @@ class WaypointsNavigator(Node):
                 self.get_logger().error('目标被导航器拒绝')
                 return False
             
-            # 等待结果
+            self.get_logger().info('✓ 多途径点目标已接受，开始导航...')
+            
+            # 等待结果（给足够的时间）
             result_future = self.current_goal_handle.get_result_async()
-            rclpy.spin_until_future_complete(self, result_future, timeout_sec=300)
+            rclpy.spin_until_future_complete(self, result_future, timeout_sec=600)
             
             result = result_future.result()
             
@@ -196,6 +193,19 @@ class WaypointsNavigator(Node):
         except Exception as e:
             self.get_logger().error(f'发送导航目标时出错: {e}')
             return False
+    
+    def send_navigation_goal(self, goal_pose: PoseStamped) -> bool:
+        """
+        发送单个导航目标并等待完成（兼容性方法，现已弃用）
+        
+        Args:
+            goal_pose: 目标位姿
+            
+        Returns:
+            成功返回 True，失败返回 False
+        """
+        # 现在使用 nav_through_poses，此方法保留用于兼容性
+        return self.send_navigation_goal_through_poses([goal_pose])
     
     def set_goal_tolerance(self, tolerance: float) -> bool:
         """
