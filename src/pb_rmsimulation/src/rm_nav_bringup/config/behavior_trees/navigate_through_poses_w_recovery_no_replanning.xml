@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+  导航通过多个目标点 - 无重规划版本
+  ====================================
+  
+  区别于默认的 navigate_through_poses_w_replanning_and_recovery.xml：
+  - ❌ 移除了 RateController (不再周期性重规划)
+  - ✅ 只规划一次全局路径，然后跟踪
+  - ✅ 避免了回头问题
+  - ✅ 点之间没有时间间隔
+  
+  工作流程：
+  1. ComputePathThroughPoses - 一次性计算经过所有点的路径
+  2. FollowPath - 严格跟踪该路径（不会因为新点而改变）
+  3. 如果跟踪失败，进行恢复
+  
+  何时使用这个：
+  - 需要无间隔的多点导航
+  - 不希望因为新目标而改变已规划的路径
+  - 路径不会因为环境变化而需要实时更新（如绕柱任务）
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <RecoveryNode number_of_retries="6" name="NavigateRecovery">
+      <PipelineSequence name="NavigateWithoutReplanning">
+        <!-- 
+          关键改进：移除 RateController，所以 ComputePathThroughPoses 只执行一次
+          第一次计算路径后，如果路径有效，就持续跟踪不再重新计算
+        -->
+        <RecoveryNode number_of_retries="1" name="ComputePathThroughPoses">
+          <ReactiveSequence>
+            <RemovePassedGoals input_goals="{goals}" output_goals="{goals}" radius="0.7"/>
+            <ComputePathThroughPoses goals="{goals}" path="{path}" planner_id="GridBased"/>
+          </ReactiveSequence>
+          <ClearEntireCostmap name="ClearGlobalCostmap-Context" service_name="global_costmap/clear_entirely_global_costmap"/>
+        </RecoveryNode>
+        
+        <!-- 跟踪路径 -->
+        <RecoveryNode number_of_retries="1" name="FollowPath">
+          <FollowPath path="{path}" controller_id="FollowPath"/>
+          <ClearEntireCostmap name="ClearLocalCostmap-Context" service_name="local_costmap/clear_entirely_local_costmap"/>
+        </RecoveryNode>
+      </PipelineSequence>
+      
+      <!-- 恢复行为（如果导航失败） -->
+      <ReactiveFallback name="RecoveryFallback">
+        <GoalUpdated/>
+        <RoundRobin name="RecoveryActions">
+          <Sequence name="ClearingActions">
+            <ClearEntireCostmap name="ClearLocalCostmap-Subtree" service_name="local_costmap/clear_entirely_local_costmap"/>
+            <ClearEntireCostmap name="ClearGlobalCostmap-Subtree" service_name="global_costmap/clear_entirely_global_costmap"/>
+          </Sequence>
+          <Spin spin_dist="1.57"/>
+          <Wait wait_duration="5"/>
+          <BackUp backup_dist="0.30" backup_speed="0.05"/>
+        </RoundRobin>
+      </ReactiveFallback>
+    </RecoveryNode>
+  </BehaviorTree>
+</root>

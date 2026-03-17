@@ -1,55 +1,64 @@
 #!/usr/bin/env python3
 """
-多途径点导航器
-- 支持根据途径点列表生成全局路线
-- 点与点之间无时间间隔
-- 支持动态调整每个点的坐标和容差
+修复版本的多途径点导航器
+==========================
+核心差异：使用 ComputePathThroughPoses（只规划一次）而不是 navigate_through_poses
+这样避免了 navigate_through_poses 的周期性重规划问题
+
+工作流程：
+1. 一次性调用 ComputePathThroughPoses，得到完整全局路径
+2. 使用 FollowPath 严格跟随这个全局路径
+3. 这样全局路径不会改变，避免绕圈问题
 """
 
 import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionClient
 from geometry_msgs.msg import PoseStamped, PoseArray
-from nav2_msgs.action import NavigateThroughPoses
+from nav2_msgs.action import FollowPath, ComputePathThroughPoses
 from nav_msgs.msg import Path
 from std_msgs.msg import Float64MultiArray
 from rcl_interfaces.msg import Parameter, ParameterValue
 from rcl_interfaces.srv import SetParameters
 import math
-from typing import List, Tuple
+from typing import List
 import threading
 import time
 
 
-class WaypointsNavigator(Node):
+class WaypointsNavigatorFixed(Node):
     """
-    多途径点导航器
+    修复版本的多途径点导航器
     
-    功能：
-    - 接收途径点列表，生成完整的全局路线
-    - 无间隔地依次导航到每个途径点
-    - 支持动态调整每个点的坐标和容差
+    关键改进：
+    - 使用 ComputePathThroughPoses 只规划一次全局路径
+    - 使用 FollowPath 严格跟随该路径
+    - 避免 navigate_through_poses 的周期性重规划
     """
     
     def __init__(self):
-        super().__init__('waypoints_navigator')
+        super().__init__('waypoints_navigator_fixed')
         
         # 参数声明
         self.declare_parameter('waypoint_tolerance', 1.0)
         self.declare_parameter('final_goal_tolerance', 0.25)
-        self.declare_parameter('goal_checker_timeout', 1.0)
         
         # 获取参数
         self.waypoint_tolerance = self.get_parameter('waypoint_tolerance').value
         self.final_goal_tolerance = self.get_parameter('final_goal_tolerance').value
-        self.goal_checker_timeout = self.get_parameter('goal_checker_timeout').value
         
-        # Nav2 Action 客户端
-        self.nav_client = ActionClient(self, NavigateThroughPoses, 'navigate_through_poses')
+        # 创建 Action 客户端
+        self.compute_path_client = ActionClient(
+            self, ComputePathThroughPoses, 'compute_path_through_poses')
+        self.follow_path_client = ActionClient(self, FollowPath, 'follow_path')
         
-        # 等待 action server
-        if not self.nav_client.wait_for_server(timeout_sec=10):
-            self.get_logger().error('navigate_through_poses action server 不可用')
+        # 等待 action servers
+        if not self.compute_path_client.wait_for_server(timeout_sec=10):
+            self.get_logger().error('compute_path_through_poses action server 不可用')
+            raise RuntimeError('Action server 初始化失败')
+        
+        if not self.follow_path_client.wait_for_server(timeout_sec=10):
+            self.get_logger().error('follow_path action server 不可用')
             raise RuntimeError('Action server 初始化失败')
         
         # SetParameters 服务客户端
@@ -69,23 +78,16 @@ class WaypointsNavigator(Node):
         self.current_waypoints: List[PoseStamped] = []
         self.current_tolerances: List[float] = []
         self.is_navigating = False
-        self.current_goal_handle = None
         
-        self.get_logger().info('✓ 多途径点导航器已初始化')
+        self.get_logger().info('✓ 修复版多途径点导航器已初始化')
         self.get_logger().info('  - 订阅话题: /set_waypoints (Float64MultiArray)')
         self.get_logger().info('  - 发布话题: /global_route (Path), /waypoints_array (PoseArray)')
     
     def waypoints_callback(self, msg: Float64MultiArray):
-        """
-        接收途径点数据
-        
-        消息格式：[x1, y1, tol1, x2, y2, tol2, ..., xn, yn, toln]
-        其中每个点包含：(x坐标, y坐标, tolerance)
-        """
+        """接收途径点数据"""
         try:
             data = msg.data
             
-            # 验证数据长度必须是 3 的倍数
             if len(data) % 3 != 0 or len(data) == 0:
                 self.get_logger().error(
                     f'无效的途径点数据格式！长度: {len(data)} (需要是 3 的倍数)')
@@ -113,9 +115,9 @@ class WaypointsNavigator(Node):
             self.current_tolerances = tolerances
             
             # 发布全局路线
-            self.publish_global_route(waypoints)
+            self.publish_waypoints_array(waypoints)
             
-            # 启动导航（如果不在导航中）
+            # 启动导航
             if not self.is_navigating:
                 self.get_logger().info(f'开始导航 {len(waypoints)} 个途径点')
                 threading.Thread(target=self.navigate_waypoints, daemon=True).start()
@@ -124,7 +126,14 @@ class WaypointsNavigator(Node):
             self.get_logger().error(f'处理途径点时出错: {e}')
     
     def navigate_waypoints(self):
-        """一次性导航到所有途径点（无间隔）- 禁止全局路径重规划"""
+        """
+        核心导航流程 - 只规划一次！
+        
+        步骤：
+        1. 调用 ComputePathThroughPoses - 一次性计算完整路径
+        2. 设置最终目标的容差
+        3. 使用 FollowPath 严格跟随该路径
+        """
         if self.is_navigating:
             self.get_logger().warn('已有导航任务在进行中')
             return
@@ -135,20 +144,26 @@ class WaypointsNavigator(Node):
             self.get_logger().info(f'\n--- 开始多途径点导航 ---')
             self.get_logger().info(f'总共 {len(self.current_waypoints)} 个途径点')
             
-            # ⭐ 关键：禁止全局路径规划的重复调用
-            # 设置规划频率为 0，禁止重规划
-            self.disable_global_replanning()
-            time.sleep(0.5)  # 等待参数生效
+            # ⭐ 第1步：一次性计算全局路径
+            # 这样避免了 navigate_through_poses 的周期性重规划
+            computed_path = self.compute_path_once()
             
-            # 设置最后一个点的容差为最终目标容差，其他点用途径点容差
+            if computed_path is None:
+                self.get_logger().error('全局路径计算失败！')
+                return
+            
+            self.get_logger().info(f'✓ 全局路径已计算（{len(computed_path.poses)} 个点）')
+            self.publish_global_route(computed_path)
+            
+            # ⭐ 第2步：设置最终目标的容差
             self.set_goal_tolerance(self.final_goal_tolerance)
-            time.sleep(0.5)  # 等待参数生效
+            time.sleep(0.5)
             
-            # 一次性发送所有途径点
-            if self.send_navigation_goal_through_poses(self.current_waypoints):
+            # ⭐ 第3步：严格跟随这个固定的全局路径
+            if self.follow_computed_path(computed_path):
                 self.get_logger().info('\n✓✓✓ 所有途径点导航完成！✓✓✓')
             else:
-                self.get_logger().error('多途径点导航失败！')
+                self.get_logger().error('路径跟随失败！')
         
         except Exception as e:
             self.get_logger().error(f'导航过程出错: {e}')
@@ -156,86 +171,104 @@ class WaypointsNavigator(Node):
         finally:
             self.is_navigating = False
     
-    def send_navigation_goal_through_poses(self, goal_poses: List[PoseStamped]) -> bool:
+    def compute_path_once(self) -> Path:
         """
-        一次性发送多个导航目标
+        一次性计算完整的全局路径
         
-        Args:
-            goal_poses: 目标位姿列表
-            
-        Returns:
-            成功返回 True，失败返回 False
+        关键点：只调用一次，避免重复规划导致路线变化
         """
         try:
             # 创建 action 目标
-            goal = NavigateThroughPoses.Goal()
-            goal.poses = goal_poses
+            goal = ComputePathThroughPoses.Goal()
+            goal.goals = self.current_waypoints
+            goal.planner_id = "GridBased"
+            goal.start.header.frame_id = "map"
+            goal.start.pose.position.x = 0.0
+            goal.start.pose.position.y = 0.0
+            goal.start.pose.orientation.w = 1.0
+            
+            self.get_logger().info('正在计算全局路径（一次性）...')
             
             # 发送目标
-            future = self.nav_client.send_goal_async(goal)
+            future = self.compute_path_client.send_goal_async(goal)
             rclpy.spin_until_future_complete(self, future, timeout_sec=30)
             
-            self.current_goal_handle = future.result()
+            goal_handle = future.result()
             
-            if not self.current_goal_handle.accepted:
-                self.get_logger().error('目标被导航器拒绝')
+            if not goal_handle.accepted:
+                self.get_logger().error('路径计算目标被拒绝')
+                return None
+            
+            # 等待结果
+            result_future = goal_handle.get_result_async()
+            rclpy.spin_until_future_complete(self, result_future, timeout_sec=300)
+            
+            result = result_future.result()
+            
+            if result.path.poses:
+                return result.path
+            else:
+                self.get_logger().error('路径为空')
+                return None
+        
+        except Exception as e:
+            self.get_logger().error(f'计算路径时出错: {e}')
+            return None
+    
+    def follow_computed_path(self, path: Path) -> bool:
+        """
+        严格跟随已计算的全局路径
+        
+        由于路径是固定的，不会改变，所以不会出现绕圈问题
+        """
+        try:
+            # 创建 FollowPath 目标
+            goal = FollowPath.Goal()
+            goal.path = path
+            goal.controller_id = "FollowPath"
+            
+            self.get_logger().info('开始跟随路径...')
+            
+            # 发送目标
+            future = self.follow_path_client.send_goal_async(goal)
+            rclpy.spin_until_future_complete(self, future, timeout_sec=30)
+            
+            goal_handle = future.result()
+            
+            if not goal_handle.accepted:
+                self.get_logger().error('路径跟随目标被拒绝')
                 return False
             
-            self.get_logger().info('✓ 多途径点目标已接受，开始导航...')
-            
-            # 等待结果（给足够的时间）
-            result_future = self.current_goal_handle.get_result_async()
+            # 等待结果
+            result_future = goal_handle.get_result_async()
             rclpy.spin_until_future_complete(self, result_future, timeout_sec=600)
             
             result = result_future.result()
             
-            if result.status == 4:  # SUCCEEDED
+            if result and result.error_code == 0:  # SUCCESS
                 return True
             else:
-                self.get_logger().warn(f'导航失败，状态码: {result.status}')
+                self.get_logger().warn(f'路径跟随失败，错误码: {result.error_code if result else "None"}')
                 return False
         
         except Exception as e:
-            self.get_logger().error(f'发送导航目标时出错: {e}')
+            self.get_logger().error(f'跟随路径时出错: {e}')
             return False
     
-    def send_navigation_goal(self, goal_pose: PoseStamped) -> bool:
-        """
-        发送单个导航目标并等待完成（兼容性方法，现已弃用）
-        
-        Args:
-            goal_pose: 目标位姿
-            
-        Returns:
-            成功返回 True，失败返回 False
-        """
-        # 现在使用 nav_through_poses，此方法保留用于兼容性
-        return self.send_navigation_goal_through_poses([goal_pose])
-    
     def set_goal_tolerance(self, tolerance: float) -> bool:
-        """
-        设置目标容差
-        
-        Args:
-            tolerance: 容差值（米）
-            
-        Returns:
-            设置成功返回 True
-        """
+        """设置目标容差"""
         try:
-            # 创建参数
             param = Parameter()
             param.name = 'general_goal_checker.xy_goal_tolerance'
             param.value = ParameterValue()
             param.value.type = 3  # double_value
             param.value.double_value = float(tolerance)
             
-            # 调用服务
             request = SetParameters.Request()
             request.parameters = [param]
             
             future = self.set_params_client.call_async(request)
-            rclpy.spin_until_future_complete(self, future, timeout_sec=self.goal_checker_timeout)
+            rclpy.spin_until_future_complete(self, future, timeout_sec=2.0)
             
             response = future.result()
             
@@ -250,87 +283,36 @@ class WaypointsNavigator(Node):
             self.get_logger().error(f'设置容差时出错: {e}')
             return False
     
-    def disable_global_replanning(self) -> bool:
-        """
-        禁止全局路径规划的重复调用
-        
-        原理：设置规划器的频率为 0，禁止重规划
-        这样 NavigateThroughPoses 只会规划一次全局路径
-        """
-        try:
-            from rcl_interfaces.msg import Parameter, ParameterValue
-            
-            # 创建参数：禁止全局路径重规划
-            param = Parameter()
-            param.name = 'planner_server.expected_planner_frequency'
-            param.value = ParameterValue()
-            param.value.type = 3  # double_value
-            param.value.double_value = 0.0  # 设为 0，禁止定期重规划
-            
-            request = SetParameters.Request()
-            request.parameters = [param]
-            
-            future = self.set_params_client.call_async(request)
-            rclpy.spin_until_future_complete(self, future, timeout_sec=2.0)
-            
-            response = future.result()
-            
-            if response.results[0].successful:
-                self.get_logger().info('✓ 已禁用全局路径重规划')
-                self.get_logger().info('  - 全局路径只规划一次')
-                self.get_logger().info('  - 局部规划器严格跟随全局路径')
-                return True
-            else:
-                self.get_logger().warn(f'✗ 禁用重规划失败: {response.results[0].reason}')
-                return False
-        
-        except Exception as e:
-            self.get_logger().error(f'禁用重规划时出错: {e}')
-            return False
-    
-    def publish_global_route(self, waypoints: List[PoseStamped]):
+    def publish_global_route(self, path: Path):
         """发布全局路线用于 RViz 可视化"""
         try:
-            path_msg = Path()
-            path_msg.header.frame_id = 'map'
-            path_msg.header.stamp = self.get_clock().now().to_msg()
-            path_msg.poses = waypoints
-            
-            self.route_pub.publish(path_msg)
-            
-            # 同时发布为 PoseArray
+            self.route_pub.publish(path)
+            self.get_logger().debug(f'已发布全局路径（{len(path.poses)} 个点）')
+        except Exception as e:
+            self.get_logger().error(f'发布路线时出错: {e}')
+    
+    def publish_waypoints_array(self, waypoints: List[PoseStamped]):
+        """发布途径点"""
+        try:
             pose_array = PoseArray()
             pose_array.header.frame_id = 'map'
             pose_array.header.stamp = self.get_clock().now().to_msg()
             pose_array.poses = [p.pose for p in waypoints]
             
             self.waypoints_pub.publish(pose_array)
-            
-            self.get_logger().debug(f'已发布 {len(waypoints)} 个途径点的全局路线')
-        
+            self.get_logger().debug(f'已发布 {len(waypoints)} 个途径点')
         except Exception as e:
-            self.get_logger().error(f'发布路线时出错: {e}')
+            self.get_logger().error(f'发布途径点时出错: {e}')
     
     @staticmethod
     def create_pose(x: float, y: float, yaw: float = 0.0) -> PoseStamped:
-        """
-        创建位姿消息
-        
-        Args:
-            x: X 坐标
-            y: Y 坐标
-            yaw: 偏航角（弧度）
-            
-        Returns:
-            PoseStamped 消息
-        """
+        """创建位姿消息"""
         pose = PoseStamped()
         pose.header.frame_id = 'map'
         pose.pose.position.x = float(x)
         pose.pose.position.y = float(y)
         pose.pose.position.z = 0.0
         
-        # 从偏航角创建四元数
         cos_yaw = math.cos(yaw / 2)
         sin_yaw = math.sin(yaw / 2)
         
@@ -344,7 +326,7 @@ class WaypointsNavigator(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = WaypointsNavigator()
+    node = WaypointsNavigatorFixed()
     
     try:
         rclpy.spin(node)

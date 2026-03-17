@@ -355,7 +355,7 @@ map_saver:
 
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 20.0
+    expected_planner_frequency: 20.0    # ⭐ 注意：运行时可被设置为 0.0 以禁止重规划
     use_sim_time: False
     planner_plugins: ["GridBased"]
     GridBased:
