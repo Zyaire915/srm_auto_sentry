@@ -641,9 +641,9 @@ void StandardRobotPpRos2Node::sendData()
 void StandardRobotPpRos2Node::CmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg)
 {
   std::lock_guard<std::mutex> lk(send_mutex_);
-  send_robot_cmd_data_.speed_vector.vx = msg->linear.x*2;
-  send_robot_cmd_data_.speed_vector.vy = msg->linear.y*2;
-  send_robot_cmd_data_.speed_vector.wz = msg->angular.z*2;
+  send_robot_cmd_data_.speed_vector.vx = msg->linear.x*4;
+  send_robot_cmd_data_.speed_vector.vy = msg->linear.y*4;
+  send_robot_cmd_data_.speed_vector.wz = msg->angular.z*4;
 }
 
 void StandardRobotPpRos2Node::printHex(

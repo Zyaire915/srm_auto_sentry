@@ -54,6 +54,7 @@ bt_navigator:
     robot_base_frame: base_link_fake
     odom_topic: /Odometry
     bt_loop_duration: 10
+    default_nav_through_poses_bt_xml: /home/srm/srm_auto_sentry/src/pb_rmsimulation/src/rm_nav_bringup/config/reality/navigate_through_poses_no_replan.xml
     default_server_timeout: 20
     plugin_lib_names:
     - nav2_compute_path_to_pose_action_bt_node
@@ -139,10 +140,10 @@ controller_server:
       #*******************************************************************************
       # Robot
       #*******************************************************************************
-      max_vel_x: 2.0                        #最大平移速度
+      max_vel_x: 10.0                        #最大平移速度
       max_vel_x_backwards: 2.0              #最大后退速度
       max_vel_theta: 6.0                    #最大转向角速度
-      acc_lim_x: 2.0                        #最大平移加速度
+      acc_lim_x: 10.0                        #最大平移加速度
       acc_lim_theta: 6.0                    #最大角加速度
       is_footprint_dynamic: False           #如果为真，在检查轨迹可行性之前更新足迹
       use_proportional_saturation: False    #如果为true，则按比例减少所有扭曲分量（线性x和y以及角度z）（如果任何扭曲分量超过其相应的界限），而不是单独饱和每个扭曲分量
@@ -265,7 +266,7 @@ local_costmap:
       width: 5
       height: 5
       resolution: 0.02
-      robot_radius: 0.2
+      robot_radius: 0.27
       plugins: ["obstacle_layer", "inflation_layer"]
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
@@ -295,7 +296,7 @@ global_costmap:
       global_frame: map
       robot_base_frame: base_link_fake
       use_sim_time: False
-      robot_radius: 0.2
+      robot_radius: 0.27
       resolution: 0.04
       track_unknown_space: true
       plugins: ["static_layer", "stvl_layer", "inflation_layer"]
@@ -307,7 +308,7 @@ global_costmap:
         decay_model:              0                                 # 衰减模型，0=线性，1=指数，-1=持久
         voxel_size:               0.05                              # 每个体素的尺寸，单位为米
         track_unknown_space:      true                              # default space is unknown
-        mark_threshold:           0                                 # voxel height
+        mark_threshold:           2                                 # 提高占据判定阈值，降低地面起伏/噪点误检
         update_footprint_enabled: true
         combination_method:       1                                 # 1=max, 0=override
         origin_z:                 0.0                               # 单位为米
@@ -322,13 +323,13 @@ global_costmap:
           marking: true
           clearing: false
           obstacle_range: 3.0                                       # meters
-          min_obstacle_height: 0.2                                  # default 0, meters
+          min_obstacle_height: 1.2                                 # 提高最小障碍高度，过滤可通行低矮起伏
           max_obstacle_height: 2.0                                  # default 3, meters
           expected_update_rate: 0.0                                 # default 0, if not updating at this rate at least, remove from buffer
           observation_persistence: 0.0                              # default 0, use all measurements taken during now-value, 0=latest
           inf_is_valid: false                                       # default false, for laser scans
           filter: "voxel"                                           # default passthrough, apply "voxel", "passthrough", or no filter to sensor data, recommend on
-          voxel_min_points: 0                                       # default 0, minimum points per voxel for voxel filter
+          voxel_min_points: 3                                       # 每个体素至少3点才计入，抑制稀疏噪声
           clear_after_reading: true                                 # default false, clear the buffer after the layer gets readings from it
         livox_clear:
           enabled: true                                             # default true, can be toggled on/off with associated service call
@@ -337,7 +338,7 @@ global_costmap:
           marking: false
           clearing: true
           max_z: 8.0                                                # default 10, meters
-          min_z: 1.0                                                # default 0, meters
+          min_z: 0.0                                                # 允许低位区域参与清除，减少误障碍残留
           vertical_fov_angle: 1.029                                 # 垂直视场角，单位为弧度，For 3D lidars it's the symmetric FOV about the planar axis.
           vertical_fov_padding: 0.05                                # 3D Lidar only. Default 0, in meters
           horizontal_fov_angle: 6.29                                # 3D 激光雷达水平视场角
@@ -412,10 +413,10 @@ velocity_smoother:
 
 # waypoint_follower:
 #   ros__parameters:
-#     loop_rate: 50
+#     loop_rate: 10000 #!! 增加检测频率
 #     stop_on_failure: false
 #     waypoint_task_executor_plugin: "wait_at_waypoint"   
 #     wait_at_waypoint:
 #       plugin: "nav2_waypoint_follower::WaitAtWaypoint"
 #       enabled: True
-#       waypoint_pause_duration: 1
+#       waypoint_pause_duration: 1 #!! 减小停顿时间

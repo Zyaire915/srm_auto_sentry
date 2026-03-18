@@ -4,5 +4,6 @@
     ],
     "python.analysis.extraPaths": [
         "/opt/ros/jazzy/lib/python3.12/site-packages"
-    ]
+    ],
+    "cmake.sourceDirectory": "/home/srm/srm_auto_sentry/build/auto_aim_interfaces/auto_aim_interfaces__py"
 }

@@ -1,7 +1,7 @@
-image: secret.pgm
+image: 3333.pgm
 mode: trinary
 resolution: 0.05
-origin: [-4.82, -7.34, 0]
+origin: [-4.34, -1.13, 0]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.25
