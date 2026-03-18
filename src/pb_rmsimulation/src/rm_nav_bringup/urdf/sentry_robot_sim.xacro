@@ -14,8 +14,8 @@
   </xacro:macro>
 
   <!-- base_link to livox_frame -->
-  <xacro:arg name="xyz" default="0.12 0.0 0.175" />
-  <xacro:arg name="rpy" default="0 0 0" />
+  <xacro:arg name="xyz" default="0.12 0.0 4.175" />
+  <xacro:arg name="rpy" default="0 0 ${PI/2}" />
 
   <link name="dummy"/>
 

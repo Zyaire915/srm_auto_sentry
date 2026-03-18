@@ -1,0 +1,19 @@
+FollowPath:
+  plugin: "pb_omni_pid_pursuit_controller::OmniPidPursuitController"
+  controller_frequency: 20.0
+  translation_kp: 3.0
+  translation_ki: 0.1
+  translation_kd: 0.3
+  rotation_kp: 3.0
+  rotation_ki: 0.1
+  rotation_kd: 0.3
+  lookahead_dist: 0.3
+  use_velocity_scaled_lookahead_dist: true
+  min_lookahead_dist: 0.2
+  max_lookahead_dist: 1.0
+  use_rotate_to_heading: true
+  use_rotate_to_heading_treshold: 0.1
+  v_linear_max: 2.0
+  v_linear_min: -2.0
+  v_angular_max: 6.0
+  v_angular_min: -6.0
