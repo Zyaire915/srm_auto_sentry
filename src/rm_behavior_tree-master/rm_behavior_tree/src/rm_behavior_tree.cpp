@@ -34,11 +34,11 @@ int main(int argc, char ** argv)
   params_send_goal.server_timeout = std::chrono::milliseconds(5000);
   params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(10000);
 
-  // 【新增 2】定义 SubAllyRobotHP 的参数 (话题名)
-  BT::RosNodeParams params_sub_ally;
-  params_sub_ally.nh = std::make_shared<rclcpp::Node>("sub_ally_hp");
+  // 【新增 2】定义 SubSefdefined 的参数 (话题名)
+  BT::RosNodeParams params_sub_sefdefined;
+  params_sub_sefdefined.nh = std::make_shared<rclcpp::Node>("sub_sefdefined");
   // 确保这里的话题名和你 interfaces 转换后的实际话题一致
-  params_sub_ally.default_port_value = "referee/ally_robot_hp";
+  params_sub_sefdefined.default_port_value = "/srm/sefdefined";
 
   // clang-format off
   const std::vector<std::string> msg_update_plugin_libs = {
@@ -73,11 +73,10 @@ int main(int argc, char ** argv)
   }
 
   RegisterRosNode(factory, BT::SharedLibrary::getOSName("send_goal"), params_send_goal);
-
   RegisterRosNode(factory, BT::SharedLibrary::getOSName("robot_control"), params_robot_control);
 
-  // 【新增 3】注册 SubAllyRobotHP (ROS 插件)
-  RegisterRosNode(factory, BT::SharedLibrary::getOSName("sub_ally_robot_hp"), params_sub_ally);
+  // 【新增 3】注册 SubSefdefined (ROS 插件)
+  RegisterRosNode(factory, BT::SharedLibrary::getOSName("sub_sefdefined"), params_sub_sefdefined);
 
   // 【新增 4】注册 HpDecisionPatrol (普通插件)
   factory.registerFromPlugin(BT::SharedLibrary::getOSName("hp_decision_patrol"));

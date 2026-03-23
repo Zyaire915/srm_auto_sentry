@@ -1,0 +1,14 @@
+uint8 robot_id
+uint8 robot_level
+uint16 current_hp
+uint16 maximum_hp
+uint16 shooter_barrel_cooling_value
+uint16 shooter_barrel_heat_limit
+uint16 shooter_17mm_1_barrel_heat
+float32 robot_pos_x
+float32 robot_pos_y
+float32 robot_pos_angle
+uint8 armor_id
+uint8 hp_deduction_reason
+uint16 projectile_allowance_17mm_1
+uint16 remaining_gold_coin

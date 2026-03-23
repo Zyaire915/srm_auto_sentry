@@ -1,5 +1,6 @@
 #include "rm_behavior_tree/plugins/action/hp_decision_patrol.hpp"
 #include "behaviortree_cpp/bt_factory.h"
+#include <rclcpp/rclcpp.hpp>
 
 namespace rm_behavior_tree
 {
@@ -12,9 +13,9 @@ HpDecisionPatrol::HpDecisionPatrol(const std::string& name, const BT::NodeConfig
 BT::PortsList HpDecisionPatrol::providedPorts()
 {
   return {
-    // 输入：从 SubAllyRobotHP 那里拿到的血量数据
-    BT::InputPort<rm_decision_interfaces::msg::AllyRobotHP>("hp_input"),
-    
+    // 输入：从 SubSefdefined 那里拿到的血量数据
+    BT::InputPort<rm_decision_interfaces::msg::Sefdefined>("hp_input"),
+
     // 参数：两个巡逻点
     BT::InputPort<double>("high_hp_x", 0.0, "X when HP > threshold"),
     BT::InputPort<double>("high_hp_y", 0.0, "Y when HP > threshold"),
@@ -32,15 +33,15 @@ BT::PortsList HpDecisionPatrol::providedPorts()
 BT::NodeStatus HpDecisionPatrol::tick()
 {
   // 1. 从黑板读取血量数据
-  auto hp_msg = getInput<rm_decision_interfaces::msg::AllyRobotHP>("hp_input");
-  
+  auto hp_msg = getInput<rm_decision_interfaces::msg::Sefdefined>("hp_input");
+
   // 如果还没收到数据，返回 FAILURE 或者 RUNNING
   if (!hp_msg) {
     return BT::NodeStatus::FAILURE; 
   }
 
-  // 2. 提取哨兵血量 (ally_7)
-  int current_hp = hp_msg.value().ally_7_robot_hp;
+  // 2. 提取当前血量
+  int current_hp = hp_msg.value().current_hp;
 
   // 读取阈值（端口默认值为 400，可由 XML 或外部黑板覆盖）
   int hp_threshold = 400;

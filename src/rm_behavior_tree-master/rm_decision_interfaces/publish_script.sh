@@ -48,6 +48,23 @@ ros2 topic pub -r 3 /referee/ally_robot_hp rm_decision_interfaces/msg/AllyRobotH
     ally_base_hp: 1000
 }" &
 
+ros2 topic pub /srm/sefdefined rm_decision_interfaces/msg/Sefdefined "{
+  robot_id: 7,
+  robot_level: 1,
+  current_hp: 500,
+  maximum_hp: 600,
+  shooter_barrel_cooling_value: 30,
+  shooter_barrel_heat_limit: 200,
+  shooter_17mm_1_barrel_heat: 50,
+  robot_pos_x: 2.5,
+  robot_pos_y: 3.5,
+  robot_pos_angle: 90.0,
+  armor_id: 0,
+  hp_deduction_reason: 0,
+  projectile_allowance_17mm_1: 400,
+  remaining_gold_coin: 200
+}" &
+
 ros2 topic pub -r 5 /detector/armors auto_aim_interfaces/msg/Armors "{
   header: {
     stamp: {sec: 0, nanosec: 0},

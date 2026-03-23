@@ -47,6 +47,8 @@ void StandardRobotPpRos2Node::createPublisher()
 {
   event_data_pub_ =
     this->create_publisher<rm_decision_interfaces::msg::EventData>("referee/event_data", 10);
+  sefdefined_pub_ =
+    this->create_publisher<rm_decision_interfaces::msg::Sefdefined>("/srm/sefdefined", 10);
   // all_robot_hp_pub_ = this->create_publisher<rm_decision_interfaces::msg::AllyRobotHP>("referee/ally_robot_hp", 10);
   all_robot_hp_pub_ =
     this->create_publisher<rm_decision_interfaces::msg::AllyRobotHP>("referee/ally_robot_hp", 10);
@@ -292,8 +294,6 @@ void StandardRobotPpRos2Node::receiveData()
       }
 
       // 5. 读取数据主体
-      data_buf.clear();  // 复用内存
-      // data_buf.reserve(body_len_to_read); // 不需要，外面已经 reserve 了足够大的
 
       while (data_buf.size() < static_cast<size_t>(body_len_to_read)) {
         int remain_len = body_len_to_read - data_buf.size();
@@ -353,6 +353,10 @@ void StandardRobotPpRos2Node::receiveData()
         case ID_ROBOT_STATUS: {
           ReceiveRobotStatus robot_status_data = fromVector<ReceiveRobotStatus>(full_packet);
           publishRobotStatus(robot_status_data);
+        } break;
+        case ID_SEFDEFINED: {
+          ReceiveSefdefinedData sefdefined_data = fromVector<ReceiveSefdefinedData>(full_packet);
+          publishSefdefined(sefdefined_data);
         } break;
         default: {
           // RCLCPP_WARN(get_logger(), "Unprocessed id: 0x%04X", cmd_id);
@@ -567,6 +571,27 @@ void StandardRobotPpRos2Node::publishRobotStatus(ReceiveRobotStatus & robot_stat
   // msg.maximum_hp = 0;
   // msg.shooter_17mm_1_barrel_heat = robot_status.data.shooter_17mm_1_barrel_heat;
   robot_status_pub_->publish(msg);
+}
+
+void StandardRobotPpRos2Node::publishSefdefined(ReceiveSefdefinedData & sefdefined)
+{
+  rm_decision_interfaces::msg::Sefdefined msg;
+  msg.robot_id = sefdefined.data.robot_id;
+  msg.robot_level = sefdefined.data.robot_level;
+  msg.current_hp = sefdefined.data.current_hp;
+  msg.maximum_hp = sefdefined.data.maximum_hp;
+  msg.shooter_barrel_cooling_value = sefdefined.data.shooter_barrel_cooling_value;
+  msg.shooter_barrel_heat_limit = sefdefined.data.shooter_barrel_heat_limit;
+  msg.shooter_17mm_1_barrel_heat = sefdefined.data.shooter_17mm_1_barrel_heat;
+  msg.robot_pos_x = sefdefined.data.robot_pos_x;
+  msg.robot_pos_y = sefdefined.data.robot_pos_y;
+  msg.robot_pos_angle = sefdefined.data.robot_pos_angle;
+  msg.armor_id = sefdefined.data.armor_id;
+  msg.hp_deduction_reason = sefdefined.data.hp_deduction_reason;
+  msg.projectile_allowance_17mm_1 = sefdefined.data.projectile_allowance_17mm_1;
+  msg.remaining_gold_coin = sefdefined.data.remaining_gold_coin;
+
+  sefdefined_pub_->publish(msg);
 }
 
 /********************************************************/

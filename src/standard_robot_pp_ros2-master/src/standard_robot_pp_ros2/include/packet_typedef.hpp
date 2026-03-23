@@ -22,6 +22,7 @@ const uint16_t ID_EVENT_DATA = 0x0101;             // 场地事件数据
 const uint16_t ID_ROBOT_STATUS = 0x0202;           // 实时底盘缓冲能量和射击热量数据
 const uint16_t ID_RFID_STATUS = 0x0209;            // 机器人RFID状态
 const uint16_t ID_GROUND_ROBOT_POSITION = 0x020B;  // 地面机器人位置数据
+const uint16_t ID_SEFDEFINED = 0x000B;             // 新定义的0x0B数据包
 
 // Send ID
 // 0x0302: 自定义控制器与机器人交互数据
@@ -151,6 +152,32 @@ struct ReceiveGroundRobotPosition
     float reserved_1;
     float reserved_2;
   } __attribute__((packed)) data;
+
+  uint16_t crc;
+} __attribute__((packed));
+
+// 0x000B 自定义数据包
+struct ReceiveSefdefinedData
+{
+  HeaderFrame frame_header;
+  uint16_t cmd_id;
+
+  struct {
+    uint8_t robot_id;                           // 本机器人ID
+    uint8_t robot_level;                        // 机器人等级
+    uint16_t current_hp;                        // 机器人当前血量
+    uint16_t maximum_hp;                        // 机器人血量上限
+    uint16_t shooter_barrel_cooling_value;      // 枪口热量每秒冷却值
+    uint16_t shooter_barrel_heat_limit;         // 枪口热量上限
+    uint16_t shooter_17mm_1_barrel_heat;        // 第1个17mm发射机构枪口热量
+    float robot_pos_x;                          // 机器人位置x坐标(m)
+    float robot_pos_y;                          // 机器人位置y坐标(m)
+    float robot_pos_angle;                      // 机器人朝向(度，正北为0)
+    uint8_t armor_id;                           // 装甲模块ID
+    uint8_t hp_deduction_reason;                // 血量变化类型
+    uint16_t projectile_allowance_17mm_1;       // 17mm弹丸剩余发射次数
+    uint16_t remaining_gold_coin;               // 剩余金币数量
+  } __attribute__((__packed__))  data;
 
   uint16_t crc;
 } __attribute__((packed));

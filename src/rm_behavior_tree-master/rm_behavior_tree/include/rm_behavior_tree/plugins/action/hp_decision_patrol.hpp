@@ -4,7 +4,7 @@
 #include "behaviortree_cpp/action_node.h"
 #include "rm_decision_interfaces/msg/ally_robot_hp.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
-#include "rclcpp/rclcpp.hpp"
+#include "rm_decision_interfaces/msg/sefdefined.hpp"
 
 namespace rm_behavior_tree
 {
