@@ -23,6 +23,7 @@ const uint16_t ID_ROBOT_STATUS = 0x0202;           // 实时底盘缓冲能量�
 const uint16_t ID_RFID_STATUS = 0x0209;            // 机器人RFID状态
 const uint16_t ID_GROUND_ROBOT_POSITION = 0x020B;  // 地面机器人位置数据
 const uint16_t ID_SEFDEFINED = 0x000B;             // 新定义的0x0B数据包
+const uint16_t ID_ROBOT_STATUS_V1 = 0x0201;        // 机器人状态数据 (兼容 ID 0x0201)
 
 // Send ID
 // 0x0302: 自定义控制器与机器人交互数据

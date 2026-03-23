@@ -59,7 +59,7 @@
     ```sh
     ros2 launch rm_behavior_tree rm_behavior_tree.launch.py \
     style:=hp_patrol_test \
-    use_sim_time:=True
+    use_sim_time:=False
     ```
 
     `style` 参数与决策树预设文件名一致，详见下文。
