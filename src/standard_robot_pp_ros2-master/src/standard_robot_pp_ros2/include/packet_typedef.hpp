@@ -163,20 +163,16 @@ struct ReceiveSefdefinedData
   uint16_t cmd_id;
 
   struct {
-    uint8_t robot_id;                           // 本机器人ID
-    uint8_t robot_level;                        // 机器人等级
-    uint16_t current_hp;                        // 机器人当前血量
-    uint16_t maximum_hp;                        // 机器人血量上限
-    uint16_t shooter_barrel_cooling_value;      // 枪口热量每秒冷却值
-    uint16_t shooter_barrel_heat_limit;         // 枪口热量上限
-    uint16_t shooter_17mm_1_barrel_heat;        // 第1个17mm发射机构枪口热量
-    float robot_pos_x;                          // 机器人位置x坐标(m)
-    float robot_pos_y;                          // 机器人位置y坐标(m)
-    float robot_pos_angle;                      // 机器人朝向(度，正北为0)
-    uint8_t armor_id;                           // 装甲模块ID
-    uint8_t hp_deduction_reason;                // 血量变化类型
-    uint16_t projectile_allowance_17mm_1;       // 17mm弹丸剩余发射次数
-    uint16_t remaining_gold_coin;               // 剩余金币数量
+    uint8_t robot_id;  // 本机器人ID
+    uint8_t robot_level;	// 机器人等级
+    uint16_t current_HP;	// 机器人当前血量
+    uint16_t maximum_HP;	// 机器人血量上限
+    uint16_t shooter_barrel_cooling_value;  // 机器人射击热量每秒冷却值
+    uint16_t shooter_barrel_heat_limit;     // 机器人射击热量上限
+    uint16_t chassis_power_limit;           // 机器人底盘功率上限
+    uint8_t power_management_gimbal_output : 1;  // bit 0：gimbal口输出，0为无输出，1为 24V输出
+    uint8_t power_management_chassis_output : 1;  // bit 1：chassis口输出，0为无输出，1为24V输出
+    uint8_t power_management_shooter_output : 1;  // bit 2：shooter口输出，0为无输出，1为24V输出
   } __attribute__((__packed__))  data;
 
   uint16_t crc;

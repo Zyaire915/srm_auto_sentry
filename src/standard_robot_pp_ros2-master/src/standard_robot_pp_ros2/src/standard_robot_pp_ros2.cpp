@@ -578,18 +578,14 @@ void StandardRobotPpRos2Node::publishSefdefined(ReceiveSefdefinedData & sefdefin
   rm_decision_interfaces::msg::Sefdefined msg;
   msg.robot_id = sefdefined.data.robot_id;
   msg.robot_level = sefdefined.data.robot_level;
-  msg.current_hp = sefdefined.data.current_hp;
-  msg.maximum_hp = sefdefined.data.maximum_hp;
+  msg.current_hp = sefdefined.data.current_HP;
+  msg.maximum_hp = sefdefined.data.maximum_HP;
   msg.shooter_barrel_cooling_value = sefdefined.data.shooter_barrel_cooling_value;
   msg.shooter_barrel_heat_limit = sefdefined.data.shooter_barrel_heat_limit;
-  msg.shooter_17mm_1_barrel_heat = sefdefined.data.shooter_17mm_1_barrel_heat;
-  msg.robot_pos_x = sefdefined.data.robot_pos_x;
-  msg.robot_pos_y = sefdefined.data.robot_pos_y;
-  msg.robot_pos_angle = sefdefined.data.robot_pos_angle;
-  msg.armor_id = sefdefined.data.armor_id;
-  msg.hp_deduction_reason = sefdefined.data.hp_deduction_reason;
-  msg.projectile_allowance_17mm_1 = sefdefined.data.projectile_allowance_17mm_1;
-  msg.remaining_gold_coin = sefdefined.data.remaining_gold_coin;
+  msg.chassis_power_limit = sefdefined.data.chassis_power_limit;
+  msg.power_management_gimbal_output = sefdefined.data.power_management_gimbal_output;
+  msg.power_management_chassis_output = sefdefined.data.power_management_chassis_output;
+  msg.power_management_shooter_output = sefdefined.data.power_management_shooter_output;
 
   sefdefined_pub_->publish(msg);
 }
