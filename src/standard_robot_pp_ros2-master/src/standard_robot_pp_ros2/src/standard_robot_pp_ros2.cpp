@@ -324,9 +324,9 @@ void StandardRobotPpRos2Node::receiveData()
         continue;
       }
 
-      // --- DEBUG: 打印原始 Hex 数据（CRC 通过后再打印，避免日志洪水） ---
-      printHex("RECV", cmd_id, full_packet);
-      // ---------------------------------------------------------------
+      // // --- DEBUG: 打印原始 Hex 数据（CRC 通过后再打印，避免日志洪水） ---
+      // printHex("RECV", cmd_id, full_packet);
+      // // ---------------------------------------------------------------
       // 8. 解析数据
       switch (cmd_id) {
         case ID_EVENT_DATA: {
