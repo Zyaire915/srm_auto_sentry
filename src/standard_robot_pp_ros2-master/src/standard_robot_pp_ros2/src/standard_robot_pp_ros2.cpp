@@ -1,6 +1,7 @@
 #include "standard_robot_pp_ros2.hpp"
 
 #include <atomic>
+#include <deque>
 #include <iomanip>
 #include <mutex>
 #include <sstream>
@@ -185,182 +186,130 @@ void StandardRobotPpRos2Node::serialPortProtect()
 
 void StandardRobotPpRos2Node::receiveData()
 {
-  RCLCPP_INFO(get_logger(), "Start receiveData!");
+  RCLCPP_INFO(get_logger(), "Start receiveData with Sliding Window!");
 
-  int sof_count = 0;
   int retry_count = 0;
-
-  // FIX 内存优化：所有 vector 定义移至循环外，使用 reserve 预分配
-  std::vector<uint8_t> sof;
-  sof.reserve(1);
-  std::vector<uint8_t> header_read_temp;
-  header_read_temp.reserve(4);
-  std::vector<uint8_t> header_frame_buf;
-  header_frame_buf.reserve(8);  // Header(5) + padding
-
-  std::vector<uint8_t> cmd_id_buf;
-  cmd_id_buf.reserve(2);
-
-  std::vector<uint8_t> full_packet;
-  full_packet.reserve(256);  // 预留足够空间避免扩容
-
-  std::vector<uint8_t> data_buf;
-  data_buf.reserve(256);
-
-  std::vector<uint8_t> remain_buf;
-  remain_buf.reserve(256);
+  std::deque<uint8_t> rx_buffer;
+  std::vector<uint8_t> read_buf;
+  read_buf.reserve(1024);
 
   while (rclcpp::ok()) {
     if (!is_usb_ok_) {
       RCLCPP_WARN(get_logger(), "receive: usb is not ok! Retry count: %d", retry_count++);
       std::this_thread::sleep_for(std::chrono::milliseconds(USB_NOT_OK_SLEEP_TIME));
+      rx_buffer.clear();
       continue;
     }
 
     try {
-      // 1. 读取 SOF
-      sof.resize(1);  // 确保大小为1
-      // FIX: 获取实际读取长度
-      int sof_len = serial_driver_->port()->receive(sof);
-
-      // FIX: 严格校验读取长度，如果 len != 1，说明什么都没读到，continue
-      if (sof_len != 1 || sof[0] != SOF_RECEIVE) {
-        sof_count++;
-        RCLCPP_DEBUG(get_logger(), "Finding sof, cnt=%d", sof_count);
-        continue;
-      }
-      sof_count = 0;
-
-      // 2. 读取 HeaderFrame 剩余部分 (DataLength:2, Seq:1, CRC8:1) 共 4 字节
-      header_read_temp.resize(4);
-      int header_len = serial_driver_->port()->receive(header_read_temp);  // FIX: 获取实际读取长度
-
-      // FIX: 必须读满 4 字节，否则视为坏帧
-      if (header_len != 4) {
-        RCLCPP_WARN(get_logger(), "Header fragment error, expected 4 got %d", header_len);
+      // 1. 从串口读取所有可用数据
+      read_buf.resize(1024);
+      int received_len = 0;
+      try {
+        received_len = serial_driver_->port()->receive(read_buf);
+      } catch (const std::exception & ex) {
+        RCLCPP_ERROR(get_logger(), "Error reading from serial port: %s", ex.what());
+        is_usb_ok_ = false;
         continue;
       }
 
-      // 重组 header_frame_buf (SOF + 4 bytes)
-      header_frame_buf.clear();            // 清空上一帧残留
-      header_frame_buf.push_back(sof[0]);  // 放入 SOF
-      header_frame_buf.insert(
-        header_frame_buf.end(), header_read_temp.begin(), header_read_temp.end());
-
-      // 3. CRC8校验
-      uint8_t received_crc8 = header_frame_buf[4];
-      bool crc8_ok = verify_CRC8_check_sum(header_frame_buf.data(), header_frame_buf.size());
-      // RCLCPP_DEBUG(get_logger(), "CRC8:0x%02X",);
-      if (!crc8_ok) {
-        RCLCPP_WARN(
-          get_logger(),
-          "Receive Header CRC8 FAIL! SOF:0x%02X, LenL:0x%02X, LenH:0x%02X, Seq:%d, RecvCRC:0x%02X",
-          header_frame_buf[0], header_frame_buf[1], header_frame_buf[2], header_frame_buf[3],
-          received_crc8);
-        continue;
-      }
-      RCLCPP_DEBUG(get_logger(), "Receive Header CRC8 OK!");
-
-      // HeaderFrame header_frame;
-      // header_frame.sof = header_frame_buf[0];
-      // header_frame.data_length = (static_cast<uint16_t>(header_frame_buf[2]) << 8) | header_frame_buf[1];
-      // header_frame.seq = header_frame_buf[3];
-      // header_frame.crc = header_frame_buf[4];
-      HeaderFrame header_frame = fromVector<HeaderFrame>(header_frame_buf);
-      RCLCPP_DEBUG(get_logger(), "Receive Header OK! Data Length: %d", header_frame.data_length);
-
-      // --- 组包：放入 full_packet ---
-      full_packet.clear();  // 清空逻辑 size，但保留 capacity
-      full_packet.insert(full_packet.end(), header_frame_buf.begin(), header_frame_buf.end());
-
-      // 3. 读取 CmdID (2 bytes)
-      cmd_id_buf.resize(2);
-      int cmd_len = serial_driver_->port()->receive(cmd_id_buf);
-
-      // FIX: 长度校验
-      if (cmd_len != 2) {
+      if (received_len > 0) {
+        // 高效插入 deque
+        rx_buffer.insert(rx_buffer.end(), read_buf.begin(), read_buf.begin() + received_len);
+      } else {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
         continue;
       }
 
-      full_packet.insert(full_packet.end(), cmd_id_buf.begin(), cmd_id_buf.end());
-      uint16_t cmd_id = (static_cast<uint16_t>(cmd_id_buf[1]) << 8) | cmd_id_buf[0];
-
-      // 4. 计算剩余数据长度 = DataLen + CRC16(2)
-      int body_len_to_read = header_frame.data_length + 2;
-
-      if (body_len_to_read > 2048 || body_len_to_read < 0) {
-        RCLCPP_WARN(get_logger(), "Invalid Body Len: %d", body_len_to_read);
-        continue;
-      }
-
-      // 5. 读取数据主体
-      data_buf.clear();  // FIX: 必须清空，否则旧帧数据残留，while 条件直接跳过
-      while (data_buf.size() < static_cast<size_t>(body_len_to_read)) {
-        int remain_len = body_len_to_read - data_buf.size();
-
-        // 使用外部定义的 remain_buf，避免循环内分配内存
-        remain_buf.resize(remain_len);
-        int received_len = serial_driver_->port()->receive(remain_buf);
-
-        if (received_len > 0) {
-          data_buf.insert(data_buf.end(), remain_buf.begin(), remain_buf.begin() + received_len);
-        } else {
-          std::this_thread::sleep_for(std::chrono::microseconds(100));
+      // 2. 滑动窗口解析
+      while (rx_buffer.size() >= 5) {
+        // 查找帧头 SOF
+        if (rx_buffer.front() != SOF_RECEIVE) {
+          rx_buffer.pop_front();
+          continue;
         }
-      }
 
-      // 6. 构造整包
-      full_packet.insert(full_packet.end(), data_buf.begin(), data_buf.end());
+        // 提取前5字节 Header 用于 CRC8 校验
+        std::vector<uint8_t> header_bytes(rx_buffer.begin(), rx_buffer.begin() + 5);
+        if (!verify_CRC8_check_sum(header_bytes.data(), 5)) {
+          // 伪造包头，丢弃1个字节，继续滑动
+          RCLCPP_WARN(get_logger(), "Receive Header CRC8 FAIL! Dropping 1 byte.");
+          rx_buffer.pop_front();
+          continue;
+        }
 
-      // 7. CRC16校验
-      bool crc16_ok = verify_CRC16_check_sum(full_packet.data(), full_packet.size());
-      uint16_t received_crc16 = (static_cast<uint16_t>(full_packet[full_packet.size() - 1]) << 8) |
-                                full_packet[full_packet.size() - 2];
+        HeaderFrame header_frame = fromVector<HeaderFrame>(header_bytes);
+        
+        // 检查 data_length 是否合法，防止恶意数据耗尽内存
+        if (header_frame.data_length > 2048) {
+          RCLCPP_WARN(get_logger(), "Invalid data length: %d", header_frame.data_length);
+          rx_buffer.pop_front();
+          continue;
+        }
 
-      if (!crc16_ok) {
-        RCLCPP_WARN(
-          get_logger(), "Receive CRC16 FAIL! CmdID: 0x%04X, TotalLen: %lu, RecvCRC: 0x%04X", cmd_id,
-          full_packet.size(), received_crc16);
-        continue;
-      }
+        // 完整包所需长度：Header(5) + CmdID(2) + Data(data_length) + CRC16(2)
+        size_t total_packet_len = 5 + 2 + header_frame.data_length + 2;
 
-      // --- DEBUG: 打印原始 Hex 数据（CRC 通过后再打印，避免日志洪水） ---
-      printHex("RECV", cmd_id, full_packet);
-      // ---------------------------------------------------------------
-      // 8. 解析数据
-      switch (cmd_id) {
-        case ID_EVENT_DATA: {
-          ReceiveEventData event_data = fromVector<ReceiveEventData>(full_packet);
-          publishEventData(event_data);
-        } break;
-        case ID_ALL_ROBOT_HP: {
-          ReceiveAllRobotHpData all_robot_hp_data = fromVector<ReceiveAllRobotHpData>(full_packet);
-          publishAllRobotHp(all_robot_hp_data);
-        } break;
-        case ID_GAME_STATUS: {
-          ReceiveGameStatusData game_status_data = fromVector<ReceiveGameStatusData>(full_packet);
-          publishGameStatus(game_status_data);
-        } break;
-        case ID_GROUND_ROBOT_POSITION: {
-          ReceiveGroundRobotPosition ground_robot_position_data =
-            fromVector<ReceiveGroundRobotPosition>(full_packet);
-          publishGroundRobotPosition(ground_robot_position_data);
-        } break;
-        case ID_RFID_STATUS: {
-          ReceiveRfidStatus rfid_status_data = fromVector<ReceiveRfidStatus>(full_packet);
-          publishRfidStatus(rfid_status_data);
-        } break;
-        case ID_ROBOT_STATUS: {
-          ReceiveRobotStatus robot_status_data = fromVector<ReceiveRobotStatus>(full_packet);
-          publishRobotStatus(robot_status_data);
-        } break;
-        case ID_SEFDEFINED:
-        case ID_ROBOT_STATUS_V1: {
-          ReceiveSefdefinedData sefdefined_data = fromVector<ReceiveSefdefinedData>(full_packet);
-          publishSefdefined(sefdefined_data);
-        } break;
-        default: {
-        } break;
+        // 断帧处理：长度不够，跳出循环等待更多数据
+        if (rx_buffer.size() < total_packet_len) {
+          break;
+        }
+
+        // 提取全包用于 CRC16 校验
+        std::vector<uint8_t> full_packet(rx_buffer.begin(), rx_buffer.begin() + total_packet_len);
+        if (!verify_CRC16_check_sum(full_packet.data(), total_packet_len)) {
+          // 校验失败，可能是错位或者丢包，丢弃头部 1 个字节，继续滑动查找下一个 SOF
+          RCLCPP_WARN(get_logger(), "Receive CRC16 FAIL! Dropping 1 byte and sliding.");
+          rx_buffer.pop_front();
+          continue;
+        }
+
+        // --- 成功解析出完整帧 ---
+        // 从 rx_buffer 中移除已被解析的完整帧
+        rx_buffer.erase(rx_buffer.begin(), rx_buffer.begin() + total_packet_len);
+
+        // 获取 CmdID，小端序解析
+        uint16_t cmd_id = static_cast<uint16_t>(full_packet[5]) | (static_cast<uint16_t>(full_packet[6]) << 8);
+
+        // 打印调试信息
+        printHex("RECV", cmd_id, full_packet);
+
+        // 8. 解析数据
+        switch (cmd_id) {
+          case ID_EVENT_DATA: {
+            ReceiveEventData event_data = fromVector<ReceiveEventData>(full_packet);
+            publishEventData(event_data);
+          } break;
+          case ID_ALL_ROBOT_HP: {
+            ReceiveAllRobotHpData all_robot_hp_data = fromVector<ReceiveAllRobotHpData>(full_packet);
+            publishAllRobotHp(all_robot_hp_data);
+          } break;
+          case ID_GAME_STATUS: {
+            ReceiveGameStatusData game_status_data = fromVector<ReceiveGameStatusData>(full_packet);
+            publishGameStatus(game_status_data);
+          } break;
+          case ID_GROUND_ROBOT_POSITION: {
+            ReceiveGroundRobotPosition ground_robot_position_data =
+              fromVector<ReceiveGroundRobotPosition>(full_packet);
+            publishGroundRobotPosition(ground_robot_position_data);
+          } break;
+          case ID_RFID_STATUS: {
+            ReceiveRfidStatus rfid_status_data = fromVector<ReceiveRfidStatus>(full_packet);
+            publishRfidStatus(rfid_status_data);
+          } break;
+          case ID_ROBOT_STATUS: {
+            ReceiveRobotStatus robot_status_data = fromVector<ReceiveRobotStatus>(full_packet);
+            publishRobotStatus(robot_status_data);
+          } break;
+          case ID_SEFDEFINED:
+          case ID_ROBOT_STATUS_V1: {
+            ReceiveSefdefinedData sefdefined_data = fromVector<ReceiveSefdefinedData>(full_packet);
+            publishSefdefined(sefdefined_data);
+          } break;
+          default: {
+            RCLCPP_DEBUG(get_logger(), "Unknown CmdID: 0x%04X", cmd_id);
+          } break;
+        }
       }
     } catch (const std::exception & ex) {
       RCLCPP_ERROR(get_logger(), "Error receiving data: %s", ex.what());
