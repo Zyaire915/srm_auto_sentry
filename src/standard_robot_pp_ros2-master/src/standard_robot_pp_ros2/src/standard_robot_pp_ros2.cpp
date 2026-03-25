@@ -1,5 +1,4 @@
 #include "standard_robot_pp_ros2.hpp"
-
 #include <atomic>
 #include <deque>
 #include <iomanip>

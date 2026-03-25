@@ -23,7 +23,10 @@ BT::PortsList HpDecisionPatrol::providedPorts()
     BT::InputPort<double>("low_hp_y", 0.0, "Y when HP <= threshold"),
 
     // 新增：从 XML 配置或黑板传入的血量阈值（默认 400）
-    BT::InputPort<int>("hp_threshold", 400, "HP threshold for decision"),
+    BT::InputPort<int>("hp_threshold", 400, "HP threshold to trigger recovery"),
+
+    // 新增：满血阈值，补满后才允许出门（默认 600）
+    BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery"),
 
     // 输出：计算出的目标点，传给 SendGoal
     BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose")
@@ -47,9 +50,21 @@ BT::NodeStatus HpDecisionPatrol::tick()
   int hp_threshold = 400;
   getInput("hp_threshold", hp_threshold);
 
-  // 3. 决策逻辑（基于可配置阈值）
+  int max_hp = 600;
+  getInput("max_hp", max_hp);
+
+  // 3. 迟滞决策逻辑：
+  //    - 血量跌破 hp_threshold → 进入回血状态，前往原点
+  //    - 血量回升到 max_hp → 解除回血状态，允许出门巡逻
+  //    - 介于两者之间 → 保持原有状态不变
+  if (current_hp <= hp_threshold) {
+    is_recovering_ = true;
+  } else if (current_hp >= max_hp) {
+    is_recovering_ = false;
+  }
+
   double tx = 0.0, ty = 0.0;
-  if (current_hp > hp_threshold) {
+  if (!is_recovering_) {
     getInput("high_hp_x", tx);
     getInput("high_hp_y", ty);
   } else {

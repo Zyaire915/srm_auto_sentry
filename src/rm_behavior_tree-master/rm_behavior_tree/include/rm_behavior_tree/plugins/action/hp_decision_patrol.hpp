@@ -17,6 +17,9 @@ public:
   static BT::PortsList providedPorts();
 
   BT::NodeStatus tick() override;
+
+private:
+  bool is_recovering_ = false;
 };
 
 }  // namespace rm_behavior_tree
