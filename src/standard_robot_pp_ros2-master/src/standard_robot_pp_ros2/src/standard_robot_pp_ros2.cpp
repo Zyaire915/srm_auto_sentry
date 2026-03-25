@@ -271,7 +271,7 @@ void StandardRobotPpRos2Node::receiveData()
         uint16_t cmd_id = static_cast<uint16_t>(full_packet[5]) | (static_cast<uint16_t>(full_packet[6]) << 8);
 
         // 打印调试信息
-        printHex("RECV", cmd_id, full_packet);
+        // printHex("RECV", cmd_id, full_packet);
 
         // 8. 解析数据
         switch (cmd_id) {
