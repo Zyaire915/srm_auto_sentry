@@ -5,6 +5,7 @@
 
 #include "behaviortree_ros2/bt_topic_pub_node.hpp"
 #include "rm_decision_interfaces/msg/robot_control.hpp"
+#include <rclcpp/rclcpp.hpp>
 
 namespace rm_behavior_tree
 {
@@ -25,6 +26,12 @@ public:
       BT::InputPort<bool>("is_recovering", false, "Whether robot is in HP recovery mode")
     };
   }
+
+private:
+  // 保存最近一次消息，用于定时器持续发布
+  rm_decision_interfaces::msg::RobotControl last_msg_;
+  rclcpp::Publisher<rm_decision_interfaces::msg::RobotControl>::SharedPtr keep_alive_pub_;
+  rclcpp::TimerBase::SharedPtr keep_alive_timer_;
 };
 }  // namespace rm_behavior_tree
 

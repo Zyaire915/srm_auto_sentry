@@ -6,6 +6,7 @@
 #include "behaviortree_ros2/plugins.hpp"
 // 【新增 1】必须添加这个头文件，否则系统看不懂 XML 里的坐标字符串
 #include "rm_behavior_tree/bt_conversions.hpp"
+#include <thread>
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
@@ -87,8 +88,20 @@ int main(int argc, char ** argv)
   const unsigned port = 1667;
   BT::Groot2Publisher publisher(tree, port);
 
+  // 在独立线程中 spin robot_control 节点，使其定时器（10Hz 持续发布 is_recovering）能正常触发
+  rclcpp::executors::SingleThreadedExecutor rc_executor;
+  rc_executor.add_node(params_robot_control.nh);
+  std::thread rc_spin_thread([&rc_executor]() {
+    rc_executor.spin();
+  });
+
   while (rclcpp::ok()) {
     tree.tickWhileRunning(std::chrono::milliseconds(10));
+  }
+
+  rc_executor.cancel();
+  if (rc_spin_thread.joinable()) {
+    rc_spin_thread.join();
   }
 
   rclcpp::shutdown();
