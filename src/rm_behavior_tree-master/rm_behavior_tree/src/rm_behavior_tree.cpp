@@ -4,9 +4,10 @@
 #include "behaviortree_cpp/loggers/groot2_publisher.h"
 #include "behaviortree_cpp/utils/shared_library.h"
 #include "behaviortree_ros2/plugins.hpp"
-// 【新增 1】必须添加这个头文件，否则系统看不懂 XML 里的坐标字符串
 #include "rm_behavior_tree/bt_conversions.hpp"
+#include "rm_behavior_tree/plugins/action/hp_decision_patrol.hpp"
 #include <thread>
+
 int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
@@ -25,21 +26,18 @@ int main(int argc, char ** argv)
   BT::RosNodeParams params_update_msg;
   params_update_msg.nh = std::make_shared<rclcpp::Node>("update_msg");
 
-  BT::RosNodeParams params_robot_control;
-  params_robot_control.nh = std::make_shared<rclcpp::Node>("robot_control");
-  params_robot_control.default_port_value = "robot_control";
-
   BT::RosNodeParams params_send_goal;
   params_send_goal.nh = std::make_shared<rclcpp::Node>("send_goal");
   params_send_goal.default_port_value = "navigate_to_pose";
   params_send_goal.server_timeout = std::chrono::milliseconds(5000);
   params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(10000);
 
-  // 【新增 2】定义 SubSefdefined 的参数 (话题名)
   BT::RosNodeParams params_sub_sefdefined;
   params_sub_sefdefined.nh = std::make_shared<rclcpp::Node>("sub_sefdefined");
-  // 确保这里的话题名和你 interfaces 转换后的实际话题一致
   params_sub_sefdefined.default_port_value = "/srm/sefdefined";
+
+  // HpDecisionPatrol 用于发布 robot_control 的 ROS 节点
+  auto hp_patrol_ros_node = std::make_shared<rclcpp::Node>("hp_patrol_rc_pub");
 
   // clang-format off
   const std::vector<std::string> msg_update_plugin_libs = {
@@ -74,34 +72,42 @@ int main(int argc, char ** argv)
   }
 
   RegisterRosNode(factory, BT::SharedLibrary::getOSName("send_goal"), params_send_goal);
-  RegisterRosNode(factory, BT::SharedLibrary::getOSName("robot_control"), params_robot_control);
-
-  // 【新增 3】注册 SubSefdefined (ROS 插件)
   RegisterRosNode(factory, BT::SharedLibrary::getOSName("sub_sefdefined"), params_sub_sefdefined);
 
-  // 【新增 4】注册 HpDecisionPatrol (普通插件)
+  // 注册 HpDecisionPatrol（普通插件，不是 ROS 插件）
   factory.registerFromPlugin(BT::SharedLibrary::getOSName("hp_decision_patrol"));
 
   auto tree = factory.createTreeFromFile(bt_xml_path);
 
-  // Connect the Groot2Publisher. This will allow Groot2 to get the tree and poll status updates.
+  // 遍历树，找到 HpDecisionPatrol 节点并注入 ROS 节点
+  // initRos 会创建：1) /srm/sefdefined 订阅者（实时更新 is_recovering）  2) robot_control publisher + 10Hz 定时器
+  for (auto & subtree : tree.subtrees) {
+    for (auto & bt_node : subtree->nodes) {
+      if (auto * hp_node = dynamic_cast<rm_behavior_tree::HpDecisionPatrol *>(bt_node.get())) {
+        hp_node->initRos(hp_patrol_ros_node, "robot_control", "/srm/sefdefined", 200, 360);
+        RCLCPP_INFO(node->get_logger(), "HpDecisionPatrol: initRos done, subscribing HP & publishing robot_control at 10Hz");
+      }
+    }
+  }
+
+  // Connect the Groot2Publisher
   const unsigned port = 1667;
   BT::Groot2Publisher publisher(tree, port);
 
-  // 在独立线程中 spin robot_control 节点，使其定时器（10Hz 持续发布 is_recovering）能正常触发
-  rclcpp::executors::SingleThreadedExecutor rc_executor;
-  rc_executor.add_node(params_robot_control.nh);
-  std::thread rc_spin_thread([&rc_executor]() {
-    rc_executor.spin();
+  // 在独立线程中 spin hp_patrol_ros_node，使定时器能以 10Hz 持续发布 robot_control
+  rclcpp::executors::SingleThreadedExecutor hp_executor;
+  hp_executor.add_node(hp_patrol_ros_node);
+  std::thread hp_spin_thread([&hp_executor]() {
+    hp_executor.spin();
   });
 
   while (rclcpp::ok()) {
     tree.tickWhileRunning(std::chrono::milliseconds(10));
   }
 
-  rc_executor.cancel();
-  if (rc_spin_thread.joinable()) {
-    rc_spin_thread.join();
+  hp_executor.cancel();
+  if (hp_spin_thread.joinable()) {
+    hp_spin_thread.join();
   }
 
   rclcpp::shutdown();

@@ -3,16 +3,30 @@
 
 #include "behaviortree_cpp/action_node.h"
 #include "rm_decision_interfaces/msg/ally_robot_hp.hpp"
-#include "geometry_msgs/msg/pose_stamped.hpp"
+#include "rm_decision_interfaces/msg/robot_control.hpp"
 #include "rm_decision_interfaces/msg/sefdefined.hpp"
+#include "geometry_msgs/msg/pose_stamped.hpp"
+#include <rclcpp/rclcpp.hpp>
+#include <mutex>
 
 namespace rm_behavior_tree
 {
-// 注意：改为继承 SyncActionNode，因为我们不需要自己管理订阅了
+
 class HpDecisionPatrol : public BT::SyncActionNode
 {
 public:
   HpDecisionPatrol(const std::string& name, const BT::NodeConfig& config);
+
+  /**
+   * 外部在 main 中调用，注入 ROS 节点。
+   * 会创建：
+   *   1) /srm/sefdefined 订阅者 —— 实时接收血量并更新 is_recovering
+   *   2) robot_control publisher + 10Hz 定时器 —— 持续发布
+   */
+  void initRos(rclcpp::Node::SharedPtr ros_node,
+               const std::string & rc_topic,
+               const std::string & hp_topic,
+               int hp_threshold, int max_hp);
 
   static BT::PortsList providedPorts();
 
@@ -20,6 +34,15 @@ public:
 
 private:
   bool is_recovering_ = false;
+  int hp_threshold_ = 400;
+  int max_hp_ = 600;
+
+  // ROS 订阅 + 发布
+  rclcpp::Subscription<rm_decision_interfaces::msg::Sefdefined>::SharedPtr hp_sub_;
+  rclcpp::Publisher<rm_decision_interfaces::msg::RobotControl>::SharedPtr rc_pub_;
+  rclcpp::TimerBase::SharedPtr rc_timer_;
+  rm_decision_interfaces::msg::RobotControl cached_rc_msg_;
+  std::mutex rc_mutex_;
 };
 
 }  // namespace rm_behavior_tree

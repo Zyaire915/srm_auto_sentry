@@ -37,6 +37,9 @@ endfunction()
 ament_auto_add_executable(rm_behavior_tree 
     src/rm_behavior_tree.cpp
 )
+# 主程序需要链接 hp_decision_patrol 库（因为 main 中 dynamic_cast + initRos）
+target_link_libraries(rm_behavior_tree hp_decision_patrol)
+
 # Controllers
 ament_auto_add_library(decision_switch SHARED
     plugins/control/decision_switch.cpp

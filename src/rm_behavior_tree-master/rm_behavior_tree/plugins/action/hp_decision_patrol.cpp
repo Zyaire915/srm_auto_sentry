@@ -10,28 +10,57 @@ HpDecisionPatrol::HpDecisionPatrol(const std::string& name, const BT::NodeConfig
 {
 }
 
+void HpDecisionPatrol::initRos(
+  rclcpp::Node::SharedPtr ros_node,
+  const std::string & rc_topic,
+  const std::string & hp_topic,
+  int hp_threshold, int max_hp)
+{
+  hp_threshold_ = hp_threshold;
+  max_hp_ = max_hp;
+
+  rc_pub_ = ros_node->create_publisher<rm_decision_interfaces::msg::RobotControl>(
+    rc_topic, rclcpp::QoS(10));
+
+  // 订阅血量话题，在 ROS 回调中实时更新 is_recovering（不依赖行为树 tick）
+  hp_sub_ = ros_node->create_subscription<rm_decision_interfaces::msg::Sefdefined>(
+    hp_topic, rclcpp::QoS(10),
+    [this, ros_node](const rm_decision_interfaces::msg::Sefdefined::SharedPtr msg) {
+      std::lock_guard<std::mutex> lock(rc_mutex_);
+      int current_hp = msg->current_hp;
+      if (current_hp <= hp_threshold_) {
+        is_recovering_ = true;
+      } else if (current_hp >= max_hp_) {
+        is_recovering_ = false;
+      }
+      cached_rc_msg_.is_recovering = is_recovering_;
+      RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
+        "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
+        is_recovering_ ? "true" : "false");
+    });
+
+  // 10Hz 定时器，持续发布 robot_control
+  rc_timer_ = ros_node->create_wall_timer(
+    std::chrono::milliseconds(100),
+    [this]() {
+      std::lock_guard<std::mutex> lock(rc_mutex_);
+      rc_pub_->publish(cached_rc_msg_);
+    });
+}
+
 BT::PortsList HpDecisionPatrol::providedPorts()
 {
   return {
-    // 输入：从 SubSefdefined 那里拿到的血量数据
     BT::InputPort<rm_decision_interfaces::msg::Sefdefined>("hp_input"),
-
-    // 参数：两个巡逻点
     BT::InputPort<double>("high_hp_x", 0.0, "X when HP > threshold"),
     BT::InputPort<double>("high_hp_y", 0.0, "Y when HP > threshold"),
     BT::InputPort<double>("low_hp_x", 0.0, "X when HP <= threshold"),
     BT::InputPort<double>("low_hp_y", 0.0, "Y when HP <= threshold"),
-
-    // 新增：从 XML 配置或黑板传入的血量阈值（默认 400）
     BT::InputPort<int>("hp_threshold", 400, "HP threshold to trigger recovery"),
-
-    // 新增：满血阈值，补满后才允许出门（默认 600）
     BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery"),
-
-    // 输出：计算出的目标点，传给 SendGoal
+    BT::InputPort<float>("chassis_spin_vel", 0.5f, "Chassis spin velocity"),
+    BT::InputPort<bool>("stop_gimbal_scan", false, "Whether to stop gimbal scan"),
     BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose"),
-
-    // 输出：当前是否处于回血状态，传给 RobotControl 等节点
     BT::OutputPort<bool>("is_recovering")
   };
 }
@@ -40,26 +69,20 @@ BT::NodeStatus HpDecisionPatrol::tick()
 {
   // 1. 从黑板读取血量数据
   auto hp_msg = getInput<rm_decision_interfaces::msg::Sefdefined>("hp_input");
-
-  // 如果还没收到数据，返回 FAILURE 或者 RUNNING
   if (!hp_msg) {
-    return BT::NodeStatus::FAILURE; 
+    return BT::NodeStatus::FAILURE;
   }
 
   // 2. 提取当前血量
   int current_hp = hp_msg.value().current_hp;
 
-  // 读取阈值（端口默认值为 400，可由 XML 或外部黑板覆盖）
   int hp_threshold = 400;
   getInput("hp_threshold", hp_threshold);
 
   int max_hp = 600;
   getInput("max_hp", max_hp);
 
-  // 3. 迟滞决策逻辑：
-  //    - 血量跌破 hp_threshold → 进入回血状态，前往原点
-  //    - 血量回升到 max_hp → 解除回血状态，允许出门巡逻
-  //    - 介于两者之间 → 保持原有状态不变
+  // 3. 迟滞决策
   if (current_hp <= hp_threshold) {
     is_recovering_ = true;
   } else if (current_hp >= max_hp) {
@@ -75,10 +98,10 @@ BT::NodeStatus HpDecisionPatrol::tick()
     getInput("low_hp_y", ty);
   }
 
-  // 4. 组装 Pose 并输出
+  // 4. 组装 Pose 并输出到黑板
   geometry_msgs::msg::PoseStamped goal;
   goal.header.frame_id = "map";
-  goal.header.stamp = rclcpp::Clock().now(); // 注意：如果没有节点句柄，这里可能需要传入时钟
+  goal.header.stamp = rclcpp::Clock().now();
   goal.pose.position.x = tx;
   goal.pose.position.y = ty;
   goal.pose.orientation.w = 1.0;
@@ -86,12 +109,25 @@ BT::NodeStatus HpDecisionPatrol::tick()
   setOutput("target_pose", goal);
   setOutput("is_recovering", is_recovering_);
 
+  // 5. 更新 robot_control 缓存中的非血量字段（spin_vel, stop_scan）
+  //    is_recovering 由 ROS 订阅回调实时更新，不在这里设置
+  {
+    std::lock_guard<std::mutex> lock(rc_mutex_);
+
+    float spin_vel = 0.5f;
+    getInput("chassis_spin_vel", spin_vel);
+    cached_rc_msg_.chassis_spin_vel = spin_vel;
+
+    bool stop_scan = false;
+    getInput("stop_gimbal_scan", stop_scan);
+    cached_rc_msg_.stop_gimbal_scan = stop_scan;
+  }
+
   return BT::NodeStatus::SUCCESS;
 }
 
 } // namespace rm_behavior_tree
 
-// 注册为普通插件（不是RosNodePlugin了，因为它不持有ROS句柄）
 BT_REGISTER_NODES(factory)
 {
   factory.registerNodeType<rm_behavior_tree::HpDecisionPatrol>("HpDecisionPatrol");
