@@ -145,6 +145,16 @@ public:
     double obstacle_proximity_ratio_max_vel; //!< Ratio of the maximum velocities used as an upper bound when reducing the speed due to the proximity to a static obstacles
     double obstacle_proximity_lower_bound; //!< Distance to a static obstacle for which the velocity should be lower
     double obstacle_proximity_upper_bound; //!< Distance to a static obstacle for which the velocity should be higher
+
+    // Kalman filter tracking parameters
+    bool use_predicted_obstacles = false; //!< Use Kalman filter-based obstacle tracking with acceleration awareness
+    double tracking_dist_threshold = 0.5; //!< Maximum distance for data association (meters)
+    double tracking_timeout = 1.0; //!< Timeout for track deletion (seconds)
+    std::string tracking_frame = "odom"; //!< Frame for obstacle tracking (e.g., "odom")
+    double max_obstacle_velocity = 2.0; //!< Maximum obstacle velocity for clamping (m/s)
+    double max_obstacle_acceleration = 1.0; //!< Maximum obstacle acceleration for clamping (m/s²)
+    double max_prediction_distance = 10.0; //!< Maximum prediction distance (meters)
+    int max_coasting_frames = 5; //!< Maximum frames to coast without measurement
   } obstacles; //!< Obstacle related parameters
 
 

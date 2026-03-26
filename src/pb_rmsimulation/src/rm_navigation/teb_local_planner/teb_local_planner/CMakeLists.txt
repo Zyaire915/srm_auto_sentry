@@ -76,6 +76,7 @@ add_library(teb_local_planner SHARED
    src/timed_elastic_band.cpp
    src/optimal_planner.cpp
    src/obstacles.cpp
+   src/obstacle_tracker.cpp
    src/visualization.cpp
    src/recovery_behaviors.cpp
    src/teb_config.cpp

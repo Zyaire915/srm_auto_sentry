@@ -189,6 +189,16 @@ controller_server:
       obstacle_proximity_lower_bound: 0.0       #需要降低速度的静态障碍物距离 (米)
       obstacle_proximity_upper_bound: 0.5       #应该保持较高速度的静态障碍物距离 (米)
 
+      # Kalman filter tracking parameters 卡尔曼滤波跟踪参数
+      use_predicted_obstacles: true             #使用基于卡尔曼滤波的障碍物跟踪和加速度感知预测
+      tracking_dist_threshold: 0.5              #数据关联的最大距离阈值 (米)
+      tracking_timeout: 1.0                     #跟踪删除的超时时间 (秒)
+      tracking_frame: "odom"                    #障碍物跟踪的坐标系 (例如 "odom")
+      max_obstacle_velocity: 2.0                #障碍物速度限制用于预测 (m/s)
+      max_obstacle_acceleration: 1.0            #障碍物加速度限制用于预测 (m/s²)
+      max_prediction_distance: 10.0             #最大预测距离 (米)
+      max_coasting_frames: 5                    #无测量时的最大滑行帧数
+
       #*******************************************************************************
       # Optimization 优化
       #*******************************************************************************

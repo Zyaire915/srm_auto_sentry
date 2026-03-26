@@ -113,6 +113,11 @@ void TebOptimalPlanner::setVisualization(const TebVisualizationPtr& visualizatio
   visualization_ = visualization;
 }
 
+void TebOptimalPlanner::setObstacleTracker(const ObstacleTracker* tracker)
+{
+  obstacle_tracker_ = tracker;
+}
+
 void TebOptimalPlanner::visualize()
 {
   if (!visualization_)
@@ -341,7 +346,9 @@ bool TebOptimalPlanner::buildGraph(double weight_multiplier)
   else
     AddEdgesObstacles(weight_multiplier);
 
-  if (cfg_->obstacles.include_dynamic_obstacles)
+  if (cfg_->obstacles.use_predicted_obstacles && obstacle_tracker_)
+    AddEdgesPredictedObstacles(weight_multiplier);
+  else if (cfg_->obstacles.include_dynamic_obstacles)
     AddEdgesDynamicObstacles();
   
   AddEdgesViaPoints();
@@ -670,6 +677,41 @@ void TebOptimalPlanner::AddEdgesDynamicObstacles(double weight_multiplier)
       dynobst_edge->setParameters(*cfg_, cfg_->robot_model.get(), obst->get());
       optimizer_->addEdge(dynobst_edge);
       time += teb_.TimeDiff(i); // we do not need to check the time diff bounds, since we iterate to "< sizePoses()-1".
+    }
+  }
+}
+
+void TebOptimalPlanner::AddEdgesPredictedObstacles(double weight_multiplier)
+{
+  if (!obstacle_tracker_ || !obstacles_ || obstacles_->empty())
+    return;
+
+  if (cfg_->optim.weight_obstacle == 0 || weight_multiplier == 0)
+    return;
+
+  Eigen::Matrix<double,2,2> information;
+  information(0,0) = cfg_->optim.weight_obstacle * weight_multiplier;
+  information(1,1) = cfg_->optim.weight_inflation;
+  information(0,1) = information(1,0) = 0;
+
+  double t_sum = 0;
+  for (int i = 1; i < teb_.sizePoses(); ++i)
+  {
+    t_sum += teb_.TimeDiff(i-1);
+
+    for (const auto& obst : *obstacles_)
+    {
+      if (!obst->isDynamic() || obst->getTrackId() < 0)
+        continue;
+
+      if (!obstacle_tracker_->hasTrack(obst->getTrackId()))
+        continue;
+
+      EdgePredictedObstacle* edge = new EdgePredictedObstacle(t_sum, obstacle_tracker_, obst->getTrackId());
+      edge->setVertex(0, teb_.PoseVertex(i));
+      edge->setInformation(information);
+      edge->setParameters(*cfg_, robot_model_.get(), obst.get());
+      optimizer_->addEdge(edge);
     }
   }
 }

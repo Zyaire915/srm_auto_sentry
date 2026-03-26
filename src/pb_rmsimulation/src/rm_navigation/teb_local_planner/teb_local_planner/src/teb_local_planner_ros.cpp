@@ -207,10 +207,16 @@ void TebLocalPlannerROS::configure(
   name_ = name;
 
   initialize(node);
+
+  // Initialize obstacle tracker
+  obstacle_tracker_ = std::make_unique<ObstacleTracker>(tf_, cfg_->obstacles.tracking_frame);
+  last_tracker_update_time_ = clock_->now();
+
   visualization_ = std::make_shared<TebVisualization>(node, *cfg_);
   visualization_->on_configure();
   planner_->setVisualization(visualization_);
-  
+  planner_->setObstacleTracker(obstacle_tracker_.get());
+
   return;
 }
 
@@ -535,6 +541,18 @@ void TebLocalPlannerROS::updateObstacleContainerWithCostmapConverter()
     if(!obstacles_.empty())
       obstacles_.back()->setCentroidVelocity(obstacles->obstacles[i].velocities, obstacles->obstacles[i].orientation);
   }
+
+  // Update obstacle tracker
+  if (obstacle_tracker_ && cfg_->obstacles.use_predicted_obstacles)
+  {
+    rclcpp::Time current_time = clock_->now();
+    double dt = (current_time - last_tracker_update_time_).seconds();
+    if (dt > 0.001)
+    {
+      obstacle_tracker_->update(obstacles_, dt, costmap_ros_->getGlobalFrameID(), *cfg_);
+      last_tracker_update_time_ = current_time;
+    }
+  }
 }
 
 
@@ -737,16 +755,28 @@ bool TebLocalPlannerROS::transformGlobalPlan(const std::vector<geometry_msgs::ms
     int i = 0;
     double sq_dist_threshold = dist_threshold * dist_threshold;
     double sq_dist = 1e10;
-    
+
     //we need to loop to a point on the plan that is within a certain distance of the robot
     bool robot_reached = false;
+    int consecutive_outside = 0;
+    const int MAX_OUTSIDE = 3;
+
     for(int j=0; j < (int)global_plan.size(); ++j)
     {
       double x_diff = robot_pose.pose.position.x - global_plan[j].pose.position.x;
       double y_diff = robot_pose.pose.position.y - global_plan[j].pose.position.y;
       double new_sq_dist = x_diff * x_diff + y_diff * y_diff;
+
       if (new_sq_dist > sq_dist_threshold)
-        break;  // force stop if we have reached the costmap border
+      {
+        consecutive_outside++;
+        if (consecutive_outside > MAX_OUTSIDE)
+          break;
+      }
+      else
+      {
+        consecutive_outside = 0;
+      }
 
       if (robot_reached && new_sq_dist > sq_dist)
         break;
