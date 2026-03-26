@@ -107,7 +107,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() = 0;
+  virtual double getInscribedRadius() const = 0;
 
 	
 
@@ -172,7 +172,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() {return 0.0;}
+  virtual double getInscribedRadius() const {return 0.0;}
 
 };
 
@@ -249,7 +249,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() {return radius_;}
+  virtual double getInscribedRadius() const {return radius_;}
 
 private:
     
@@ -362,7 +362,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() 
+  virtual double getInscribedRadius() const
   {
       double min_longitudinal = std::min(rear_offset_ + rear_radius_, front_offset_ + front_radius_);
       double min_lateral = std::min(rear_radius_, front_radius_);
@@ -501,7 +501,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() 
+  virtual double getInscribedRadius() const
   {
       return 0.0; // lateral distance = 0.0
   }
@@ -631,7 +631,7 @@ public:
    * @brief Compute the inscribed radius of the footprint model
    * @return inscribed radius
    */
-  virtual double getInscribedRadius() 
+  virtual double getInscribedRadius() const 
   {
      double min_dist = std::numeric_limits<double>::max();
      Eigen::Vector2d center(0.0, 0.0);
@@ -650,7 +650,7 @@ public:
      // we also need to check the last vertex and the first vertex
      double vertex_dist = vertices_.back().norm();
      double edge_dist = distance_point_to_segment_2d(center, vertices_.back(), vertices_.front());
-     return std::min(min_dist, std::min(vertex_dist, edge_dist));
+     return std::min(min_dist, std::min(vertex_dist, edge_dist)); // TODO: this implementation is not correct... check geometric lib
   }
 
 private:
