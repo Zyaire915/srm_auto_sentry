@@ -67,6 +67,7 @@
 namespace teb_local_planner
 {
 
+class ObstacleTracker;
 
 /**
  * @class PlannerInterface
@@ -173,6 +174,15 @@ public:
   }
 
   virtual void setVisualization(const TebVisualizationPtr & visualization) = 0;
+
+  /**
+   * @brief Set the obstacle tracker for predicted obstacle avoidance
+   * @param tracker Pointer to ObstacleTracker instance
+   */
+  virtual void setObstacleTracker(const ObstacleTracker* tracker)
+  {
+  }
+
 
   /**
    * @brief Check whether the planned trajectory is feasible or not.
