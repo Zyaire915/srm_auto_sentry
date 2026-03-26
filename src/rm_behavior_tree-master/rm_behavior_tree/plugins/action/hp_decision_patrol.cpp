@@ -1,5 +1,6 @@
 #include "rm_behavior_tree/plugins/action/hp_decision_patrol.hpp"
 #include "behaviortree_cpp/bt_factory.h"
+#include <rclcpp/rclcpp.hpp>
 
 namespace rm_behavior_tree
 {
@@ -12,44 +13,66 @@ HpDecisionPatrol::HpDecisionPatrol(const std::string& name, const BT::NodeConfig
 BT::PortsList HpDecisionPatrol::providedPorts()
 {
   return {
-    // 输入：从 SubAllyRobotHP 那里拿到的血量数据
-    BT::InputPort<rm_decision_interfaces::msg::AllyRobotHP>("hp_input"),
-    
+    // 输入：从 SubSefdefined 那里拿到的血量数据
+    BT::InputPort<rm_decision_interfaces::msg::Sefdefined>("hp_input"),
+
     // 参数：两个巡逻点
-    BT::InputPort<double>("high_hp_x", 0.0, "X when HP > 400"),
-    BT::InputPort<double>("high_hp_y", 0.0, "Y when HP > 400"),
-    BT::InputPort<double>("low_hp_x", 0.0, "X when HP <= 400"),
-    BT::InputPort<double>("low_hp_y", 0.0, "Y when HP <= 400"),
+    BT::InputPort<double>("high_hp_x", 0.0, "X when HP > threshold"),
+    BT::InputPort<double>("high_hp_y", 0.0, "Y when HP > threshold"),
+    BT::InputPort<double>("low_hp_x", 0.0, "X when HP <= threshold"),
+    BT::InputPort<double>("low_hp_y", 0.0, "Y when HP <= threshold"),
+
+    // 新增：从 XML 配置或黑板传入的血量阈值（默认 400）
+    BT::InputPort<int>("hp_threshold", 400, "HP threshold to trigger recovery"),
+
+    // 新增：满血阈值，补满后才允许出门（默认 600）
+    BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery"),
 
     // 输出：计算出的目标点，传给 SendGoal
-    BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose")
+    BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose"),
+
+    // 输出：当前是否处于回血状态，传给 RobotControl 等节点
+    BT::OutputPort<bool>("is_recovering")
   };
 }
 
 BT::NodeStatus HpDecisionPatrol::tick()
 {
   // 1. 从黑板读取血量数据
-  auto hp_msg = getInput<rm_decision_interfaces::msg::AllyRobotHP>("hp_input");
-  
+  auto hp_msg = getInput<rm_decision_interfaces::msg::Sefdefined>("hp_input");
+
   // 如果还没收到数据，返回 FAILURE 或者 RUNNING
   if (!hp_msg) {
     return BT::NodeStatus::FAILURE; 
   }
 
-  // 2. 提取哨兵血量 (ally_7)
-  int current_hp = hp_msg.value().ally_7_robot_hp;
+  // 2. 提取当前血量
+  int current_hp = hp_msg.value().current_hp;
 
-  // 3. 决策逻辑
+  // 读取阈值（端口默认值为 400，可由 XML 或外部黑板覆盖）
+  int hp_threshold = 400;
+  getInput("hp_threshold", hp_threshold);
+
+  int max_hp = 600;
+  getInput("max_hp", max_hp);
+
+  // 3. 迟滞决策逻辑：
+  //    - 血量跌破 hp_threshold → 进入回血状态，前往原点
+  //    - 血量回升到 max_hp → 解除回血状态，允许出门巡逻
+  //    - 介于两者之间 → 保持原有状态不变
+  if (current_hp <= hp_threshold) {
+    is_recovering_ = true;
+  } else if (current_hp >= max_hp) {
+    is_recovering_ = false;
+  }
+
   double tx = 0.0, ty = 0.0;
-  if (current_hp > 400) {
+  if (!is_recovering_) {
     getInput("high_hp_x", tx);
     getInput("high_hp_y", ty);
-    // 这里没有 node_ 指针，用 std::cout 或不做打印，或者通过 config 传入 logger
-    // std::cout << "[Decider] HP=" << current_hp << " -> Going A\n";
   } else {
     getInput("low_hp_x", tx);
     getInput("low_hp_y", ty);
-    // std::cout << "[Decider] HP=" << current_hp << " -> Going B\n";
   }
 
   // 4. 组装 Pose 并输出
@@ -61,6 +84,7 @@ BT::NodeStatus HpDecisionPatrol::tick()
   goal.pose.orientation.w = 1.0;
 
   setOutput("target_pose", goal);
+  setOutput("is_recovering", is_recovering_);
 
   return BT::NodeStatus::SUCCESS;
 }

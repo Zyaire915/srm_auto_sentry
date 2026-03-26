@@ -96,6 +96,11 @@ ament_auto_add_library(sub_ally_robot_hp SHARED
 )
 add_target_dependencies(sub_ally_robot_hp)
 
+ament_auto_add_library(sub_sefdefined SHARED 
+    plugins/action/sub_sefdefined.cpp
+)
+add_target_dependencies(sub_sefdefined)
+
 ament_auto_add_library(sub_robot_status SHARED 
     plugins/action/sub_robot_status.cpp
 )

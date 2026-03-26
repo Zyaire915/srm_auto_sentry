@@ -28,6 +28,7 @@
       "ip" : "192.168.1.146",
       "pcl_data_type" : 1,
       "pattern_mode" : 0,
+      "timestamp_type" : 0,
       "extrinsic_parameter" : {
         "roll": 0.0,
         "pitch": 0.0,

@@ -26,7 +26,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/GroundRobotPosition.msg"
   "msg/GameRobotHP.msg"
   "msg/RfidStatus.msg"
-
+  "msg/Sefdefined.msg"
 
   DEPENDENCIES
     std_msgs

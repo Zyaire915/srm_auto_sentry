@@ -172,6 +172,8 @@
                   default="True"/>
       <input_port name="chassis_spin_vel"
                   default="False"/>
+      <input_port name="is_recovering"
+                  default="False"/>
     </Action>
     <Action ID="SendGoal"
             editable="true">
