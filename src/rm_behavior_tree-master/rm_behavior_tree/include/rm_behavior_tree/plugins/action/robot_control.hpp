@@ -19,7 +19,11 @@ public:
 
   static BT::PortsList providedPorts()
   {
-    return {BT::InputPort<bool>("stop_gimbal_scan"), BT::InputPort<float>("chassis_spin_vel")};
+    return {
+      BT::InputPort<bool>("stop_gimbal_scan"),
+      BT::InputPort<float>("chassis_spin_vel"),
+      BT::InputPort<bool>("is_recovering", false, "Whether robot is in HP recovery mode")
+    };
   }
 };
 }  // namespace rm_behavior_tree

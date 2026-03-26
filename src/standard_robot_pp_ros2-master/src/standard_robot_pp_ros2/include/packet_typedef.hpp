@@ -195,6 +195,9 @@ struct SendRobotCmdData
     float wz;
   } __attribute__((packed)) speed_vector;
 
+  // 决策状态：0=正常巡逻，1=回血中
+  uint8_t is_recovering;
+
   uint16_t checksum;
 } __attribute__((packed));
 

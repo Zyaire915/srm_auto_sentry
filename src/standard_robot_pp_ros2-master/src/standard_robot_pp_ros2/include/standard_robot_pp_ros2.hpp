@@ -27,6 +27,7 @@
 #include <rm_decision_interfaces/msg/rfid_status.hpp>
 #include "rm_decision_interfaces/msg/ally_robot_hp.hpp"
 #include <rm_decision_interfaces/msg/robot_status.hpp> // 注意：这里对应的是 0x0202 能量热量数据
+#include <rm_decision_interfaces/msg/robot_control.hpp>
 #include <rm_decision_interfaces/msg/sefdefined.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <serial_driver/serial_driver.hpp>
@@ -65,7 +66,7 @@ private:
 
   // Subscribe
   rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
-  // 移除了 cmd_gimbal_joint_sub_, cmd_shoot_sub_
+  rclcpp::Subscription<rm_decision_interfaces::msg::RobotControl>::SharedPtr robot_control_sub_;
 
   // 移除了 robot_models_, debug_pub_map_
   // 移除了 imu_tf_broadcaster_
@@ -92,7 +93,7 @@ private:
 
   // Callbacks
   void CmdVelCallback(const geometry_msgs::msg::Twist::SharedPtr msg);
-  // 移除了 CmdGimbalJointCallback, CmdShootCallback
+  void RobotControlCallback(const rm_decision_interfaces::msg::RobotControl::SharedPtr msg);
 
   // debug (ID 类型修正为 uint16_t 以匹配 2 字节 ID)
   void printHex(const std::string& tag, uint16_t id, const std::vector<uint8_t>& data);

@@ -10,6 +10,13 @@
                 target_pose="{current_goal}" 
                 hp_threshold="200"
                 max_hp="600"
+                is_recovering="{is_recovering}"
+            />
+
+            <RobotControl
+                stop_gimbal_scan="False"
+                chassis_spin_vel="0.5"
+                is_recovering="{is_recovering}"
             />
             
             <SendGoal goal_pose="{current_goal}" />

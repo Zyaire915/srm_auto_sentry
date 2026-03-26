@@ -5,6 +5,7 @@
 #include <mutex>
 #include <sstream>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
+#include <rm_decision_interfaces/msg/robot_control.hpp>
 
 #include "crc_func.h"
 #include "packet_typedef.hpp"
@@ -67,6 +68,9 @@ void StandardRobotPpRos2Node::createSubscription()
   cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>(
     "cmd_vel_chassis", 10,
     std::bind(&StandardRobotPpRos2Node::CmdVelCallback, this, std::placeholders::_1));
+  robot_control_sub_ = this->create_subscription<rm_decision_interfaces::msg::RobotControl>(
+    "robot_control", 10,
+    std::bind(&StandardRobotPpRos2Node::RobotControlCallback, this, std::placeholders::_1));
 }
 
 void StandardRobotPpRos2Node::getParams()
@@ -613,6 +617,13 @@ void StandardRobotPpRos2Node::CmdVelCallback(const geometry_msgs::msg::Twist::Sh
   send_robot_cmd_data_.speed_vector.vx = msg->linear.x;
   send_robot_cmd_data_.speed_vector.vy = msg->linear.y;
   send_robot_cmd_data_.speed_vector.wz = msg->angular.z;
+}
+
+void StandardRobotPpRos2Node::RobotControlCallback(
+  const rm_decision_interfaces::msg::RobotControl::SharedPtr msg)
+{
+  std::lock_guard<std::mutex> lk(send_mutex_);
+  send_robot_cmd_data_.is_recovering = msg->is_recovering ? 1u : 0u;
 }
 
 void StandardRobotPpRos2Node::printHex(

@@ -29,7 +29,10 @@ BT::PortsList HpDecisionPatrol::providedPorts()
     BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery"),
 
     // 输出：计算出的目标点，传给 SendGoal
-    BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose")
+    BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose"),
+
+    // 输出：当前是否处于回血状态，传给 RobotControl 等节点
+    BT::OutputPort<bool>("is_recovering")
   };
 }
 
@@ -81,6 +84,7 @@ BT::NodeStatus HpDecisionPatrol::tick()
   goal.pose.orientation.w = 1.0;
 
   setOutput("target_pose", goal);
+  setOutput("is_recovering", is_recovering_);
 
   return BT::NodeStatus::SUCCESS;
 }
