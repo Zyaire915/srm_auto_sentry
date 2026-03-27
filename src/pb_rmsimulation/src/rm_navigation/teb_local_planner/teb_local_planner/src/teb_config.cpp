@@ -101,6 +101,14 @@ void TebConfig::declareParameters(const nav2_util::LifecycleNode::SharedPtr nh, 
   declare_parameter_if_not_declared(nh, name + "." + "obstacle_proximity_ratio_max_vel",  rclcpp::ParameterValue(obstacles.obstacle_proximity_ratio_max_vel));
   declare_parameter_if_not_declared(nh, name + "." + "obstacle_proximity_lower_bound", rclcpp::ParameterValue(obstacles.obstacle_proximity_lower_bound));
   declare_parameter_if_not_declared(nh, name + "." + "obstacle_proximity_upper_bound", rclcpp::ParameterValue(obstacles.obstacle_proximity_upper_bound));
+  declare_parameter_if_not_declared(nh, name + "." + "use_predicted_obstacles", rclcpp::ParameterValue(obstacles.use_predicted_obstacles));
+  declare_parameter_if_not_declared(nh, name + "." + "tracking_dist_threshold", rclcpp::ParameterValue(obstacles.tracking_dist_threshold));
+  declare_parameter_if_not_declared(nh, name + "." + "tracking_timeout", rclcpp::ParameterValue(obstacles.tracking_timeout));
+  declare_parameter_if_not_declared(nh, name + "." + "tracking_frame", rclcpp::ParameterValue(obstacles.tracking_frame));
+  declare_parameter_if_not_declared(nh, name + "." + "max_obstacle_velocity", rclcpp::ParameterValue(obstacles.max_obstacle_velocity));
+  declare_parameter_if_not_declared(nh, name + "." + "max_obstacle_acceleration", rclcpp::ParameterValue(obstacles.max_obstacle_acceleration));
+  declare_parameter_if_not_declared(nh, name + "." + "max_prediction_distance", rclcpp::ParameterValue(obstacles.max_prediction_distance));
+  declare_parameter_if_not_declared(nh, name + "." + "max_coasting_frames", rclcpp::ParameterValue(obstacles.max_coasting_frames));
 
   // Optimization
   declare_parameter_if_not_declared(nh, name + "." + "no_inner_iterations", rclcpp::ParameterValue(optim.no_inner_iterations));
@@ -228,7 +236,15 @@ void TebConfig::loadRosParamFromNodeHandle(const nav2_util::LifecycleNode::Share
   nh->get_parameter_or(name + "." + "obstacle_proximity_ratio_max_vel", obstacles.obstacle_proximity_ratio_max_vel, obstacles.obstacle_proximity_ratio_max_vel);
   nh->get_parameter_or(name + "." + "obstacle_proximity_lower_bound", obstacles.obstacle_proximity_lower_bound, obstacles.obstacle_proximity_lower_bound);
   nh->get_parameter_or(name + "." + "obstacle_proximity_upper_bound", obstacles.obstacle_proximity_upper_bound, obstacles.obstacle_proximity_upper_bound);
-  
+  nh->get_parameter_or(name + "." + "use_predicted_obstacles", obstacles.use_predicted_obstacles, obstacles.use_predicted_obstacles);
+  nh->get_parameter_or(name + "." + "tracking_dist_threshold", obstacles.tracking_dist_threshold, obstacles.tracking_dist_threshold);
+  nh->get_parameter_or(name + "." + "tracking_timeout", obstacles.tracking_timeout, obstacles.tracking_timeout);
+  nh->get_parameter_or(name + "." + "tracking_frame", obstacles.tracking_frame, obstacles.tracking_frame);
+  nh->get_parameter_or(name + "." + "max_obstacle_velocity", obstacles.max_obstacle_velocity, obstacles.max_obstacle_velocity);
+  nh->get_parameter_or(name + "." + "max_obstacle_acceleration", obstacles.max_obstacle_acceleration, obstacles.max_obstacle_acceleration);
+  nh->get_parameter_or(name + "." + "max_prediction_distance", obstacles.max_prediction_distance, obstacles.max_prediction_distance);
+  nh->get_parameter_or(name + "." + "max_coasting_frames", obstacles.max_coasting_frames, obstacles.max_coasting_frames);
+
   // Optimization
   nh->get_parameter_or(name + "." + "no_inner_iterations", optim.no_inner_iterations, optim.no_inner_iterations);
   nh->get_parameter_or(name + "." + "no_outer_iterations", optim.no_outer_iterations, optim.no_outer_iterations);

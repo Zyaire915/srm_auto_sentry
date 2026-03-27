@@ -51,6 +51,7 @@
 #include "teb_local_planner/homotopy_class_planner.h"
 #include "teb_local_planner/visualization.h"
 #include "teb_local_planner/recovery_behaviors.h"
+#include "teb_local_planner/obstacle_tracker.h"
 
 // message types
 #include <nav_msgs/msg/path.hpp>
@@ -376,6 +377,8 @@ private:
   // internal objects (memory management owned)
   PlannerInterfacePtr planner_; //!< Instance of the underlying optimal planner class
   ObstContainer obstacles_; //!< Obstacle vector that should be considered during local trajectory optimization
+  std::unique_ptr<ObstacleTracker> obstacle_tracker_; //!< Kalman filter-based obstacle tracker
+  rclcpp::Time last_tracker_update_time_; //!< Timestamp of last tracker update
   ViaPointContainer via_points_; //!< Container of via-points that should be considered during local trajectory optimization
   TebVisualizationPtr visualization_; //!< Instance of the visualization class (local/global plan, obstacles, ...)
   std::shared_ptr<dwb_critics::ObstacleFootprintCritic> costmap_model_;

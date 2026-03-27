@@ -48,6 +48,7 @@
 #include "teb_local_planner/timed_elastic_band.h"
 #include "teb_local_planner/planner_interface.h"
 #include "teb_local_planner/visualization.h"
+#include "teb_local_planner/obstacle_tracker.h"
 #include "teb_local_planner/robot_footprint_model.h"
 
 // g2o lib stuff
@@ -328,7 +329,13 @@ public:
    * @see visualize
    */
   void setVisualization(const TebVisualizationPtr & visualization) override;
-  
+
+  /**
+   * @brief Set the obstacle tracker for predicted obstacle avoidance
+   * @param tracker Pointer to ObstacleTracker instance
+   */
+  void setObstacleTracker(const ObstacleTracker* tracker);
+
   /**
    * @brief Publish the local plan and pose sequence via ros topics (e.g. subscribe with rviz).
    * 
@@ -659,6 +666,12 @@ protected:
   void AddEdgesDynamicObstacles(double weight_multiplier=1.0);
 
   /**
+   * @brief Add edges for predicted obstacle avoidance using Kalman filter tracking
+   * @param weight_multiplier Specify an additional weight multiplier
+   */
+  void AddEdgesPredictedObstacles(double weight_multiplier=1.0);
+
+  /**
    * @brief Add all edges (local cost functions) for satisfying kinematic constraints of a differential drive robot
    * @warning do not combine with AddEdgesKinematicsCarlike()
    * @see AddEdgesKinematicsCarlike
@@ -711,6 +724,7 @@ protected:
   
   // internal objects (memory management owned)
   TebVisualizationPtr visualization_; //!< Instance of the visualization class
+  const ObstacleTracker* obstacle_tracker_ = nullptr; //!< Pointer to obstacle tracker for predicted obstacles
   TimedElasticBand teb_; //!< Actual trajectory object
   RobotFootprintModelPtr robot_model_; //!< Robot model
   std::shared_ptr<g2o::SparseOptimizer> optimizer_; //!< g2o optimizer for trajectory optimization

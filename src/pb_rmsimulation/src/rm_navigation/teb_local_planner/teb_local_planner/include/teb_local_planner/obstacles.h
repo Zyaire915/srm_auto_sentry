@@ -240,6 +240,18 @@ public:
     */
   const Eigen::Vector2d& getCentroidVelocity() const {return centroid_velocity_;}
 
+  /**
+    * @brief Set the tracking ID for this obstacle
+    * @param id Tracking ID assigned by ObstacleTracker
+    */
+  void setTrackId(int id) {track_id_ = id;}
+
+  /**
+    * @brief Get the tracking ID for this obstacle
+    * @returns Tracking ID (-1 if untracked)
+    */
+  int getTrackId() const {return track_id_;}
+
   //@}
 
 
@@ -276,9 +288,10 @@ public:
   //@}
 	
 protected:
-	   
+
   bool dynamic_; //!< Store flag if obstacle is dynamic (resp. a moving obstacle)
   Eigen::Vector2d centroid_velocity_; //!< Store the corresponding velocity (vx, vy) of the centroid (zero, if _dynamic is \c true)
+  int track_id_ = -1; //!< Tracking ID assigned by ObstacleTracker (-1 = untracked)
   
 public:	
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
