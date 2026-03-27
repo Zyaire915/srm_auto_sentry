@@ -1,6 +1,7 @@
 #include "rm_behavior_tree/plugins/action/hp_decision_patrol.hpp"
 #include "behaviortree_cpp/bt_factory.h"
 #include <rclcpp/rclcpp.hpp>
+#include <cmath>
 
 namespace rm_behavior_tree
 {
@@ -34,9 +35,9 @@ void HpDecisionPatrol::initRos(
         is_recovering_ = false;
       }
       cached_rc_msg_.is_recovering = is_recovering_;
-      // RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
-      //   "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
-      //   is_recovering_ ? "true" : "false");
+      RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
+        "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
+        is_recovering_ ? "true" : "false");
     });
 
   // 10Hz 定时器，持续发布 robot_control
@@ -98,7 +99,20 @@ BT::NodeStatus HpDecisionPatrol::tick()
     getInput("low_hp_y", ty);
   }
 
-  // 4. 组装 Pose 并输出到黑板
+  // 4. 检测目标是否变化（用于在 ReactiveSequence 中中途切换导航目标）
+  bool goal_changed = false;
+  if (first_goal_set_) {
+    constexpr double eps = 0.01;  // 1cm 容差
+    if (std::abs(tx - last_goal_x_) > eps || std::abs(ty - last_goal_y_) > eps) {
+      goal_changed = true;
+    }
+  } else {
+    first_goal_set_ = true;
+  }
+  last_goal_x_ = tx;
+  last_goal_y_ = ty;
+
+  // 5. 组装 Pose 并输出到黑板
   geometry_msgs::msg::PoseStamped goal;
   goal.header.frame_id = "map";
   goal.header.stamp = rclcpp::Clock().now();
@@ -109,7 +123,7 @@ BT::NodeStatus HpDecisionPatrol::tick()
   setOutput("target_pose", goal);
   setOutput("is_recovering", is_recovering_);
 
-  // 5. 更新 robot_control 缓存中的非血量字段（spin_vel, stop_scan）
+  // 6. 更新 robot_control 缓存中的非血量字段（spin_vel, stop_scan）
   //    is_recovering 由 ROS 订阅回调实时更新，不在这里设置
   {
     std::lock_guard<std::mutex> lock(rc_mutex_);
@@ -123,6 +137,11 @@ BT::NodeStatus HpDecisionPatrol::tick()
     cached_rc_msg_.stop_gimbal_scan = stop_scan;
   }
 
+  // 7. 如果目标发生变化，返回 FAILURE 使 ReactiveSequence 中断当前 SendGoal（取消导航）
+  //    下一次 tick 时目标未变，返回 SUCCESS，SendGoal 用新目标重新启动导航
+  if (goal_changed) {
+    return BT::NodeStatus::FAILURE;
+  }
   return BT::NodeStatus::SUCCESS;
 }
 

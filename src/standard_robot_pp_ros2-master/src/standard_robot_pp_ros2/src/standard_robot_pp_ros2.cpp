@@ -146,6 +146,13 @@ void StandardRobotPpRos2Node::getParams()
 
   device_config_ =
     std::make_unique<drivers::serial_driver::SerialPortConfig>(baud_rate, fc, pt, sb);
+
+  try {
+    debug_print_hex_ = declare_parameter<bool>("debug_print_hex", false);
+  } catch (rclcpp::ParameterTypeException & ex) {
+    RCLCPP_ERROR(get_logger(), "The debug_print_hex provided was invalid");
+    throw ex;
+  }
 }
 
 void StandardRobotPpRos2Node::serialPortProtect()
@@ -275,7 +282,9 @@ void StandardRobotPpRos2Node::receiveData()
         uint16_t cmd_id = static_cast<uint16_t>(full_packet[5]) | (static_cast<uint16_t>(full_packet[6]) << 8);
 
         // 打印调试信息
-        // printHex("RECV", cmd_id, full_packet);
+        if (debug_print_hex_) {
+          printHex("RECV", cmd_id, full_packet);
+        }
 
         // 8. 解析数据
         switch (cmd_id) {

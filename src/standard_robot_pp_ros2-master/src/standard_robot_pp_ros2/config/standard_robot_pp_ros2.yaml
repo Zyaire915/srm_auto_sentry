@@ -5,3 +5,4 @@
     flow_control: none
     parity: none
     stop_bits: "1"
+    debug_print_hex: false

@@ -37,6 +37,11 @@ private:
   int hp_threshold_ = 400;
   int max_hp_ = 600;
 
+  // 目标跟踪：检测目标是否变化，以便中途切换导航目标
+  double last_goal_x_ = 0.0;
+  double last_goal_y_ = 0.0;
+  bool first_goal_set_ = false;
+
   // ROS 订阅 + 发布
   rclcpp::Subscription<rm_decision_interfaces::msg::Sefdefined>::SharedPtr hp_sub_;
   rclcpp::Publisher<rm_decision_interfaces::msg::RobotControl>::SharedPtr rc_pub_;
