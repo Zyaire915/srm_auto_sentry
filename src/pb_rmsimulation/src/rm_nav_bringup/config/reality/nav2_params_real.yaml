@@ -163,6 +163,13 @@ controller_server:
       acc_lim_y: 2.0
 
       #*******************************************************************************
+      # Footprint 机器人足迹模型
+      #*******************************************************************************
+      footprint_model:
+        type: "circular"
+        radius: 0.27
+
+      #*******************************************************************************
       # GoalTolerance 目标容差
       #*******************************************************************************
       free_goal_vel: True      #允许机器人以最大速度驶向目的地，为False时，车到达终点时的目标速度为0；
@@ -170,9 +177,9 @@ controller_server:
       #*******************************************************************************
       # Obstacles 障碍物
       #*******************************************************************************
-      min_obstacle_dist: 0.4                     #机器人与障碍物之间最小的期望间隔距离
+      min_obstacle_dist: 0.5                     #机器人与障碍物之间最小的期望间隔距离
       inflation_dist: 0.6                         #障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
-      dynamic_obstacle_inflation_dist: 0.7        #具有非零惩罚成本的动态障碍物预测位置周围的缓冲区（应大于min_obstacle_dist才能生效)
+      dynamic_obstacle_inflation_dist: 0.8        #具有非零惩罚成本的动态障碍物预测位置周围的缓冲区（应大于min_obstacle_dist才能生效)
       include_dynamic_obstacles: True             #预测动态障碍物周围的缓冲区，用于增加安全裕度。此缓冲区内具有非零的惩罚代价
       include_costmap_obstacles: True             #是否直接考虑代价地图中的障碍物 (如果没有单独的聚类和检测功能，则需要此选项)
       legacy_obstacle_association: False          #是否严格遵循局部规划出来的路径。如果为真，则使用旧的关联策略 (为每个障碍物找到最近的 TEB 姿势)，否则使用新的关联策略 (为每个 TEB 姿势仅找到“相关”障碍物)
@@ -192,11 +199,11 @@ controller_server:
 
       # Kalman filter tracking parameters 卡尔曼滤波跟踪参数
       use_predicted_obstacles: true             #使用基于卡尔曼滤波的障碍物跟踪和加速度感知预测
-      tracking_dist_threshold: 0.5              #数据关联的最大距离阈值 (米)
+      tracking_dist_threshold: 1.5              #数据关联的最大距离阈值 (米)
       tracking_timeout: 1.0                     #跟踪删除的超时时间 (秒)
-      tracking_frame: "odom"                    #障碍物跟踪的坐标系 (例如 "odom")
-      max_obstacle_velocity: 2.0                #障碍物速度限制用于预测 (m/s)
-      max_obstacle_acceleration: 1.0            #障碍物加速度限制用于预测 (m/s²)
+      tracking_frame: "map"                     #障碍物跟踪的坐标系 (例如 "odom")
+      max_obstacle_velocity: 12.0               #障碍物速度限制用于预测 (m/s)
+      max_obstacle_acceleration: 8.0            #障碍物加速度限制用于预测 (m/s²)
       max_prediction_distance: 10.0             #最大预测距离 (米)
       max_coasting_frames: 5                    #无测量时的最大滑行帧数
 
