@@ -34,9 +34,9 @@ void HpDecisionPatrol::initRos(
         is_recovering_ = false;
       }
       cached_rc_msg_.is_recovering = is_recovering_;
-      RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
-        "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
-        is_recovering_ ? "true" : "false");
+      // RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
+      //   "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
+      //   is_recovering_ ? "true" : "false");
     });
 
   // 10Hz 定时器，持续发布 robot_control
