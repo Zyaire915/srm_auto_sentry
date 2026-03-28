@@ -42,7 +42,7 @@ void HpDecisionPatrol::initRos(
 
   // 5Hz 定时器，持续发布 robot_control（降频以减少队列压力）
   rc_timer_ = ros_node->create_wall_timer(
-    std::chrono::milliseconds(200),
+    std::chrono::milliseconds(100),
     [this]() {
       std::lock_guard<std::mutex> lock(rc_mutex_);
       rc_pub_->publish(cached_rc_msg_);

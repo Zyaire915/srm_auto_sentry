@@ -14,7 +14,7 @@ RobotControlAction::RobotControlAction(
 
   // 以 5Hz 定时持续发布最新的 is_recovering 状态，避免 Sequence 记忆跳过本节点时话题断更（降频以减少队列压力）
   keep_alive_timer_ = ros_node->create_wall_timer(
-    std::chrono::milliseconds(200),
+    std::chrono::milliseconds(100),
     [this]() {
       keep_alive_pub_->publish(last_msg_);
     });
