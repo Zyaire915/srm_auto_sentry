@@ -85,7 +85,7 @@ int main(int argc, char ** argv)
     for (auto & bt_node : subtree->nodes) {
       if (auto * hp_node = dynamic_cast<rm_behavior_tree::HpDecisionPatrol *>(bt_node.get())) {
         hp_node->initRos(hp_patrol_ros_node, "robot_control", "/srm/sefdefined", 200, 360);
-        RCLCPP_INFO(node->get_logger(), "HpDecisionPatrol: initRos done, subscribing HP & publishing robot_control at 10Hz");
+        RCLCPP_INFO(node->get_logger(), "HpDecisionPatrol: initRos done, subscribing HP & publishing robot_control at 5Hz");
       }
     }
   }

@@ -12,9 +12,9 @@ RobotControlAction::RobotControlAction(
   keep_alive_pub_ = ros_node->create_publisher<rm_decision_interfaces::msg::RobotControl>(
     params.default_port_value, rclcpp::QoS(10));
 
-  // 以 10Hz 定时持续发布最新的 is_recovering 状态，避免 Sequence 记忆跳过本节点时话题断更
+  // 以 5Hz 定时持续发布最新的 is_recovering 状态，避免 Sequence 记忆跳过本节点时话题断更（降频以减少队列压力）
   keep_alive_timer_ = ros_node->create_wall_timer(
-    std::chrono::milliseconds(100),
+    std::chrono::milliseconds(200),
     [this]() {
       keep_alive_pub_->publish(last_msg_);
     });
