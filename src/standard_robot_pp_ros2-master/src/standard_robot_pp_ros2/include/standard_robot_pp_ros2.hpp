@@ -72,6 +72,7 @@ private:
   // 移除了 imu_tf_broadcaster_
 
   SendRobotCmdData send_robot_cmd_data_;
+  bool debug_print_hex_{false};
 
   void getParams();
   void createPublisher();
