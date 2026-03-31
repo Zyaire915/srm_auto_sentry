@@ -123,7 +123,7 @@ controller_server:
       #*******************************************************************************
       # Trajectory Sampling 轨迹采样参数
       #*******************************************************************************
-      time_steps: 100                       # 预测时域的步数，100步 × 0.05s = 5秒预测时域
+      time_steps: 180                       # 预测时域的步数，100步 × 0.05s = 5秒预测时域
       model_dt: 0.05                        # 每个时间步长（秒），应为 1/controller_frequency，即 1/20Hz = 0.05s
       batch_size: 1200                      # 每个周期采样的轨迹数量，越大越精确但计算量越大（1000-2000 推荐）
       iteration_count: 1                    # 每个控制周期的优化迭代次数（通常保持为 1）
@@ -148,8 +148,8 @@ controller_server:
       #*******************************************************************************
       temperature: 0.3                      # 温度参数：控制轨迹选择的贪婪程度。越低越贪婪（选最优），越高越平滑（考虑次优）
       gamma: 0.07                           # 折扣因子：平衡轨迹平滑度与能量消耗的权衡
-      prune_distance: 2.0                   # 全局路径裁剪距离（米），只考虑机器人前方该距离内的全局路径
-      transform_tolerance: 0.5              # TF 变换容差（秒），与 TEB 的 transform_tolerance 对应
+      prune_distance: 4.0                   # 全局路径裁剪距离（米），只考虑机器人前方该距离内的全局路径
+      transform_tolerance: 0.1              # TF 变换容差（秒），与 TEB 的 transform_tolerance 对应
       regenerate_noises: false              # 是否每个周期重新生成噪声（false 可提高一致性）
       retry_attempt_limit: 3                # 控制失败时的重试次数
 
@@ -172,7 +172,7 @@ controller_server:
         repulsion_weight: 0.2               # 膨胀区域内的排斥力权重
         critical_weight: 20.0               # 接近碰撞时的高惩罚权重（对应 TEB 的 weight_obstacle）
         collision_cost: 40.0                # 碰撞的致命代价
-        collision_margin_distance: 0.1      # 碰撞边界距离（米），机器人与障碍物的最小安全距离
+        collision_margin_distance: 0.05      # 碰撞边界距离（米），机器人与障碍物的最小安全距离
         consider_footprint: false           # 是否考虑机器人足迹形状（true 会增加计算量，圆形机器人可设为 false）
         inflation_radius: 0.6               # 障碍物膨胀半径（米），应与 costmap 的 inflation_radius 一致
         cost_scaling_factor: 5.0            # 代价缩放因子，应与 costmap 的 cost_scaling_factor 一致
