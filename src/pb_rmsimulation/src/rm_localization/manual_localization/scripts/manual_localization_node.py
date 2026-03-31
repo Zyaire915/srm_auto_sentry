@@ -34,6 +34,7 @@ from tf2_ros import (
 import tf2_ros
 import numpy as np
 from rclpy.time import Time
+from rclpy.duration import Duration
 
 
 # ── Quaternion helpers (avoid external dependency) ──────────────────────
@@ -117,7 +118,7 @@ class ManualLocalizationNode(Node):
         self.base_frame = self.get_parameter('base_frame').value
 
         # TF infrastructure
-        self.tf_buffer = Buffer()
+        self.tf_buffer = Buffer(cache_time=Duration(seconds=30.0))
         self.tf_listener = TransformListener(self.tf_buffer, self)
         self.tf_broadcaster = TransformBroadcaster(self)
 
