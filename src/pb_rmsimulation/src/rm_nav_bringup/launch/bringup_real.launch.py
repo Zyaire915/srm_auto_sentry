@@ -176,7 +176,7 @@ def generate_launch_description():
                     ('scan',  ['/scan'])],
         parameters=[{
             'target_frame': 'livox_frame',
-            'transform_tolerance': 0.01,
+            'transform_tolerance': 0.5,
             'min_height': -0.23,  ##改
             'max_height': 0.01,
             'angle_min': -3.14159,  # -M_PI/2
