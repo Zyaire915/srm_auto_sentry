@@ -337,7 +337,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
-            'spin_speed': 2.512 # rad/s
+            'spin_speed': 3.14 # rad/s
         }]
     )
 
