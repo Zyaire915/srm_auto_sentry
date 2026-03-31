@@ -178,7 +178,7 @@ def generate_launch_description():
             'target_frame': 'livox_frame',
             'transform_tolerance': 0.01,
             'min_height': -0.23,  ##改
-            'max_height': 0.1,
+            'max_height': 0.01,
             'angle_min': -3.14159,  # -M_PI/2
             'angle_max': 3.14159,   # M_PI/2
             'angle_increment': 0.0043,  # M_PI/360.0
@@ -321,7 +321,7 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'use_sim_time': use_sim_time,
-            'spin_speed': 0.0 # rad/s
+            'spin_speed': 2.512 # rad/s
         }]
     )
 

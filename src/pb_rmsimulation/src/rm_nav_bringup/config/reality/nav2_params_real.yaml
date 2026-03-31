@@ -231,7 +231,7 @@ controller_server:
       weight_shortest_path: 0.0               #倾向于选择更短的路径，路径可能更加弯曲或不平坦
       weight_obstacle: 100.0                  #与障碍物保持最小距离的权重
       weight_inflation: 0.2                   #优化轨迹并尽量避免膨胀区域的权重 (权重应设置较小)
-      weight_dynamic_obstacle: 5.0           #与动态障碍物保持最小距离的权重
+      weight_dynamic_obstacle: 2.0           #与动态障碍物保持最小距离的权重
       weight_dynamic_obstacle_inflation: 0.2  #优化轨迹并尽量避免动态障碍物膨胀区域的权重 (权重应设置较小)
       weight_viapoint: 1.0                    #一些特定的权重 (例如 weight_obstacle) 会在外循环每次迭代中乘以该因子进行调整。这样逐步增加权重比直接设置较高的权重值可以改善优化问题的数值条件
       weight_adapt_factor: 2.0                #非线性障碍物代价的指数 (cost = linear_cost * obstacle_cost_exponent)。设置为 1 则禁用非线性代价 (默认值)
@@ -302,7 +302,7 @@ local_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 5.0
-        inflation_radius: 0.4
+        inflation_radius: 0.1
       always_send_full_costmap: true
 
 global_costmap:
@@ -321,7 +321,7 @@ global_costmap:
         plugin: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"
         # https://github.com/SteveMacenski/spatio_temporal_voxel_layer
         enabled:                  true
-        voxel_decay:              0.5                               # 如果是线性衰减，单位为秒；如果是指数衰减，则为 e 的 n 次方
+        voxel_decay:              0.2                               # 如果是线性衰减，单位为秒；如果是指数衰减，则为 e 的 n 次方
         decay_model:              0                                 # 衰减模型，0=线性，1=指数，-1=持久
         voxel_size:               0.05                              # 每个体素的尺寸，单位为米
         track_unknown_space:      true                              # default space is unknown
@@ -359,7 +359,7 @@ global_costmap:
           vertical_fov_angle: 1.029                                 # 垂直视场角，单位为弧度，For 3D lidars it's the symmetric FOV about the planar axis.
           vertical_fov_padding: 0.05                                # 3D Lidar only. Default 0, in meters
           horizontal_fov_angle: 6.29                                # 3D 激光雷达水平视场角
-          decay_acceleration: 5.0                                   # default 0, 1/s^2.
+          decay_acceleration: 10.0                                   # default 0, 1/s^2.
           model_type: 1                                             # 0=深度相机，1=3D激光雷达
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
@@ -367,8 +367,8 @@ global_costmap:
         map_subscribe_transient_local: True
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 8.0
-        inflation_radius: 0.4
+        cost_scaling_factor: 5.0
+        inflation_radius: 0.7
       always_send_full_costmap: True
 
 map_saver:
