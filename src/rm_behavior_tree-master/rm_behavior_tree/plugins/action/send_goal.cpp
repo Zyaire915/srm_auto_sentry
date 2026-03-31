@@ -44,6 +44,7 @@ BT::NodeStatus SendGoalAction::onResultReceived(const WrappedResult & wr)
   switch (wr.code) {
     case rclcpp_action::ResultCode::SUCCEEDED:
       RCLCPP_INFO(node_->get_logger(), "Success!!!");
+      setOutput("goal_reached", true);
       return BT::NodeStatus::SUCCESS;
       break;
     case rclcpp_action::ResultCode::ABORTED:

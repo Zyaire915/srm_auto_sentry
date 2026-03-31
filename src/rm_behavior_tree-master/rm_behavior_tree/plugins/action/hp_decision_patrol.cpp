@@ -1,7 +1,6 @@
 #include "rm_behavior_tree/plugins/action/hp_decision_patrol.hpp"
 #include "behaviortree_cpp/bt_factory.h"
 #include <rclcpp/rclcpp.hpp>
-#include <cmath>
 
 namespace rm_behavior_tree
 {
@@ -23,21 +22,11 @@ void HpDecisionPatrol::initRos(
   rc_pub_ = ros_node->create_publisher<rm_decision_interfaces::msg::RobotControl>(
     rc_topic, rclcpp::QoS(10));
 
-  // 订阅血量话题，在 ROS 回调中实时更新 is_recovering（不依赖行为树 tick）
+  // 订阅血量话题 —— 仅保留订阅以维持 ROS 连接
   hp_sub_ = ros_node->create_subscription<rm_decision_interfaces::msg::Sefdefined>(
     hp_topic, rclcpp::QoS(10),
-    [this, ros_node](const rm_decision_interfaces::msg::Sefdefined::SharedPtr msg) {
-      std::lock_guard<std::mutex> lock(rc_mutex_);
-      int current_hp = msg->current_hp;
-      if (current_hp <= hp_threshold_) {
-        is_recovering_ = true;
-      } else if (current_hp >= max_hp_) {
-        is_recovering_ = false;
-      }
-      cached_rc_msg_.is_recovering = is_recovering_;
-      // RCLCPP_INFO_THROTTLE(ros_node->get_logger(), *ros_node->get_clock(), 2000,
-      //   "[HpDecisionPatrol] HP=%d, is_recovering=%s", current_hp,
-      //   is_recovering_ ? "true" : "false");
+    [](const rm_decision_interfaces::msg::Sefdefined::SharedPtr /*msg*/) {
+      // HP 决策由 tick() 中的三态状态机处理
     });
 
   // 5Hz 定时器，持续发布 robot_control（降频以减少队列压力）
@@ -57,8 +46,10 @@ BT::PortsList HpDecisionPatrol::providedPorts()
     BT::InputPort<double>("high_hp_y", 0.0, "Y when HP > threshold"),
     BT::InputPort<double>("low_hp_x", 0.0, "X when HP <= threshold"),
     BT::InputPort<double>("low_hp_y", 0.0, "Y when HP <= threshold"),
-    BT::InputPort<int>("hp_threshold", 400, "HP threshold to trigger recovery"),
-    BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery"),
+    BT::InputPort<int>("hp_threshold", 400, "HP threshold to trigger retreat (e.g. 50%)"),
+    BT::InputPort<int>("max_hp", 600, "HP threshold to exit recovery (e.g. 90%)"),
+    BT::InputPort<bool>("goal_reached", false, "Nav2 navigation succeeded signal from SendGoal"),
+    BT::OutputPort<bool>("goal_reached_out", "Reset goal_reached when starting new navigation"),
     BT::InputPort<float>("chassis_spin_vel", 0.5f, "Chassis spin velocity"),
     BT::InputPort<bool>("stop_gimbal_scan", false, "Whether to stop gimbal scan"),
     BT::OutputPort<geometry_msgs::msg::PoseStamped>("target_pose"),
@@ -83,23 +74,56 @@ BT::NodeStatus HpDecisionPatrol::tick()
   int max_hp = 600;
   getInput("max_hp", max_hp);
 
-  // 3. 迟滞决策
-  if (current_hp <= hp_threshold) {
-    is_recovering_ = true;
-  } else if (current_hp >= max_hp) {
-    is_recovering_ = false;
+  // 3. 读取 SendGoal 写入的 goal_reached（Nav2 导航成功信号）
+  bool goal_reached = false;
+  getInput("goal_reached", goal_reached);
+
+  // 4. 三态状态机
+  //    NORMAL      —— 正常巡逻（high_hp 点位），is_recovering=0
+  //    GOING_HOME  —— 半血撤退（low_hp 点位），is_recovering=0（撤退途中保持战斗模式）
+  //    RECOVERING  —— Nav2 确认到达回血点，is_recovering=1（下位机可据此降功耗/停旋加速回血）
+  switch (state_) {
+    case PatrolState::NORMAL:
+      if (current_hp <= hp_threshold) {
+        state_ = PatrolState::GOING_HOME;
+        // 重置 goal_reached，避免残留的上一次导航成功信号误触发 RECOVERING
+        setOutput("goal_reached_out", false);
+      }
+      break;
+
+    case PatrolState::GOING_HOME:
+      if (goal_reached) {
+        // Nav2 确认已到达 low_hp 回血点 → 正式进入回血
+        state_ = PatrolState::RECOVERING;
+      } else if (current_hp >= max_hp) {
+        // 撤退途中 HP 已恢复（极少出现），直接回归正常巡逻
+        state_ = PatrolState::NORMAL;
+      }
+      break;
+
+    case PatrolState::RECOVERING:
+      if (current_hp >= max_hp) {
+        // 回血完成（≥90%），回归正常巡逻
+        state_ = PatrolState::NORMAL;
+      }
+      break;
   }
 
+  // is_recovering 仅在 RECOVERING 状态为 true
+  is_recovering_ = (state_ == PatrolState::RECOVERING);
+
+  // 5. 根据状态选择导航目标
   double tx = 0.0, ty = 0.0;
-  if (!is_recovering_) {
+  if (state_ == PatrolState::NORMAL) {
     getInput("high_hp_x", tx);
     getInput("high_hp_y", ty);
   } else {
+    // GOING_HOME 或 RECOVERING：目标是 low_hp 回血点
     getInput("low_hp_x", tx);
     getInput("low_hp_y", ty);
   }
 
-  // 4. 检测目标是否变化（用于在 ReactiveSequence 中中途切换导航目标）
+  // 6. 检测目标是否变化（用于在 ReactiveSequence 中中途切换导航目标）
   bool goal_changed = false;
   if (first_goal_set_) {
     constexpr double eps = 0.01;  // 1cm 容差
@@ -112,7 +136,7 @@ BT::NodeStatus HpDecisionPatrol::tick()
   last_goal_x_ = tx;
   last_goal_y_ = ty;
 
-  // 5. 组装 Pose 并输出到黑板
+  // 7. 组装 Pose 并输出到黑板
   geometry_msgs::msg::PoseStamped goal;
   goal.header.frame_id = "map";
   goal.header.stamp = rclcpp::Clock().now();
@@ -123,10 +147,11 @@ BT::NodeStatus HpDecisionPatrol::tick()
   setOutput("target_pose", goal);
   setOutput("is_recovering", is_recovering_);
 
-  // 6. 更新 robot_control 缓存中的非血量字段（spin_vel, stop_scan）
-  //    is_recovering 由 ROS 订阅回调实时更新，不在这里设置
+  // 8. 更新 robot_control 缓存（含 is_recovering，由定时器持续发布）
   {
     std::lock_guard<std::mutex> lock(rc_mutex_);
+
+    cached_rc_msg_.is_recovering = is_recovering_;
 
     float spin_vel = 0.5f;
     getInput("chassis_spin_vel", spin_vel);
@@ -137,8 +162,8 @@ BT::NodeStatus HpDecisionPatrol::tick()
     cached_rc_msg_.stop_gimbal_scan = stop_scan;
   }
 
-  // 7. 如果目标发生变化，返回 FAILURE 使 ReactiveSequence 中断当前 SendGoal（取消导航）
-  //    下一次 tick 时目标未变，返回 SUCCESS，SendGoal 用新目标重新启动导航
+  // 9. 如果目标发生变化，返回 FAILURE 使 ReactiveSequence 中断当前 SendGoal（取消导航）
+  //     下一次 tick 时目标未变，返回 SUCCESS，SendGoal 用新目标重新启动导航
   if (goal_changed) {
     return BT::NodeStatus::FAILURE;
   }

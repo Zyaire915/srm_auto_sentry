@@ -18,7 +18,8 @@ public:
   {
     return {
       BT::InputPort<geometry_msgs::msg::PoseStamped>("goal_pose"),
-      BT::InputPort<std::string>("action_name")};
+      BT::InputPort<std::string>("action_name"),
+      BT::OutputPort<bool>("goal_reached", "Set to true when nav2 goal SUCCEEDED")};
   }
 
   bool setGoal(Goal & goal) override;

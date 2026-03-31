@@ -15,13 +15,21 @@ namespace rm_behavior_tree
 class HpDecisionPatrol : public BT::SyncActionNode
 {
 public:
+  /// 巡逻状态机
+  enum class PatrolState {
+    NORMAL,       ///< 正常巡逻，前往 high_hp 点位
+    GOING_HOME,   ///< 血量低于阈值，正在撤回 low_hp 点位（is_recovering=0）
+    RECOVERING    ///< 已抵达 low_hp 点位（Nav2 导航成功），正在回血（is_recovering=1）
+  };
+
   HpDecisionPatrol(const std::string& name, const BT::NodeConfig& config);
 
   /**
    * 外部在 main 中调用，注入 ROS 节点。
    * 会创建：
-   *   1) /srm/sefdefined 订阅者 —— 实时接收血量并更新 is_recovering
+   *   1) /srm/sefdefined 订阅者（仅接收血量）
    *   2) robot_control publisher + 10Hz 定时器 —— 持续发布
+   * 到达 low_hp 点位的判断通过 SendGoal 的 goal_reached blackboard 变量完成（Nav2 导航结果）。
    */
   void initRos(rclcpp::Node::SharedPtr ros_node,
                const std::string & rc_topic,
@@ -33,6 +41,7 @@ public:
   BT::NodeStatus tick() override;
 
 private:
+  PatrolState state_ = PatrolState::NORMAL;
   bool is_recovering_ = false;
   int hp_threshold_ = 400;
   int max_hp_ = 600;

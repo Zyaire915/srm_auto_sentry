@@ -82,7 +82,9 @@ int main(int argc, char ** argv)
   auto tree = factory.createTreeFromFile(bt_xml_path);
 
   // 遍历树，找到 HpDecisionPatrol 节点并注入 ROS 节点
-  // initRos 会创建：1) /srm/sefdefined 订阅者（实时更新 is_recovering）  2) robot_control publisher + 10Hz 定时器
+  // initRos 会创建：1) /srm/sefdefined 订阅者  2) robot_control publisher + 10Hz 定时器
+  // "到达回血点"由 SendGoal 通过 blackboard goal_reached 信号传递（Nav2 导航结果），无需 TF2
+  // is_recovering 由 tick() 三态状态机决定（NORMAL→GOING_HOME→RECOVERING），仅 Nav2 确认到达 low_hp 后才为 1
   for (auto & subtree : tree.subtrees) {
     for (auto & bt_node : subtree->nodes) {
       if (auto * hp_node = dynamic_cast<rm_behavior_tree::HpDecisionPatrol *>(bt_node.get())) {
