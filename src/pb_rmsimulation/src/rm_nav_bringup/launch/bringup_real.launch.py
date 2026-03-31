@@ -304,6 +304,22 @@ def generate_launch_description():
                 ]
             ),
 
+            # ── Self-defined manual localization (RViz 2D Pose Estimate) ──
+            Node(
+                condition=LaunchConfigurationEquals('localization', 'selfdefined'),
+                package='manual_localization',
+                executable='manual_localization_node.py',
+                name='manual_localization_node',
+                output='screen',
+                parameters=[{
+                    'use_sim_time': use_sim_time,
+                    'publish_rate': 50.0,
+                    'odom_frame': 'odom',
+                    'map_frame': 'map',
+                    'base_frame': 'base_link',
+                }],
+            ),
+
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(os.path.join(navigation2_launch_dir, 'map_server_launch.py')),
                 condition = LaunchConfigurationNotEquals('localization', 'slam_toolbox'),
