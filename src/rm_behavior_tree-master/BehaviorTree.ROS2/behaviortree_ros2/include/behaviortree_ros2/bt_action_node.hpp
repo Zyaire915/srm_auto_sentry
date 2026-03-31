@@ -22,6 +22,7 @@
 #include "behaviortree_cpp/action_node.h"
 #include "behaviortree_cpp/bt_factory.h"
 #include "rclcpp_action/rclcpp_action.hpp"
+#include <rclcpp_action/exceptions.hpp>
 
 #include "behaviortree_ros2/ros_node_params.hpp"
 
@@ -429,21 +430,42 @@ template<class T> inline
 template<class T> inline
   void RosActionNode<T>::cancelGoal()
 {
-  auto future_result = action_client_->async_get_result(goal_handle_);
-  auto future_cancel = action_client_->async_cancel_goal(goal_handle_);
-
-  if (callback_group_executor_.spin_until_future_complete(future_cancel, server_timeout_) !=
-      rclcpp::FutureReturnCode::SUCCESS)
+  if(!goal_handle_)
   {
-    RCLCPP_ERROR( node_->get_logger(), "Failed to cancel action server for [%s]",
-                 prev_action_name_.c_str());
+    RCLCPP_WARN(node_->get_logger(), "cancelGoal called but goal_handle_ is null, skipping.");
+    return;
   }
 
-  if (callback_group_executor_.spin_until_future_complete(future_result, server_timeout_) !=
-      rclcpp::FutureReturnCode::SUCCESS)
+  try
   {
-    RCLCPP_ERROR( node_->get_logger(), "Failed to get result call failed :( for [%s]",
-                 prev_action_name_.c_str());
+    auto future_cancel = action_client_->async_cancel_goal(goal_handle_);
+    if (callback_group_executor_.spin_until_future_complete(future_cancel, server_timeout_) !=
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+      RCLCPP_WARN( node_->get_logger(), "Failed to cancel action server for [%s]",
+                   prev_action_name_.c_str());
+    }
+  }
+  catch (const rclcpp_action::exceptions::UnknownGoalHandleError & e)
+  {
+    RCLCPP_WARN(node_->get_logger(),
+      "cancelGoal: goal handle unknown (goal likely already finished): %s", e.what());
+  }
+
+  try
+  {
+    auto future_result = action_client_->async_get_result(goal_handle_);
+    if (callback_group_executor_.spin_until_future_complete(future_result, server_timeout_) !=
+        rclcpp::FutureReturnCode::SUCCESS)
+    {
+      RCLCPP_WARN( node_->get_logger(), "Failed to get result for [%s]",
+                   prev_action_name_.c_str());
+    }
+  }
+  catch (const rclcpp_action::exceptions::UnknownGoalHandleError & e)
+  {
+    RCLCPP_WARN(node_->get_logger(),
+      "cancelGoal: async_get_result goal handle unknown: %s", e.what());
   }
 }
 

@@ -31,8 +31,8 @@ int main(int argc, char ** argv)
   BT::RosNodeParams params_send_goal;
   params_send_goal.nh = std::make_shared<rclcpp::Node>("send_goal");
   params_send_goal.default_port_value = "navigate_to_pose";
-  params_send_goal.server_timeout = std::chrono::milliseconds(2000);
-  params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(3000);
+  params_send_goal.server_timeout = std::chrono::milliseconds(500);
+  params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(1000);
 
   BT::RosNodeParams params_sub_sefdefined;
   params_sub_sefdefined.nh = std::make_shared<rclcpp::Node>("sub_sefdefined");
@@ -105,11 +105,11 @@ int main(int argc, char ** argv)
 
   while (rclcpp::ok()) {
     try {
-      tree.tickWhileRunning(std::chrono::milliseconds(100));
+      tree.tickWhileRunning(std::chrono::milliseconds(10));
     } catch (const rclcpp_action::exceptions::UnknownGoalHandleError & e) {
       RCLCPP_WARN(node->get_logger(), "Goal handle lost (nav server may have restarted): %s. Retrying...", e.what());
       tree.haltTree();
-      std::this_thread::sleep_for(std::chrono::milliseconds(500));
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
     } catch (const std::exception & e) {
       RCLCPP_ERROR(node->get_logger(), "BT tick exception: %s. Retrying...", e.what());
       tree.haltTree();
