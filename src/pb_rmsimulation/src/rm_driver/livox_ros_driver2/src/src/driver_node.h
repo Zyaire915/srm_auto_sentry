@@ -26,6 +26,7 @@
 #define LIVOX_DRIVER_NODE_H
 
 #include "include/ros_headers.h"
+#include <rcl_interfaces/msg/set_parameters_result.hpp>
 
 namespace livox_ros {
 
@@ -44,11 +45,17 @@ class DriverNode final : public rclcpp::Node {
   void PointCloudDataPollThread();
   void ImuDataPollThread();
 
+  // Dynamic parameter callback for rqt_reconfigure
+  rcl_interfaces::msg::SetParametersResult
+  OnParameterChange(const std::vector<rclcpp::Parameter>& parameters);
+
   std::unique_ptr<Lddc> lddc_ptr_;
   std::shared_ptr<std::thread> pointclouddata_poll_thread_;
   std::shared_ptr<std::thread> imudata_poll_thread_;
   std::shared_future<void> future_;
   std::promise<void> exit_signal_;
+
+  rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_cb_handle_;
 };
 
 } // namespace livox_ros

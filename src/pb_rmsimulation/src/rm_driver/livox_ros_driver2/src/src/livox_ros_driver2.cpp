@@ -34,6 +34,7 @@
 #include "include/ros_headers.h"
 #include "lddc.h"
 #include "lds_lidar.h"
+#include "comm/pub_handler.h"
 
 
 using namespace livox_ros;
@@ -111,6 +112,19 @@ DriverNode::DriverNode(const rclcpp::NodeOptions &node_options)
       &DriverNode::PointCloudDataPollThread, this);
   imudata_poll_thread_ =
       std::make_shared<std::thread>(&DriverNode::ImuDataPollThread, this);
+
+  // ====== Dynamic extrinsic parameters for rqt_reconfigure ======
+  // Declare parameters with default values from JSON config
+  this->declare_parameter("extrinsic_roll", 0.0);
+  this->declare_parameter("extrinsic_pitch", 0.0);
+  this->declare_parameter("extrinsic_yaw", 0.0);
+
+  // Register dynamic parameter callback
+  param_cb_handle_ = this->add_on_set_parameters_callback(
+      std::bind(&DriverNode::OnParameterChange, this, std::placeholders::_1));
+
+  DRIVER_INFO(*this, "Dynamic extrinsic parameters registered: "
+              "extrinsic_roll, extrinsic_pitch, extrinsic_yaw");
 }
 
 } // namespace livox_ros
@@ -134,4 +148,39 @@ void DriverNode::ImuDataPollThread() {
     lddc_ptr_->DistributeImuData();
     status = future_.wait_for(std::chrono::microseconds(0));
   } while (status == std::future_status::timeout);
+}
+
+rcl_interfaces::msg::SetParametersResult
+DriverNode::OnParameterChange(const std::vector<rclcpp::Parameter>& parameters) {
+  rcl_interfaces::msg::SetParametersResult result;
+  result.successful = true;
+
+  bool extrinsic_changed = false;
+  double roll = this->get_parameter("extrinsic_roll").as_double();
+  double pitch = this->get_parameter("extrinsic_pitch").as_double();
+  double yaw = this->get_parameter("extrinsic_yaw").as_double();
+
+  for (const auto& param : parameters) {
+    if (param.get_name() == "extrinsic_roll") {
+      roll = param.as_double();
+      extrinsic_changed = true;
+    } else if (param.get_name() == "extrinsic_pitch") {
+      pitch = param.as_double();
+      extrinsic_changed = true;
+    } else if (param.get_name() == "extrinsic_yaw") {
+      yaw = param.as_double();
+      extrinsic_changed = true;
+    }
+  }
+
+  if (extrinsic_changed) {
+    DRIVER_INFO(*this, "[rqt_reconfigure] Updating extrinsic: roll=%.2f, pitch=%.2f, yaw=%.2f",
+                roll, pitch, yaw);
+    pub_handler().UpdateAllLidarsExtParam(
+        static_cast<float>(roll),
+        static_cast<float>(pitch),
+        static_cast<float>(yaw));
+  }
+
+  return result;
 }

@@ -426,6 +426,82 @@ void LidarPubHandler::SetLidarsExtParam(LidarExtParameter lidar_param) {
   is_set_extrinsic_params_ = true;
 }
 
+void LidarPubHandler::UpdateLidarsExtParam(LidarExtParameter lidar_param) {
+  std::lock_guard<std::mutex> lock(mutex_);
+  extrinsic_.trans[0] = lidar_param.param.x;
+  extrinsic_.trans[1] = lidar_param.param.y;
+  extrinsic_.trans[2] = lidar_param.param.z;
+
+  double cos_roll =
+      cos(static_cast<double>(lidar_param.param.roll * PI / 180.0));
+  double cos_pitch =
+      cos(static_cast<double>(lidar_param.param.pitch * PI / 180.0));
+  double cos_yaw = cos(static_cast<double>(lidar_param.param.yaw * PI / 180.0));
+  double sin_roll =
+      sin(static_cast<double>(lidar_param.param.roll * PI / 180.0));
+  double sin_pitch =
+      sin(static_cast<double>(lidar_param.param.pitch * PI / 180.0));
+  double sin_yaw = sin(static_cast<double>(lidar_param.param.yaw * PI / 180.0));
+
+  std::cout << "[UpdateExtParam] rpy: " << lidar_param.param.roll << " "
+            << lidar_param.param.pitch << " " << lidar_param.param.yaw << "\n";
+
+  extrinsic_.rotation[0][0] = cos_pitch * cos_yaw;
+  extrinsic_.rotation[0][1] =
+      sin_roll * sin_pitch * cos_yaw - cos_roll * sin_yaw;
+  extrinsic_.rotation[0][2] =
+      cos_roll * sin_pitch * cos_yaw + sin_roll * sin_yaw;
+
+  extrinsic_.rotation[1][0] = cos_pitch * sin_yaw;
+  extrinsic_.rotation[1][1] =
+      sin_roll * sin_pitch * sin_yaw + cos_roll * cos_yaw;
+  extrinsic_.rotation[1][2] =
+      cos_roll * sin_pitch * sin_yaw - sin_roll * cos_yaw;
+
+  extrinsic_.rotation[2][0] = -sin_pitch;
+  extrinsic_.rotation[2][1] = sin_roll * cos_pitch;
+  extrinsic_.rotation[2][2] = cos_roll * cos_pitch;
+
+  extrinsic_global.rotation[0][0] = cos_pitch * cos_yaw;
+  extrinsic_global.rotation[0][1] =
+      sin_roll * sin_pitch * cos_yaw - cos_roll * sin_yaw;
+  extrinsic_global.rotation[0][2] =
+      cos_roll * sin_pitch * cos_yaw + sin_roll * sin_yaw;
+
+  extrinsic_global.rotation[1][0] = cos_pitch * sin_yaw;
+  extrinsic_global.rotation[1][1] =
+      sin_roll * sin_pitch * sin_yaw + cos_roll * cos_yaw;
+  extrinsic_global.rotation[1][2] =
+      cos_roll * sin_pitch * sin_yaw - sin_roll * cos_yaw;
+
+  extrinsic_global.rotation[2][0] = -sin_pitch;
+  extrinsic_global.rotation[2][1] = sin_roll * cos_pitch;
+  extrinsic_global.rotation[2][2] = cos_roll * cos_pitch;
+}
+
+void PubHandler::UpdateAllLidarsExtParam(float roll, float pitch, float yaw) {
+  std::unique_lock<std::mutex> lock(packet_mutex_);
+  for (auto &pair : lidar_extrinsics_) {
+    pair.second.param.roll = roll;
+    pair.second.param.pitch = pitch;
+    pair.second.param.yaw = yaw;
+  }
+  for (auto &pair : lidar_process_handlers_) {
+    LidarExtParameter param;
+    if (lidar_extrinsics_.find(pair.first) != lidar_extrinsics_.end()) {
+      param = lidar_extrinsics_[pair.first];
+    } else {
+      param.param.roll = roll;
+      param.param.pitch = pitch;
+      param.param.yaw = yaw;
+      param.param.x = 0;
+      param.param.y = 0;
+      param.param.z = 0;
+    }
+    pair.second->UpdateLidarsExtParam(param);
+  }
+}
+
 void LidarPubHandler::ProcessCartesianHighPoint(RawPacket &pkt) {
   LivoxLidarCartesianHighRawPoint *raw =
       (LivoxLidarCartesianHighRawPoint *)pkt.raw_data.data();

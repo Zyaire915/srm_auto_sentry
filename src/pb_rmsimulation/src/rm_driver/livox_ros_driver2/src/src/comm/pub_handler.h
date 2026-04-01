@@ -48,6 +48,7 @@ class LidarPubHandler {
 
   void PointCloudProcess(RawPacket& pkt);
   void SetLidarsExtParam(LidarExtParameter param);
+  void UpdateLidarsExtParam(LidarExtParameter param);  // Can be called repeatedly for dynamic update
   void GetLidarPointClouds(std::vector<PointXyzlt>& points_clouds);
 
   uint64_t GetRecentTimeStamp();
@@ -88,6 +89,7 @@ class PubHandler {
   void SetPointCloudConfig(const double publish_freq);
   void SetPointCloudsCallback(PointCloudsCallback cb, void* client_data);
   void AddLidarsExtParam(LidarExtParameter& extrinsic_params);
+  void UpdateAllLidarsExtParam(float roll, float pitch, float yaw);  // Dynamic update for rqt_reconfigure
   void ClearAllLidarsExtrinsicParams();
   void SetImuDataCallback(ImuDataCallback cb, void* client_data);
 
