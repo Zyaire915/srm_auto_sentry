@@ -1,0 +1,21 @@
+<root main_tree_to_execute="HpTestTree">
+    <BehaviorTree ID="HpTestTree">
+        <ReactiveSequence>
+            <SubSefdefined sefdefined_data="{the_hp_data}" />
+            
+            <HpDecisionPatrol 
+                hp_input="{the_hp_data}"
+                high_hp_x="4.5" high_hp_y="-0.07"
+                low_hp_x="0.00" low_hp_y="0.00"
+                target_pose="{current_goal}" 
+                hp_threshold="200"
+                max_hp="360"
+                chassis_spin_vel="0.5"
+                stop_gimbal_scan="false"
+                is_recovering="{is_recovering}"
+            />
+            
+            <SendGoal goal_pose="{current_goal}" />
+        </ReactiveSequence>
+    </BehaviorTree>
+</root>

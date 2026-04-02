@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/zyaire/srm_auto_sentry/src/pb_rmsimulation/src/rm_nav_bringup/config/reality -name \"*.yaml\" -exec wc -l {})",
+      "Bash(ros2 pkg:*)",
+      "Bash(find /home/zyaire/srm_auto_sentry -name *small_gicp* -o -name *relocalization*)"
+    ]
+  }
+}

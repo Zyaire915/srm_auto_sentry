@@ -1,0 +1,10 @@
+build/
+install/
+log/
+logs/
+.vscode/
+*.pcd
+*.pgm
+.devcontainer/
+.cache/
+.vscode/settings.json
