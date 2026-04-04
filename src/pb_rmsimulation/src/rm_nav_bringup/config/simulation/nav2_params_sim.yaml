@@ -101,8 +101,8 @@ controller_server:
     controller_plugins: ["FollowPath"]
     progress_checker:
       plugin: "nav2_controller::SimpleProgressChecker"
-      required_movement_radius: 0.5
-      movement_time_allowance: 10.0
+      required_movement_radius: 0.2
+      movement_time_allowance: 20.0
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
@@ -290,8 +290,8 @@ local_costmap:
 global_costmap:
   global_costmap:
     ros__parameters:
-      update_frequency: 5.0
-      publish_frequency: 2.0
+      update_frequency: 10.0
+      publish_frequency: 5.0
       global_frame: map
       robot_base_frame: base_link_fake
       use_sim_time: False
@@ -303,7 +303,7 @@ global_costmap:
         plugin: "spatio_temporal_voxel_layer/SpatioTemporalVoxelLayer"
         # https://github.com/SteveMacenski/spatio_temporal_voxel_layer
         enabled:                  true
-        voxel_decay:              0.5                               # 如果是线性衰减，单位为秒；如果是指数衰减，则为 e 的 n 次方
+        voxel_decay:              0.1                               # 如果是线性衰减，单位为秒；如果是指数衰减，则为 e 的 n 次方 (从0.5降至0.1，加速动态障碍物清除)
         decay_model:              0                                 # 衰减模型，0=线性，1=指数，-1=持久
         voxel_size:               0.05                              # 每个体素的尺寸，单位为米
         track_unknown_space:      true                              # default space is unknown
@@ -341,7 +341,7 @@ global_costmap:
           vertical_fov_angle: 1.029                                 # 垂直视场角，单位为弧度，For 3D lidars it's the symmetric FOV about the planar axis.
           vertical_fov_padding: 0.05                                # 3D Lidar only. Default 0, in meters
           horizontal_fov_angle: 6.29                                # 3D 激光雷达水平视场角
-          decay_acceleration: 5.0                                   # default 0, 1/s^2.
+          decay_acceleration: 15.0                                   # default 0, 1/s^2. (从5.0提升至15.0，加速动态障碍物清除)
           model_type: 1                                             # 0=深度相机，1=3D激光雷达
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
