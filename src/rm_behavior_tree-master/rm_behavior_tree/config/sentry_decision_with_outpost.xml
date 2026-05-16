@@ -17,8 +17,8 @@
         <!-- Check if both HP and ammo are healthy -->
         <IsHealthyAmmo hp_message="{sefdefined}"
                        ammo_message="{projectile_allowance}"
-                       hp_threshold="250"
-                       ammo_threshold="40"/>
+                       hp_threshold="200"
+                       ammo_threshold="0"/>
         
         <!-- Both healthy: Check outpost status to choose waypoint A or B -->
         <WhileDoElse name="Outpost Status Check">
@@ -27,14 +27,14 @@
           <!-- Outpost not completed (switch_position = 0): Go to waypoint A -->
           <RateController hz="1">
             <SendGoal name="Waypoint_A_Occupy"
-                      goal_pose="5.0;0.0;0; 0;0;0;1"
+                      goal_pose="1.0;1.0;0; 0;0;0;1"
                       action_name="navigate_to_pose"/>
           </RateController>
           
           <!-- Outpost completed (switch_position = 1): Go to waypoint B -->
           <RateController hz="1">
             <SendGoal name="Waypoint_B_Defend"
-                      goal_pose="3.0;2.0;0; 0;0;0;1"
+                      goal_pose="2.0;2.0;0; 0;0;0;1"
                       action_name="navigate_to_pose"/>
           </RateController>
         </WhileDoElse>
@@ -42,7 +42,7 @@
         <!-- HP or ammo below threshold: Go to waypoint C (Supply/Retreat) -->
         <RateController hz="1">
           <SendGoal name="Waypoint_C_Supply"
-                    goal_pose="-2.5;4.07;0; 0;0;0;1"
+                    goal_pose="0.0;0.0;0; 0;0;0;1"
                     action_name="navigate_to_pose"/>
         </RateController>
       </WhileDoElse>
