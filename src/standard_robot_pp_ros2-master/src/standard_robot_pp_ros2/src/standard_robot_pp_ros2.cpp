@@ -61,6 +61,10 @@ void StandardRobotPpRos2Node::createPublisher()
     this->create_publisher<rm_decision_interfaces::msg::RfidStatus>("referee/rfid_status", 10);
   robot_status_pub_ =
     this->create_publisher<rm_decision_interfaces::msg::RobotStatus>("referee/robot_status", 10);
+  projectile_allowance_pub_ =
+    this->create_publisher<pb_rm_interfaces::msg::ProjectileAllowance>("referee/projectile_allowance", 10);
+  switch_position_pub_ =
+    this->create_publisher<pb_rm_interfaces::msg::SwitchPosition>("referee/switch_position", 10);
 }
 
 void StandardRobotPpRos2Node::createSubscription()
@@ -313,6 +317,15 @@ void StandardRobotPpRos2Node::receiveData()
             ReceiveRobotStatus robot_status_data = fromVector<ReceiveRobotStatus>(full_packet);
             publishRobotStatus(robot_status_data);
           } break;
+          case ID_PROJECTILE_ALLOWANCE: {
+            ReceiveProjectileAllowance projectile_allowance_data =
+              fromVector<ReceiveProjectileAllowance>(full_packet);
+            publishProjectileAllowance(projectile_allowance_data);
+          } break;
+          case ID_SWITCH_POSITION: {
+            ReceiveSwitchPosition switch_position_data = fromVector<ReceiveSwitchPosition>(full_packet);
+            publishSwitchPosition(switch_position_data);
+          } break;
           case ID_SEFDEFINED:
           case ID_ROBOT_STATUS_V1: {
             ReceiveSefdefinedData sefdefined_data = fromVector<ReceiveSefdefinedData>(full_packet);
@@ -532,6 +545,23 @@ void StandardRobotPpRos2Node::publishRobotStatus(ReceiveRobotStatus & robot_stat
   // msg.maximum_hp = 0;
   // msg.shooter_17mm_1_barrel_heat = robot_status.data.shooter_17mm_1_barrel_heat;
   robot_status_pub_->publish(msg);
+}
+
+void StandardRobotPpRos2Node::publishProjectileAllowance(ReceiveProjectileAllowance & projectile_allowance)
+{
+  pb_rm_interfaces::msg::ProjectileAllowance msg;
+  msg.projectile_allowance_17mm = projectile_allowance.data.projectile_allowance_17mm;
+  msg.projectile_allowance_42mm = projectile_allowance.data.projectile_allowance_42mm;
+  msg.remaining_gold_coin = projectile_allowance.data.remaining_gold_coin;
+  msg.projectile_allowance_fortress = projectile_allowance.data.projectile_allowance_fortress;
+  projectile_allowance_pub_->publish(msg);
+}
+
+void StandardRobotPpRos2Node::publishSwitchPosition(ReceiveSwitchPosition & switch_position)
+{
+  pb_rm_interfaces::msg::SwitchPosition msg;
+  msg.switch_position = switch_position.data.switch_position;
+  switch_position_pub_->publish(msg);
 }
 
 void StandardRobotPpRos2Node::publishSefdefined(ReceiveSefdefinedData & sefdefined)

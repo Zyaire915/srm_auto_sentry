@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4"
+      main_tree_to_execute="StrategyDecision">
+  <!-- Main Strategy Decision Tree based on HP and Projectile Allowance -->
+  <BehaviorTree ID="StrategyDecision">
+    <ReactiveSequence>
+      <!-- Subscribe to necessary topics -->
+      <SubSefdefined topic_name="referee/sefdefined"
+                     sefdefined="{sefdefined}"/>
+      <SubProjectileAllowance topic_name="referee/projectile_allowance"
+                              projectile_allowance="{projectile_allowance}"/>
+      <SubSwitchPosition topic_name="referee/switch_position"
+                         switch_position="{switch_position}"/>
+      
+      <!-- Main Decision Logic -->
+      <WhileDoElse name="Health and Ammo Check">
+        <!-- Check if both HP and ammo are healthy -->
+        <IsHealthyAmmo hp_message="{sefdefined}"
+                       ammo_message="{projectile_allowance}"
+                       hp_threshold="250"
+                       ammo_threshold="40"/>
+        
+        <!-- Both healthy: Check outpost status to choose waypoint A or B -->
+        <WhileDoElse name="Outpost Status Check">
+          <IsOutpostNotCompleted switch_position="{switch_position}"/>
+          
+          <!-- Outpost not completed (switch_position = 0): Go to waypoint A -->
+          <RateController hz="1">
+            <SendGoal name="Waypoint_A_Occupy"
+                      goal_pose="5.0;0.0;0; 0;0;0;1"
+                      action_name="navigate_to_pose"/>
+          </RateController>
+          
+          <!-- Outpost completed (switch_position = 1): Go to waypoint B -->
+          <RateController hz="1">
+            <SendGoal name="Waypoint_B_Defend"
+                      goal_pose="3.0;2.0;0; 0;0;0;1"
+                      action_name="navigate_to_pose"/>
+          </RateController>
+        </WhileDoElse>
+        
+        <!-- HP or ammo below threshold: Go to waypoint C (Supply/Retreat) -->
+        <RateController hz="1">
+          <SendGoal name="Waypoint_C_Supply"
+                    goal_pose="-2.5;4.07;0; 0;0;0;1"
+                    action_name="navigate_to_pose"/>
+        </RateController>
+      </WhileDoElse>
+    </ReactiveSequence>
+  </BehaviorTree>
+
+  <!-- Tree Nodes Model Definition -->
+  <TreeNodesModel>
+    <Action ID="GetCurrentLocation"
+            editable="true">
+      <output_port name="current_location"
+                   default="{current_location}"/>
+    </Action>
+    
+    <Action ID="IsHealthyAmmo"
+            editable="true">
+      <input_port name="hp_message"
+                  default="{sefdefined}"/>
+      <input_port name="ammo_message"
+                  default="{projectile_allowance}"/>
+      <input_port name="hp_threshold"
+                  default="250"/>
+      <input_port name="ammo_threshold"
+                  default="40"/>
+    </Action>
+    
+    <Action ID="IsOutpostNotCompleted"
+            editable="true">
+      <input_port name="switch_position"
+                  default="{switch_position}"/>
+    </Action>
+    
+    <Decorator ID="RateController">
+      <input_port name="hz">Rate</input_port>
+    </Decorator>
+    
+    <Action ID="SendGoal"
+            editable="true">
+      <input_port name="goal_pose"
+                  default="0;0;0; 0;0;0;1"/>
+      <input_port name="action_name"
+                  default="navigate_to_pose"/>
+    </Action>
+    
+    <Action ID="SubSefdefined"
+            editable="true">
+      <input_port name="topic_name"
+                  default="referee/sefdefined"/>
+      <output_port name="sefdefined"
+                   default="{sefdefined}"/>
+    </Action>
+    
+    <Action ID="SubProjectileAllowance"
+            editable="true">
+      <input_port name="topic_name"
+                  default="referee/projectile_allowance"/>
+      <output_port name="projectile_allowance"
+                   default="{projectile_allowance}"/>
+    </Action>
+    
+    <Action ID="SubSwitchPosition"
+            editable="true">
+      <input_port name="topic_name"
+                  default="referee/switch_position"/>
+      <output_port name="switch_position"
+                   default="{switch_position}"/>
+    </Action>
+    
+    <Action ID="RobotControl"
+            editable="true">
+      <input_port name="stop_gimbal_scan"
+                  default="True"/>
+      <input_port name="chassis_spin_vel"
+                  default="False"/>
+      <input_port name="is_recovering"
+                  default="False"/>
+    </Action>
+  </TreeNodesModel>
+
+</root>

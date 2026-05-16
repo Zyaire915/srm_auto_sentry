@@ -21,6 +21,7 @@ ament_auto_find_build_dependencies()
 
 set(PACKAGE_INCLUDE_DEPENDS
     rm_decision_interfaces
+    pb_rm_interfaces
     rclcpp
     std_msgs
     behaviortree_cpp
@@ -85,6 +86,16 @@ ament_auto_add_library(is_detect_enemy SHARED
 )
 add_target_dependencies(is_detect_enemy)
 
+ament_auto_add_library(is_healthy_ammo SHARED 
+    plugins/condition/is_healthy_ammo.cpp
+)
+add_target_dependencies(is_healthy_ammo)
+
+ament_auto_add_library(is_outpost_not_completed SHARED 
+    plugins/condition/is_outpost_not_completed.cpp
+)
+add_target_dependencies(is_outpost_not_completed)
+
 # Actions
 ament_auto_add_library(send_goal SHARED 
     plugins/action/send_goal.cpp
@@ -125,6 +136,16 @@ ament_auto_add_library(sub_decision_num SHARED
     plugins/action/sub_decision_num.cpp
 )
 add_target_dependencies(sub_decision_num)
+
+ament_auto_add_library(sub_projectile_allowance SHARED
+    plugins/action/sub_projectile_allowance.cpp
+)
+add_target_dependencies(sub_projectile_allowance)
+
+ament_auto_add_library(sub_switch_position SHARED
+    plugins/action/sub_switch_position.cpp
+)
+add_target_dependencies(sub_switch_position)
 
 ament_auto_add_library(get_current_location SHARED 
     plugins/action/get_current_location.cpp

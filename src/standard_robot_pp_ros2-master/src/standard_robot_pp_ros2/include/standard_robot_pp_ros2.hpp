@@ -29,6 +29,8 @@
 #include <rm_decision_interfaces/msg/robot_status.hpp> // 注意：这里对应的是 0x0202 能量热量数据
 #include <rm_decision_interfaces/msg/robot_control.hpp>
 #include <rm_decision_interfaces/msg/sefdefined.hpp>
+#include <pb_rm_interfaces/msg/projectile_allowance.hpp>
+#include <pb_rm_interfaces/msg/switch_position.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <serial_driver/serial_driver.hpp>
 
@@ -62,6 +64,8 @@ private:
   rclcpp::Publisher<rm_decision_interfaces::msg::GroundRobotPosition>::SharedPtr ground_robot_position_pub_; // 0x020B
   rclcpp::Publisher<rm_decision_interfaces::msg::RfidStatus>::SharedPtr rfid_status_pub_;           // 0x0209
   rclcpp::Publisher<rm_decision_interfaces::msg::RobotStatus>::SharedPtr robot_status_pub_;         // 0x0202
+  rclcpp::Publisher<pb_rm_interfaces::msg::ProjectileAllowance>::SharedPtr projectile_allowance_pub_; // 0x0208
+  rclcpp::Publisher<pb_rm_interfaces::msg::SwitchPosition>::SharedPtr switch_position_pub_;         // 0x000D
   rclcpp::Publisher<rm_decision_interfaces::msg::Sefdefined>::SharedPtr sefdefined_pub_;            // 0x000B
 
   // Subscribe
@@ -89,6 +93,8 @@ private:
   void publishGroundRobotPosition(ReceiveGroundRobotPosition & data); // 0x020B
   void publishRfidStatus(ReceiveRfidStatus & data);         // 0x0209
   void publishRobotStatus(ReceiveRobotStatus & data);       // 0x0202
+  void publishProjectileAllowance(ReceiveProjectileAllowance & data); // 0x0208
+  void publishSwitchPosition(ReceiveSwitchPosition & data);  // 0x000D
   void publishSefdefined(ReceiveSefdefinedData & data);     // 0x000B
   // 移除了 publishDebugData, publishImuData, publishRobotInfo, publishRobotMotion, publishJointState
 

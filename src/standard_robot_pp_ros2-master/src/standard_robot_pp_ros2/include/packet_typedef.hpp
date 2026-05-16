@@ -20,8 +20,10 @@ const uint16_t ID_GAME_STATUS = 0x0001;            // 比赛状态数据
 const uint16_t ID_ALL_ROBOT_HP = 0x0003;           // 机器人血量数据 (文档表1-4定义0x0003为机器人血量)
 const uint16_t ID_EVENT_DATA = 0x0101;             // 场地事件数据
 const uint16_t ID_ROBOT_STATUS = 0x0202;           // 实时底盘缓冲能量和射击热量数据
+const uint16_t ID_PROJECTILE_ALLOWANCE = 0x0208;   // 允许发弹量数据
 const uint16_t ID_RFID_STATUS = 0x0209;            // 机器人RFID状态
 const uint16_t ID_GROUND_ROBOT_POSITION = 0x020B;  // 地面机器人位置数据
+const uint16_t ID_SWITCH_POSITION = 0x000D;        // 打前哨战与否标志位
 const uint16_t ID_SEFDEFINED = 0x000B;             // 新定义的0x0B数据包
 const uint16_t ID_ROBOT_STATUS_V1 = 0x0201;        // 机器人状态数据 (兼容 ID 0x0201)
 
@@ -114,6 +116,35 @@ struct ReceiveRobotStatus
     uint16_t buffer_energy;
     uint16_t shooter_17mm_1_barrel_heat;
     uint16_t shooter_42mm_barrel_heat;
+  } __attribute__((packed)) data;
+
+  uint16_t crc;
+} __attribute__((packed));
+
+// 0x0208 允许发弹量数据
+struct ReceiveProjectileAllowance
+{
+  HeaderFrame frame_header;
+  uint16_t cmd_id;
+  struct
+  {
+    uint16_t projectile_allowance_17mm;  // 机器人自身拥有的17mm弹丸允许发弹量
+    uint16_t projectile_allowance_42mm;  // 42mm弹丸允许发弹量
+    uint16_t remaining_gold_coin;        // 剩余金币数量
+    uint16_t projectile_allowance_fortress;  // 堡垒增益点提供的储备17mm弹丸允许发弹量
+  } __attribute__((packed)) data;
+
+  uint16_t crc;
+} __attribute__((packed));
+
+// 0x000D 打前哨战与否标志位
+struct ReceiveSwitchPosition
+{
+  HeaderFrame frame_header;
+  uint16_t cmd_id;
+  struct
+  {
+    uint8_t switch_position;  // 0=未打完, 1=已打完
   } __attribute__((packed)) data;
 
   uint16_t crc;

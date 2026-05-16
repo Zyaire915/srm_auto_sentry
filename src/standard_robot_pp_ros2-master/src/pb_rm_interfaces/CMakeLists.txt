@@ -19,6 +19,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RfidStatus.msg"
   "msg/RobotStatus.msg"
   "msg/AllyRobotHP.msg"
+  "msg/ProjectileAllowance.msg"
+  "msg/SwitchPosition.msg"
 
   DEPENDENCIES
     geometry_msgs
