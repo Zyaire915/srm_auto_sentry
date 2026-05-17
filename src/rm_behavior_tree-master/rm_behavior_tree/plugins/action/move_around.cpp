@@ -29,6 +29,7 @@ BT::NodeStatus MoveAroundAction::onStart()
   expected_dis = 0.0;
   expected_nearby_goal_count = 0;
   goal_count = 0;
+  last_goal_sent_time_ = std::chrono::steady_clock::time_point::min();
 
   // 获取参数：机器人当前位置坐标的blackboard映射
   if (!getInput("message", current_location)) {
@@ -66,10 +67,17 @@ BT::NodeStatus MoveAroundAction::onRunning()
   if (expected_nearby_goal_count == goal_count) {
     return BT::NodeStatus::SUCCESS;
   } else {
+    auto now = std::chrono::steady_clock::now();
+    if (
+      last_goal_sent_time_ != std::chrono::steady_clock::time_point::min() &&
+      (now - last_goal_sent_time_) < goal_publish_interval_) {
+      return BT::NodeStatus::RUNNING;
+    }
+
     goal_count++;
     generatePoints(current_location, expected_dis, nearby_random_point);
     sendGoalPose(nearby_random_point);
-    std::this_thread::sleep_for(milliseconds(1000));  // 这是不太文明的做法...
+    last_goal_sent_time_ = now;
     return BT::NodeStatus::RUNNING;
   }
 }

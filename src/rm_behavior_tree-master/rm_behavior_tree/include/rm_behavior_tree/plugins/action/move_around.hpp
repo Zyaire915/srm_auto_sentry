@@ -1,6 +1,7 @@
 #ifndef RM_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_AROUND_HPP_
 #define RM_BEHAVIOR_TREE__PLUGINS__ACTION__MOVE_AROUND_HPP_
 
+#include <chrono>
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include <rclcpp/node.hpp>
 #include <rclcpp/publisher.hpp>
@@ -48,6 +49,8 @@ private:
   int goal_count;
   int expected_nearby_goal_count;
   float expected_dis;
+  std::chrono::steady_clock::time_point last_goal_sent_time_;
+  std::chrono::milliseconds goal_publish_interval_{1000};
   geometry_msgs::msg::TransformStamped current_location;
   geometry_msgs::msg::PoseStamped nearby_random_point;
   rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr publisher_goal_pose;

@@ -16,14 +16,25 @@ int main(int argc, char ** argv)
   BT::BehaviorTreeFactory factory;
 
   std::string bt_xml_path;
+  int bt_tick_period_ms = 50;
   auto node = std::make_shared<rclcpp::Node>("rm_behavior_tree");
   node->declare_parameter<std::string>(
     "style", "./rm_decision_ws/rm_behavior_tree/rm_behavior_tree.xml");
+  node->declare_parameter<int>("bt_tick_period_ms", 50);
   node->get_parameter_or<std::string>(
     "style", bt_xml_path, "./rm_decision_ws/rm_behavior_tree/config/attack_left.xml");
+  node->get_parameter_or<int>("bt_tick_period_ms", bt_tick_period_ms, 50);
+
+  if (bt_tick_period_ms < 1) {
+    RCLCPP_WARN(
+      node->get_logger(),
+      "Invalid bt_tick_period_ms=%d, fallback to 50ms", bt_tick_period_ms);
+    bt_tick_period_ms = 50;
+  }
 
   std::cout << "Start RM_Behavior_Tree" << '\n';
   RCLCPP_INFO(node->get_logger(), "Load bt_xml: \e[1;42m %s \e[0m", bt_xml_path.c_str());
+  RCLCPP_INFO(node->get_logger(), "BT tick period: %d ms", bt_tick_period_ms);
 
   BT::RosNodeParams params_update_msg;
   params_update_msg.nh = std::make_shared<rclcpp::Node>("update_msg");
@@ -107,7 +118,7 @@ int main(int argc, char ** argv)
 
   while (rclcpp::ok()) {
     try {
-      tree.tickWhileRunning(std::chrono::milliseconds(10));
+      tree.tickWhileRunning(std::chrono::milliseconds(bt_tick_period_ms));
     } catch (const rclcpp_action::exceptions::UnknownGoalHandleError & e) {
       RCLCPP_WARN(node->get_logger(), "Goal handle lost (nav server may have restarted): %s. Retrying...", e.what());
       tree.haltTree();
