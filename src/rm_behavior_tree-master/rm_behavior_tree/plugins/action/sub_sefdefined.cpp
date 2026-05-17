@@ -14,8 +14,9 @@ SubSefdefinedAction::SubSefdefinedAction(
 BT::PortsList SubSefdefinedAction::providedPorts()
 {
   return {
-    // 这里的字符串 "sefdefined_data" 必须和 XML 里的属性名完全一致
-    BT::OutputPort<rm_decision_interfaces::msg::Sefdefined>("sefdefined_data")
+    // XML 使用的输入端口名 topic_name，以及输出端口名 sefdefined
+    BT::InputPort<std::string>("topic_name"),
+    BT::OutputPort<rm_decision_interfaces::msg::Sefdefined>("sefdefined")
   };
 }
 

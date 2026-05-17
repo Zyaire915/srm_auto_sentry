@@ -13,6 +13,7 @@ SubSwitchPositionAction::SubSwitchPositionAction(
 BT::PortsList SubSwitchPositionAction::providedPorts()
 {
   return {
+    BT::InputPort<std::string>("topic_name"),
     BT::OutputPort<pb_rm_interfaces::msg::SwitchPosition>("switch_position")
   };
 }

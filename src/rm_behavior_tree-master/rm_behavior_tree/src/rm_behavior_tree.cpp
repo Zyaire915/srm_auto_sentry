@@ -59,6 +59,8 @@ int main(int argc, char ** argv)
     "sub_game_status",
     "sub_armors",
     "sub_decision_num",
+    "sub_projectile_allowance",
+    "sub_switch_position",
   };
 
   const std::vector<std::string> bt_plugin_libs = {
@@ -70,6 +72,8 @@ int main(int argc, char ** argv)
     "is_attacked",
     "is_friend_ok",
     "is_outpost_ok",
+    "is_healthy_ammo",
+    "is_outpost_not_completed",
     "get_current_location",
     "move_around",
     "print_message",

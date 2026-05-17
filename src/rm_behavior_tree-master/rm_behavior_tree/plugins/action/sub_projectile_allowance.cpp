@@ -13,6 +13,7 @@ SubProjectileAllowanceAction::SubProjectileAllowanceAction(
 BT::PortsList SubProjectileAllowanceAction::providedPorts()
 {
   return {
+    BT::InputPort<std::string>("topic_name"),
     BT::OutputPort<pb_rm_interfaces::msg::ProjectileAllowance>("projectile_allowance")
   };
 }
