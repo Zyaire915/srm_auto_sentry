@@ -4,6 +4,8 @@
 #include "behaviortree_ros2/bt_action_node.hpp"
 #include "geometry_msgs/msg/pose_stamped.hpp"
 #include "nav2_msgs/action/navigate_to_pose.hpp"
+#include "rm_behavior_tree/bt_conversions.hpp"
+#include <string>
 
 namespace rm_behavior_tree
 {
@@ -17,7 +19,7 @@ public:
   static BT::PortsList providedPorts()
   {
     return {
-      BT::InputPort<geometry_msgs::msg::PoseStamped>("goal_pose"),
+      BT::InputPort<std::string>("goal_pose"),
       BT::InputPort<std::string>("action_name"),
       BT::OutputPort<bool>("goal_reached", "Set to true when nav2 goal SUCCEEDED")};
   }

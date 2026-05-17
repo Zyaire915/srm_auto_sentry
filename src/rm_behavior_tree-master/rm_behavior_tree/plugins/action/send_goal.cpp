@@ -1,5 +1,7 @@
 #include "rm_behavior_tree/plugins/action/send_goal.hpp"
 #include "rm_behavior_tree/bt_conversions.hpp"
+#include <iomanip>
+#include <string>
 
 namespace rm_behavior_tree
 {
@@ -12,11 +14,31 @@ SendGoalAction::SendGoalAction(
 
 bool SendGoalAction::setGoal(nav2_msgs::action::NavigateToPose::Goal & goal)
 {
-  auto res = getInput<geometry_msgs::msg::PoseStamped>("goal_pose");
+  auto res = getInput<std::string>("goal_pose");
   if (!res) {
     throw BT::RuntimeError("error reading port [goal_pose]:", res.error());
   }
-  goal.pose = res.value();
+  
+  // Parse string format: "x;y;z;qx;qy;qz;qw"
+  std::string pose_str = res.value();
+  auto parts = BT::splitString(pose_str, ';');
+  if (parts.size() != 7) {
+    throw BT::RuntimeError("goal_pose string must have 7 values separated by semicolons, got " + 
+                          std::to_string(parts.size()));
+  }
+  
+  try {
+    goal.pose.pose.position.x = std::stod(std::string(parts[0]));
+    goal.pose.pose.position.y = std::stod(std::string(parts[1]));
+    goal.pose.pose.position.z = std::stod(std::string(parts[2]));
+    goal.pose.pose.orientation.x = std::stod(std::string(parts[3]));
+    goal.pose.pose.orientation.y = std::stod(std::string(parts[4]));
+    goal.pose.pose.orientation.z = std::stod(std::string(parts[5]));
+    goal.pose.pose.orientation.w = std::stod(std::string(parts[6]));
+  } catch (const std::exception & e) {
+    throw BT::RuntimeError("Failed to parse goal_pose values: " + std::string(e.what()));
+  }
+  
   goal.pose.header.frame_id = "map";
   goal.pose.header.stamp = rclcpp::Clock().now();
 
