@@ -8,6 +8,8 @@ IsHealthyAmmoAction::IsHealthyAmmoAction(const std::string & name, const BT::Nod
 {
 }
 
+//getInput<rm_decision_interfaces::msg::Sefdefined>("hp_message");
+//getInput<pb_rm_interfaces::msg::ProjectileAllowance>("ammo_message");
 BT::NodeStatus IsHealthyAmmoAction::checkHealthyAmmo()
 {
   int hp_threshold, ammo_threshold;
