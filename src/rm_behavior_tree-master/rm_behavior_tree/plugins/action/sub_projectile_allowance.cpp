@@ -18,6 +18,7 @@ BT::PortsList SubProjectileAllowanceAction::providedPorts()
   };
 }
 
+//setOutput is called in the onTick function, which is called when the node is ticked in the behavior tree. The onTick function receives the last message received from the subscribed topic as an argument. If a message is received, it sets the output port "projectile_allowance" with the received message and returns SUCCESS. If no message is received, it still returns SUCCESS but does not set the output port.
 BT::NodeStatus SubProjectileAllowanceAction::onTick(
   const std::shared_ptr<pb_rm_interfaces::msg::ProjectileAllowance> & last_msg)
 {

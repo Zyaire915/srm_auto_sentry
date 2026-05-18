@@ -20,7 +20,7 @@ const uint16_t ID_GAME_STATUS = 0x0001;            // 比赛状态数据
 const uint16_t ID_ALL_ROBOT_HP = 0x0003;           // 机器人血量数据 (文档表1-4定义0x0003为机器人血量)
 const uint16_t ID_EVENT_DATA = 0x0101;             // 场地事件数据
 const uint16_t ID_ROBOT_STATUS = 0x0202;           // 实时底盘缓冲能量和射击热量数据
-const uint16_t ID_PROJECTILE_ALLOWANCE = 0x0208;   // 允许发弹量数据
+const uint16_t ID_PROJECTILE_ALLOWANCE = 0x000E;   // 允许发弹量数据
 const uint16_t ID_RFID_STATUS = 0x0209;            // 机器人RFID状态
 const uint16_t ID_GROUND_ROBOT_POSITION = 0x020B;  // 地面机器人位置数据
 const uint16_t ID_SWITCH_POSITION = 0x000D;        // 打前哨战与否标志位
@@ -121,7 +121,7 @@ struct ReceiveRobotStatus
   uint16_t crc;
 } __attribute__((packed));
 
-// 0x0208 允许发弹量数据
+// 0x000E 允许发弹量数据
 struct ReceiveProjectileAllowance
 {
   HeaderFrame frame_header;
