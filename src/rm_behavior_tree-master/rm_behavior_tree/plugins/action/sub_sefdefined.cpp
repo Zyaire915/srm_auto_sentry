@@ -28,7 +28,7 @@ BT::NodeStatus SubSefdefinedAction::onTick(
     RCLCPP_DEBUG(logger(), "[%s] Received HP Data", name().c_str());
     
     // 将数据写入上面定义的端口
-    setOutput("sefdefined_data", *last_msg);
+    setOutput("sefdefined", *last_msg);
   }
   return BT::NodeStatus::SUCCESS;
 }

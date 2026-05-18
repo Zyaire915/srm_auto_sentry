@@ -5,7 +5,7 @@
   <BehaviorTree ID="StrategyDecision">
     <ReactiveSequence>
       <!-- Subscribe to necessary topics -->
-      <SubSefdefined topic_name="referee/sefdefined"
+      <SubSefdefined topic_name="/srm/sefdefined"
                      sefdefined="{sefdefined}"/>
       <SubProjectileAllowance topic_name="referee/projectile_allowance"
                               projectile_allowance="{projectile_allowance}"/>
@@ -90,7 +90,7 @@
     <Action ID="SubSefdefined"
             editable="true">
       <input_port name="topic_name"
-                  default="referee/sefdefined"/>
+                  default="/srm/sefdefined"/>
       <output_port name="sefdefined"
                    default="{sefdefined}"/>
     </Action>
