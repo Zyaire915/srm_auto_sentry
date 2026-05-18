@@ -8,3 +8,4 @@ uint16 chassis_power_limit
 uint8 power_management_gimbal_output
 uint8 power_management_chassis_output
 uint8 power_management_shooter_output
+uint16 projectile_allowance_17mm

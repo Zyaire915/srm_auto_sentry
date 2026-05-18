@@ -205,6 +205,8 @@ struct ReceiveSefdefinedData
     uint8_t power_management_gimbal_output : 1;  // bit 0：gimbal口输出，0为无输出，1为 24V输出
     uint8_t power_management_chassis_output : 1;  // bit 1：chassis口输出，0为无输出，1为24V输出
     uint8_t power_management_shooter_output : 1;  // bit 2：shooter口输出，0为无输出，1为24V输出
+    uint8_t reserved : 5;
+    uint16_t projectile_allowance_17mm;
   } __attribute__((__packed__))  data;
 
   uint16_t crc;

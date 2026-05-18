@@ -577,6 +577,7 @@ void StandardRobotPpRos2Node::publishSefdefined(ReceiveSefdefinedData & sefdefin
   msg.power_management_gimbal_output = sefdefined.data.power_management_gimbal_output;
   msg.power_management_chassis_output = sefdefined.data.power_management_chassis_output;
   msg.power_management_shooter_output = sefdefined.data.power_management_shooter_output;
+  msg.projectile_allowance_17mm = sefdefined.data.projectile_allowance_17mm;
 
   sefdefined_pub_->publish(msg);
 }
