@@ -17,7 +17,7 @@
         <!-- Check if both HP and ammo are healthy -->
         <IsHealthyAmmo hp_message="{sefdefined}"
                        ammo_message="{projectile_allowance}"
-                       hp_threshold="0"
+                       hp_threshold="200"
                        ammo_threshold="0"/>
         
         <!-- Both healthy: Check outpost status to choose waypoint A or B -->

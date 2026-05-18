@@ -1,5 +1,5 @@
 # ProjectileAllowance.msg
-# ID: 0x0208  Byte: 6    Projectile Allowance
+# ID: 0x000E  Byte: 6    Projectile Allowance
 # 允许发弹量数据
 
 uint16 projectile_allowance_17mm     # 机器人自身拥有的17mm弹丸允许发弹量
