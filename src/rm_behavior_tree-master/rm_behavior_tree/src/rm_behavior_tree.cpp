@@ -77,6 +77,7 @@ int main(int argc, char ** argv)
     "get_current_location",
     "move_around",
     "print_message",
+    "hp_ammo_decision",
   };
   // clang-format on
 
