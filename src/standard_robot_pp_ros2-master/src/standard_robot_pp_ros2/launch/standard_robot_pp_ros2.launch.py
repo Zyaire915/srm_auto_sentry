@@ -17,7 +17,7 @@ def generate_launch_description():
         executable="standard_robot_pp_ros2_node",
         name="standard_robot_pp_ros2",
         namespace="",
-        output="screen",
+        output="log",
         emulate_tty=True,
         parameters=[config],
     )

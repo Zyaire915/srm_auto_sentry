@@ -134,7 +134,7 @@ def generate_launch_description():
             'use_sim_time': use_sim_time,
             'robot_description': robot_description
         }],
-        output='screen'
+        output='log'
     )
 
     # Specify the actions
@@ -142,7 +142,7 @@ def generate_launch_description():
         package='livox_ros_driver2',
         executable='livox_ros_driver2_node',
         name='livox_lidar_publisher',
-        output='screen',
+        output='log',
         parameters=livox_ros2_params
     )
 
@@ -150,7 +150,7 @@ def generate_launch_description():
         package='imu_complementary_filter',
         executable='complementary_filter_node',
         name='complementary_filter_gain_node',
-        output='screen',
+        output='log',
         parameters=[
             {'do_bias_estimation': True},
             {'do_adaptive_gain': True},
@@ -166,7 +166,7 @@ def generate_launch_description():
     bringup_linefit_ground_segmentation_node = Node(
         package='linefit_ground_segmentation_ros',
         executable='ground_segmentation_node',
-        output='screen',
+        output='log',
         parameters=[segmentation_params]
     )
 
@@ -236,7 +236,7 @@ def generate_launch_description():
                 package='point_lio',
                 executable='pointlio_mapping',
                 name='laserMapping',
-                output='screen',
+                output='log',
                 parameters=[
                     pointlio_mid360_params,
                     {'use_sim_time': use_sim_time,
@@ -310,7 +310,7 @@ def generate_launch_description():
                 package='manual_localization',
                 executable='manual_localization_node.py',
                 name='manual_localization_node',
-                output='screen',
+                output='log',
                 parameters=[{
                     'use_sim_time': use_sim_time,
                     'publish_rate': 50.0,
@@ -334,7 +334,7 @@ def generate_launch_description():
     bringup_fake_vel_transform_node = Node(
         package='fake_vel_transform',
         executable='fake_vel_transform_node',
-        output='screen',
+        output='log',
         parameters=[{
             'use_sim_time': use_sim_time,
             'spin_speed':  -2.0 # rad/s

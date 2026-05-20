@@ -113,7 +113,7 @@ def generate_launch_description():
             parameters=[configured_params, {'autostart': autostart}],
             arguments=['--ros-args', '--log-level', log_level],
             remappings=remappings,
-            output='screen'),
+            output='log'),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(launch_dir, 'navigation_launch.py')),
@@ -127,6 +127,7 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(os.path.join(launch_dir, 'rviz_launch.py')),
+            launch_arguments={'log_level': log_level}.items(),
             condition=IfCondition(use_nav_rviz)
         ),
     ])

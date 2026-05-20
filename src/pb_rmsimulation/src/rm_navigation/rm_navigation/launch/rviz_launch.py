@@ -34,6 +34,7 @@ def generate_launch_description():
     namespace = LaunchConfiguration('namespace')
     use_namespace = LaunchConfiguration('use_namespace')
     rviz_config_file = LaunchConfiguration('rviz_config')
+    log_level = LaunchConfiguration('log_level')
 
     # Declare the launch arguments
     declare_namespace_cmd = DeclareLaunchArgument(
@@ -52,13 +53,18 @@ def generate_launch_description():
         default_value=os.path.join(bringup_dir, 'rviz', 'nav2.rviz'),
         description='Full path to the RVIZ config file to use')
 
+    declare_log_level_cmd = DeclareLaunchArgument(
+        'log_level',
+        default_value='info',
+        description='log level')
+
     # Launch rviz
     start_rviz_cmd = Node(
         condition=UnlessCondition(use_namespace),
         package='rviz2',
         executable='rviz2',
-        arguments=['-d', rviz_config_file],
-        output='screen')
+        arguments=['-d', rviz_config_file, '--ros-args', '--log-level', log_level],
+        output='log')
 
     namespaced_rviz_config_file = ReplaceString(
             source_file=rviz_config_file,
@@ -69,8 +75,8 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         namespace=namespace,
-        arguments=['-d', namespaced_rviz_config_file],
-        output='screen',
+        arguments=['-d', namespaced_rviz_config_file, '--ros-args', '--log-level', log_level],
+        output='log',
         remappings=[('/map', 'map'),
                     ('/tf', 'tf'),
                     ('/tf_static', 'tf_static'),
@@ -97,6 +103,7 @@ def generate_launch_description():
     ld.add_action(declare_namespace_cmd)
     ld.add_action(declare_use_namespace_cmd)
     ld.add_action(declare_rviz_config_file_cmd)
+    ld.add_action(declare_log_level_cmd)
 
     # Add any conditioned actions
     ld.add_action(start_rviz_cmd)
