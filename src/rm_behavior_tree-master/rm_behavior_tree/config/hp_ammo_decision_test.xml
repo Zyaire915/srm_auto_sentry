@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root BTCPP_format="4"
+      main_tree_to_execute="StrategyDecision">
+  <!-- Strategy Decision Tree using HpAmmoDecision node -->
+  <!-- This tree judges based on HP and ammo thresholds and outputs goal poses -->
+  <BehaviorTree ID="StrategyDecision">
+    <ReactiveSequence>
+      <!-- Subscribe to necessary topics -->
+      <SubSefdefined topic_name="/srm/sefdefined"
+                     sefdefined="{sefdefined}"/>
+      <SubProjectileAllowance topic_name="referee/projectile_allowance"
+                              projectile_allowance="{projectile_allowance}"/>
+      
+      <!-- Judge HP and ammo status, output goal pose -->
+      <HpAmmoDecision hp_message="{sefdefined}"
+                      ammo_message="{projectile_allowance}"
+                      hp_threshold="200"
+                      ammo_threshold="30"
+                      pose_above_threshold="7.89;5.76;0; 0;0;0;1"
+                      pose_below_threshold="5.24;2.26;0; 0;0;0;1"
+                      goal_pose="{goal_pose}"/>
+      
+      <!-- Send goal based on decision -->
+      <RateController hz="1">
+        <SendGoal name="NavigateToDecidedPose"
+                  goal_pose="{goal_pose}"
+                  action_name="navigate_to_pose"/>
+      </RateController>
+    </ReactiveSequence>
+  </BehaviorTree>
+</root>

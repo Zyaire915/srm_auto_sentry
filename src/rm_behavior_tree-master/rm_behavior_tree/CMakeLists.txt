@@ -91,6 +91,11 @@ ament_auto_add_library(is_healthy_ammo SHARED
 )
 add_target_dependencies(is_healthy_ammo)
 
+ament_auto_add_library(hp_ammo_decision SHARED 
+    plugins/condition/hp_ammo_decision.cpp
+)
+add_target_dependencies(hp_ammo_decision)
+
 ament_auto_add_library(is_outpost_not_completed SHARED 
     plugins/condition/is_outpost_not_completed.cpp
 )
