@@ -26,6 +26,7 @@ public:
   }
 
 private:
+  std::string last_goal_pose_ = ""; // Cache last goal to avoid duplicate sends
   BT::NodeStatus checkHpAmmoAndDecide();
 };
 

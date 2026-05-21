@@ -357,7 +357,7 @@ waypoint_follower:
 
 velocity_smoother:
   ros__parameters:
-    use_sim_time: True
+    use_sim_time: False
     smoothing_frequency: 5.0
     scale_velocities: False
     feedback: "CLOSED_LOOP"

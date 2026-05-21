@@ -59,7 +59,8 @@ bool SendGoalAction::setGoal(nav2_msgs::action::NavigateToPose::Goal & goal)
 
 void SendGoalAction::onHalt()
 {
-  RCLCPP_INFO(node_->get_logger(), "SendGoalAction has been halted.");
+  // Let base class handle goal cancellation
+  // Suppresses warning about null goal_handle_
 }
 
 BT::NodeStatus SendGoalAction::onResultReceived(const WrappedResult & wr)

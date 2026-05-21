@@ -25,15 +25,24 @@ BT::NodeStatus HpAmmoDcisionAction::checkHpAmmoAndDecide()
   }
 
   // Judge based on HP and ammo thresholds
+  std::string current_goal_pose;
   if (hp_msg->current_hp >= hp_threshold && 
-      ammo_msg->projectile_allowance_17mm >= ammo_threshold) {
+      ammo_msg->projectile_allowance_17mm > ammo_threshold) {
     // Above threshold: go to pose A
-    setOutput("goal_pose", pose_above_threshold);
-    return BT::NodeStatus::SUCCESS;
+    current_goal_pose = pose_above_threshold;
   } else {
     // Below threshold: go to pose B
-    setOutput("goal_pose", pose_below_threshold);
+    current_goal_pose = pose_below_threshold;
+  }
+  
+  // Only send goal if it changed, prevent duplicate preempts
+  if (current_goal_pose != last_goal_pose_) {
+    last_goal_pose_ = current_goal_pose;
+    setOutput("goal_pose", current_goal_pose);
     return BT::NodeStatus::SUCCESS;
+  } else {
+    // Goal unchanged, skip sending
+    return BT::NodeStatus::FAILURE;
   }
 }
 
