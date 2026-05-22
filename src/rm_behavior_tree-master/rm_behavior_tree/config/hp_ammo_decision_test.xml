@@ -16,8 +16,8 @@
                       ammo_message="{projectile_allowance}"
                       hp_threshold="200"
                       ammo_threshold="0"
-                      pose_above_threshold="8.69;5.0;0; 0;0;0;1"
-                      pose_below_threshold="8.69;5.0;0; 0;0;0;1"
+                      pose_above_threshold="5.32;-0.72;0; 0;0;0;1"
+                      pose_below_threshold="-1.25;-5.71;0; 0;0;0;1"
                       goal_pose="{goal_pose}"/>
       
       <!-- Send goal based on decision -->

@@ -42,7 +42,7 @@ int main(int argc, char ** argv)
   BT::RosNodeParams params_send_goal;
   params_send_goal.nh = std::make_shared<rclcpp::Node>("send_goal");
   params_send_goal.default_port_value = "navigate_to_pose";
-  params_send_goal.server_timeout = std::chrono::milliseconds(2000);
+  params_send_goal.server_timeout = std::chrono::milliseconds(20000);
   params_send_goal.wait_for_server_timeout = std::chrono::milliseconds(1000);
 
   BT::RosNodeParams params_sub_sefdefined;

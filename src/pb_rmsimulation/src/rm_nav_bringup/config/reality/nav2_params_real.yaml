@@ -54,6 +54,7 @@ bt_navigator:
     robot_base_frame: base_link_fake
     odom_topic: /Odometry
     bt_loop_duration: 10
+    default_bt_xml_filename: "navigate_w_replanning_and_recovery.xml"
     default_server_timeout: 20
     plugin_lib_names:
     - nav2_compute_path_to_pose_action_bt_node
@@ -269,7 +270,7 @@ controller_server:
       oscillation_v_eps: 0.1                    #(0,1)内的 normalized 线速度的平均值的阈值，判断机器人是否运动异常
       oscillation_omega_eps: 0.1                #(0,1)内的 normalized 角速度的平均值，判断机器人是否运动异常
       oscillation_recovery_min_duration: 10.0   #在这个时间内，是否再次发生FailureDetector检测的振荡
-      oscillation_filter_duration: 10.0         #failure_detector_中buffer容器的大小为oscillation_filter_duration * controller_frequency
+      oscillation_filter_duration: 200.0         #failure_detector_中buffer容器的大小为oscillation_filter_duration * controller_frequency
 
 local_costmap:
   local_costmap:
@@ -383,7 +384,7 @@ map_saver:
 
 planner_server:
   ros__parameters:
-    expected_planner_frequency: 5.0
+    expected_planner_frequency: 10.0
     use_sim_time: False
     planner_plugins: ["GridBased"]
     GridBased:
